@@ -10,7 +10,7 @@ The `Makefile` in this repository has the following targets:
 - `deploy`: deploy the website to GitHub Pages; and
 - `help`: list all targets.
 
-The generated website is deployed at https://pdmosses.github.io/xds-agda/.
+The generated website is deployed at https://pdmosses.github.io/mfps2026-agda/.
 
 ## About
 
@@ -111,15 +111,15 @@ Peter Mosses
 [pdmosses.github.io](https://pdmosses.github.io)
 
 
-[repository]: https://github.com/pdmosses/xds-agda/
-[website]: https://pdmosses.github.io/xds-agda/
-[Lambda-calculus]: https://pdmosses.github.io/xds-agda/LC/
-[PCF]: https://pdmosses.github.io/xds-agda/PCF/
-[Scm]: https://pdmosses.github.io/xds-agda/Scm/
+[repository]: https://github.com/pdmosses/mfps2026-agda/
+[website]: https://pdmosses.github.io/mfps2026-agda/
+[Lambda-calculus]: https://pdmosses.github.io/mfps2026-agda/LC/
+[PCF]: https://pdmosses.github.io/mfps2026-agda/PCF/
+[Scm]: https://pdmosses.github.io/mfps2026-agda/Scm/
 
-[Issues]: https://github.com/pdmosses/xds-agda/issues
-[Pull requests]: https://github.com/pdmosses/xds-agda/pulls
-[Discussions]: https://github.com/pdmosses/xds-agda/discussions
+[Issues]: https://github.com/pdmosses/mfps2026-agda/issues
+[Pull requests]: https://github.com/pdmosses/mfps2026-agda/pulls
+[Discussions]: https://github.com/pdmosses/mfps2026-agda/discussions
 
 [Home page]: index.md
 [Agda]: https://agda.readthedocs.io/en/stable/getting-started/index.html

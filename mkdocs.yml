@@ -1,14 +1,14 @@
-site_name: XDS-Agda
-site_url: https://pdmosses.github.io/xds-agda/
-repo_name: pdmosses/xds-agda
-repo_url: https://github.com/pdmosses/xds-agda
+site_name: MFPS2026-Agda
+site_url: https://pdmosses.github.io/mfps2026-agda/
+repo_name: pdmosses/mfps2026-agda
+repo_url: https://github.com/pdmosses/mfps2026-agda
 
 # To deploy website versions:
 # - install mike (https://github.com/jimporter/mike/)
 # - uncomment the following lines:
-extra:
-  version:
-    provider: mike
+# extra:
+#   version:
+#     provider: mike
 
 use_directory_urls: true
 
