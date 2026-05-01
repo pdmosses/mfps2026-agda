@@ -14,7 +14,7 @@ Complete examples of denotational semantics definitions in Agda:
 
 !!! info
 
-    This website version was deployed from the `sub` branch of the repository
+    This website was deployed from the `main` branch of the repository.
 
 ## Domains in Denotational Semantics
 
@@ -65,18 +65,6 @@ semantics more straightforwardly in Agda.
 The current examples use *postulates*, and some of the postulates are
 inconsistent with a classical set-theoretic interpretation of Agda.
 
-### Adding a Universe of Domains
-
-One idea is to distinguish between declarations of types that correspond
-to domains and declarations of ordinary types – e.g., by introducing a universe
-(hierarchy) for domains.
-
-A domain type would implicitly be a cpo, with built-in notation for its partial
-order and least element. A type that corresponds to the domain of continuous 
-functions from a domain to itself would also have a least fixed-point function.
-Functions on elements of domains should be defined in λ-notation, based on
-built-in functions associated with th various domain contructors.
-
 ### Implementing Synthetic Domain Theory
 
 An implementation of *Synthetic Domain Theory* (SDT) in Agda would address the
@@ -124,10 +112,10 @@ Advice and suggestions are welcome, e.g., by posting to the repo [Discussions].
 Peter Mosses <p.d.mosses@tudelft.nl>
 
 [Scheme]: https://scheme.org
-[DomainTheory]: https://martinescardo.github.io/TypeTopology/DomainTheory.index.html "Agda modules"
-[TypeTopology]: https://martinescardo.github.io/TypeTopology/ "Agda library"
-[DomainTheory.Bilimits.Dinfinity]: https://martinescardo.github.io/TypeTopology/DomainTheory.Bilimits.Dinfinity.html  "Agda module"
-[Formalizing Synthetic Domain Theory]: https://doi.org/10.1023/A:1006258506401 "JAR paper DOI"
-[Lego]: https://www.dcs.ed.ac.uk/home/lego/ "Web page"
-[Computational adequacy for recursive types in models of intuitionistic set theory]: https://doi.org/10.1016/j.apal.2003.12.005 "APAL paper DOI"
+[DomainTheory]: https://martinescardo.github.io/TypeTopology/DomainTheory.index.html
+[TypeTopology]: https://martinescardo.github.io/TypeTopology/
+[DomainTheory.Bilimits.Dinfinity]: https://martinescardo.github.io/TypeTopology/DomainTheory.Bilimits.Dinfinity.html
+[Formalizing Synthetic Domain Theory]: https://doi.org/10.1023/A:1006258506401
+[Lego]: https://www.dcs.ed.ac.uk/home/lego/
+[Computational adequacy for recursive types in models of intuitionistic set theory]: https://doi.org/10.1016/j.apal.2003.12.005
 [Discussions]: https://github.com/pdmosses/xds-agda/discussions
