@@ -597,11 +597,11 @@ endif
 clean-md:
 ifeq ($(MD),docs)
 # 	@echo "Warning: manually remove any obsolete docs/**/*.md files"
-	@find docs/* -name *.md \
-	    ! -path docs/javascripts/* ! -path docs/stylesheets/* \
-	    ! -path docs/Library/* ! -path docs/index.md ! -path docs/meta-notation.md \
+	@find docs -name '*.md' \
+	    ! -path 'docs/javascripts/*' ! -path 'docs/stylesheets/*' \
+	    ! -path 'docs/Library/*' ! -path docs/index.md ! -path docs/meta-notation.md \
 	    -delete
-	@find docs/* -type d -empty -delete
+	@find docs -type d -empty -delete
 else
 	@rm -rf $(MD)
 endif
