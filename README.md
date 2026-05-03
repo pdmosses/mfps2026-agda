@@ -32,7 +32,7 @@ The [repository] contains the following files and directories:
     - `docs/stylesheets`: directory for added CSS files
     - `docs/.nav.yml`: configuration file for navigation panels
     - `docs/*.md`: Markdown sources for non-generated pages
-- `UNLICENSE`: release into the public domain
+- `LICENSE`: release into the public domain
 - `Makefile`: automation of website and PDF generation
 - `mkdocs.yml`: configuration file for generated websites
 
@@ -41,14 +41,14 @@ The repository does not contain any generated files.
 ## Software dependencies
 
 - [Agda] (2.8.0)
-- [GNU Make] (3.81)
-- [sd] (1.0.0)
-- [Python 3] (3.11.3)
-- [Pip] (25.2)
-- [MkDocs] (1.6.1)
-- [Material for MkDocs] (9.7.0)
 - [Awesome-nav] (3.3.0)
-- [GitHub Pages]
+- [GNU Make] (3.81)
+- [Material for MkDocs] (9.7.6)
+- [mike] (2.0.0)
+- [MkDocs] (1.6.1)
+- [pip] (26.0.1)
+- [Python 3] (3.14.0)
+- [sd] (1.0.0)
 
 ## Platform dependencies
 
@@ -126,8 +126,9 @@ Peter Mosses
 [GNU Make]: https://www.gnu.org/software/make/manual/make.html
 [sd]: https://github.com/chmln/sd/
 [Python 3]: https://www.python.org/downloads/
-[Pip]: https://pypi.org/project/pip/
+[pip]: https://pypi.org/project/pip/
 [MkDocs]: https://www.mkdocs.org/getting-started/
 [Material for MkDocs]: https://squidfunk.github.io/mkdocs-material/getting-started/
 [Awesome-nav]: https://lukasgeiter.github.io/mkdocs-awesome-nav/
+[mike]: https://github.com/jimporter/mike/
 [GitHub Pages]: https://pages.github.com
