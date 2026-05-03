@@ -1,11 +1,5 @@
 # PCF definitions
 
-PCF and its denotational semantics were orginally defined by Dana Scott in 1969
-([Scott 1993]) with combinators (`S`, `K`) instead of λ-abstraction.
-Gordon Plotkin subsequently defined a denotational semantics for PCF including 
-λ-abstraction ([Plotkin 1977]). This module formalises a denotational semantics
-of PCF in Agda, corresponding closely to Plotkin's original paper.
-
 The following options are needed in connection with the lightweight
 formalisation of [function domains] in Agda.
 
@@ -229,4 +223,4 @@ equivalence proofs.
 [Scott 1993]: https://doi.org/10.1016/0304-3975(93)90095-B
 [Plotkin 1977]: https://doi.org/10.1016/0304-3975(77)90044-5
 [intrinsically-typed]: https://ncatlab.org/nlab/show/intrinsic+and+extrinsic+views+of+typing
-[Tests]: ../Tests/index.md
+[Tests]: Tests.md

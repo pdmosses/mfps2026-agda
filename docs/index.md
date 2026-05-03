@@ -1,4 +1,4 @@
-# About
+# About this website
 
 > Experiments with Agda support for Scott–Strachey denotational semantics
 
@@ -6,9 +6,9 @@
 
 Complete examples of denotational semantics definitions in Agda:
 
-- [LC](LC.md): the untyped λ-calculus
-- [PCF](PCF.md): an intrinsically (simply) typed programming language based on LCF.[^1]
-- [Scm](Scm.md): a sublanguage of [Scheme]
+- [LC](LC/index.md): the untyped λ-calculus
+- [PCF](PCF/index.md): an intrinsically (simply) typed programming language based on LCF.[^1]
+- [Scm](Scm/index.md): a sublanguage of [Scheme]
 
 [^1]: LCF is Scott's logic of computable functions.
 

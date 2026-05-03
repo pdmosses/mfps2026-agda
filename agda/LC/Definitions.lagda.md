@@ -119,5 +119,5 @@ module Semantic-Functions where
 See the [Tests] module for some examples of abstract syntax terms and
 equivalence proofs.
 
-[Function domains]: ../../Notation/index.md#function-domains
-[Tests]: ../Tests/index.md
+[Function domains]: ../Notation.md#function-domains
+[Tests]: Tests.md

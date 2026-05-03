@@ -111,14 +111,10 @@ to be separated by spaces.
 
 ### Modules
 
-Currently, the examples of denotational definitions presented here are
-independent, and there is some duplication of declarations of notation for
-domains.
-
-In a future version, all the domain notation should be specified in the module
-[Notation], with submodules for the various domain constructors.
+All the examples of denotational definitions presented here are based on
+the shallow embeding of domain notation in the module [Notation], importing
+its submodules for the required domain constructors.
 
 [Agda docs]: https://agda.readthedocs.io/en/latest/getting-started/a-taste-of-agda.html
 [Agda Wikipedia page]: https://en.wikipedia.org/wiki/Agda_(programming_language)
-[Scm]: Scm.md
-[Notation]: md/Notation/index.md
+[Notation]: Notation.md

@@ -1,24 +1,20 @@
 nav:
   - About:
     - index.md
-    - LC.md
-    - PCF.md
-    - Scm.md
     - meta-notation.md
   - Lambda-Calculus:
-    - md/LC/index.md
-    - md/LC/*
+    - LC/index.md
+    - LC/*
   - PCF:
-    - md/PCF/index.md
-    - md/PCF/*
+    - PCF/index.md
+    - PCF/*
   - Scm:
-    - md/Scm/index.md
-    - md/Scm/*
-  - Notation:
-    - md/Notation/index.md
+    - Scm/index.md
+    - Scm/*
+  - Notation.md
   - Library:
     - Library/index.md
-    - md/*
+    - '*'
   
 preserve_directory_names: true
 

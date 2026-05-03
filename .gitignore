@@ -1,11 +1,8 @@
 *.agdai
 /docs/html/
-/docs/md/
-/lagda/
-/latex/
-/code/
+/docs/**/*.md
+!/docs/index.md
+!/docs/meta-notation.md
+/site
+/temp
 .DS_Store
-site
-bin
-lib
-pyvenv.cfg
