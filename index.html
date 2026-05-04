@@ -5969,17 +5969,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#domains-in-agda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domains in Agda
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#postulating-domains-in-agda" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5992,10 +5981,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#implementing-synthetic-domain-theory" class="md-nav__link">
+  <a href="#implementing-synthetic-domain-theory-in-agda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementing Synthetic Domain Theory
+        Implementing Synthetic Domain Theory in Agda
       
     </span>
   </a>
@@ -6055,10 +6044,6 @@
 <li><a href="PCF/">PCF</a>: an intrinsically (simply) typed programming language based on LCF.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 <li><a href="Scm/">Scm</a>: a sublanguage of <a href="https://scheme.org">Scheme</a></li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>This website was deployed from the <code>main</code> branch of the repository.</p>
-</div>
 <h2 id="domains-in-denotational-semantics">Domains in Denotational Semantics</h2>
 <p>In the Scott–Strachey style of denotational semantics:</p>
 <ul>
@@ -6067,57 +6052,17 @@
 <li>denotations are defined in λ-notation, and functions are continuous;</li>
 <li>the isomorphisms between domains and their definitions are left implicit.</li>
 </ul>
-<h2 id="domains-in-agda">Domains in Agda</h2>
-<p>In Agda, the <a href="https://martinescardo.github.io/TypeTopology/DomainTheory.index.html">DomainTheory</a> modules from the <a href="https://martinescardo.github.io/TypeTopology/">TypeTopology</a> library provide
-well-developed support for domains.</p>
-<ul>
-<li>
-<p>Domains <code>D</code> are tuples <code>(⟪D⟫, ⊥, _⊑_, axioms)</code> where:</p>
-</li>
-<li>
-<p><code>⟪D⟫</code> is a type of elements,</p>
-</li>
-<li><code>⊥</code> is a distinguished element of <code>⟪D⟫</code>,</li>
-<li><code>_⊑_</code> is a partial order on <code>⟪D⟫</code>, and</li>
-<li>
-<p><code>axioms</code> prove that <code>(⟪D⟫, _⊑_)</code> is a directed-complete poset (dcpo)
-    with <code>⊥</code> least.</p>
-</li>
-<li>
-<p>Continuous functions <code>c</code> from domain <code>D</code> to domain <code>E</code>  are pairs
-  <code>(f, axioms)</code> where:</p>
-</li>
-<li>
-<p><code>f</code> is an underlying function from <code>⟪D⟫</code> to <code>⟪E⟫</code>, and</p>
-</li>
-<li>
-<p><code>axioms</code> prove that <code>f</code> preserves limits of directed sets.</p>
-</li>
-<li>
-<p>Domains are defined recursively as bilimits of diagrams.</p>
-</li>
-<li>
-<p>Elements of domains are defined in λ-notation, where:</p>
-</li>
-<li>
-<p>λ-abstractions need to be paired with continuity proofs,</p>
-</li>
-<li>applications need to select the underlying functions, and</li>
-<li>the isomorphisms between domains and their definitions are explicit.</li>
-</ul>
-<p>Such requirements give significant pragmatic issues: explicit continuity
-  proofs are generally tedious to formulate (and subsequently read); and the
-  notation for pairing and selection prevents direct embedding in Agda of
-  λ-notation from denotational definitions.</p>
 <h2 id="postulating-domains-in-agda">Postulating Domains in Agda</h2>
 <p>The purpose of this repository is to experiment with defining denotational
-semantics more straightforwardly in Agda.</p>
-<p>The current examples use <em>postulates</em>, and some of the postulates are
-inconsistent with a classical set-theoretic interpretation of Agda.</p>
-<h3 id="implementing-synthetic-domain-theory">Implementing Synthetic Domain Theory</h3>
-<p>An implementation of <em>Synthetic Domain Theory</em> (SDT) in Agda would address the
-pragmatic issues with using the <a href="https://martinescardo.github.io/TypeTopology/DomainTheory.index.html">DomainTheory</a> modules from the <a href="https://martinescardo.github.io/TypeTopology/">TypeTopology</a>
-library.</p>
+semantics straightforwardly in Agda.</p>
+<p>The current examples use <em>postulated</em> domain constructors and
+associated operations declared in the <a href="Notation/">Notation</a> module and its submodules.
+Some of the postulates are inconsistent with a classical set-theoretic
+interpretation of Agda.</p>
+<h3 id="implementing-synthetic-domain-theory-in-agda">Implementing Synthetic Domain Theory in Agda</h3>
+<p>An implementation of <em>Synthetic Domain Theory</em> (SDT) in Agda would allow
+domain constructors and associated operations to be defined from a smaller
+collection of postulates that are known to have a model.</p>
 <p>From the abstract of <a href="https://doi.org/10.1023/A:1006258506401">Formalizing Synthetic Domain Theory</a> by Bernhard Reus
 (J. Automated Reasoning, 1999):</p>
 <blockquote>
