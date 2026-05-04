@@ -6,15 +6,11 @@
 
 Complete examples of denotational semantics definitions in Agda:
 
-- [LC](LC/index.md): the untyped λ-calculus
-- [PCF](PCF/index.md): an intrinsically (simply) typed programming language based on LCF.[^1]
-- [Scm](Scm/index.md): a sublanguage of [Scheme]
+- [LC]: the untyped λ-calculus
+- [PCF]: an intrinsically (simply) typed programming language based on LCF.[^1]
+- [Scm]: a sublanguage of [Scheme]
 
 [^1]: LCF is Scott's logic of computable functions.
-
-!!! info
-
-    This website was deployed from the `main` branch of the repository.
 
 ## Domains in Denotational Semantics
 
@@ -25,51 +21,21 @@ In the Scott–Strachey style of denotational semantics:
 - denotations are defined in λ-notation, and functions are continuous;
 - the isomorphisms between domains and their definitions are left implicit.
 
-## Domains in Agda
-
-In Agda, the [DomainTheory] modules from the [TypeTopology] library provide
-well-developed support for domains.
-
-- Domains `D` are tuples `(⟪D⟫, ⊥, _⊑_, axioms)` where:
-  
-  - `⟪D⟫` is a type of elements,
-  - `⊥` is a distinguished element of `⟪D⟫`,
-  - `_⊑_` is a partial order on `⟪D⟫`, and
-  - `axioms` prove that `(⟪D⟫, _⊑_)` is a directed-complete poset (dcpo)
-    with `⊥` least.
-
-- Continuous functions `c` from domain `D` to domain `E`  are pairs
-  `(f, axioms)` where:
-
-  - `f` is an underlying function from `⟪D⟫` to `⟪E⟫`, and
-  - `axioms` prove that `f` preserves limits of directed sets.
-
-- Domains are defined recursively as bilimits of diagrams.
-
-- Elements of domains are defined in λ-notation, where:
-
-  - λ-abstractions need to be paired with continuity proofs,
-  - applications need to select the underlying functions, and
-  - the isomorphisms between domains and their definitions are explicit.
-
-  Such requirements give significant pragmatic issues: explicit continuity
-  proofs are generally tedious to formulate (and subsequently read); and the
-  notation for pairing and selection prevents direct embedding in Agda of
-  λ-notation from denotational definitions.
-
 ## Postulating Domains in Agda
 
 The purpose of this repository is to experiment with defining denotational
-semantics more straightforwardly in Agda.
+semantics straightforwardly in Agda.
 
-The current examples use *postulates*, and some of the postulates are
-inconsistent with a classical set-theoretic interpretation of Agda.
+The current examples use *postulated* domain constructors and
+associated operations declared in the [Notation] module and its submodules.
+Some of the postulates are inconsistent with a classical set-theoretic
+interpretation of Agda.
 
-### Implementing Synthetic Domain Theory
+### Implementing Synthetic Domain Theory in Agda
 
-An implementation of *Synthetic Domain Theory* (SDT) in Agda would address the
-pragmatic issues with using the [DomainTheory] modules from the [TypeTopology]
-library.
+An implementation of *Synthetic Domain Theory* (SDT) in Agda would allow
+domain constructors and associated operations to be defined from a smaller
+collection of postulates that are known to have a model.
 
 From the abstract of [Formalizing Synthetic Domain Theory] by Bernhard Reus
 (J. Automated Reasoning, 1999):
@@ -111,10 +77,12 @@ Advice and suggestions are welcome, e.g., by posting to the repo [Discussions].
 
 Peter Mosses <p.d.mosses@tudelft.nl>
 
+[LC]: LC/index.md
+[PCF]: PCF/index.md
+[Scm]: Scm/index.md
+[Notation]: Notation.md
+
 [Scheme]: https://scheme.org
-[DomainTheory]: https://martinescardo.github.io/TypeTopology/DomainTheory.index.html
-[TypeTopology]: https://martinescardo.github.io/TypeTopology/
-[DomainTheory.Bilimits.Dinfinity]: https://martinescardo.github.io/TypeTopology/DomainTheory.Bilimits.Dinfinity.html
 [Formalizing Synthetic Domain Theory]: https://doi.org/10.1023/A:1006258506401
 [Lego]: https://www.dcs.ed.ac.uk/home/lego/
 [Computational adequacy for recursive types in models of intuitionistic set theory]: https://doi.org/10.1016/j.apal.2003.12.005
