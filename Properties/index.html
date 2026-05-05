@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://pdmosses.github.io/mfps2026-agda/Relation/Nullary/Recomputable/">
+        <link rel="canonical" href="https://pdmosses.github.io/mfps2026-agda/Properties/">
       
       
-        <link rel="prev" href="../Negation/Core/">
+        <link rel="prev" href="../Notation/">
       
       
-        <link rel="next" href="Core/">
+        <link rel="next" href="../Library/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Recomputable - MFPS2026-Agda</title>
+        <title>Properties - MFPS2026-Agda</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,13 +47,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-material.css">
+      <link rel="stylesheet" href="../stylesheets/Agda-material.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md.css">
+      <link rel="stylesheet" href="../stylesheets/Agda-md.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md-dark.css">
+      <link rel="stylesheet" href="../stylesheets/Agda-md-dark.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#properties" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MFPS2026-Agda" class="md-header__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
+    <a href=".." title="MFPS2026-Agda" class="md-header__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recomputable
+              Properties
             
           </span>
         </div>
@@ -233,7 +238,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href=".." class="md-tabs__link">
           
   
   
@@ -255,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../LC/" class="md-tabs__link">
+        <a href="../LC/" class="md-tabs__link">
           
   
   
@@ -277,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../PCF/" class="md-tabs__link">
+        <a href="../PCF/" class="md-tabs__link">
           
   
   
@@ -299,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Scm/" class="md-tabs__link">
+        <a href="../Scm/" class="md-tabs__link">
           
   
   
@@ -317,11 +322,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../Notation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Notation/" class="md-tabs__link">
           
   
   
@@ -339,13 +346,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../Library/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../Library/" class="md-tabs__link">
           
   
   
@@ -376,8 +381,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -389,7 +392,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MFPS2026-Agda" class="md-nav__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
+    <a href=".." title="MFPS2026-Agda" class="md-nav__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -442,7 +445,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href=".." class="md-nav__link ">
               
   
   
@@ -486,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../meta-notation/" class="md-nav__link">
+      <a href="../meta-notation/" class="md-nav__link">
         
   
   
@@ -546,7 +549,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../LC/" class="md-nav__link ">
+            <a href="../LC/" class="md-nav__link ">
               
   
   
@@ -590,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../LC/Definitions/" class="md-nav__link">
+      <a href="../LC/Definitions/" class="md-nav__link">
         
   
   
@@ -618,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../LC/Tests/" class="md-nav__link">
+      <a href="../LC/Tests/" class="md-nav__link">
         
   
   
@@ -678,7 +681,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../PCF/" class="md-nav__link ">
+            <a href="../PCF/" class="md-nav__link ">
               
   
   
@@ -722,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../PCF/Definitions/" class="md-nav__link">
+      <a href="../PCF/Definitions/" class="md-nav__link">
         
   
   
@@ -750,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../PCF/Tests/" class="md-nav__link">
+      <a href="../PCF/Tests/" class="md-nav__link">
         
   
   
@@ -814,7 +817,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Scm/" class="md-nav__link ">
+            <a href="../Scm/" class="md-nav__link ">
               
   
   
@@ -858,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Scm/Abstract-Syntax/" class="md-nav__link">
+      <a href="../Scm/Abstract-Syntax/" class="md-nav__link">
         
   
   
@@ -886,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Scm/Auxiliary-Functions/" class="md-nav__link">
+      <a href="../Scm/Auxiliary-Functions/" class="md-nav__link">
         
   
   
@@ -914,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Scm/Domain-Equations/" class="md-nav__link">
+      <a href="../Scm/Domain-Equations/" class="md-nav__link">
         
   
   
@@ -942,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Scm/Semantic-Functions/" class="md-nav__link">
+      <a href="../Scm/Semantic-Functions/" class="md-nav__link">
         
   
   
@@ -974,143 +977,12 @@
       
   
   
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Notation
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Notation
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Notation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Notation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Properties/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Properties
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
   
     
     
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1130,11 +1002,322 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Properties
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursive-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursive domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flat-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flat domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flat domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booleans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naturals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naturals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Product domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Library/" class="md-nav__link ">
+            <a href="../Library/" class="md-nav__link ">
               
   
   
@@ -1152,13 +1335,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1306,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Bool/" class="md-nav__link">
+      <a href="../Agda/Builtin/Bool/" class="md-nav__link">
         
   
   
@@ -1334,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Char/" class="md-nav__link">
+      <a href="../Agda/Builtin/Char/" class="md-nav__link">
         
   
   
@@ -1385,7 +1568,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Agda/Builtin/Equality/" class="md-nav__link ">
+            <a href="../Agda/Builtin/Equality/" class="md-nav__link ">
               
   
   
@@ -1429,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Equality/Rewrite/" class="md-nav__link">
+      <a href="../Agda/Builtin/Equality/Rewrite/" class="md-nav__link">
         
   
   
@@ -1465,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Int/" class="md-nav__link">
+      <a href="../Agda/Builtin/Int/" class="md-nav__link">
         
   
   
@@ -1493,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/List/" class="md-nav__link">
+      <a href="../Agda/Builtin/List/" class="md-nav__link">
         
   
   
@@ -1521,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Maybe/" class="md-nav__link">
+      <a href="../Agda/Builtin/Maybe/" class="md-nav__link">
         
   
   
@@ -1549,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Nat/" class="md-nav__link">
+      <a href="../Agda/Builtin/Nat/" class="md-nav__link">
         
   
   
@@ -1577,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Sigma/" class="md-nav__link">
+      <a href="../Agda/Builtin/Sigma/" class="md-nav__link">
         
   
   
@@ -1605,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/String/" class="md-nav__link">
+      <a href="../Agda/Builtin/String/" class="md-nav__link">
         
   
   
@@ -1633,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Unit/" class="md-nav__link">
+      <a href="../Agda/Builtin/Unit/" class="md-nav__link">
         
   
   
@@ -1669,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Primitive/" class="md-nav__link">
+      <a href="../Agda/Primitive/" class="md-nav__link">
         
   
   
@@ -1817,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Bundles/Raw/" class="md-nav__link">
+      <a href="../Algebra/Bundles/Raw/" class="md-nav__link">
         
   
   
@@ -1853,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Core/" class="md-nav__link">
+      <a href="../Algebra/Core/" class="md-nav__link">
         
   
   
@@ -1935,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Definitions/RawMagma/" class="md-nav__link">
+      <a href="../Algebra/Definitions/RawMagma/" class="md-nav__link">
         
   
   
@@ -2119,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Bool/Base/" class="md-nav__link">
+      <a href="../Data/Bool/Base/" class="md-nav__link">
         
   
   
@@ -2209,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Char/Base/" class="md-nav__link">
+      <a href="../Data/Char/Base/" class="md-nav__link">
         
   
   
@@ -2268,7 +2451,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data/Empty/" class="md-nav__link ">
+            <a href="../Data/Empty/" class="md-nav__link ">
               
   
   
@@ -2312,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Empty/Polymorphic/" class="md-nav__link">
+      <a href="../Data/Empty/Polymorphic/" class="md-nav__link">
         
   
   
@@ -2402,7 +2585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Fin/Base/" class="md-nav__link">
+      <a href="../Data/Fin/Base/" class="md-nav__link">
         
   
   
@@ -2492,7 +2675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Integer/Base/" class="md-nav__link">
+      <a href="../Data/Integer/Base/" class="md-nav__link">
         
   
   
@@ -2528,7 +2711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Irrelevant/" class="md-nav__link">
+      <a href="../Data/Irrelevant/" class="md-nav__link">
         
   
   
@@ -2614,7 +2797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Base/" class="md-nav__link">
+      <a href="../Data/List/Base/" class="md-nav__link">
         
   
   
@@ -2696,7 +2879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/NonEmpty/Base/" class="md-nav__link">
+      <a href="../Data/List/NonEmpty/Base/" class="md-nav__link">
         
   
   
@@ -2896,7 +3079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Relation/Binary/Lex/Core/" class="md-nav__link">
+      <a href="../Data/List/Relation/Binary/Lex/Core/" class="md-nav__link">
         
   
   
@@ -2986,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Relation/Binary/Pointwise/Base/" class="md-nav__link">
+      <a href="../Data/List/Relation/Binary/Pointwise/Base/" class="md-nav__link">
         
   
   
@@ -3100,7 +3283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Maybe/Base/" class="md-nav__link">
+      <a href="../Data/Maybe/Base/" class="md-nav__link">
         
   
   
@@ -3190,7 +3373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Nat/Base/" class="md-nav__link">
+      <a href="../Data/Nat/Base/" class="md-nav__link">
         
   
   
@@ -3280,7 +3463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Parity/Base/" class="md-nav__link">
+      <a href="../Data/Parity/Base/" class="md-nav__link">
         
   
   
@@ -3370,7 +3553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Product/Base/" class="md-nav__link">
+      <a href="../Data/Product/Base/" class="md-nav__link">
         
   
   
@@ -3460,7 +3643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Sign/Base/" class="md-nav__link">
+      <a href="../Data/Sign/Base/" class="md-nav__link">
         
   
   
@@ -3550,7 +3733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/String/Base/" class="md-nav__link">
+      <a href="../Data/String/Base/" class="md-nav__link">
         
   
   
@@ -3640,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Sum/Base/" class="md-nav__link">
+      <a href="../Data/Sum/Base/" class="md-nav__link">
         
   
   
@@ -3730,7 +3913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/These/Base/" class="md-nav__link">
+      <a href="../Data/These/Base/" class="md-nav__link">
         
   
   
@@ -3822,7 +4005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Unit/Base/" class="md-nav__link">
+      <a href="../Data/Unit/Base/" class="md-nav__link">
         
   
   
@@ -3904,7 +4087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Unit/Polymorphic/Base/" class="md-nav__link">
+      <a href="../Data/Unit/Polymorphic/Base/" class="md-nav__link">
         
   
   
@@ -4002,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Vec/Base/" class="md-nav__link">
+      <a href="../Data/Vec/Base/" class="md-nav__link">
         
   
   
@@ -4108,7 +4291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Base/" class="md-nav__link">
+      <a href="../Function/Base/" class="md-nav__link">
         
   
   
@@ -4136,7 +4319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Bundles/" class="md-nav__link">
+      <a href="../Function/Bundles/" class="md-nav__link">
         
   
   
@@ -4189,7 +4372,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Function/Consequences/" class="md-nav__link ">
+            <a href="../Function/Consequences/" class="md-nav__link ">
               
   
   
@@ -4233,7 +4416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Consequences/Propositional/" class="md-nav__link">
+      <a href="../Function/Consequences/Propositional/" class="md-nav__link">
         
   
   
@@ -4261,7 +4444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Consequences/Setoid/" class="md-nav__link">
+      <a href="../Function/Consequences/Setoid/" class="md-nav__link">
         
   
   
@@ -4297,7 +4480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Definitions/" class="md-nav__link">
+      <a href="../Function/Definitions/" class="md-nav__link">
         
   
   
@@ -4325,7 +4508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Structures/" class="md-nav__link">
+      <a href="../Function/Structures/" class="md-nav__link">
         
   
   
@@ -4361,7 +4544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Level/" class="md-nav__link">
+      <a href="../Level/" class="md-nav__link">
         
   
   
@@ -4386,10 +4569,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -4406,11 +4587,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
         
           
           <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
@@ -4431,7 +4612,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4544,7 +4725,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Binary/Bundles/" class="md-nav__link ">
+            <a href="../Relation/Binary/Bundles/" class="md-nav__link ">
               
   
   
@@ -4588,7 +4769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Bundles/Raw/" class="md-nav__link">
+      <a href="../Relation/Binary/Bundles/Raw/" class="md-nav__link">
         
   
   
@@ -4624,7 +4805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Consequences/" class="md-nav__link">
+      <a href="../Relation/Binary/Consequences/" class="md-nav__link">
         
   
   
@@ -4764,7 +4945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Construct/Closure/Reflexive/" class="md-nav__link">
+      <a href="../Relation/Binary/Construct/Closure/Reflexive/" class="md-nav__link">
         
   
   
@@ -4800,7 +4981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Construct/Composition/" class="md-nav__link">
+      <a href="../Relation/Binary/Construct/Composition/" class="md-nav__link">
         
   
   
@@ -4882,7 +5063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Construct/Constant/Core/" class="md-nav__link">
+      <a href="../Relation/Binary/Construct/Constant/Core/" class="md-nav__link">
         
   
   
@@ -4926,7 +5107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Core/" class="md-nav__link">
+      <a href="../Relation/Binary/Core/" class="md-nav__link">
         
   
   
@@ -4954,7 +5135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Definitions/" class="md-nav__link">
+      <a href="../Relation/Binary/Definitions/" class="md-nav__link">
         
   
   
@@ -5090,7 +5271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Indexed/Heterogeneous/Core/" class="md-nav__link">
+      <a href="../Relation/Binary/Indexed/Heterogeneous/Core/" class="md-nav__link">
         
   
   
@@ -5188,7 +5369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Properties/Setoid/" class="md-nav__link">
+      <a href="../Relation/Binary/Properties/Setoid/" class="md-nav__link">
         
   
   
@@ -5280,7 +5461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/PropositionalEquality/Core/" class="md-nav__link">
+      <a href="../Relation/Binary/PropositionalEquality/Core/" class="md-nav__link">
         
   
   
@@ -5308,7 +5489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/PropositionalEquality/Properties/" class="md-nav__link">
+      <a href="../Relation/Binary/PropositionalEquality/Properties/" class="md-nav__link">
         
   
   
@@ -5398,7 +5579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Reasoning/Syntax/" class="md-nav__link">
+      <a href="../Relation/Binary/Reasoning/Syntax/" class="md-nav__link">
         
   
   
@@ -5434,7 +5615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Binary/Structures/" class="md-nav__link">
+      <a href="../Relation/Binary/Structures/" class="md-nav__link">
         
   
   
@@ -5467,8 +5648,6 @@
                 
   
   
-    
-  
   
   
     
@@ -5495,15 +5674,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../Relation/Nullary/" class="md-nav__link ">
               
   
   
@@ -5527,7 +5706,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -5570,7 +5749,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Decidable/" class="md-nav__link ">
+            <a href="../Relation/Nullary/Decidable/" class="md-nav__link ">
               
   
   
@@ -5614,7 +5793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Decidable/Core/" class="md-nav__link">
+      <a href="../Relation/Nullary/Decidable/Core/" class="md-nav__link">
         
   
   
@@ -5650,7 +5829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Irrelevant/" class="md-nav__link">
+      <a href="../Relation/Nullary/Irrelevant/" class="md-nav__link">
         
   
   
@@ -5732,7 +5911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Negation/Core/" class="md-nav__link">
+      <a href="../Relation/Nullary/Negation/Core/" class="md-nav__link">
         
   
   
@@ -5765,8 +5944,6 @@
                 
   
   
-    
-  
   
   
     
@@ -5785,15 +5962,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7_2_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../Relation/Nullary/Recomputable/" class="md-nav__link ">
               
   
   
@@ -5811,13 +5988,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_6_7_2_5" id="__nav_6_7_2_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6_7_2_5" id="__nav_6_7_2_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_7_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_7_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -5837,7 +6014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Core/" class="md-nav__link">
+      <a href="../Relation/Nullary/Recomputable/Core/" class="md-nav__link">
         
   
   
@@ -5873,7 +6050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reflects/" class="md-nav__link">
+      <a href="../Relation/Nullary/Reflects/" class="md-nav__link">
         
   
   
@@ -5932,7 +6109,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Unary/" class="md-nav__link ">
+            <a href="../Relation/Unary/" class="md-nav__link ">
               
   
   
@@ -5976,7 +6153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Unary/Properties/" class="md-nav__link">
+      <a href="../Relation/Unary/Properties/" class="md-nav__link">
         
   
   
@@ -6028,9 +6205,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -6039,6 +6214,149 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursive-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursive domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flat-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flat domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flat domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booleans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naturals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naturals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Product domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6051,178 +6369,149 @@
               
                 
 
-  
 
 
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../../Library/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Library
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      
-  
-  
-    
-    
-      
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../Binary/Bundles/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Relation
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Nullary
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Recomputable
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
 
               
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-  <h1>Recomputable</h1>
+<h1 id="properties">Properties</h1>
+<p>This module declares some properties of the conventional notation for
+Scott domains and the associated functions on their carrier sets.</p>
+<pre class="Agda"><code class="Agda"><a id="160" class="Symbol">{-#</a> <a id="164" class="Keyword">OPTIONS</a> <a id="172" class="Pragma">--rewriting</a> <a id="184" class="Pragma">--confluence-check</a> <a id="203" class="Pragma">--lossy-unification</a> <a id="223" class="Symbol">#-}</a>
 
-<pre class="Agda"><code class="Agda"><a id="1" class="Comment">------------------------------------------------------------------------</a>
-<a id="74" class="Comment">-- The Agda standard library</a>
-<a id="103" class="Comment">--</a>
-<a id="106" class="Comment">-- Recomputable types and their algebra as Harrop formulas</a>
-<a id="165" class="Comment">------------------------------------------------------------------------</a>
+<a id="228" class="Keyword">module</a> <a id="" href="../html/Properties.html" class="Module Definition">Properties</a> <a id="246" class="Keyword">where</a>
 
-<a id="239" class="Symbol">{-#</a> <a id="243" class="Keyword">OPTIONS</a> <a id="251" class="Pragma">--cubical-compatible</a> <a id="272" class="Pragma">--safe</a> <a id="279" class="Symbol">#-}</a>
+<a id="253" class="Keyword">open</a> <a id="258" class="Keyword">import</a> <a id="265" href="../Agda/Builtin/Equality/" class="Module">Agda.Builtin.Equality</a> <a id="287" class="Keyword">public</a> <a id="294" class="Keyword">using</a> <a id="300" class="Symbol">(</a><a id="301" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">_≡_</a><a id="304" class="Symbol">;</a> <a id="306" href="../Agda/Builtin/Equality/#207" class="InductiveConstructor">refl</a><a id="310" class="Symbol">)</a>
+<a id="312" class="Keyword">open</a> <a id="317" class="Keyword">import</a> <a id="324" href="../Agda/Builtin/Equality/Rewrite/" class="Module">Agda.Builtin.Equality.Rewrite</a> <a id="354" class="Keyword">using</a> <a id="360" class="Symbol">()</a>
+<a id="363" class="Keyword">open</a> <a id="368" class="Keyword">import</a> <a id="375" href="../Agda/Builtin/Nat/" class="Module">Agda.Builtin.Nat</a> <a id="392" class="Keyword">public</a> <a id="399" class="Keyword">using</a> <a id="405" class="Symbol">(</a><a id="406" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a><a id="409" class="Symbol">)</a> <a id="411" class="Keyword">renaming</a> <a id="420" class="Symbol">(</a><a id="421" href="../Agda/Builtin/Nat/#631" class="Primitive Operator">_==_</a> <a id="426" class="Symbol">to</a> <a id="429" class="Primitive Operator">_==ᴺ_</a><a id="434" class="Symbol">)</a> 
 
-<a id="284" class="Keyword">module</a> <a id="" href="../../../html/Relation.Nullary.Recomputable.html" class="Module Definition">Relation.Nullary.Recomputable</a> <a id="321" class="Keyword">where</a>
+<a id="438" class="Keyword">import</a> <a id="445" href="../Notation/" class="Module">Notation</a>
 
-<a id="328" class="Keyword">open</a> <a id="333" class="Keyword">import</a> <a id="340" href="../../../Data/Empty/" class="Module">Data.Empty</a> <a id="351" class="Keyword">using</a> <a id="357" class="Symbol">(</a><a id="358" href="../../../Data/Empty/#914" class="Function">⊥</a><a id="359" class="Symbol">)</a>
-<a id="361" class="Keyword">open</a> <a id="366" class="Keyword">import</a> <a id="373" href="../../../Data/Irrelevant/" class="Module">Data.Irrelevant</a> <a id="389" class="Keyword">using</a> <a id="395" class="Symbol">(</a><a id="396" href="../../../Data/Irrelevant/#725" class="Record">Irrelevant</a><a id="406" class="Symbol">;</a> <a id="408" href="../../../Data/Irrelevant/#789" class="Field">irrelevant</a><a id="418" class="Symbol">;</a> <a id="420" href="../../../Data/Irrelevant/#776" class="InductiveConstructor Operator">[_]</a><a id="423" class="Symbol">)</a>
-<a id="425" class="Keyword">open</a> <a id="430" class="Keyword">import</a> <a id="437" href="../../../Data/Product/Base/" class="Module">Data.Product.Base</a> <a id="455" class="Keyword">using</a> <a id="461" class="Symbol">(</a><a id="462" href="../../../Data/Product/Base/#1618" class="Function Operator">_×_</a><a id="465" class="Symbol">;</a> <a id="467" href="../../../Agda/Builtin/Sigma/#235" class="InductiveConstructor Operator">_,_</a><a id="470" class="Symbol">;</a> <a id="472" href="../../../Data/Product/Base/#636" class="Field">proj₁</a><a id="477" class="Symbol">;</a> <a id="479" href="../../../Data/Product/Base/#650" class="Field">proj₂</a><a id="484" class="Symbol">)</a>
-<a id="486" class="Keyword">open</a> <a id="491" class="Keyword">import</a> <a id="498" href="../../../Level/" class="Module">Level</a> <a id="504" class="Keyword">using</a> <a id="510" class="Symbol">(</a><a id="511" href="../../../Agda/Primitive/#742" class="Postulate">Level</a><a id="516" class="Symbol">)</a>
-<a id="518" class="Keyword">open</a> <a id="523" class="Keyword">import</a> <a id="530" href="../../../Relation/Nullary/Negation/Core/" class="Module">Relation.Nullary.Negation.Core</a> <a id="561" class="Keyword">using</a> <a id="567" class="Symbol">(</a><a id="568" href="../../../Relation/Nullary/Negation/Core/#677" class="Function Operator">¬_</a><a id="570" class="Symbol">)</a>
+<a id="455" class="Keyword">open</a> <a id="460" href="../Notation/" class="Module">Notation</a> <a id="469" class="Keyword">using</a> <a id="475" class="Symbol">(</a><a id="476" href="../Notation/#520" class="Generalizable">A</a><a id="477" class="Symbol">;</a> <a id="479" href="../Notation/#522" class="Generalizable">B</a><a id="480" class="Symbol">;</a> <a id="482" href="../Notation/#524" class="Generalizable">C</a><a id="483" class="Symbol">)</a>
+</code></pre>
+<h2 id="domains">Domains</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The specified properties are <em>not</em> used for type-checking.
+They do <em>not</em> define the mathematical structure of domains,
+nor the algebraic and universal properties of the associated functions.
+Postulated equivalences are used for testing denotations of terms,
+and added as rewrite rules to allow their use to be implicit.</p>
+</div>
+<pre class="Agda"><code class="Agda"><a id="863" class="Keyword">module</a> <a id="Domains"></a><a id="870" href="../Properties/#870" class="Module">Domains</a> <a id="878" class="Keyword">where</a>
 
-<a id="573" class="Keyword">private</a>
-  <a id="583" class="Keyword">variable</a>
-    <a id="596" href="../../../Relation/Nullary/Recomputable/#596" class="Generalizable">a</a> <a id="598" href="../../../Relation/Nullary/Recomputable/#598" class="Generalizable">b</a> <a id="600" class="Symbol">:</a> <a id="602" href="../../../Agda/Primitive/#742" class="Postulate">Level</a>
-    <a id="612" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a> <a id="614" class="Symbol">:</a> <a id="616" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="620" href="../../../Relation/Nullary/Recomputable/#596" class="Generalizable">a</a>
-    <a id="626" href="../../../Relation/Nullary/Recomputable/#626" class="Generalizable">B</a> <a id="628" class="Symbol">:</a> <a id="630" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="634" href="../../../Relation/Nullary/Recomputable/#598" class="Generalizable">b</a>
+  <a id="887" class="Keyword">open</a> <a id="892" href="../Notation/#1711" class="Module">Notation.Domains</a> <a id="909" class="Keyword">using</a> <a id="915" class="Symbol">(</a><a id="916" href="../Notation/#1742" class="Postulate">Domain</a><a id="922" class="Symbol">;</a> <a id="924" href="../Notation/#1809" class="Postulate Operator">⟪_⟫</a><a id="927" class="Symbol">;</a> <a id="929" href="../Notation/#1877" class="Postulate">⊥</a><a id="930" class="Symbol">;</a> <a id="932" href="../Notation/#1942" class="Postulate">𝟙</a><a id="933" class="Symbol">;</a> <a id="935" href="../Notation/#2002" class="Generalizable">D</a><a id="936" class="Symbol">;</a> <a id="938" href="../Notation/#2004" class="Generalizable">E</a><a id="939" class="Symbol">;</a> <a id="941" href="../Notation/#2006" class="Generalizable">F</a><a id="942" class="Symbol">)</a> <a id="944" class="Keyword">public</a>
 
-<a id="637" class="Comment">------------------------------------------------------------------------</a>
-<a id="710" class="Comment">-- Re-export</a>
+<a id="952" class="Keyword">open</a> <a id="957" href="../Properties/#870" class="Module">Domains</a> <a id="965" class="Keyword">public</a>
+</code></pre>
+<h2 id="function-domains">Function domains</h2>
+<pre class="Agda"><code class="Agda"><a id="1006" class="Keyword">module</a> <a id="Functions"></a><a id="1013" href="../Properties/#1013" class="Module">Functions</a> <a id="1023" class="Keyword">where</a>
 
-<a id="724" class="Keyword">open</a> <a id="729" class="Keyword">import</a> <a id="736" href="../../../Relation/Nullary/Recomputable/Core/" class="Module">Relation.Nullary.Recomputable.Core</a> <a id="771" class="Keyword">public</a>
+  <a id="1032" class="Keyword">open</a> <a id="1037" href="../Notation/#3711" class="Module">Notation.Functions</a> <a id="1056" class="Keyword">using</a> <a id="1062" class="Symbol">(</a><a id="1063" href="../Notation/#3744" class="Postulate Operator">_→ᶜ_</a><a id="1067" class="Symbol">;</a> <a id="1069" href="../Notation/#5041" class="Postulate">dom-cts</a><a id="1076" class="Symbol">;</a> <a id="1078" href="../Notation/#5546" class="Postulate Operator">_→ˢ_</a><a id="1082" class="Symbol">;</a> <a id="1084" href="../Notation/#5743" class="Postulate">set-cts</a><a id="1091" class="Symbol">;</a> <a id="1093" href="../Notation/#5912" class="Postulate">fix</a><a id="1096" class="Symbol">)</a> <a id="1098" class="Keyword">public</a>
 
+  <a id="1108" class="Keyword">postulate</a>
+    <a id="Functions.apply-fix"></a><a id="1122" href="../Properties/#1122" class="Postulate">apply-fix</a> <a id="1132" class="Symbol">:</a> <a id="1134" class="Symbol">{</a><a id="1135" href="../Properties/#1135" class="Bound">φ</a> <a id="1137" class="Symbol">:</a> <a id="1139" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="1141" href="../Notation/#2002" class="Generalizable">D</a> <a id="1143" href="../Notation/#3744" class="Postulate Operator">→ᶜ</a> <a id="1146" href="../Notation/#2002" class="Generalizable">D</a> <a id="1148" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="1149" class="Symbol">}</a> <a id="1151" class="Symbol">→</a> <a id="1153" href="../Notation/#5912" class="Postulate">fix</a> <a id="1157" href="../Properties/#1135" class="Bound">φ</a> <a id="1159" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1161" href="../Properties/#1135" class="Bound">φ</a> <a id="1163" class="Symbol">(</a><a id="1164" href="../Notation/#5912" class="Postulate">fix</a> <a id="1168" href="../Properties/#1135" class="Bound">φ</a><a id="1169" class="Symbol">)</a>
+    <a id="1175" class="Comment">-- apply-fix{φ} unfolds fix φ once</a>
+  <a id="1212" class="Symbol">{-#</a> <a id="1216" class="Keyword">REWRITE</a> <a id="1224" href="../Properties/#1122" class="Postulate">apply-fix</a> <a id="1234" class="Symbol">#-}</a>
 
-<a id="780" class="Comment">------------------------------------------------------------------------</a>
-<a id="853" class="Comment">-- Constructions</a>
+<a id="1239" class="Keyword">open</a> <a id="1244" href="../Properties/#1013" class="Module">Functions</a> <a id="1254" class="Keyword">public</a>
+</code></pre>
+<h2 id="recursive-domains">Recursive domains</h2>
+<pre class="Agda"><code class="Agda"><a id="1296" class="Keyword">module</a> <a id="Recursion"></a><a id="1303" href="../Properties/#1303" class="Module">Recursion</a> <a id="1313" class="Keyword">where</a>
 
-<a id="871" class="Comment">-- Irrelevant types are Recomputable</a>
+  <a id="1322" class="Keyword">open</a> <a id="1327" href="../Notation/#6630" class="Module">Notation.Recursion</a> <a id="1346" class="Keyword">using</a> <a id="1352" class="Symbol">(</a><a id="1353" href="../Notation/#6663" class="Postulate Operator">_≅_</a><a id="1356" class="Symbol">;</a> <a id="1358" href="../Notation/#6773" class="Postulate">unfold</a><a id="1364" class="Symbol">;</a> <a id="1366" href="../Notation/#6810" class="Postulate">fold</a><a id="1370" class="Symbol">)</a> <a id="1372" class="Keyword">public</a>
 
-<a id="irrelevant-recompute"></a><a id="909" href="../../../Relation/Nullary/Recomputable/#909" class="Function">irrelevant-recompute</a> <a id="930" class="Symbol">:</a> <a id="932" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="945" class="Symbol">(</a><a id="946" href="../../../Data/Irrelevant/#725" class="Record">Irrelevant</a> <a id="957" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a><a id="958" class="Symbol">)</a>
-<a id="960" href="../../../Data/Irrelevant/#789" class="Field">irrelevant</a> <a id="971" class="Symbol">(</a><a id="972" href="../../../Relation/Nullary/Recomputable/#909" class="Function">irrelevant-recompute</a> <a id="993" href="../../../Data/Irrelevant/#776" class="InductiveConstructor Operator">[</a> <a id="995" href="../../../Relation/Nullary/Recomputable/#995" class="Bound">a</a> <a id="997" href="../../../Data/Irrelevant/#776" class="InductiveConstructor Operator">]</a><a id="998" class="Symbol">)</a> <a id="1000" class="Symbol">=</a> <a id="1002" href="../../../Relation/Nullary/Recomputable/#995" class="Bound">a</a>
+  <a id="1382" class="Keyword">postulate</a>
+    <a id="Recursion.elim-unfold-fold"></a><a id="1396" href="../Properties/#1396" class="Postulate">elim-unfold-fold</a> <a id="1413" class="Symbol">:</a> <a id="1415" class="Symbol">{{</a><a id="1417" href="../Properties/#1417" class="Bound">_</a> <a id="1419" class="Symbol">:</a> <a id="1421" href="../Notation/#2002" class="Generalizable">D</a> <a id="1423" href="../Notation/#6663" class="Postulate Operator">≅</a> <a id="1425" href="../Notation/#2004" class="Generalizable">E</a><a id="1426" class="Symbol">}}</a> <a id="1429" class="Symbol">→</a> <a id="1431" class="Symbol">{</a><a id="1432" href="../Properties/#1432" class="Bound">e</a> <a id="1434" class="Symbol">:</a> <a id="1436" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="1438" href="../Notation/#2004" class="Generalizable">E</a> <a id="1440" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="1441" class="Symbol">}</a> <a id="1443" class="Symbol">→</a> <a id="1445" href="../Notation/#6773" class="Postulate">unfold</a> <a id="1452" class="Symbol">(</a><a id="1453" href="../Notation/#6810" class="Postulate">fold</a> <a id="1458" href="../Properties/#1432" class="Bound">e</a><a id="1459" class="Symbol">)</a> <a id="1461" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1463" href="../Properties/#1432" class="Bound">e</a>
+  <a id="1467" class="Symbol">{-#</a> <a id="1471" class="Keyword">REWRITE</a> <a id="1479" href="../Properties/#1396" class="Postulate">elim-unfold-fold</a> <a id="1496" class="Symbol">#-}</a>
+</code></pre>
+<h2 id="flat-domains">Flat domains</h2>
+<pre class="Agda"><code class="Agda"><a id="1530" class="Keyword">module</a> <a id="Flat"></a><a id="1537" href="../Properties/#1537" class="Module">Flat</a> <a id="1542" class="Keyword">where</a>
 
-<a id="1005" class="Comment">-- Corollary: so too is ⊥</a>
+  <a id="1551" class="Keyword">open</a> <a id="1556" href="../Notation/#8291" class="Module">Notation.Flat</a> <a id="1570" class="Keyword">using</a> <a id="1576" class="Symbol">(</a><a id="1577" href="../Notation/#8319" class="Postulate Operator">_+⊥</a><a id="1580" class="Symbol">;</a> <a id="1582" href="../Notation/#8392" class="Postulate">↑</a><a id="1583" class="Symbol">;</a> <a id="1585" href="../Notation/#8461" class="Postulate Operator">_♯</a><a id="1587" class="Symbol">)</a> <a id="1589" class="Keyword">public</a>
 
-<a id="⊥-recompute"></a><a id="1032" href="../../../Relation/Nullary/Recomputable/#1032" class="Function">⊥-recompute</a> <a id="1044" class="Symbol">:</a> <a id="1046" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1059" href="../../../Data/Empty/#914" class="Function">⊥</a>
-<a id="1061" href="../../../Relation/Nullary/Recomputable/#1032" class="Function">⊥-recompute</a> <a id="1073" class="Symbol">=</a> <a id="1075" href="../../../Relation/Nullary/Recomputable/#909" class="Function">irrelevant-recompute</a>
+  <a id="1599" class="Keyword">variable</a> <a id="1608" href="../Properties/#1608" class="Generalizable">f</a> <a id="1610" class="Symbol">:</a> <a id="1612" href="../Notation/#520" class="Generalizable">A</a> <a id="1614" class="Symbol">→</a> <a id="1616" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="1618" href="../Notation/#2002" class="Generalizable">D</a> <a id="1620" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="1621" class="Symbol">;</a> <a id="1623" href="../Properties/#1623" class="Generalizable">a′</a> <a id="1626" class="Symbol">:</a> <a id="1628" href="../Notation/#520" class="Generalizable">A</a>
+  <a id="1632" class="Keyword">postulate</a>
+    <a id="Flat.elim-♯-↑"></a><a id="1646" href="../Properties/#1646" class="Postulate">elim-♯-↑</a>  <a id="1656" class="Symbol">:</a> <a id="1658" class="Symbol">(</a><a id="1659" href="../Properties/#1608" class="Generalizable">f</a> <a id="1661" href="../Notation/#8461" class="Postulate Operator">♯</a><a id="1662" class="Symbol">)</a> <a id="1664" class="Symbol">(</a><a id="1665" href="../Notation/#8392" class="Postulate">↑</a> <a id="1667" href="../Properties/#1623" class="Generalizable">a′</a><a id="1669" class="Symbol">)</a>  <a id="1672" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1674" href="../Properties/#1608" class="Generalizable">f</a> <a id="1676" href="../Properties/#1623" class="Generalizable">a′</a>
+    <a id="Flat.elim-♯-⊥"></a><a id="1683" href="../Properties/#1683" class="Postulate">elim-♯-⊥</a>  <a id="1693" class="Symbol">:</a> <a id="1695" class="Symbol">(</a><a id="1696" href="../Properties/#1608" class="Generalizable">f</a> <a id="1698" href="../Notation/#8461" class="Postulate Operator">♯</a><a id="1699" class="Symbol">)</a> <a id="1701" href="../Notation/#1877" class="Postulate">⊥</a>      <a id="1708" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1710" href="../Notation/#1877" class="Postulate">⊥</a>
+  <a id="1714" class="Symbol">{-#</a> <a id="1718" class="Keyword">REWRITE</a> <a id="1726" href="../Properties/#1646" class="Postulate">elim-♯-↑</a> <a id="1735" href="../Properties/#1683" class="Postulate">elim-♯-⊥</a> <a id="1744" class="Symbol">#-}</a> 
+</code></pre>
+<h3 id="booleans">Booleans</h3>
+<pre class="Agda"><code class="Agda">  <a id="1778" class="Keyword">module</a> <a id="Flat.Booleans"></a><a id="1785" href="../Properties/#1785" class="Module">Booleans</a> <a id="1794" class="Keyword">where</a>
 
-<a id="_×-recompute_"></a><a id="1097" href="../../../Relation/Nullary/Recomputable/#1097" class="Function Operator">_×-recompute_</a> <a id="1111" class="Symbol">:</a> <a id="1113" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1126" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a> <a id="1128" class="Symbol">→</a> <a id="1130" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1143" href="../../../Relation/Nullary/Recomputable/#626" class="Generalizable">B</a> <a id="1145" class="Symbol">→</a> <a id="1147" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1160" class="Symbol">(</a><a id="1161" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a> <a id="1163" href="../../../Data/Product/Base/#1618" class="Function Operator">×</a> <a id="1165" href="../../../Relation/Nullary/Recomputable/#626" class="Generalizable">B</a><a id="1166" class="Symbol">)</a>
-<a id="1168" class="Symbol">(</a><a id="1169" href="../../../Relation/Nullary/Recomputable/#1169" class="Bound">rA</a> <a id="1172" href="../../../Relation/Nullary/Recomputable/#1097" class="Function Operator">×-recompute</a> <a id="1184" href="../../../Relation/Nullary/Recomputable/#1184" class="Bound">rB</a><a id="1186" class="Symbol">)</a> <a id="1188" href="../../../Relation/Nullary/Recomputable/#1188" class="Bound">p</a> <a id="1190" class="Symbol">=</a> <a id="1192" href="../../../Relation/Nullary/Recomputable/#1169" class="Bound">rA</a> <a id="1195" class="Symbol">(</a><a id="1196" href="../../../Relation/Nullary/Recomputable/#1188" class="Bound">p</a> <a id="1198" class="Symbol">.</a><a id="1199" href="../../../Data/Product/Base/#636" class="Field">proj₁</a><a id="1204" class="Symbol">)</a> <a id="1206" href="../../../Agda/Builtin/Sigma/#235" class="InductiveConstructor Operator">,</a> <a id="1208" href="../../../Relation/Nullary/Recomputable/#1184" class="Bound">rB</a> <a id="1211" class="Symbol">(</a><a id="1212" href="../../../Relation/Nullary/Recomputable/#1188" class="Bound">p</a> <a id="1214" class="Symbol">.</a><a id="1215" href="../../../Data/Product/Base/#650" class="Field">proj₂</a><a id="1220" class="Symbol">)</a>
+    <a id="1805" class="Keyword">open</a> <a id="1810" href="../Notation/#8722" class="Module">Notation.Flat.Booleans</a> <a id="1833" class="Keyword">using</a> <a id="1839" class="Symbol">(</a><a id="1840" href="../Notation/#8821" class="Function">Bool⊥</a><a id="1845" class="Symbol">;</a> <a id="1847" href="../Notation/#8841" class="Function Operator">_⟶_,_</a><a id="1852" class="Symbol">;</a> <a id="1854" href="../Notation/#9232" class="Record">Eq</a><a id="1856" class="Symbol">;</a> <a id="1858" href="../Notation/#9330" class="Postulate Operator">_==⊥_</a><a id="1863" class="Symbol">;</a> <a id="1865" href="../Notation/#9443" class="Postulate">eqBool</a><a id="1871" class="Symbol">)</a> <a id="1873" class="Keyword">public</a>
+</code></pre>
+<h3 id="naturals">Naturals</h3>
+<pre class="Agda"><code class="Agda">  <a id="1909" class="Keyword">module</a> <a id="Flat.Naturals"></a><a id="1916" href="../Properties/#1916" class="Module">Naturals</a> <a id="1925" class="Keyword">where</a>
 
-<a id="_→-recompute_"></a><a id="1223" href="../../../Relation/Nullary/Recomputable/#1223" class="Function Operator">_→-recompute_</a> <a id="1237" class="Symbol">:</a> <a id="1239" class="Symbol">(</a><a id="1240" href="../../../Relation/Nullary/Recomputable/#1240" class="Bound">A</a> <a id="1242" class="Symbol">:</a> <a id="1244" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1248" href="../../../Relation/Nullary/Recomputable/#596" class="Generalizable">a</a><a id="1249" class="Symbol">)</a> <a id="1251" class="Symbol">→</a> <a id="1253" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1266" href="../../../Relation/Nullary/Recomputable/#626" class="Generalizable">B</a> <a id="1268" class="Symbol">→</a> <a id="1270" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1283" class="Symbol">(</a><a id="1284" href="../../../Relation/Nullary/Recomputable/#1240" class="Bound">A</a> <a id="1286" class="Symbol">→</a> <a id="1288" href="../../../Relation/Nullary/Recomputable/#626" class="Generalizable">B</a><a id="1289" class="Symbol">)</a>
-<a id="1291" class="Symbol">(</a><a id="1292" href="../../../Relation/Nullary/Recomputable/#1292" class="Bound">A</a> <a id="1294" href="../../../Relation/Nullary/Recomputable/#1223" class="Function Operator">→-recompute</a> <a id="1306" href="../../../Relation/Nullary/Recomputable/#1306" class="Bound">rB</a><a id="1308" class="Symbol">)</a> <a id="1310" href="../../../Relation/Nullary/Recomputable/#1310" class="Bound">f</a> <a id="1312" href="../../../Relation/Nullary/Recomputable/#1312" class="Bound">a</a> <a id="1314" class="Symbol">=</a> <a id="1316" href="../../../Relation/Nullary/Recomputable/#1306" class="Bound">rB</a> <a id="1319" class="Symbol">(</a><a id="1320" href="../../../Relation/Nullary/Recomputable/#1310" class="Bound">f</a> <a id="1322" href="../../../Relation/Nullary/Recomputable/#1312" class="Bound">a</a><a id="1323" class="Symbol">)</a>
+    <a id="1936" class="Keyword">open</a> <a id="1941" href="../Notation/#9597" class="Module">Notation.Flat.Naturals</a> <a id="1964" class="Keyword">using</a> <a id="1970" class="Symbol">(</a><a id="1971" href="../Notation/#9715" class="Function">Nat⊥</a><a id="1975" class="Symbol">;</a> <a id="1977" href="../Notation/#9777" class="Postulate">eqNat</a><a id="1982" class="Symbol">)</a> <a id="1984" class="Keyword">public</a>
+    <a id="1995" class="Keyword">open</a> <a id="2000" href="../Properties/#1785" class="Module">Booleans</a>
 
-<a id="Π-recompute"></a><a id="1326" href="../../../Relation/Nullary/Recomputable/#1326" class="Function">Π-recompute</a> <a id="1338" class="Symbol">:</a> <a id="1340" class="Symbol">(</a><a id="1341" href="../../../Relation/Nullary/Recomputable/#1341" class="Bound">B</a> <a id="1343" class="Symbol">:</a> <a id="1345" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a> <a id="1347" class="Symbol">→</a> <a id="1349" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1353" href="../../../Relation/Nullary/Recomputable/#598" class="Generalizable">b</a><a id="1354" class="Symbol">)</a> <a id="1356" class="Symbol">→</a> <a id="1358" class="Symbol">(∀</a> <a id="1361" href="../../../Relation/Nullary/Recomputable/#1361" class="Bound">x</a> <a id="1363" class="Symbol">→</a> <a id="1365" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1378" class="Symbol">(</a><a id="1379" href="../../../Relation/Nullary/Recomputable/#1341" class="Bound">B</a> <a id="1381" href="../../../Relation/Nullary/Recomputable/#1361" class="Bound">x</a><a id="1382" class="Symbol">))</a> <a id="1385" class="Symbol">→</a> <a id="1387" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1400" class="Symbol">(∀</a> <a id="1403" href="../../../Relation/Nullary/Recomputable/#1403" class="Bound">x</a> <a id="1405" class="Symbol">→</a> <a id="1407" href="../../../Relation/Nullary/Recomputable/#1341" class="Bound">B</a> <a id="1409" href="../../../Relation/Nullary/Recomputable/#1403" class="Bound">x</a><a id="1410" class="Symbol">)</a>
-<a id="1412" href="../../../Relation/Nullary/Recomputable/#1326" class="Function">Π-recompute</a> <a id="1424" href="../../../Relation/Nullary/Recomputable/#1424" class="Bound">B</a> <a id="1426" href="../../../Relation/Nullary/Recomputable/#1426" class="Bound">rB</a> <a id="1429" href="../../../Relation/Nullary/Recomputable/#1429" class="Bound">f</a> <a id="1431" href="../../../Relation/Nullary/Recomputable/#1431" class="Bound">a</a> <a id="1433" class="Symbol">=</a> <a id="1435" href="../../../Relation/Nullary/Recomputable/#1426" class="Bound">rB</a> <a id="1438" href="../../../Relation/Nullary/Recomputable/#1431" class="Bound">a</a> <a id="1440" class="Symbol">(</a><a id="1441" href="../../../Relation/Nullary/Recomputable/#1429" class="Bound">f</a> <a id="1443" href="../../../Relation/Nullary/Recomputable/#1431" class="Bound">a</a><a id="1444" class="Symbol">)</a>
+    <a id="2014" class="Keyword">variable</a> <a id="2023" href="../Properties/#2023" class="Generalizable">n₁</a> <a id="2026" href="../Properties/#2026" class="Generalizable">n₂</a> <a id="2029" class="Symbol">:</a> <a id="2031" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a>
+    <a id="2039" class="Keyword">postulate</a>
+      <a id="Flat.Naturals.elim-==⊥"></a><a id="2055" href="../Properties/#2055" class="Postulate">elim-==⊥</a> <a id="2064" class="Symbol">:</a> <a id="2066" class="Symbol">(</a><a id="2067" href="../Notation/#8392" class="Postulate">↑</a> <a id="2069" href="../Properties/#2023" class="Generalizable">n₁</a> <a id="2072" href="../Notation/#9330" class="Postulate Operator">==⊥</a> <a id="2076" href="../Notation/#8392" class="Postulate">↑</a> <a id="2078" href="../Properties/#2026" class="Generalizable">n₂</a><a id="2080" class="Symbol">)</a> <a id="2082" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2084" href="../Notation/#8392" class="Postulate">↑</a> <a id="2086" class="Symbol">(</a><a id="2087" href="../Properties/#2023" class="Generalizable">n₁</a> <a id="2090" href="../Properties/#429" class="Primitive Operator">==ᴺ</a> <a id="2094" href="../Properties/#2026" class="Generalizable">n₂</a><a id="2096" class="Symbol">)</a>
+    <a id="2102" class="Symbol">{-#</a> <a id="2106" class="Keyword">REWRITE</a> <a id="2114" href="../Properties/#2055" class="Postulate">elim-==⊥</a> <a id="2123" class="Symbol">#-}</a> 
+</code></pre>
+<h2 id="sum-domains">Sum domains</h2>
+<pre class="Agda"><code class="Agda"><a id="2157" class="Keyword">module</a> <a id="Sums"></a><a id="2164" href="../Properties/#2164" class="Module">Sums</a> <a id="2169" class="Keyword">where</a>
 
-<a id="∀-recompute"></a><a id="1447" href="../../../Relation/Nullary/Recomputable/#1447" class="Function">∀-recompute</a> <a id="1459" class="Symbol">:</a> <a id="1461" class="Symbol">(</a><a id="1462" href="../../../Relation/Nullary/Recomputable/#1462" class="Bound">B</a> <a id="1464" class="Symbol">:</a> <a id="1466" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a> <a id="1468" class="Symbol">→</a> <a id="1470" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1474" href="../../../Relation/Nullary/Recomputable/#598" class="Generalizable">b</a><a id="1475" class="Symbol">)</a> <a id="1477" class="Symbol">→</a> <a id="1479" class="Symbol">(∀</a> <a id="1482" class="Symbol">{</a><a id="1483" href="../../../Relation/Nullary/Recomputable/#1483" class="Bound">x</a><a id="1484" class="Symbol">}</a> <a id="1486" class="Symbol">→</a> <a id="1488" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1501" class="Symbol">(</a><a id="1502" href="../../../Relation/Nullary/Recomputable/#1462" class="Bound">B</a> <a id="1504" href="../../../Relation/Nullary/Recomputable/#1483" class="Bound">x</a><a id="1505" class="Symbol">))</a> <a id="1508" class="Symbol">→</a> <a id="1510" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1523" class="Symbol">(∀</a> <a id="1526" class="Symbol">{</a><a id="1527" href="../../../Relation/Nullary/Recomputable/#1527" class="Bound">x</a><a id="1528" class="Symbol">}</a> <a id="1530" class="Symbol">→</a> <a id="1532" href="../../../Relation/Nullary/Recomputable/#1462" class="Bound">B</a> <a id="1534" href="../../../Relation/Nullary/Recomputable/#1527" class="Bound">x</a><a id="1535" class="Symbol">)</a>
-<a id="1537" href="../../../Relation/Nullary/Recomputable/#1447" class="Function">∀-recompute</a> <a id="1549" href="../../../Relation/Nullary/Recomputable/#1549" class="Bound">B</a> <a id="1551" href="../../../Relation/Nullary/Recomputable/#1551" class="Bound">rB</a> <a id="1554" href="../../../Relation/Nullary/Recomputable/#1554" class="Bound">f</a> <a id="1556" class="Symbol">=</a> <a id="1558" href="../../../Relation/Nullary/Recomputable/#1551" class="Bound">rB</a> <a id="1561" href="../../../Relation/Nullary/Recomputable/#1554" class="Bound">f</a>
+  <a id="2178" class="Keyword">open</a> <a id="2183" href="../Notation/#10053" class="Module">Notation.Sums</a> <a id="2197" class="Keyword">using</a> <a id="2203" class="Symbol">(</a><a id="2204" href="../Notation/#10081" class="Postulate Operator">_+_</a><a id="2207" class="Symbol">;</a> <a id="2209" href="../Notation/#10147" class="Postulate">inj₁</a><a id="2213" class="Symbol">;</a> <a id="2215" href="../Notation/#10217" class="Postulate">inj₂</a><a id="2219" class="Symbol">;</a> <a id="2221" href="../Notation/#10287" class="Postulate Operator">[_,_]</a><a id="2226" class="Symbol">)</a> <a id="2228" class="Keyword">public</a>
 
-<a id="1564" class="Comment">-- Corollary: negations are Recomputable</a>
+  <a id="2238" class="Keyword">variable</a> <a id="2247" href="../Properties/#2247" class="Generalizable">φ</a> <a id="2249" class="Symbol">:</a> <a id="2251" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2253" href="../Notation/#2002" class="Generalizable">D</a> <a id="2255" href="../Notation/#3744" class="Postulate Operator">→ᶜ</a> <a id="2258" href="../Notation/#2006" class="Generalizable">F</a> <a id="2260" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2261" class="Symbol">;</a> <a id="2263" href="../Properties/#2263" class="Generalizable">ψ</a> <a id="2265" class="Symbol">:</a> <a id="2267" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2269" href="../Notation/#2004" class="Generalizable">E</a> <a id="2271" href="../Notation/#3744" class="Postulate Operator">→ᶜ</a> <a id="2274" href="../Notation/#2006" class="Generalizable">F</a> <a id="2276" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2277" class="Symbol">;</a> <a id="2279" href="../Properties/#2279" class="Generalizable">δ</a> <a id="2281" class="Symbol">:</a> <a id="2283" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2285" href="../Notation/#2002" class="Generalizable">D</a> <a id="2287" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2288" class="Symbol">;</a> <a id="2290" href="../Properties/#2290" class="Generalizable">ε</a> <a id="2292" class="Symbol">:</a> <a id="2294" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2296" href="../Notation/#2004" class="Generalizable">E</a> <a id="2298" href="../Notation/#1809" class="Postulate Operator">⟫</a>
+  <a id="2302" class="Keyword">postulate</a>
+    <a id="Sums.elim-inj₁"></a><a id="2316" href="../Properties/#2316" class="Postulate">elim-inj₁</a>  <a id="2327" class="Symbol">:</a>  <a id="2330" href="../Notation/#10287" class="Postulate Operator">[</a> <a id="2332" href="../Properties/#2247" class="Generalizable">φ</a> <a id="2334" href="../Notation/#10287" class="Postulate Operator">,</a> <a id="2336" href="../Properties/#2263" class="Generalizable">ψ</a> <a id="2338" href="../Notation/#10287" class="Postulate Operator">]</a> <a id="2340" class="Symbol">(</a><a id="2341" href="../Notation/#10147" class="Postulate">inj₁</a> <a id="2346" href="../Properties/#2279" class="Generalizable">δ</a><a id="2347" class="Symbol">)</a>  <a id="2350" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="2353" href="../Properties/#2247" class="Generalizable">φ</a> <a id="2355" href="../Properties/#2279" class="Generalizable">δ</a>
+    <a id="Sums.elim-inj₂"></a><a id="2361" href="../Properties/#2361" class="Postulate">elim-inj₂</a>  <a id="2372" class="Symbol">:</a>  <a id="2375" href="../Notation/#10287" class="Postulate Operator">[</a> <a id="2377" href="../Properties/#2247" class="Generalizable">φ</a> <a id="2379" href="../Notation/#10287" class="Postulate Operator">,</a> <a id="2381" href="../Properties/#2263" class="Generalizable">ψ</a> <a id="2383" href="../Notation/#10287" class="Postulate Operator">]</a> <a id="2385" class="Symbol">(</a><a id="2386" href="../Notation/#10217" class="Postulate">inj₂</a> <a id="2391" href="../Properties/#2290" class="Generalizable">ε</a><a id="2392" class="Symbol">)</a>  <a id="2395" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="2398" href="../Properties/#2263" class="Generalizable">ψ</a> <a id="2400" href="../Properties/#2290" class="Generalizable">ε</a>
+    <a id="Sums.elim-[]-⊥"></a><a id="2406" href="../Properties/#2406" class="Postulate">elim-[]-⊥</a>  <a id="2417" class="Symbol">:</a>  <a id="2420" href="../Notation/#10287" class="Postulate Operator">[</a> <a id="2422" href="../Properties/#2247" class="Generalizable">φ</a> <a id="2424" href="../Notation/#10287" class="Postulate Operator">,</a> <a id="2426" href="../Properties/#2263" class="Generalizable">ψ</a> <a id="2428" href="../Notation/#10287" class="Postulate Operator">]</a> <a id="2430" href="../Notation/#1877" class="Postulate">⊥</a>         <a id="2440" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="2443" href="../Notation/#1877" class="Postulate">⊥</a>
+  <a id="2447" class="Symbol">{-#</a> <a id="2451" class="Keyword">REWRITE</a> <a id="2459" href="../Properties/#2316" class="Postulate">elim-inj₁</a> <a id="2469" href="../Properties/#2361" class="Postulate">elim-inj₂</a> <a id="2479" class="Symbol">#-}</a> 
 
-<a id="¬-recompute"></a><a id="1606" href="../../../Relation/Nullary/Recomputable/#1606" class="Function">¬-recompute</a> <a id="1618" class="Symbol">:</a> <a id="1620" href="../../../Relation/Nullary/Recomputable/Core/#985" class="Function">Recomputable</a> <a id="1633" class="Symbol">(</a><a id="1634" href="../../../Relation/Nullary/Negation/Core/#677" class="Function Operator">¬</a> <a id="1636" href="../../../Relation/Nullary/Recomputable/#612" class="Generalizable">A</a><a id="1637" class="Symbol">)</a>
-<a id="1639" href="../../../Relation/Nullary/Recomputable/#1606" class="Function">¬-recompute</a> <a id="1651" class="Symbol">{</a><a id="1652" class="Argument">A</a> <a id="1654" class="Symbol">=</a> <a id="1656" href="../../../Relation/Nullary/Recomputable/#1656" class="Bound">A</a><a id="1657" class="Symbol">}</a> <a id="1659" class="Symbol">=</a> <a id="1661" href="../../../Relation/Nullary/Recomputable/#1656" class="Bound">A</a> <a id="1663" href="../../../Relation/Nullary/Recomputable/#1223" class="Function Operator">→-recompute</a> <a id="1675" href="../../../Relation/Nullary/Recomputable/#1032" class="Function">⊥-recompute</a>
+  <a id="2487" class="Keyword">open</a> <a id="2492" href="../Notation/#10053" class="Module">Notation.Sums</a> <a id="2506" class="Keyword">using</a> <a id="2512" class="Symbol">(</a><a id="2513" href="../Notation/#11927" class="Generalizable">n</a><a id="2514" class="Symbol">;</a> <a id="2516" href="../Notation/#11951" class="Postulate Operator">_≳_↦_</a><a id="2521" class="Symbol">;</a> <a id="2523" href="../Notation/#11992" class="Postulate Operator">_in⊥_</a><a id="2528" class="Symbol">;</a> <a id="2530" href="../Notation/#12086" class="Postulate Operator">_|⊥_</a><a id="2534" class="Symbol">;</a> <a id="2536" href="../Notation/#12178" class="Postulate Operator">_∈⊥_</a><a id="2540" class="Symbol">)</a> <a id="2542" class="Keyword">public</a>
+  <a id="2551" class="Keyword">open</a> <a id="2556" href="../Properties/#1537" class="Module">Flat</a>
+  <a id="2563" class="Keyword">open</a> <a id="2568" href="../Properties/#1785" class="Module">Flat.Booleans</a>
+  <a id="2584" class="Keyword">open</a> <a id="2589" href="../Properties/#1916" class="Module">Flat.Naturals</a>
 
+  <a id="2606" class="Keyword">open</a> <a id="2611" class="Keyword">import</a> <a id="2618" href="../Relation/Binary/PropositionalEquality/Core/" class="Module">Relation.Binary.PropositionalEquality.Core</a> <a id="2661" class="Keyword">using</a> <a id="2667" class="Symbol">(</a><a id="2668" href="../Relation/Binary/PropositionalEquality/Core/#1000" class="Function Operator">_≢_</a><a id="2671" class="Symbol">)</a>
+  <a id="2675" class="Keyword">variable</a> <a id="2684" href="../Properties/#2684" class="Generalizable">D′</a> <a id="2687" class="Symbol">:</a> <a id="2689" href="../Notation/#1742" class="Postulate">Domain</a><a id="2695" class="Symbol">;</a> <a id="2697" href="../Properties/#2697" class="Generalizable">n′</a> <a id="2700" class="Symbol">:</a> <a id="2702" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a>
+  <a id="2708" class="Keyword">postulate</a>
+    <a id="Sums.elim-∈⊥"></a><a id="2722" href="../Properties/#2722" class="Postulate">elim-∈⊥</a>    <a id="2733" class="Symbol">:</a>  <a id="2736" class="Symbol">{{</a><a id="2738" href="../Properties/#2738" class="Bound">_</a> <a id="2740" class="Symbol">:</a> <a id="2742" href="../Notation/#2004" class="Generalizable">E</a> <a id="2744" href="../Notation/#11951" class="Postulate Operator">≳</a> <a id="2746" href="../Notation/#11927" class="Generalizable">n</a> <a id="2748" href="../Notation/#11951" class="Postulate Operator">↦</a> <a id="2750" href="../Notation/#2002" class="Generalizable">D</a><a id="2751" class="Symbol">}}</a> <a id="2754" class="Symbol">→</a> <a id="2756" class="Symbol">{{</a><a id="2758" href="../Properties/#2758" class="Bound">_</a> <a id="2760" class="Symbol">:</a> <a id="2762" href="../Notation/#2004" class="Generalizable">E</a> <a id="2764" href="../Notation/#11951" class="Postulate Operator">≳</a> <a id="2766" href="../Properties/#2697" class="Generalizable">n′</a> <a id="2769" href="../Notation/#11951" class="Postulate Operator">↦</a> <a id="2771" href="../Properties/#2684" class="Generalizable">D′</a><a id="2773" class="Symbol">}}</a> <a id="2776" class="Symbol">→</a> <a id="2778" class="Symbol">(</a><a id="2779" href="../Properties/#2779" class="Bound">δ</a> <a id="2781" class="Symbol">:</a> <a id="2783" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2785" href="../Notation/#2002" class="Generalizable">D</a> <a id="2787" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2788" class="Symbol">)</a> <a id="2790" class="Symbol">→</a>
+                  <a id="2810" class="Symbol">(</a><a id="2811" href="../Properties/#2779" class="Bound">δ</a> <a id="2813" href="../Notation/#11992" class="Postulate Operator">in⊥</a> <a id="2817" href="../Notation/#2004" class="Generalizable">E</a><a id="2818" class="Symbol">)</a> <a id="2820" href="../Notation/#12178" class="Postulate Operator">∈⊥</a> <a id="2823" href="../Properties/#2684" class="Generalizable">D′</a> <a id="2826" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2828" href="../Notation/#8392" class="Postulate">↑</a> <a id="2830" class="Symbol">(</a><a id="2831" href="../Notation/#11927" class="Generalizable">n</a> <a id="2833" href="../Properties/#429" class="Primitive Operator">==ᴺ</a> <a id="2837" href="../Properties/#2697" class="Generalizable">n′</a><a id="2839" class="Symbol">)</a>
+    <a id="Sums.elim-|⊥"></a><a id="2845" href="../Properties/#2845" class="Postulate">elim-|⊥</a>    <a id="2856" class="Symbol">:</a>  <a id="2859" class="Symbol">{{</a><a id="2861" href="../Properties/#2861" class="Bound">_</a> <a id="2863" class="Symbol">:</a> <a id="2865" href="../Notation/#2004" class="Generalizable">E</a> <a id="2867" href="../Notation/#11951" class="Postulate Operator">≳</a> <a id="2869" href="../Notation/#11927" class="Generalizable">n</a> <a id="2871" href="../Notation/#11951" class="Postulate Operator">↦</a> <a id="2873" href="../Notation/#2002" class="Generalizable">D</a><a id="2874" class="Symbol">}}</a> <a id="2877" class="Symbol">→</a> <a id="2879" class="Symbol">(</a><a id="2880" href="../Properties/#2880" class="Bound">δ</a> <a id="2882" class="Symbol">:</a> <a id="2884" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2886" href="../Notation/#2002" class="Generalizable">D</a> <a id="2888" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2889" class="Symbol">)</a> <a id="2891" class="Symbol">→</a> <a id="2893" class="Symbol">(</a><a id="2894" href="../Properties/#2880" class="Bound">δ</a> <a id="2896" href="../Notation/#11992" class="Postulate Operator">in⊥</a> <a id="2900" href="../Notation/#2004" class="Generalizable">E</a><a id="2901" class="Symbol">)</a> <a id="2903" href="../Notation/#12086" class="Postulate Operator">|⊥</a> <a id="2906" href="../Notation/#2002" class="Generalizable">D</a> <a id="2908" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2910" href="../Properties/#2880" class="Bound">δ</a>
+    <a id="Sums.elim-∈⊥-⊥"></a><a id="2916" href="../Properties/#2916" class="Postulate">elim-∈⊥-⊥</a>  <a id="2927" class="Symbol">:</a>  <a id="2930" class="Symbol">{{</a><a id="2932" href="../Properties/#2932" class="Bound">_</a> <a id="2934" class="Symbol">:</a> <a id="2936" href="../Notation/#2004" class="Generalizable">E</a> <a id="2938" href="../Notation/#11951" class="Postulate Operator">≳</a> <a id="2940" href="../Notation/#11927" class="Generalizable">n</a> <a id="2942" href="../Notation/#11951" class="Postulate Operator">↦</a> <a id="2944" href="../Notation/#2002" class="Generalizable">D</a><a id="2945" class="Symbol">}}</a> <a id="2948" class="Symbol">→</a> <a id="2950" class="Symbol">{{</a><a id="2952" href="../Properties/#2952" class="Bound">_</a> <a id="2954" class="Symbol">:</a> <a id="2956" href="../Notation/#2004" class="Generalizable">E</a> <a id="2958" href="../Notation/#11951" class="Postulate Operator">≳</a> <a id="2960" href="../Properties/#2697" class="Generalizable">n′</a> <a id="2963" href="../Notation/#11951" class="Postulate Operator">↦</a> <a id="2965" href="../Properties/#2684" class="Generalizable">D′</a><a id="2967" class="Symbol">}}</a> <a id="2970" class="Symbol">→</a> <a id="2972" class="Symbol">(</a><a id="2973" href="../Properties/#2973" class="Bound">δ</a> <a id="2975" class="Symbol">:</a> <a id="2977" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2979" href="../Notation/#2002" class="Generalizable">D</a> <a id="2981" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="2982" class="Symbol">)</a> <a id="2984" class="Symbol">→</a>
+                  <a id="3004" class="Symbol">{</a><a id="3005" href="../Notation/#11927" class="Generalizable">n</a> <a id="3007" href="../Relation/Binary/PropositionalEquality/Core/#1000" class="Function Operator">≢</a> <a id="3009" href="../Properties/#2697" class="Generalizable">n′</a><a id="3011" class="Symbol">}</a> <a id="3013" class="Symbol">→</a> <a id="3015" class="Symbol">(</a><a id="3016" href="../Properties/#2973" class="Bound">δ</a> <a id="3018" href="../Notation/#11992" class="Postulate Operator">in⊥</a> <a id="3022" href="../Notation/#2004" class="Generalizable">E</a><a id="3023" class="Symbol">)</a> <a id="3025" href="../Notation/#12086" class="Postulate Operator">|⊥</a> <a id="3028" href="../Properties/#2684" class="Generalizable">D′</a> <a id="3031" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="3033" href="../Notation/#1877" class="Postulate">⊥</a>
+  <a id="3037" class="Symbol">{-#</a> <a id="3041" class="Keyword">REWRITE</a> <a id="3049" href="../Properties/#2722" class="Postulate">elim-∈⊥</a> <a id="3057" href="../Properties/#2845" class="Postulate">elim-|⊥</a> <a id="3065" class="Symbol">#-}</a> 
+</code></pre>
+<h2 id="product-domains">Product domains</h2>
+<pre class="Agda"><code class="Agda"><a id="3103" class="Keyword">module</a> <a id="Products"></a><a id="3110" href="../Properties/#3110" class="Module">Products</a> <a id="3119" class="Keyword">where</a>
+
+  <a id="3128" class="Keyword">open</a> <a id="3133" href="../Notation/#12608" class="Module">Notation.Products</a> <a id="3151" class="Keyword">using</a> <a id="3157" class="Symbol">(</a><a id="3158" href="../Notation/#12640" class="Postulate Operator">_×_</a><a id="3161" class="Symbol">;</a> <a id="3163" href="../Notation/#12707" class="Postulate Operator">_,_</a><a id="3166" class="Symbol">;</a> <a id="3168" href="../Notation/#12777" class="Postulate Operator">_↓₁</a><a id="3171" class="Symbol">;</a> <a id="3173" href="../Notation/#12832" class="Postulate Operator">_↓₂</a><a id="3176" class="Symbol">)</a> <a id="3178" class="Keyword">public</a>
+
+  <a id="3188" class="Keyword">variable</a> <a id="3197" href="../Properties/#3197" class="Generalizable">δ</a> <a id="3199" class="Symbol">:</a> <a id="3201" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="3203" href="../Notation/#2002" class="Generalizable">D</a> <a id="3205" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="3206" class="Symbol">;</a> <a id="3208" href="../Properties/#3208" class="Generalizable">ε</a> <a id="3210" class="Symbol">:</a> <a id="3212" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="3214" href="../Notation/#2004" class="Generalizable">E</a> <a id="3216" href="../Notation/#1809" class="Postulate Operator">⟫</a>
+  <a id="3220" class="Keyword">postulate</a>
+    <a id="Products.elim-↓₁"></a><a id="3234" href="../Properties/#3234" class="Postulate">elim-↓₁</a>  <a id="3243" class="Symbol">:</a>  <a id="3246" class="Symbol">(</a> <a id="3248" href="../Properties/#3197" class="Generalizable">δ</a> <a id="3250" href="../Notation/#12707" class="Postulate Operator">,</a> <a id="3252" href="../Properties/#3208" class="Generalizable">ε</a> <a id="3254" class="Symbol">)</a> <a id="3256" href="../Notation/#12777" class="Postulate Operator">↓₁</a>  <a id="3260" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="3263" href="../Properties/#3197" class="Generalizable">δ</a>
+    <a id="Products.elim-↓₂"></a><a id="3269" href="../Properties/#3269" class="Postulate">elim-↓₂</a>  <a id="3278" class="Symbol">:</a>  <a id="3281" class="Symbol">(</a> <a id="3283" href="../Properties/#3197" class="Generalizable">δ</a> <a id="3285" href="../Notation/#12707" class="Postulate Operator">,</a> <a id="3287" href="../Properties/#3208" class="Generalizable">ε</a> <a id="3289" class="Symbol">)</a> <a id="3291" href="../Notation/#12832" class="Postulate Operator">↓₂</a>  <a id="3295" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="3298" href="../Properties/#3208" class="Generalizable">ε</a>
+  <a id="3302" class="Symbol">{-#</a> <a id="3306" class="Keyword">REWRITE</a> <a id="3314" href="../Properties/#3234" class="Pragma">elim-↓₁</a> <a id="3322" href="../Properties/#3269" class="Pragma">elim-↓₂</a> <a id="3330" class="Symbol">#-}</a> 
+</code></pre>
+<h3 id="tuples">Tuples</h3>
+<pre class="Agda"><code class="Agda">  <a id="3362" class="Keyword">module</a> <a id="Products.Tuples"></a><a id="3369" href="../Properties/#3369" class="Module">Tuples</a> <a id="3376" class="Keyword">where</a>
+
+    <a id="3387" class="Keyword">open</a> <a id="3392" href="../Notation/#13107" class="Module">Notation.Products.Tuples</a> <a id="3417" class="Keyword">using</a> <a id="3423" class="Symbol">(</a><a id="3424" href="../Notation/#13182" class="Function Operator">_^_</a><a id="3427" class="Symbol">)</a> <a id="3429" class="Keyword">public</a>
+</code></pre>
+<h3 id="sequences">Sequences</h3>
+<pre class="Agda"><code class="Agda">  <a id="3466" class="Keyword">module</a> <a id="Products.Sequences"></a><a id="3473" href="../Properties/#3473" class="Module">Sequences</a> <a id="3483" class="Keyword">where</a>
+
+    <a id="3494" class="Keyword">open</a> <a id="3499" href="../Notation/#13939" class="Module">Notation.Products.Sequences</a> <a id="3527" class="Keyword">using</a> <a id="3533" class="Symbol">(</a><a id="3534" href="../Notation/#14008" class="Generalizable">n</a><a id="3535" class="Symbol">;</a> <a id="3537" href="../Notation/#14036" class="Postulate Operator">_⋆</a><a id="3539" class="Symbol">;</a> <a id="3541" href="../Notation/#14113" class="Postulate">⟨⟩</a><a id="3543" class="Symbol">;</a> <a id="3545" href="../Notation/#14181" class="Postulate Operator">⟨_⟩</a><a id="3548" class="Symbol">;</a> <a id="3550" href="../Notation/#14261" class="Postulate">#</a><a id="3551" class="Symbol">;</a> <a id="3553" href="../Notation/#14338" class="Postulate Operator">_§_</a><a id="3556" class="Symbol">;</a> <a id="3558" href="../Notation/#14417" class="Postulate Operator">_↓_</a><a id="3561" class="Symbol">;</a> <a id="3563" href="../Notation/#14486" class="Postulate Operator">_†_</a><a id="3566" class="Symbol">)</a> <a id="3568" class="Keyword">public</a>
+</code></pre>
+<h2 id="updates">Updates</h2>
+<pre class="Agda"><code class="Agda"><a id="3600" class="Keyword">module</a> <a id="Updates"></a><a id="3607" href="../Properties/#3607" class="Module">Updates</a> <a id="3615" class="Keyword">where</a>
+
+  <a id="3624" class="Keyword">open</a> <a id="3629" href="../Notation/#14804" class="Module">Notation.Updates</a> <a id="3646" class="Keyword">using</a> <a id="3652" class="Symbol">(</a><a id="3653" href="../Notation/#14854" class="Function Operator">_[_/_]</a><a id="3659" class="Symbol">;</a> <a id="3661" href="../Notation/#15093" class="Function Operator">_[_/_]⊥</a><a id="3668" class="Symbol">;</a> <a id="3670" href="../Notation/#15746" class="Function Operator">_[_←_]</a><a id="3676" class="Symbol">)</a> <a id="3678" class="Keyword">public</a>
 </code></pre>
 
 
@@ -6236,8 +6525,6 @@
 
 
 
-
-  
 
 
 
@@ -6286,18 +6573,18 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../../../javascripts/highlight-hover.js"></script>
+        <script src="../javascripts/highlight-hover.js"></script>
       
     
   </body>
