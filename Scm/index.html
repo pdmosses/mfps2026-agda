@@ -6063,7 +6063,7 @@
 
 <h1 id="scm-a-sublanguage-of-scheme">Scm: A Sublanguage of Scheme</h1>
 <p>Scm is a particularly basic sublanguage of the core Scheme expressions whose
-denotational semantics is defined in the <a href="https://standards.scheme.org">Scheme reports</a>.</p>
+denotational semantics is defined in the Scheme reports <a href="https://standards.scheme.org">(Scheme)</a>.</p>
 <p>A denotational semantics for Scm is defined in the following paper:</p>
 <blockquote>
 <p>Peter D. Mosses. 2025. A Compositional Semantics for <code>eval</code> in Scheme.
@@ -6072,8 +6072,8 @@ In <em>Proceedings of the Workshop Dedicated to Olivier Danvy</em>
 <em>October 12–18, 2025, Singapore, Singapore.</em>
 ACM, New York, NY, USA, 10 pages. <a href="https://doi.org/10.1145/3759427.3760369">DOI</a></p>
 </blockquote>
-<p>[Scm] is a shallow embedding of the published denotational definition.</p>
-<p>[Scm.Abstract-Syntax] illustrates a simple way to declare phrase types for
+<p>The module <a href="./">Scm</a> is a shallow embedding of the published denotational definition.</p>
+<p><a href="Abstract-Syntax/">Scm.Abstract-Syntax</a> illustrates a simple way to declare phrase types for
 finite sequences.</p>
 <p><a href="Domain-Equations/">Scm.Domain-Equations</a> uses all the domain constructors declared in the module
 <a href="../Notation/">Notation</a>. It illustrates how a group of mutually recursive domains can be
@@ -6083,17 +6083,17 @@ embedded by postulating a domain that corresponds to a separated sum domain.</p>
 correspond to standard Scheme procedures. The embeddings of most of the
 definitions are completely straightforward.</p>
 <p><a href="Semantic-Functions/">Scm.Semantic-Functions</a> embeds the definitions of the semantic functions
-without significant notational changes. As in the <a href="https://standards.scheme.org">Scheme Reports</a>, 
+without significant notational changes. As in the Scheme Reports <a href="https://standards.scheme.org">(Scheme)</a>, 
 the types of semantic functions are declared before defining the denotations
 of phrases, which supports mutual recursion without further ado.</p>
-<pre class="Agda"><code class="Agda"><a id="1530" class="Symbol">{-#</a> <a id="1534" class="Keyword">OPTIONS</a> <a id="1542" class="Pragma">--rewriting</a> <a id="1554" class="Pragma">--confluence-check</a> <a id="1573" class="Pragma">--lossy-unification</a> <a id="1593" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="1559" class="Symbol">{-#</a> <a id="1563" class="Keyword">OPTIONS</a> <a id="1571" class="Pragma">--rewriting</a> <a id="1583" class="Pragma">--confluence-check</a> <a id="1602" class="Pragma">--lossy-unification</a> <a id="1622" class="Symbol">#-}</a>
 
-<a id="1598" class="Keyword">module</a> <a id="" href="../html/Scm.html" class="Module Definition">Scm</a> <a id="1609" class="Keyword">where</a>
+<a id="1627" class="Keyword">module</a> <a id="" href="../html/Scm.html" class="Module Definition">Scm</a> <a id="1638" class="Keyword">where</a>
 
-<a id="1616" class="Keyword">import</a> <a id="1623" href="../Scm/Abstract-Syntax/" class="Module">Scm.Abstract-Syntax</a>
-<a id="1643" class="Keyword">import</a> <a id="1650" href="../Scm/Domain-Equations/" class="Module">Scm.Domain-Equations</a>
-<a id="1671" class="Keyword">import</a> <a id="1678" href="../Scm/Semantic-Functions/" class="Module">Scm.Semantic-Functions</a>
-<a id="1701" class="Keyword">import</a> <a id="1708" href="../Scm/Auxiliary-Functions/" class="Module">Scm.Auxiliary-Functions</a>
+<a id="1645" class="Keyword">import</a> <a id="1652" href="../Scm/Abstract-Syntax/" class="Module">Scm.Abstract-Syntax</a>
+<a id="1672" class="Keyword">import</a> <a id="1679" href="../Scm/Domain-Equations/" class="Module">Scm.Domain-Equations</a>
+<a id="1700" class="Keyword">import</a> <a id="1707" href="../Scm/Semantic-Functions/" class="Module">Scm.Semantic-Functions</a>
+<a id="1730" class="Keyword">import</a> <a id="1737" href="../Scm/Auxiliary-Functions/" class="Module">Scm.Auxiliary-Functions</a>
 </code></pre>
 
 

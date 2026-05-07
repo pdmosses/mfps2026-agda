@@ -6063,30 +6063,30 @@
 
 <h1 id="pcf">PCF</h1>
 <p>PCF is a programming language for computable functions, based on LCF,
-Dana Scott’s logic of computable functions (<a href="https://apps.dtic.mil/sti/tr/pdf/AD0758645.pdf">Milner 1973</a>).</p>
+Dana Scott’s logic of computable functions <a href="https://apps.dtic.mil/sti/tr/pdf/AD0758645.pdf">(Milner1973LCF)</a>.</p>
 <blockquote>
 <p>PCF is a call-by-name simply-typed λ-calculus equipped with one or two base
 types (usually natural numbers and Booleans) and a fixed point combinator.
 In essence, PCF is the simplest lazy, purely functional programming language.
-(<a href="https://www.pls-lab.org/PCF">PLS Lab</a>)</p>
+<a href="https://www.pls-lab.org/PCF">(PLS-Lab)</a></p>
 </blockquote>
 <p>PCF and its denotational semantics were orginally defined by Dana Scott in 1969
-(<a href="https://doi.org/10.1016/0304-3975(93)90095-B">Scott 1993</a>) with combinators (<code>S</code>, <code>K</code>) instead of λ-abstraction.
+<a href="https://doi.org/10.1016/0304-3975(93)90095-B">(Scott1993TTA)</a> with combinators (<code>S</code>, <code>K</code>) instead of λ-abstraction.
 Gordon Plotkin subsequently defined a denotational semantics for PCF 
-including λ-abstraction (<a href="https://doi.org/10.1016/0304-3975(77)90044-5">Plotkin 1977</a>).</p>
+including λ-abstraction <a href="https://doi.org/10.1016/0304-3975(77)90044-5">(Plotkin1977LCP)</a>.</p>
 <p><a href="Definitions/">PCF.Definitions</a> is a shallow embedding of Plotkin's definitions, using the
 notatation declared in the <a href="../Notation/">Notation</a> module.  It illustrates the use of
 dependent types in formalising the semantics of an intrinsically-typed
 programming language. This example also exploits Agda’s support for Unicode
 symbols to minimise notational differences from Plotkin’s paper.</p>
-<p>[PC.Tests] declares some equivalence assertions about term denotations,
+<p><a href="Tests/">PCF.Tests</a> declares some equivalence assertions about term denotations,
 and proves that they hold. </p>
-<pre class="Agda"><code class="Agda"><a id="1123" class="Symbol">{-#</a> <a id="1127" class="Keyword">OPTIONS</a> <a id="1135" class="Pragma">--rewriting</a> <a id="1147" class="Pragma">--confluence-check</a> <a id="1166" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="1130" class="Symbol">{-#</a> <a id="1134" class="Keyword">OPTIONS</a> <a id="1142" class="Pragma">--rewriting</a> <a id="1154" class="Pragma">--confluence-check</a> <a id="1173" class="Symbol">#-}</a>
 
-<a id="1171" class="Keyword">module</a> <a id="" href="../html/PCF.html" class="Module Definition">PCF</a> <a id="1182" class="Keyword">where</a>
+<a id="1178" class="Keyword">module</a> <a id="" href="../html/PCF.html" class="Module Definition">PCF</a> <a id="1189" class="Keyword">where</a>
 
-<a id="1189" class="Keyword">import</a> <a id="1196" href="../PCF/Definitions/" class="Module">PCF.Definitions</a>
-<a id="1212" class="Keyword">import</a> <a id="1219" href="../PCF/Tests/" class="Module">PCF.Tests</a>
+<a id="1196" class="Keyword">import</a> <a id="1203" href="../PCF/Definitions/" class="Module">PCF.Definitions</a>
+<a id="1219" class="Keyword">import</a> <a id="1226" href="../PCF/Tests/" class="Module">PCF.Tests</a>
 </code></pre>
 
 

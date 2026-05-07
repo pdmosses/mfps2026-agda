@@ -2,7 +2,7 @@
 <html><head><meta charset="utf-8"><title>Scm</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># Scm: A Sublanguage of Scheme
 
 Scm is a particularly basic sublanguage of the core Scheme expressions whose
-denotational semantics is defined in the [Scheme reports].
+denotational semantics is defined in the Scheme reports [(Scheme)].
 
 A denotational semantics for Scm is defined in the following paper:
 
@@ -12,7 +12,7 @@ A denotational semantics for Scm is defined in the following paper:
 &gt; *October 12–18, 2025, Singapore, Singapore.*
 &gt; ACM, New York, NY, USA, 10 pages. [DOI](https://doi.org/10.1145/3759427.3760369)
 
-[Scm] is a shallow embedding of the published denotational definition.
+The module [Scm] is a shallow embedding of the published denotational definition.
 
 [Scm.Abstract-Syntax] illustrates a simple way to declare phrase types for
 finite sequences.
@@ -27,25 +27,26 @@ correspond to standard Scheme procedures. The embeddings of most of the
 definitions are completely straightforward.
 
 [Scm.Semantic-Functions] embeds the definitions of the semantic functions
-without significant notational changes. As in the [Scheme Reports], 
+without significant notational changes. As in the Scheme Reports [(Scheme)], 
 the types of semantic functions are declared before defining the denotations
 of phrases, which supports mutual recursion without further ado.
 
-</a><a id="1522" class="Markup">```agda
-</a><a id="1530" class="Symbol">{-#</a> <a id="1534" class="Keyword">OPTIONS</a> <a id="1542" class="Pragma">--rewriting</a> <a id="1554" class="Pragma">--confluence-check</a> <a id="1573" class="Pragma">--lossy-unification</a> <a id="1593" class="Symbol">#-}</a>
+</a><a id="1551" class="Markup">```agda
+</a><a id="1559" class="Symbol">{-#</a> <a id="1563" class="Keyword">OPTIONS</a> <a id="1571" class="Pragma">--rewriting</a> <a id="1583" class="Pragma">--confluence-check</a> <a id="1602" class="Pragma">--lossy-unification</a> <a id="1622" class="Symbol">#-}</a>
 
-<a id="1598" class="Keyword">module</a> <a id="" href="../Scm/" class="Module Definition">Scm</a> <a id="1609" class="Keyword">where</a>
+<a id="1627" class="Keyword">module</a> <a id="" href="../Scm/" class="Module Definition">Scm</a> <a id="1638" class="Keyword">where</a>
 
-<a id="1616" class="Keyword">import</a> <a id="1623" href="Scm.Abstract-Syntax.html" class="Module">Scm.Abstract-Syntax</a>
-<a id="1643" class="Keyword">import</a> <a id="1650" href="Scm.Domain-Equations.html" class="Module">Scm.Domain-Equations</a>
-<a id="1671" class="Keyword">import</a> <a id="1678" href="Scm.Semantic-Functions.html" class="Module">Scm.Semantic-Functions</a>
-<a id="1701" class="Keyword">import</a> <a id="1708" href="Scm.Auxiliary-Functions.html" class="Module">Scm.Auxiliary-Functions</a>
-<a id="1732" class="Markup">```
-</a><a id="1736" class="Background">
-[Scheme Reports]: https://standards.scheme.org
+<a id="1645" class="Keyword">import</a> <a id="1652" href="Scm.Abstract-Syntax.html" class="Module">Scm.Abstract-Syntax</a>
+<a id="1672" class="Keyword">import</a> <a id="1679" href="Scm.Domain-Equations.html" class="Module">Scm.Domain-Equations</a>
+<a id="1700" class="Keyword">import</a> <a id="1707" href="Scm.Semantic-Functions.html" class="Module">Scm.Semantic-Functions</a>
+<a id="1730" class="Keyword">import</a> <a id="1737" href="Scm.Auxiliary-Functions.html" class="Module">Scm.Auxiliary-Functions</a>
+<a id="1761" class="Markup">```
+</a><a id="1765" class="Background">
+[(Scheme)]: https://standards.scheme.org
 
-[Scm.Definitions]: Definitions.md
-[Scm.Domain-Equations]: Domain-Equations.md
-[Scm.Auxiliary-Functions]: Auxiliary-Functions.md
-[Scm.Semantic-Functions]: Semantic-Functions.md
+[Scm]: ../Scm/index.md
+[Scm.Abstract-Syntax]: ../Scm/Abstract-Syntax.md
+[Scm.Domain-Equations]: ../Scm/Domain-Equations.md
+[Scm.Auxiliary-Functions]: ../Scm/Auxiliary-Functions.md
+[Scm.Semantic-Functions]: ../Scm/Semantic-Functions.md
 [Notation]: ../Notation.md</a></pre></body></html>
