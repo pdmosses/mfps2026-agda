@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Definitions.Scm.Abstract-Syntax</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background">## Abstract Syntax
+
+</a><a id="21" class="Markup">```agda
+</a><a id="29" class="Symbol">{-#</a> <a id="33" class="Keyword">OPTIONS</a> <a id="41" class="Pragma">--rewriting</a> <a id="53" class="Pragma">--confluence-check</a> <a id="72" class="Symbol">#-}</a>
+
+<a id="77" class="Keyword">module</a> <a id="" href="../Definitions/Scm/Abstract-Syntax/" class="Module Definition">Definitions.Scm.Abstract-Syntax</a> <a id="116" class="Keyword">where</a>
+<a id="122" class="Markup">```
+</a><a id="126" class="Background">
+### Identifiers
+
+In the concrete syntax of the full Scheme programming language, identifiers
+can be almost arbitrary sequences of characters. For abstract syntax in Agda,
+it is convenient to represent identifiers as strings.
+
+</a><a id="353" class="Markup">```agda
+</a>  <a id="363" class="Keyword">open</a> <a id="368" class="Keyword">import</a> <a id="375" href="Data.String.Base.html" class="Module">Data.String.Base</a> <a id="392" class="Keyword">public</a> <a id="399" class="Keyword">using</a> <a id="405" class="Symbol">(</a><a id="406" href="Agda.Builtin.String.html#335" class="Postulate">String</a><a id="412" class="Symbol">)</a>
+  <a id="Ide"></a><a id="416" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a> <a id="420" class="Symbol">=</a> <a id="422" href="Agda.Builtin.String.html#335" class="Postulate">String</a>      <a id="434" class="Comment">-- identifiers</a>
+  <a id="451" class="Keyword">variable</a> <a id="460" href="Definitions.Scm.Abstract-Syntax.html#460" class="Generalizable">I</a> <a id="462" class="Symbol">:</a> <a id="464" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a>
+<a id="468" class="Markup">```
+</a><a id="472" class="Background">
+### Literal Constants
+
+The abstract syntax of the Scm sublanguage restricts constants to integers
+and truth values. THe Agda formalisation uses the constructor `int` to include
+integers as ASTs in `Con`, and the standard Scheme notation `#t` and `#f` for
+the truth values.
+
+</a><a id="747" class="Markup">```agda
+</a>  <a id="757" class="Keyword">open</a> <a id="762" class="Keyword">import</a> <a id="769" href="Data.Integer.Base.html" class="Module">Data.Integer.Base</a> <a id="787" class="Keyword">public</a> <a id="794" class="Keyword">renaming</a> <a id="803" class="Symbol">(</a><a id="804" href="Agda.Builtin.Int.html#245" class="Datatype">ℤ</a> <a id="806" class="Symbol">to</a> <a id="809" class="Datatype">Int</a><a id="812" class="Symbol">)</a> <a id="814" class="Keyword">using</a> <a id="820" class="Symbol">()</a>
+  <a id="825" class="Keyword">data</a> <a id="Con"></a><a id="830" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a>  <a id="835" class="Symbol">:</a> <a id="837" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="841" class="Keyword">where</a>  <a id="848" class="Comment">-- constants</a>
+    <a id="Con.int"></a><a id="865" href="Definitions.Scm.Abstract-Syntax.html#865" class="InductiveConstructor">int</a>     <a id="873" class="Symbol">:</a> <a id="875" href="Definitions.Scm.Abstract-Syntax.html#809" class="Datatype">Int</a> <a id="879" class="Symbol">→</a> <a id="881" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a>  <a id="886" class="Comment">-- integer numerals</a>
+    <a id="Con.#t"></a><a id="910" href="Definitions.Scm.Abstract-Syntax.html#910" class="InductiveConstructor">#t</a>      <a id="918" class="Symbol">:</a> <a id="920" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a>        <a id="931" class="Comment">-- true</a>
+    <a id="Con.#f"></a><a id="943" href="Definitions.Scm.Abstract-Syntax.html#943" class="InductiveConstructor">#f</a>      <a id="951" class="Symbol">:</a> <a id="953" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a>        <a id="964" class="Comment">-- false</a>
+  <a id="975" class="Keyword">variable</a> <a id="984" href="Definitions.Scm.Abstract-Syntax.html#984" class="Generalizable">K</a> <a id="986" class="Symbol">:</a> <a id="988" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a>
+<a id="992" class="Markup">```
+</a><a id="996" class="Background">
+### Expressions
+
+Scheme expressions include function application, lambda-abstraction,
+conditional choice, and assignment. The constructors used in the Agda
+formalisation correspond closely to the concrete syntax of Scheme.
+
+</a><a id="1221" class="Markup">```agda
+</a>  <a id="1231" class="Keyword">mutual</a>
+    <a id="1242" class="Keyword">data</a> <a id="Exp"></a><a id="1247" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>       <a id="1257" class="Symbol">:</a> <a id="1259" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1263" class="Keyword">where</a>              <a id="1282" class="Comment">-- expressions</a>
+      <a id="Exp.con"></a><a id="1303" href="Definitions.Scm.Abstract-Syntax.html#1303" class="InductiveConstructor">con</a>          <a id="1316" class="Symbol">:</a> <a id="1318" href="Definitions.Scm.Abstract-Syntax.html#830" class="Datatype">Con</a> <a id="1322" class="Symbol">→</a> <a id="1324" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>              <a id="1341" class="Comment">-- constants</a>
+      <a id="Exp.ide"></a><a id="1360" href="Definitions.Scm.Abstract-Syntax.html#1360" class="InductiveConstructor">ide</a>          <a id="1373" class="Symbol">:</a> <a id="1375" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a> <a id="1379" class="Symbol">→</a> <a id="1381" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>              <a id="1398" class="Comment">-- identifiers</a>
+      <a id="Exp.⦅_␣_⦆"></a><a id="1419" href="Definitions.Scm.Abstract-Syntax.html#1419" class="InductiveConstructor Operator">⦅_␣_⦆</a>        <a id="1432" class="Symbol">:</a> <a id="1434" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1438" class="Symbol">→</a> <a id="1440" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a> <a id="1445" class="Symbol">→</a> <a id="1447" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>       <a id="1457" class="Comment">-- procedure application </a>
+      <a id="Exp.⦅lambda_␣_⦆"></a><a id="1489" href="Definitions.Scm.Abstract-Syntax.html#1489" class="InductiveConstructor Operator">⦅lambda_␣_⦆</a>  <a id="1502" class="Symbol">:</a> <a id="1504" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a> <a id="1508" class="Symbol">→</a> <a id="1510" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1514" class="Symbol">→</a> <a id="1516" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>        <a id="1527" class="Comment">-- procedure abstraction</a>
+      <a id="Exp.⦅if_␣_␣_⦆"></a><a id="1558" href="Definitions.Scm.Abstract-Syntax.html#1558" class="InductiveConstructor Operator">⦅if_␣_␣_⦆</a>    <a id="1571" class="Symbol">:</a> <a id="1573" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1577" class="Symbol">→</a> <a id="1579" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1583" class="Symbol">→</a> <a id="1585" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1589" class="Symbol">→</a> <a id="1591" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>  <a id="1596" class="Comment">-- conditional choice</a>
+      <a id="Exp.⦅set!_␣_⦆"></a><a id="1624" href="Definitions.Scm.Abstract-Syntax.html#1624" class="InductiveConstructor Operator">⦅set!_␣_⦆</a>    <a id="1637" class="Symbol">:</a> <a id="1639" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a> <a id="1643" class="Symbol">→</a> <a id="1645" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1649" class="Symbol">→</a> <a id="1651" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a>        <a id="1662" class="Comment">-- assignment</a>
+    <a id="1680" class="Keyword">data</a> <a id="Exp⋆"></a><a id="1685" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a>      <a id="1695" class="Symbol">:</a> <a id="1697" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1701" class="Keyword">where</a>              <a id="1720" class="Comment">-- expression sequences</a>
+      <a id="Exp⋆.␣␣␣"></a><a id="1750" href="Definitions.Scm.Abstract-Syntax.html#1750" class="InductiveConstructor">␣␣␣</a>          <a id="1763" class="Symbol">:</a> <a id="1765" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a>                   <a id="1788" class="Comment">-- empty sequence</a>
+      <a id="Exp⋆._␣␣_"></a><a id="1812" href="Definitions.Scm.Abstract-Syntax.html#1812" class="InductiveConstructor Operator">_␣␣_</a>         <a id="1825" class="Symbol">:</a> <a id="1827" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="1831" class="Symbol">→</a> <a id="1833" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a> <a id="1838" class="Symbol">→</a> <a id="1840" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a>      <a id="1850" class="Comment">-- sequence prefix</a>
+  <a id="1871" class="Keyword">variable</a> <a id="1880" href="Definitions.Scm.Abstract-Syntax.html#1880" class="Generalizable">E</a> <a id="1882" class="Symbol">:</a> <a id="1884" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a><a id="1887" class="Symbol">;</a> <a id="1889" href="Definitions.Scm.Abstract-Syntax.html#1889" class="Generalizable">E⋆</a> <a id="1892" class="Symbol">:</a> <a id="1894" href="Definitions.Scm.Abstract-Syntax.html#1685" class="Datatype">Exp⋆</a>
+<a id="1899" class="Markup">```
+</a><a id="1903" class="Background">
+Procedure application can take any number of argument expressions. The Agda
+formalisation of the abstract syntax represents the empty sequence by `␣␣␣`,
+and sequence prefixing by `E ␣␣ E⋆`. The full Scheme language includes several
+forms of lambda-expression, allowing a fixed number of arguments to be named;
+for simplicity, the Scm sublanguage includes only the form where a single
+identifier corresponds to the entire sequence of argument values.
+
+### Definitions and Programs
+
+The Scheme standards do not specify abstract syntax for definitions and
+programs. The Agda formalisation of them in the Scm sublanguage uses notation
+close to their concrete syntax in Scheme.
+
+</a><a id="2578" class="Markup">```agda
+</a>  <a id="2588" class="Keyword">mutual</a>
+    <a id="2599" class="Keyword">data</a> <a id="Body"></a><a id="2604" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a>      <a id="2614" class="Symbol">:</a> <a id="2616" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2620" class="Keyword">where</a>             <a id="2638" class="Comment">-- bodies</a>
+      <a id="Body.␣␣_"></a><a id="2654" href="Definitions.Scm.Abstract-Syntax.html#2654" class="InductiveConstructor Operator">␣␣_</a>          <a id="2667" class="Symbol">:</a> <a id="2669" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="2673" class="Symbol">→</a> <a id="2675" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a>            <a id="2691" class="Comment">-- expression body</a>
+      <a id="Body.⦅define_␣_⦆"></a><a id="2716" href="Definitions.Scm.Abstract-Syntax.html#2716" class="InductiveConstructor Operator">⦅define_␣_⦆</a>  <a id="2729" class="Symbol">:</a> <a id="2731" href="Definitions.Scm.Abstract-Syntax.html#416" class="Function">Ide</a> <a id="2735" class="Symbol">→</a> <a id="2737" href="Definitions.Scm.Abstract-Syntax.html#1247" class="Datatype">Exp</a> <a id="2741" class="Symbol">→</a> <a id="2743" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a>      <a id="2753" class="Comment">-- definition body</a>
+      <a id="Body.⦅begin_⦆"></a><a id="2778" href="Definitions.Scm.Abstract-Syntax.html#2778" class="InductiveConstructor Operator">⦅begin_⦆</a>     <a id="2791" class="Symbol">:</a> <a id="2793" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a> <a id="2799" class="Symbol">→</a> <a id="2801" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a>          <a id="2815" class="Comment">-- body sequence</a>
+    <a id="2836" class="Keyword">data</a> <a id="Body⁺"></a><a id="2841" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a>     <a id="2851" class="Symbol">:</a> <a id="2853" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2857" class="Keyword">where</a>             <a id="2875" class="Comment">-- body sequences</a>
+      <a id="Body⁺.␣␣_"></a><a id="2899" href="Definitions.Scm.Abstract-Syntax.html#2899" class="InductiveConstructor Operator">␣␣_</a>          <a id="2912" class="Symbol">:</a> <a id="2914" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a> <a id="2919" class="Symbol">→</a> <a id="2921" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a>          <a id="2936" class="Comment">-- empty sequence</a>
+      <a id="Body⁺._␣␣_"></a><a id="2960" href="Definitions.Scm.Abstract-Syntax.html#2960" class="InductiveConstructor Operator">_␣␣_</a>         <a id="2973" class="Symbol">:</a> <a id="2975" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a> <a id="2980" class="Symbol">→</a> <a id="2982" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a> <a id="2988" class="Symbol">→</a> <a id="2990" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a>  <a id="2997" class="Comment">-- sequence prefix</a>
+  <a id="3018" class="Keyword">data</a> <a id="Prog"></a><a id="3023" href="Definitions.Scm.Abstract-Syntax.html#3023" class="Datatype">Prog</a>        <a id="3035" class="Symbol">:</a> <a id="3037" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="3041" class="Keyword">where</a>             <a id="3059" class="Comment">-- programs</a>
+    <a id="Prog.␣␣␣"></a><a id="3075" href="Definitions.Scm.Abstract-Syntax.html#3075" class="InductiveConstructor">␣␣␣</a>            <a id="3090" class="Symbol">:</a> <a id="3092" href="Definitions.Scm.Abstract-Syntax.html#3023" class="Datatype">Prog</a>                  <a id="3114" class="Comment">-- empty program</a>
+    <a id="Prog.␣␣_"></a><a id="3135" href="Definitions.Scm.Abstract-Syntax.html#3135" class="InductiveConstructor Operator">␣␣_</a>            <a id="3150" class="Symbol">:</a> <a id="3152" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a> <a id="3158" class="Symbol">→</a> <a id="3160" href="Definitions.Scm.Abstract-Syntax.html#3023" class="Datatype">Prog</a>          <a id="3174" class="Comment">-- body sequence program</a>
+  <a id="3201" class="Keyword">variable</a> <a id="3210" href="Definitions.Scm.Abstract-Syntax.html#3210" class="Generalizable">B</a> <a id="3212" class="Symbol">:</a> <a id="3214" href="Definitions.Scm.Abstract-Syntax.html#2604" class="Datatype">Body</a><a id="3218" class="Symbol">;</a> <a id="3220" href="Definitions.Scm.Abstract-Syntax.html#3220" class="Generalizable">B⁺</a> <a id="3223" class="Symbol">:</a> <a id="3225" href="Definitions.Scm.Abstract-Syntax.html#2841" class="Datatype">Body⁺</a><a id="3230" class="Symbol">;</a> <a id="3232" href="Definitions.Scm.Abstract-Syntax.html#3232" class="Generalizable">Π</a> <a id="3234" class="Symbol">:</a> <a id="3236" href="Definitions.Scm.Abstract-Syntax.html#3023" class="Datatype">Prog</a>
+<a id="3241" class="Markup">```</a></pre></body></html>

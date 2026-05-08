@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Definitions.Scm</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># Scm: A Sublanguage of Scheme
+
+[Scm.Abstract-Syntax] illustrates a simple way to declare phrase types for
+finite sequences.
+
+[Scm.Domain-Equations] uses all the domain constructors declared in the module
+[Notation]. It illustrates how a group of mutually recursive domains can be
+embedded by postulating a domain that corresponds to a separated sum domain.
+
+[Scm.Auxiliary-Functions] embeds definitions of the auxiliary functions used in
+[Scm.Semantic-Functions], together with definitions of some functions that
+correspond to standard Scheme procedures. The embeddings of most of the
+definitions are completely straightforward.
+
+[Scm.Semantic-Functions] embeds the definitions of the semantic functions
+without significant notational changes. As in the Scheme Reports [(Scheme)], 
+the types of semantic functions are declared before defining the denotations
+of phrases, which supports mutual recursion without further ado.
+
+</a><a id="927" class="Markup">```agda
+</a><a id="935" class="Symbol">{-#</a> <a id="939" class="Keyword">OPTIONS</a> <a id="947" class="Pragma">--rewriting</a> <a id="959" class="Pragma">--confluence-check</a> <a id="978" class="Pragma">--lossy-unification</a> <a id="998" class="Symbol">#-}</a>
+
+<a id="1003" class="Keyword">module</a> <a id="" href="../Definitions/Scm/" class="Module Definition">Definitions.Scm</a> <a id="1026" class="Keyword">where</a>
+
+<a id="1033" class="Keyword">import</a> <a id="1040" href="Definitions.Scm.Abstract-Syntax.html" class="Module">Definitions.Scm.Abstract-Syntax</a>
+<a id="1072" class="Keyword">import</a> <a id="1079" href="Definitions.Scm.Domain-Equations.html" class="Module">Definitions.Scm.Domain-Equations</a>
+<a id="1112" class="Keyword">import</a> <a id="1119" href="Definitions.Scm.Semantic-Functions.html" class="Module">Definitions.Scm.Semantic-Functions</a>
+<a id="1154" class="Keyword">import</a> <a id="1161" href="Definitions.Scm.Auxiliary-Functions.html" class="Module">Definitions.Scm.Auxiliary-Functions</a>
+<a id="1197" class="Markup">```
+</a><a id="1201" class="Background">
+[(Scheme)]: https://standards.scheme.org
+
+[Scm.Abstract-Syntax]: ../Scm/Abstract-Syntax.md
+[Scm.Domain-Equations]: ../Scm/Domain-Equations.md
+[Scm.Auxiliary-Functions]: ../Scm/Auxiliary-Functions.md
+[Scm.Semantic-Functions]: ../Scm/Semantic-Functions.md
+[Notation]: ../../Notation.md</a></pre></body></html>
