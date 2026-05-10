@@ -5999,47 +5999,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lc-untyped-calculus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LC: Untyped λ-calculus
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pcf-programming-computable-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PCF: Programming Computable Functions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scm-a-sublanguage-of-scheme" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scm: A Sublanguage of Scheme
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -6065,52 +6024,21 @@
 
 
 <h1 id="definitions">Definitions</h1>
-<h2 id="lc-untyped-calculus">LC: Untyped λ-calculus</h2>
-<p>The language <code>LC</code> corresponds to the untyped call-by-name λ-calculus.
-The syntax of terms and the conversion rules of the calculus were defined by
-Alonzo Church in 1936. A domain <span class="arithmatex">\(D_\infty\)</span> isomorphic to a space of
-endofunctions on <span class="arithmatex">\(D_\infty\)</span> was defined by Dana Scott in 1969, and used to
-give a model of the calculus (with combinators instead of λ-abstractions).</p>
-<p><a href="LC/">Definitions.LC</a> is a shallow embedding of a conventional denotational
-semantics of <code>LC</code>. It illustrates how to postulate a domain <code>D∞</code>, together with
-inverse functions between <code>D∞</code> and a domain of endofunctions on <code>D∞</code>, using the
-notatation declared in the <a href="../Notation/">Notation</a> module.</p>
-<h2 id="pcf-programming-computable-functions">PCF: Programming Computable Functions</h2>
-<p>PCF is a programming language for computable functions, based on LCF,
-Dana Scott’s logic of computable functions <a href="https://apps.dtic.mil/sti/tr/pdf/AD0758645.pdf">(Milner1973LCF)</a>.</p>
-<blockquote>
-<p>PCF is a call-by-name simply-typed λ-calculus equipped with one or two base
-types (usually natural numbers and Booleans) and a fixed point combinator.
-In essence, PCF is the simplest lazy, purely functional programming language.
-<a href="https://www.pls-lab.org/PCF">(PLS-Lab)</a></p>
-</blockquote>
-<p>PCF and its denotational semantics were orginally defined by Dana Scott in 1969
-<a href="https://doi.org/10.1016/0304-3975(93)90095-B">(Scott1993TTA)</a> with combinators (<code>S</code>, <code>K</code>) instead of λ-abstraction.
-Gordon Plotkin subsequently defined a denotational semantics for PCF 
-including λ-abstraction <a href="https://doi.org/10.1016/0304-3975(77)90044-5">(Plotkin1977LCP)</a>.</p>
-<p><a href="PCF/">Definitions.PCF</a> is a shallow embedding of Plotkin's definitions, using the
-notatation declared in the <a href="../Notation/">Notation</a> module.  It illustrates the use of
-dependent types in formalising the semantics of an intrinsically-typed
-programming language. This example also exploits Agda’s support for Unicode
-symbols to minimise notational differences from Plotkin’s paper.</p>
-<h2 id="scm-a-sublanguage-of-scheme">Scm: A Sublanguage of Scheme</h2>
-<p>Scm is a particularly basic sublanguage of the core Scheme expressions whose
-denotational semantics is defined in the Scheme reports [(Scheme)].</p>
-<p>A denotational semantics for Scm is defined in the following paper:</p>
-<blockquote>
-<p>Peter D. Mosses. 2025. A Compositional Semantics for <code>eval</code> in Scheme.
-In <em>Proceedings of the Workshop Dedicated to Olivier Danvy</em>
-<em>on the Occasion of His 64th Birthday (OLIVIERFEST ’25),</em>
-<em>October 12–18, 2025, Singapore, Singapore.</em>
-ACM, New York, NY, USA, 10 pages. <a href="https://doi.org/10.1145/3759427.3760369">DOI</a></p>
-</blockquote>
-<p><a href="Scm/">Definitions.Scm</a> is a shallow embedding of the published denotational semantics of Scm.</p>
+<pre class="Agda"><code class="Agda"><a id="24" class="Symbol">{-#</a> <a id="28" class="Keyword">OPTIONS</a> <a id="36" class="Pragma">--rewriting</a> <a id="48" class="Pragma">--confluence-check</a> <a id="67" class="Symbol">#-}</a>
+
+<a id="72" class="Keyword">import</a> <a id="79" href="../Definitions/LC/" class="Module">Definitions.LC</a>
+<a id="94" class="Keyword">import</a> <a id="101" href="../Definitions/PCF/" class="Module">Definitions.PCF</a>
+<a id="117" class="Keyword">import</a> <a id="124" href="../Definitions/Scm/" class="Module">Definitions.Scm</a>
+</code></pre>
 
 
 
 
 
 
+
+  
+  
 
 
 

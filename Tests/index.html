@@ -6024,30 +6024,21 @@
 
 
 <h1 id="tests">Tests</h1>
-<p>The following modules all import the <a href="../Properties/">Properties</a> module, which postulates
-some equivalence assertions about the operations postulated in the <a href="../Notation/">Notation</a> module.
-For convenience, some of the postulated equivalence assertions are also declared
-as rewrite rules.</p>
-<ul>
-<li>
-<p><a href="LC/">Tests.LC</a> declares some equivalence assertions about denotations of LC terms,
-and proves that they hold. </p>
-</li>
-<li>
-<p><a href="PCF/">Tests.PCF</a> declares some equivalence assertions about denotations of PCF terms,
-and proves that they hold. </p>
-</li>
-<li>
-<p><a href="Scm/">Tests.Scm</a> is to declare some equivalence assertions about denotations of Scm expressions,
-and prove that they hold.</p>
-</li>
-</ul>
+<pre class="Agda"><code class="Agda"><a id="18" class="Symbol">{-#</a> <a id="22" class="Keyword">OPTIONS</a> <a id="30" class="Pragma">--rewriting</a> <a id="42" class="Pragma">--confluence-check</a> <a id="61" class="Symbol">#-}</a>
+
+<a id="66" class="Keyword">import</a> <a id="73" href="../Tests/LC/" class="Module">Tests.LC</a>
+<a id="82" class="Keyword">import</a> <a id="89" href="../Tests/PCF/" class="Module">Tests.PCF</a>
+<a id="99" class="Keyword">import</a> <a id="106" href="../Tests/Scm/" class="Module">Tests.Scm</a>
+</code></pre>
 
 
 
 
 
 
+
+  
+  
 
 
 

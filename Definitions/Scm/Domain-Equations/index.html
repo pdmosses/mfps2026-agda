@@ -6097,6 +6097,7 @@ the domain constructors formalised in the <code>Notation</code> module.</p>
   <a id="656" class="Keyword">open</a> <a id="661" href="../../../Notation/#12616" class="Module">Notation.Products</a> <a id="679" class="Keyword">using</a> <a id="685" class="Symbol">(</a><a id="686" href="../../../Notation/#12648" class="Postulate Operator">_×_</a><a id="689" class="Symbol">)</a>
   <a id="693" class="Keyword">open</a> <a id="698" href="../../../Notation/#13947" class="Module">Notation.Products.Sequences</a> <a id="726" class="Keyword">using</a> <a id="732" class="Symbol">(</a><a id="733" href="../../../Notation/#14044" class="Postulate Operator">_⋆</a><a id="735" class="Symbol">)</a>
 </code></pre>
+
 <p>Agda allows non-recursive type definitions to be written simply as equations.
 This avoids the need for the <code>fold</code> and <code>unfold</code> functions used in connection
 with postulated domain equivalences <code>D ≡ E</code>.</p>
@@ -6111,6 +6112,7 @@ with postulated domain equivalences <code>D ≡ E</code>.</p>
     <a id="Misc.null"></a><a id="1262" href="../../../Definitions/Scm/Domain-Equations/#1262" class="InductiveConstructor">null</a> <a id="Misc.unallocated"></a><a id="1267" href="../../../Definitions/Scm/Domain-Equations/#1267" class="InductiveConstructor">unallocated</a> <a id="Misc.undefined"></a><a id="1279" href="../../../Definitions/Scm/Domain-Equations/#1279" class="InductiveConstructor">undefined</a> <a id="Misc.unspecified"></a><a id="1289" href="../../../Definitions/Scm/Domain-Equations/#1289" class="InductiveConstructor">unspecified</a> <a id="1301" class="Symbol">:</a> <a id="1303" href="../../../Definitions/Scm/Domain-Equations/#1241" class="Datatype">Misc</a>
   <a id="𝐌"></a><a id="1310" href="../../../Definitions/Scm/Domain-Equations/#1310" class="Function">𝐌</a>  <a id="1313" class="Symbol">=</a>  <a id="1316" href="../../../Definitions/Scm/Domain-Equations/#1241" class="Datatype">Misc</a> <a id="1321" href="../../../Notation/#8327" class="Postulate Operator">+⊥</a>               <a id="1338" class="Comment">-- miscellaneous</a>
 </code></pre>
+
 <p>The remaining domains are mutually recursive: the domain <code>𝐄</code> is supposed to be
 the sum <code>𝐓 ⊕ 𝐑 ⊕ 𝐏 ⊕ 𝐌 ⊕ 𝐅</code>, where <code>𝐅</code> is a domain involving <code>𝐄</code> (directly, and
 indirectly through <code>𝐄 ⋆</code> and <code>𝐂</code>). In conventional denotational semantics,
@@ -6126,6 +6128,7 @@ intended structure. </p>
   <a id="𝐂"></a><a id="2142" href="../../../Definitions/Scm/Domain-Equations/#2142" class="Function">𝐂</a>  <a id="2145" class="Symbol">=</a>  <a id="2148" href="../../../Definitions/Scm/Domain-Equations/#2061" class="Function">𝐒</a> <a id="2150" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2153" href="../../../Definitions/Scm/Domain-Equations/#2111" class="Postulate">𝐀</a>                <a id="2170" class="Comment">-- command continuations</a>
   <a id="𝐅"></a><a id="2197" href="../../../Definitions/Scm/Domain-Equations/#2197" class="Function">𝐅</a>  <a id="2200" class="Symbol">=</a>  <a id="2203" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a> <a id="2205" href="../../../Notation/#14044" class="Postulate Operator">⋆</a> <a id="2207" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2210" class="Symbol">(</a><a id="2211" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a> <a id="2213" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2216" href="../../../Definitions/Scm/Domain-Equations/#2142" class="Function">𝐂</a><a id="2217" class="Symbol">)</a> <a id="2219" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2222" href="../../../Definitions/Scm/Domain-Equations/#2142" class="Function">𝐂</a>  <a id="2225" class="Comment">-- procedure values</a>
 </code></pre>
+
 <p>The following postulates instantiate the emebdding, inspection, and projection
 operations for each summand of <code>𝐄</code>.</p>
 <pre class="Agda"><code class="Agda">  <a id="2376" class="Keyword">postulate</a> <a id="2386" class="Keyword">instance</a>
@@ -6135,6 +6138,7 @@ operations for each summand of <code>𝐄</code>.</p>
     <a id="E+=M"></a><a id="2465" href="../../../Definitions/Scm/Domain-Equations/#2465" class="Postulate">E+=M</a>  <a id="2471" class="Symbol">:</a> <a id="2473" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a> <a id="2475" href="../../../Notation/#11959" class="Postulate Operator">≳</a> <a id="2477" class="Number">4</a> <a id="2479" href="../../../Notation/#11959" class="Postulate Operator">↦</a> <a id="2481" href="../../../Definitions/Scm/Domain-Equations/#1310" class="Function">𝐌</a>
     <a id="E+=F"></a><a id="2487" href="../../../Definitions/Scm/Domain-Equations/#2487" class="Postulate">E+=F</a>  <a id="2493" class="Symbol">:</a> <a id="2495" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a> <a id="2497" href="../../../Notation/#11959" class="Postulate Operator">≳</a> <a id="2499" class="Number">5</a> <a id="2501" href="../../../Notation/#11959" class="Postulate Operator">↦</a> <a id="2503" href="../../../Definitions/Scm/Domain-Equations/#2197" class="Function">𝐅</a>
 </code></pre>
+
 <p>Conventional denotational definitions declare Greek lowercase letters as
 (meta-)variables ranging over specified domains, allowing subscripts and primes
 to be added. The following variable declarations in Agda look similar, but

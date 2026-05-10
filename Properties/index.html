@@ -6354,6 +6354,7 @@ Scott domains and the associated functions on their carrier sets.</p>
 
 <a id="455" class="Keyword">open</a> <a id="460" href="../Notation/" class="Module">Notation</a> <a id="469" class="Keyword">using</a> <a id="475" class="Symbol">(</a><a id="476" href="../Notation/#520" class="Generalizable">A</a><a id="477" class="Symbol">;</a> <a id="479" href="../Notation/#522" class="Generalizable">B</a><a id="480" class="Symbol">;</a> <a id="482" href="../Notation/#524" class="Generalizable">C</a><a id="483" class="Symbol">)</a>
 </code></pre>
+
 <h2 id="domains">Domains</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6369,6 +6370,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
 
 <a id="952" class="Keyword">open</a> <a id="957" href="../Properties/#870" class="Module">Domains</a> <a id="965" class="Keyword">public</a>
 </code></pre>
+
 <h2 id="function-domains">Function domains</h2>
 <pre class="Agda"><code class="Agda"><a id="1006" class="Keyword">module</a> <a id="Functions"></a><a id="1013" href="../Properties/#1013" class="Module">Functions</a> <a id="1023" class="Keyword">where</a>
 
@@ -6381,6 +6383,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
 
 <a id="1239" class="Keyword">open</a> <a id="1244" href="../Properties/#1013" class="Module">Functions</a> <a id="1254" class="Keyword">public</a>
 </code></pre>
+
 <h2 id="recursive-domains">Recursive domains</h2>
 <pre class="Agda"><code class="Agda"><a id="1296" class="Keyword">module</a> <a id="Recursion"></a><a id="1303" href="../Properties/#1303" class="Module">Recursion</a> <a id="1313" class="Keyword">where</a>
 
@@ -6390,6 +6393,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
     <a id="Recursion.elim-unfold-fold"></a><a id="1396" href="../Properties/#1396" class="Postulate">elim-unfold-fold</a> <a id="1413" class="Symbol">:</a> <a id="1415" class="Symbol">{{</a><a id="1417" href="../Properties/#1417" class="Bound">_</a> <a id="1419" class="Symbol">:</a> <a id="1421" href="../Notation/#2002" class="Generalizable">D</a> <a id="1423" href="../Notation/#6671" class="Postulate Operator">≅</a> <a id="1425" href="../Notation/#2004" class="Generalizable">E</a><a id="1426" class="Symbol">}}</a> <a id="1429" class="Symbol">→</a> <a id="1431" class="Symbol">{</a><a id="1432" href="../Properties/#1432" class="Bound">e</a> <a id="1434" class="Symbol">:</a> <a id="1436" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="1438" href="../Notation/#2004" class="Generalizable">E</a> <a id="1440" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="1441" class="Symbol">}</a> <a id="1443" class="Symbol">→</a> <a id="1445" href="../Notation/#6781" class="Postulate">unfold</a> <a id="1452" class="Symbol">(</a><a id="1453" href="../Notation/#6818" class="Postulate">fold</a> <a id="1458" href="../Properties/#1432" class="Bound">e</a><a id="1459" class="Symbol">)</a> <a id="1461" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1463" href="../Properties/#1432" class="Bound">e</a>
   <a id="1467" class="Symbol">{-#</a> <a id="1471" class="Keyword">REWRITE</a> <a id="1479" href="../Properties/#1396" class="Postulate">elim-unfold-fold</a> <a id="1496" class="Symbol">#-}</a>
 </code></pre>
+
 <h2 id="flat-domains">Flat domains</h2>
 <pre class="Agda"><code class="Agda"><a id="1530" class="Keyword">module</a> <a id="Flat"></a><a id="1537" href="../Properties/#1537" class="Module">Flat</a> <a id="1542" class="Keyword">where</a>
 
@@ -6401,11 +6405,13 @@ and added as rewrite rules to allow their use to be implicit.</p>
     <a id="Flat.elim-♯-⊥"></a><a id="1683" href="../Properties/#1683" class="Postulate">elim-♯-⊥</a>  <a id="1693" class="Symbol">:</a> <a id="1695" class="Symbol">(</a><a id="1696" href="../Properties/#1608" class="Generalizable">f</a> <a id="1698" href="../Notation/#8469" class="Postulate Operator">♯</a><a id="1699" class="Symbol">)</a> <a id="1701" href="../Notation/#1877" class="Postulate">⊥</a>      <a id="1708" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1710" href="../Notation/#1877" class="Postulate">⊥</a>
   <a id="1714" class="Symbol">{-#</a> <a id="1718" class="Keyword">REWRITE</a> <a id="1726" href="../Properties/#1646" class="Postulate">elim-♯-↑</a> <a id="1735" href="../Properties/#1683" class="Postulate">elim-♯-⊥</a> <a id="1744" class="Symbol">#-}</a> 
 </code></pre>
+
 <h3 id="booleans">Booleans</h3>
 <pre class="Agda"><code class="Agda">  <a id="1778" class="Keyword">module</a> <a id="Flat.Booleans"></a><a id="1785" href="../Properties/#1785" class="Module">Booleans</a> <a id="1794" class="Keyword">where</a>
 
     <a id="1805" class="Keyword">open</a> <a id="1810" href="../Notation/#8730" class="Module">Notation.Flat.Booleans</a> <a id="1833" class="Keyword">using</a> <a id="1839" class="Symbol">(</a><a id="1840" href="../Notation/#8829" class="Function">Bool⊥</a><a id="1845" class="Symbol">;</a> <a id="1847" href="../Notation/#8849" class="Function Operator">_⟶_,_</a><a id="1852" class="Symbol">;</a> <a id="1854" href="../Notation/#9240" class="Record">Eq</a><a id="1856" class="Symbol">;</a> <a id="1858" href="../Notation/#9338" class="Postulate Operator">_==⊥_</a><a id="1863" class="Symbol">;</a> <a id="1865" href="../Notation/#9451" class="Postulate">eqBool</a><a id="1871" class="Symbol">)</a> <a id="1873" class="Keyword">public</a>
 </code></pre>
+
 <h3 id="naturals">Naturals</h3>
 <pre class="Agda"><code class="Agda">  <a id="1909" class="Keyword">module</a> <a id="Flat.Naturals"></a><a id="1916" href="../Properties/#1916" class="Module">Naturals</a> <a id="1925" class="Keyword">where</a>
 
@@ -6417,6 +6423,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
       <a id="Flat.Naturals.elim-==⊥"></a><a id="2055" href="../Properties/#2055" class="Postulate">elim-==⊥</a> <a id="2064" class="Symbol">:</a> <a id="2066" class="Symbol">(</a><a id="2067" href="../Notation/#8400" class="Postulate">↑</a> <a id="2069" href="../Properties/#2023" class="Generalizable">n₁</a> <a id="2072" href="../Notation/#9338" class="Postulate Operator">==⊥</a> <a id="2076" href="../Notation/#8400" class="Postulate">↑</a> <a id="2078" href="../Properties/#2026" class="Generalizable">n₂</a><a id="2080" class="Symbol">)</a> <a id="2082" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2084" href="../Notation/#8400" class="Postulate">↑</a> <a id="2086" class="Symbol">(</a><a id="2087" href="../Properties/#2023" class="Generalizable">n₁</a> <a id="2090" href="../Properties/#429" class="Primitive Operator">==ᴺ</a> <a id="2094" href="../Properties/#2026" class="Generalizable">n₂</a><a id="2096" class="Symbol">)</a>
     <a id="2102" class="Symbol">{-#</a> <a id="2106" class="Keyword">REWRITE</a> <a id="2114" href="../Properties/#2055" class="Postulate">elim-==⊥</a> <a id="2123" class="Symbol">#-}</a> 
 </code></pre>
+
 <h2 id="sum-domains">Sum domains</h2>
 <pre class="Agda"><code class="Agda"><a id="2157" class="Keyword">module</a> <a id="Sums"></a><a id="2164" href="../Properties/#2164" class="Module">Sums</a> <a id="2169" class="Keyword">where</a>
 
@@ -6444,6 +6451,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
                   <a id="3004" class="Symbol">{</a><a id="3005" href="../Notation/#11935" class="Generalizable">n</a> <a id="3007" href="../Relation/Binary/PropositionalEquality/Core/#1000" class="Function Operator">≢</a> <a id="3009" href="../Properties/#2697" class="Generalizable">n′</a><a id="3011" class="Symbol">}</a> <a id="3013" class="Symbol">→</a> <a id="3015" class="Symbol">(</a><a id="3016" href="../Properties/#2973" class="Bound">δ</a> <a id="3018" href="../Notation/#12000" class="Postulate Operator">in⊥</a> <a id="3022" href="../Notation/#2004" class="Generalizable">E</a><a id="3023" class="Symbol">)</a> <a id="3025" href="../Notation/#12094" class="Postulate Operator">|⊥</a> <a id="3028" href="../Properties/#2684" class="Generalizable">D′</a> <a id="3031" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="3033" href="../Notation/#1877" class="Postulate">⊥</a>
   <a id="3037" class="Symbol">{-#</a> <a id="3041" class="Keyword">REWRITE</a> <a id="3049" href="../Properties/#2722" class="Postulate">elim-∈⊥</a> <a id="3057" href="../Properties/#2845" class="Postulate">elim-|⊥</a> <a id="3065" class="Symbol">#-}</a> 
 </code></pre>
+
 <h2 id="product-domains">Product domains</h2>
 <pre class="Agda"><code class="Agda"><a id="3103" class="Keyword">module</a> <a id="Products"></a><a id="3110" href="../Properties/#3110" class="Module">Products</a> <a id="3119" class="Keyword">where</a>
 
@@ -6455,16 +6463,19 @@ and added as rewrite rules to allow their use to be implicit.</p>
     <a id="Products.elim-↓₂"></a><a id="3269" href="../Properties/#3269" class="Postulate">elim-↓₂</a>  <a id="3278" class="Symbol">:</a>  <a id="3281" class="Symbol">(</a> <a id="3283" href="../Properties/#3197" class="Generalizable">δ</a> <a id="3285" href="../Notation/#12715" class="Postulate Operator">,</a> <a id="3287" href="../Properties/#3208" class="Generalizable">ε</a> <a id="3289" class="Symbol">)</a> <a id="3291" href="../Notation/#12840" class="Postulate Operator">↓₂</a>  <a id="3295" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a>  <a id="3298" href="../Properties/#3208" class="Generalizable">ε</a>
   <a id="3302" class="Symbol">{-#</a> <a id="3306" class="Keyword">REWRITE</a> <a id="3314" href="../Properties/#3234" class="Postulate">elim-↓₁</a> <a id="3322" href="../Properties/#3269" class="Postulate">elim-↓₂</a> <a id="3330" class="Symbol">#-}</a> 
 </code></pre>
+
 <h3 id="tuples">Tuples</h3>
 <pre class="Agda"><code class="Agda">  <a id="3362" class="Keyword">module</a> <a id="Products.Tuples"></a><a id="3369" href="../Properties/#3369" class="Module">Tuples</a> <a id="3376" class="Keyword">where</a>
 
     <a id="3387" class="Keyword">open</a> <a id="3392" href="../Notation/#13115" class="Module">Notation.Products.Tuples</a> <a id="3417" class="Keyword">using</a> <a id="3423" class="Symbol">(</a><a id="3424" href="../Notation/#13190" class="Function Operator">_^_</a><a id="3427" class="Symbol">)</a> <a id="3429" class="Keyword">public</a>
 </code></pre>
+
 <h3 id="sequences">Sequences</h3>
 <pre class="Agda"><code class="Agda">  <a id="3466" class="Keyword">module</a> <a id="Products.Sequences"></a><a id="3473" href="../Properties/#3473" class="Module">Sequences</a> <a id="3483" class="Keyword">where</a>
 
     <a id="3494" class="Keyword">open</a> <a id="3499" href="../Notation/#13947" class="Module">Notation.Products.Sequences</a> <a id="3527" class="Keyword">using</a> <a id="3533" class="Symbol">(</a><a id="3534" href="../Notation/#14016" class="Generalizable">n</a><a id="3535" class="Symbol">;</a> <a id="3537" href="../Notation/#14044" class="Postulate Operator">_⋆</a><a id="3539" class="Symbol">;</a> <a id="3541" href="../Notation/#14121" class="Postulate">⟨⟩</a><a id="3543" class="Symbol">;</a> <a id="3545" href="../Notation/#14189" class="Postulate Operator">⟨_⟩</a><a id="3548" class="Symbol">;</a> <a id="3550" href="../Notation/#14269" class="Postulate">#</a><a id="3551" class="Symbol">;</a> <a id="3553" href="../Notation/#14346" class="Postulate Operator">_§_</a><a id="3556" class="Symbol">;</a> <a id="3558" href="../Notation/#14425" class="Postulate Operator">_↓_</a><a id="3561" class="Symbol">;</a> <a id="3563" href="../Notation/#14494" class="Postulate Operator">_†_</a><a id="3566" class="Symbol">)</a> <a id="3568" class="Keyword">public</a>
 </code></pre>
+
 <h2 id="updates">Updates</h2>
 <pre class="Agda"><code class="Agda"><a id="3600" class="Keyword">module</a> <a id="Updates"></a><a id="3607" href="../Properties/#3607" class="Module">Updates</a> <a id="3615" class="Keyword">where</a>
 

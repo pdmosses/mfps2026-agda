@@ -6216,6 +6216,7 @@
 
 <a id="76" class="Keyword">module</a> <a id="" href="../../../html/Definitions.Scm.Abstract-Syntax.html" class="Module Definition">Definitions.Scm.Abstract-Syntax</a> <a id="115" class="Keyword">where</a>
 </code></pre>
+
 <h2 id="identifiers">Identifiers</h2>
 <p>In the concrete syntax of the full Scheme programming language, identifiers
 can be almost arbitrary sequences of characters. For abstract syntax in Agda,
@@ -6224,6 +6225,7 @@ it is convenient to represent identifiers as strings.</p>
   <a id="Ide"></a><a id="414" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="418" class="Symbol">=</a> <a id="420" href="../../../Agda/Builtin/String/#335" class="Postulate">String</a>      <a id="432" class="Comment">-- identifiers</a>
   <a id="449" class="Keyword">variable</a> <a id="458" href="../../../Definitions/Scm/Abstract-Syntax/#458" class="Generalizable">I</a> <a id="460" class="Symbol">:</a> <a id="462" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a>
 </code></pre>
+
 <h2 id="literal-constants">Literal Constants</h2>
 <p>The abstract syntax of the Scm sublanguage restricts constants to integers
 and truth values. THe Agda formalisation uses the constructor <code>int</code> to include
@@ -6236,6 +6238,7 @@ the truth values.</p>
     <a id="Con.#f"></a><a id="940" href="../../../Definitions/Scm/Abstract-Syntax/#940" class="InductiveConstructor">#f</a>      <a id="948" class="Symbol">:</a> <a id="950" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>        <a id="961" class="Comment">-- false</a>
   <a id="972" class="Keyword">variable</a> <a id="981" href="../../../Definitions/Scm/Abstract-Syntax/#981" class="Generalizable">K</a> <a id="983" class="Symbol">:</a> <a id="985" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>
 </code></pre>
+
 <h2 id="expressions">Expressions</h2>
 <p>Scheme expressions include function application, lambda-abstraction,
 conditional choice, and assignment. The constructors used in the Agda
@@ -6253,6 +6256,7 @@ formalisation correspond closely to the concrete syntax of Scheme.</p>
       <a id="Exp⋆._␣␣_"></a><a id="1808" href="../../../Definitions/Scm/Abstract-Syntax/#1808" class="InductiveConstructor Operator">_␣␣_</a>         <a id="1821" class="Symbol">:</a> <a id="1823" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1827" class="Symbol">→</a> <a id="1829" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a> <a id="1834" class="Symbol">→</a> <a id="1836" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>      <a id="1846" class="Comment">-- sequence prefix</a>
   <a id="1867" class="Keyword">variable</a> <a id="1876" href="../../../Definitions/Scm/Abstract-Syntax/#1876" class="Generalizable">E</a> <a id="1878" class="Symbol">:</a> <a id="1880" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a><a id="1883" class="Symbol">;</a> <a id="1885" href="../../../Definitions/Scm/Abstract-Syntax/#1885" class="Generalizable">E⋆</a> <a id="1888" class="Symbol">:</a> <a id="1890" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>
 </code></pre>
+
 <p>Procedure application can take any number of argument expressions. The Agda
 formalisation of the abstract syntax represents the empty sequence by <code>␣␣␣</code>,
 and sequence prefixing by <code>E ␣␣ E⋆</code>. The full Scheme language includes several

@@ -6250,6 +6250,7 @@
   <a id="539" class="Keyword">open</a> <a id="544" href="../../../Notation/#13947" class="Module">Notation.Products.Sequences</a> <a id="572" class="Keyword">using</a> <a id="578" class="Symbol">(</a><a id="579" href="../../../Notation/#14189" class="Postulate Operator">⟨_⟩</a><a id="582" class="Symbol">;</a> <a id="584" href="../../../Notation/#14269" class="Postulate">#</a><a id="585" class="Symbol">;</a> <a id="587" href="../../../Notation/#14425" class="Postulate Operator">_↓_</a><a id="590" class="Symbol">;</a> <a id="592" href="../../../Notation/#14494" class="Postulate Operator">_†_</a><a id="595" class="Symbol">)</a>
   <a id="599" class="Keyword">open</a> <a id="604" href="../../../Notation/#14812" class="Module">Notation.Updates</a> <a id="621" class="Keyword">using</a> <a id="627" class="Symbol">(</a><a id="628" href="../../../Notation/#15101" class="Function Operator">_[_/_]⊥</a><a id="635" class="Symbol">)</a>
 </code></pre>
+
 <h2 id="operations">Operations</h2>
 <p>The following postulates instantiate the operation <code>_==⊥_</code> on the flat
 domains <code>𝐋</code>, <code>𝐌</code>, and <code>𝐑</code>, and illustrate declaration of further
@@ -6264,6 +6265,7 @@ operations on <code>𝐑</code> and <code>𝐓</code>.</p>
     <a id="_+ᴿ_"></a><a id="955" href="../../../Definitions/Scm/Auxiliary-Functions/#955" class="Postulate Operator">_+ᴿ_</a>  <a id="961" class="Symbol">:</a> <a id="963" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="965" href="../../../Definitions/Scm/Domain-Equations/#1110" class="Function">𝐑</a> <a id="967" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="970" href="../../../Definitions/Scm/Domain-Equations/#1110" class="Function">𝐑</a> <a id="972" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="975" href="../../../Definitions/Scm/Domain-Equations/#1110" class="Function">𝐑</a> <a id="977" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>
     <a id="_∧ᵀ_"></a><a id="983" href="../../../Definitions/Scm/Auxiliary-Functions/#983" class="Postulate Operator">_∧ᵀ_</a>  <a id="989" class="Symbol">:</a> <a id="991" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="993" href="../../../Definitions/Scm/Domain-Equations/#1068" class="Function">𝐓</a> <a id="995" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="998" href="../../../Definitions/Scm/Domain-Equations/#1068" class="Function">𝐓</a> <a id="1000" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="1003" href="../../../Definitions/Scm/Domain-Equations/#1068" class="Function">𝐓</a> <a id="1005" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>
 </code></pre>
+
 <h2 id="environments">Environments</h2>
 <p>An environment <code>ρ</code> is a function from the defined type <code>Ide</code> to the carrier of
 the domain <code>𝐋</code>. The instance <code>Eq Ide</code> supports the conventional notation
@@ -6275,6 +6277,7 @@ the domain <code>𝐋</code>. The instance <code>Eq Ide</code> supports the conv
 
   <a id="1319" class="Keyword">postulate</a> <a id="initial-env"></a><a id="1329" href="../../../Definitions/Scm/Auxiliary-Functions/#1329" class="Postulate">initial-env</a> <a id="1341" class="Symbol">:</a> <a id="1343" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="1345" href="../../../Definitions/Scm/Domain-Equations/#1190" class="Function">𝐔</a> <a id="1347" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>
 </code></pre>
+
 <p>The <code>initial-env</code> could map predefined identifiers to initialised locations
 in the initial store, and all other identifiers to <code>unknown</code>. </p>
 <h2 id="stores">Stores</h2>
@@ -6287,6 +6290,7 @@ notation <code>σ [ ϵ / α ]⊥</code> for updating <code>σ</code> to map <cod
   <a id="hold"></a><a id="1994" href="../../../Definitions/Scm/Auxiliary-Functions/#1994" class="Function">hold</a> <a id="1999" class="Symbol">:</a> <a id="2001" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2003" href="../../../Definitions/Scm/Domain-Equations/#976" class="Function">𝐋</a> <a id="2005" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2008" class="Symbol">(</a><a id="2009" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a> <a id="2011" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2014" href="../../../Definitions/Scm/Domain-Equations/#2142" class="Function">𝐂</a><a id="2015" class="Symbol">)</a> <a id="2017" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2020" href="../../../Definitions/Scm/Domain-Equations/#2142" class="Function">𝐂</a> <a id="2022" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>      <a id="2029" class="Comment">-- hold α gives the value stored at α</a>
   <a id="2069" href="../../../Definitions/Scm/Auxiliary-Functions/#1994" class="Function">hold</a> <a id="2074" href="../../../Definitions/Scm/Auxiliary-Functions/#2074" class="Bound">α</a> <a id="2076" href="../../../Definitions/Scm/Auxiliary-Functions/#2076" class="Bound">κ</a> <a id="2078" href="../../../Definitions/Scm/Auxiliary-Functions/#2078" class="Bound">σ</a> <a id="2080" class="Symbol">=</a> <a id="2082" href="../../../Definitions/Scm/Auxiliary-Functions/#2076" class="Bound">κ</a> <a id="2084" class="Symbol">(</a><a id="2085" href="../../../Definitions/Scm/Auxiliary-Functions/#2078" class="Bound">σ</a> <a id="2087" href="../../../Definitions/Scm/Auxiliary-Functions/#2074" class="Bound">α</a><a id="2088" class="Symbol">)</a> <a id="2090" href="../../../Definitions/Scm/Auxiliary-Functions/#2078" class="Bound">σ</a>
 </code></pre>
+
 <p>The function <code>new</code> is for use in continuation-passing style. An application
 <code>new κ σ</code> should apply <code>κ</code> to a location <code>α</code> mapped to <code>↑ unallocated</code> in <code>σ</code>;
 if all locations have already been allocated, it should discard <code>κ</code>.</p>
@@ -6297,10 +6301,12 @@ if all locations have already been allocated, it should discard <code>κ</code>.
 
   <a id="2526" class="Keyword">postulate</a> <a id="initial-store"></a><a id="2536" href="../../../Definitions/Scm/Auxiliary-Functions/#2536" class="Postulate">initial-store</a> <a id="2550" class="Symbol">:</a> <a id="2552" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2554" href="../../../Definitions/Scm/Domain-Equations/#2061" class="Function">𝐒</a> <a id="2556" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>    <a id="2561" class="Comment">-- may have initialised locations</a>
 </code></pre>
+
 <p>The <code>initial-store</code> could map initialised locations to their values, and all
 other locations to <code>↑ unallocated</code>. </p>
 <pre class="Agda"><code class="Agda">  <a id="2725" class="Keyword">postulate</a> <a id="finished"></a><a id="2735" href="../../../Definitions/Scm/Auxiliary-Functions/#2735" class="Postulate">finished</a> <a id="2744" class="Symbol">:</a> <a id="2746" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="2748" href="../../../Definitions/Scm/Domain-Equations/#2061" class="Function">𝐒</a> <a id="2750" href="../../../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="2753" href="../../../Definitions/Scm/Domain-Equations/#2111" class="Postulate">𝐀</a> <a id="2755" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>    <a id="2760" class="Comment">-- obtain answer from the final store</a>
 </code></pre>
+
 <p>The continuation <code>finished</code> maps the final store to an element of the
 postulated domain <code>𝐀</code> of answers.</p>
 <h2 id="truth-values">Truth Values</h2>
@@ -6311,6 +6317,7 @@ testing for equality. </p>
   <a id="3176" href="../../../Definitions/Scm/Auxiliary-Functions/#3110" class="Function">truish</a> <a id="3183" href="../../../Definitions/Scm/Auxiliary-Functions/#3183" class="Bound">ϵ</a> <a id="3185" class="Symbol">=</a>  <a id="3188" class="Symbol">(</a><a id="3189" href="../../../Definitions/Scm/Auxiliary-Functions/#3183" class="Bound">ϵ</a> <a id="3191" href="../../../Notation/#12186" class="Postulate Operator">∈⊥</a> <a id="3194" href="../../../Definitions/Scm/Domain-Equations/#1068" class="Function">𝐓</a><a id="3195" class="Symbol">)</a> <a id="3197" href="../../../Notation/#8849" class="Function Operator">⟶</a> <a id="3199" class="Symbol">(((</a><a id="3202" href="../../../Definitions/Scm/Auxiliary-Functions/#3183" class="Bound">ϵ</a> <a id="3204" href="../../../Notation/#12094" class="Postulate Operator">|⊥</a> <a id="3207" href="../../../Definitions/Scm/Domain-Equations/#1068" class="Function">𝐓</a><a id="3208" class="Symbol">)</a> <a id="3210" href="../../../Notation/#9338" class="Postulate Operator">==⊥</a> <a id="3214" href="../../../Notation/#8400" class="Postulate">↑</a> <a id="3216" href="../../../Agda/Builtin/Bool/#192" class="InductiveConstructor">false</a><a id="3221" class="Symbol">)</a> <a id="3223" href="../../../Notation/#8849" class="Function Operator">⟶</a> <a id="3225" href="../../../Notation/#8400" class="Postulate">↑</a> <a id="3227" href="../../../Agda/Builtin/Bool/#192" class="InductiveConstructor">false</a> <a id="3233" href="../../../Notation/#8849" class="Function Operator">,</a> <a id="3235" href="../../../Notation/#8400" class="Postulate">↑</a> <a id="3237" href="../../../Agda/Builtin/Bool/#198" class="InductiveConstructor">true</a><a id="3241" class="Symbol">)</a> <a id="3243" href="../../../Notation/#8849" class="Function Operator">,</a>
               <a id="3259" href="../../../Notation/#8400" class="Postulate">↑</a> <a id="3261" href="../../../Agda/Builtin/Bool/#198" class="InductiveConstructor">true</a>
 </code></pre>
+
 <h2 id="lists">Lists</h2>
 <p>The following definitions of standard Scheme functions for list processing
 use conventional notation for pairs <code>α₁ , α₂</code> and sequences <code>⟨ ϵ⋆ ⟩</code>.</p>
@@ -6320,6 +6327,7 @@ use conventional notation for pairs <code>α₁ , α₂</code> and sequences <co
                    <a id="3602" href="../../../Definitions/Scm/Auxiliary-Functions/#2407" class="Function">alloc</a> <a id="3608" class="Symbol">(</a><a id="3609" href="../../../Definitions/Scm/Auxiliary-Functions/#3518" class="Bound">ϵ⋆</a> <a id="3612" href="../../../Notation/#14425" class="Postulate Operator">↓</a> <a id="3614" class="Number">2</a><a id="3615" class="Symbol">)</a> <a id="3617" class="Symbol">(λ</a> <a id="3620" href="../../../Definitions/Scm/Auxiliary-Functions/#3620" class="Bound">α₂</a> <a id="3623" class="Symbol">→</a> <a id="3625" href="../../../Definitions/Scm/Auxiliary-Functions/#3521" class="Bound">κ</a> <a id="3627" class="Symbol">((</a><a id="3629" href="../../../Definitions/Scm/Auxiliary-Functions/#3578" class="Bound">α₁</a> <a id="3632" href="../../../Notation/#12715" class="Postulate Operator">,</a> <a id="3634" href="../../../Definitions/Scm/Auxiliary-Functions/#3620" class="Bound">α₂</a><a id="3636" class="Symbol">)</a> <a id="3638" href="../../../Notation/#12000" class="Postulate Operator">in⊥</a> <a id="3642" href="../../../Definitions/Scm/Domain-Equations/#2021" class="Postulate">𝐄</a><a id="3643" class="Symbol">)))</a> <a id="3647" href="../../../Notation/#8849" class="Function Operator">,</a>
                <a id="3664" href="../../../Notation/#1877" class="Postulate">⊥</a>
 </code></pre>
+
 <p>The recursive definition of the <code>list</code> function requires an explicit fixed
 point in Agda:</p>
 <pre class="Agda"><code class="Agda">  <a id="list"></a><a id="3772" href="../../../Definitions/Scm/Auxiliary-Functions/#3772" class="Function">list</a> <a id="3777" class="Symbol">:</a> <a id="3779" href="../../../Notation/#1809" class="Postulate Operator">⟪</a> <a id="3781" href="../../../Definitions/Scm/Domain-Equations/#2197" class="Function">𝐅</a> <a id="3783" href="../../../Notation/#1809" class="Postulate Operator">⟫</a>         <a id="3793" class="Comment">-- list ϵ⋆ allocates and initialises a list</a>

@@ -6353,6 +6353,7 @@ direct use of λ-notation for defining functions between domains.</p>
 
 <a id="511" class="Keyword">variable</a> <a id="520" href="../Notation/#520" class="Generalizable">A</a> <a id="522" href="../Notation/#522" class="Generalizable">B</a> <a id="524" href="../Notation/#524" class="Generalizable">C</a> <a id="526" class="Symbol">:</a> <a id="528" href="../Agda/Primitive/#388" class="Primitive">Set</a>
 </code></pre>
+
 <h2 id="domains">Domains</h2>
 <p>The notation used in conventional denotational definitions does not depend
 on the details of the mathematical structure of domains.<sup id="fnref:domains"><a class="footnote-ref" href="#fn:domains">1</a></sup> The only
@@ -6380,6 +6381,7 @@ and added as rewrite rules to allow their use to be implicit.</p>
 
 <a id="2018" class="Keyword">open</a> <a id="2023" href="../Notation/#1711" class="Module">Domains</a> <a id="2031" class="Keyword">public</a>
 </code></pre>
+
 <p>In three previous papers <a href="https://doi.org/10.1145/3759427.3760369">(Mosses2025CDS)</a> <a href="https://msp.cis.strath.ac.uk/types2025/abstracts/TYPES2025_paper11.pdf">(Mosses2025LAF)</a>,
 the type of domains was defined by <code>Domain = Set</code>. However, postulating <code>⊥ : D</code>
 for all domains <code>D</code> was then <em>inconsistent</em> with the existence of an empty type
@@ -6402,6 +6404,7 @@ the domain are continuous functions.</p>
     <a id="3788" class="Comment">-- D →ᶜ E is the domain of continuous functions from D to E</a>
   <a id="3850" class="Keyword">infixr</a> <a id="3857" class="Number">0</a> <a id="3859" href="../Notation/#3752" class="Postulate Operator">_→ᶜ_</a>
 </code></pre>
+
 <p>In conventional denotational semantics, functions between domains are
 <em>automatically</em> continuous when defined in terms of λ-abstraction and
 application from primitive continuous functions associated with specific
@@ -6418,6 +6421,7 @@ domains, the type <code>⟪ D →ᶜ E ⟫</code> is <em>rewritten</em><sup id="
     <a id="Functions.dom-cts"></a><a id="5049" href="../Notation/#5049" class="Postulate">dom-cts</a> <a id="5057" class="Symbol">:</a> <a id="5059" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5061" href="../Notation/#2002" class="Generalizable">D</a> <a id="5063" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="5066" href="../Notation/#2004" class="Generalizable">E</a> <a id="5068" href="../Notation/#1809" class="Postulate Operator">⟫</a> <a id="5070" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="5072" class="Symbol">(</a><a id="5073" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5075" href="../Notation/#2002" class="Generalizable">D</a> <a id="5077" href="../Notation/#1809" class="Postulate Operator">⟫</a> <a id="5079" class="Symbol">→</a> <a id="5081" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5083" href="../Notation/#2004" class="Generalizable">E</a> <a id="5085" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="5086" class="Symbol">)</a>
   <a id="5090" class="Symbol">{-#</a> <a id="5094" class="Keyword">REWRITE</a> <a id="5102" href="../Notation/#5049" class="Postulate">dom-cts</a> <a id="5110" class="Symbol">#-}</a>
 </code></pre>
+
 <p>It would be possible to declare an analogous type of <em>predomains</em>,<sup id="fnref:pre"><a class="footnote-ref" href="#fn:pre">5</a></sup>
 together with notation for types of continuous functions between predomains.
 An ordinary set <code>A</code> is a special case of a predomain. The domain <code>A →ˢ D</code>
@@ -6428,19 +6432,23 @@ when ordered pointwise).</p>
   <a id="5585" class="Comment">-- A →ˢ D is the domain of all functions from A to D</a>
   <a id="5640" class="Keyword">infixr</a> <a id="5647" class="Number">0</a> <a id="5649" href="../Notation/#5554" class="Postulate Operator">_→ˢ_</a>
 </code></pre>
+
 <p>The type <code>⟪ A →ˢ D ⟫</code> is <em>rewritten</em> to the Agda type <code>A → ⟪ D ⟫</code>:</p>
 <pre class="Agda"><code class="Agda">  <a id="5737" class="Keyword">postulate</a>
     <a id="Functions.set-cts"></a><a id="5751" href="../Notation/#5751" class="Postulate">set-cts</a> <a id="5759" class="Symbol">:</a> <a id="5761" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5763" href="../Notation/#520" class="Generalizable">A</a> <a id="5765" href="../Notation/#5554" class="Postulate Operator">→ˢ</a> <a id="5768" href="../Notation/#2002" class="Generalizable">D</a> <a id="5770" href="../Notation/#1809" class="Postulate Operator">⟫</a> <a id="5772" href="../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="5774" class="Symbol">(</a><a id="5775" href="../Notation/#520" class="Generalizable">A</a> <a id="5777" class="Symbol">→</a> <a id="5779" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5781" href="../Notation/#2002" class="Generalizable">D</a> <a id="5783" href="../Notation/#1809" class="Postulate Operator">⟫</a><a id="5784" class="Symbol">)</a>
   <a id="5788" class="Symbol">{-#</a> <a id="5792" class="Keyword">REWRITE</a> <a id="5800" href="../Notation/#5751" class="Postulate">set-cts</a> <a id="5808" class="Symbol">#-}</a>
 </code></pre>
+
 <p>Continuous <em>endofunctions</em> <code>φ</code> in <code>D →ᶜ D</code> have (least) fixed points <code>fix φ</code>:</p>
 <pre class="Agda"><code class="Agda">  <a id="5906" class="Keyword">postulate</a>
     <a id="Functions.fix"></a><a id="5920" href="../Notation/#5920" class="Postulate">fix</a> <a id="5924" class="Symbol">:</a> <a id="5926" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="5928" class="Symbol">(</a><a id="5929" href="../Notation/#2002" class="Generalizable">D</a> <a id="5931" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="5934" href="../Notation/#2002" class="Generalizable">D</a><a id="5935" class="Symbol">)</a> <a id="5937" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="5940" href="../Notation/#2002" class="Generalizable">D</a> <a id="5942" href="../Notation/#1809" class="Postulate Operator">⟫</a>
     <a id="5948" class="Comment">-- fix φ is the least fixed point of the continuous function φ</a>
 </code></pre>
+
 <p>The above notation is implicitly imported by the remaining submodules of <code>Notation</code>:</p>
 <pre class="Agda"><code class="Agda"><a id="6110" class="Keyword">open</a> <a id="6115" href="../Notation/#3719" class="Module">Functions</a> <a id="6125" class="Keyword">public</a>
 </code></pre>
+
 <h2 id="recursive-domains">Recursive domains</h2>
 <p>Conventional denotational semantics often involves groups of mutually
 recursive domain definitions. Agda supports groups of non-recursive type
@@ -6457,6 +6465,7 @@ to map values from a postulated domain to its structure and <em>vice versa</em>.
     <a id="Recursion.unfold"></a><a id="6781" href="../Notation/#6781" class="Postulate">unfold</a> <a id="6788" class="Symbol">:</a>  <a id="6791" class="Symbol">{{</a><a id="6793" href="../Notation/#2002" class="Generalizable">D</a> <a id="6795" href="../Notation/#6671" class="Postulate Operator">≅</a> <a id="6797" href="../Notation/#2004" class="Generalizable">E</a><a id="6798" class="Symbol">}}</a> <a id="6801" class="Symbol">→</a> <a id="6803" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="6805" href="../Notation/#2002" class="Generalizable">D</a> <a id="6807" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="6810" href="../Notation/#2004" class="Generalizable">E</a> <a id="6812" href="../Notation/#1809" class="Postulate Operator">⟫</a>
     <a id="Recursion.fold"></a><a id="6818" href="../Notation/#6818" class="Postulate">fold</a> <a id="6823" class="Symbol">:</a>    <a id="6828" class="Symbol">{{</a><a id="6830" href="../Notation/#2002" class="Generalizable">D</a> <a id="6832" href="../Notation/#6671" class="Postulate Operator">≅</a> <a id="6834" href="../Notation/#2004" class="Generalizable">E</a><a id="6835" class="Symbol">}}</a> <a id="6838" class="Symbol">→</a> <a id="6840" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="6842" href="../Notation/#2004" class="Generalizable">E</a> <a id="6844" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="6847" href="../Notation/#2002" class="Generalizable">D</a> <a id="6849" href="../Notation/#1809" class="Postulate Operator">⟫</a>
 </code></pre>
+
 <p>The <em>instance parameter</em> <code>{{D ≅ E}}</code> of the above operations restricts them
 to domains <code>D</code> and <code>E</code> such that <code>instance _ : D ≅ E</code> has been declared.</p>
 <p>For example, an Agda formalisation of Scott's <span class="arithmatex">\(D_\infty\)</span> domain,
@@ -6467,6 +6476,7 @@ is simply as follows.</p>
       <a id="Recursion.D-infinity.D∞"></a><a id="7220" href="../Notation/#7220" class="Postulate">D∞</a> <a id="7223" class="Symbol">:</a> <a id="7225" href="../Notation/#1742" class="Postulate">Domain</a>
       <a id="7238" class="Keyword">instance</a> <a id="7247" href="../Notation/#7247" class="Postulate">_</a> <a id="7249" class="Symbol">:</a> <a id="7251" href="../Notation/#7220" class="Postulate">D∞</a> <a id="7254" href="../Notation/#6671" class="Postulate Operator">≅</a> <a id="7256" class="Symbol">(</a><a id="7257" href="../Notation/#7220" class="Postulate">D∞</a> <a id="7260" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="7263" href="../Notation/#7220" class="Postulate">D∞</a><a id="7265" class="Symbol">)</a>
 </code></pre>
+
 <p>The least domain <code>D</code> with <code>D ≅ (D →ᶜ D)</code> is the unit domain. For any
 domain <code>D₀</code> there is a domain <code>D</code> that includes <code>D₀</code> with <code>D ≅ (D →ᶜ D)</code>.</p>
 <h2 id="flat-domains">Flat domains</h2>
@@ -6489,6 +6499,7 @@ However, it is difficult to support such conventions in Agda.)</p>
     <a id="Flat.↑"></a><a id="8400" href="../Notation/#8400" class="Postulate">↑</a>    <a id="8405" class="Symbol">:</a> <a id="8407" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="8409" href="../Notation/#520" class="Generalizable">A</a> <a id="8411" href="../Notation/#5554" class="Postulate Operator">→ˢ</a> <a id="8414" class="Symbol">(</a><a id="8415" href="../Notation/#520" class="Generalizable">A</a> <a id="8417" href="../Notation/#8327" class="Postulate Operator">+⊥</a><a id="8419" class="Symbol">)</a> <a id="8421" href="../Notation/#1809" class="Postulate Operator">⟫</a>              <a id="8436" class="Comment">-- (↑ a) injects a into A +⊥</a>
     <a id="Flat._♯"></a><a id="8469" href="../Notation/#8469" class="Postulate Operator">_♯</a>   <a id="8474" class="Symbol">:</a> <a id="8476" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="8478" class="Symbol">(</a><a id="8479" href="../Notation/#520" class="Generalizable">A</a> <a id="8481" href="../Notation/#5554" class="Postulate Operator">→ˢ</a> <a id="8484" href="../Notation/#2002" class="Generalizable">D</a><a id="8485" class="Symbol">)</a> <a id="8487" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="8490" class="Symbol">(</a><a id="8491" href="../Notation/#520" class="Generalizable">A</a> <a id="8493" href="../Notation/#8327" class="Postulate Operator">+⊥</a><a id="8495" class="Symbol">)</a> <a id="8497" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="8500" href="../Notation/#2002" class="Generalizable">D</a> <a id="8502" href="../Notation/#1809" class="Postulate Operator">⟫</a>  <a id="8505" class="Comment">-- f ♯ extends f to map ⊥ to ⊥</a>
 </code></pre>
+
 <h3 id="booleans">Booleans</h3>
 <p>The McCarthy conditional operation <code>β ⟶ δ₁ , δ₂</code> extends the usual ternary
 conditional choice to domains. It returns <code>⊥</code> whenever its first argument is <code>⊥</code>.</p>
@@ -6500,6 +6511,7 @@ conditional choice to domains. It returns <code>⊥</code> whenever its first ar
     <a id="8926" href="../Notation/#8849" class="Function Operator">_⟶_,_</a> <a id="8932" class="Symbol">=</a> <a id="8934" class="Symbol">(λ</a> <a id="8937" href="../Notation/#8937" class="Bound">b</a> <a id="8939" href="../Notation/#8939" class="Bound">δ₁</a> <a id="8942" href="../Notation/#8942" class="Bound">δ₂</a> <a id="8945" class="Symbol">→</a> <a id="8947" href="../Data/Bool/Base/#1515" class="Function Operator">if</a> <a id="8950" href="../Notation/#8937" class="Bound">b</a> <a id="8952" href="../Data/Bool/Base/#1515" class="Function Operator">then</a> <a id="8957" href="../Notation/#8939" class="Bound">δ₁</a> <a id="8960" href="../Data/Bool/Base/#1515" class="Function Operator">else</a> <a id="8965" href="../Notation/#8942" class="Bound">δ₂</a><a id="8967" class="Symbol">)</a><a id="8968" href="../Notation/#8469" class="Postulate Operator">♯</a>  
     <a id="8976" class="Keyword">infixr</a> <a id="8983" class="Number">20</a> <a id="8986" href="../Notation/#8849" class="Function Operator">_⟶_,_</a>
 </code></pre>
+
 <p>The instance parameter of the strict equality test <code>δ₁ ==⊥ δ₂</code> below declares
 the operation only for flat domains <code>A +⊥</code> with <code>instance _ : Eq A</code>.
 (Equality is unavailable on non-flat domains because it is not continuous.)</p>
@@ -6510,6 +6522,7 @@ the operation only for flat domains <code>A +⊥</code> with <code>instance _ : 
       <a id="9393" class="Comment">-- δ₁ ==⊥ δ₂ is ⊥ when either operand is ⊥</a>
       <a id="9442" class="Keyword">instance</a> <a id="Flat.Booleans.eqBool"></a><a id="9451" href="../Notation/#9451" class="Postulate">eqBool</a> <a id="9458" class="Symbol">:</a> <a id="9460" href="../Notation/#9240" class="Record">Eq</a> <a id="9463" href="../Agda/Builtin/Bool/#173" class="Datatype">Bool</a>
 </code></pre>
+
 <h3 id="naturals">Naturals</h3>
 <p>Agda allows decimal notation for natural numbers, as well as unary notation
 using <code>zero</code> and <code>suc</code>.</p>
@@ -6522,6 +6535,7 @@ using <code>zero</code> and <code>suc</code>.</p>
     <a id="9759" class="Keyword">postulate</a> 
       <a id="9776" class="Keyword">instance</a> <a id="Flat.Naturals.eqNat"></a><a id="9785" href="../Notation/#9785" class="Postulate">eqNat</a> <a id="9791" class="Symbol">:</a> <a id="9793" href="../Notation/#9240" class="Record">Eq</a> <a id="9796" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a>
 </code></pre>
+
 <h2 id="sum-domains">Sum domains</h2>
 <p>The separated sum <code>D + E</code> of two domains corresponds to lifting the disjoint
 union of their carrier sets. 
@@ -6536,6 +6550,7 @@ and iterated for domains with more than two summands.</p>
     <a id="Sums.[_,_]"></a><a id="10295" href="../Notation/#10295" class="Postulate Operator">[_,_]</a>  <a id="10302" class="Symbol">:</a> <a id="10304" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="10306" class="Symbol">(</a><a id="10307" href="../Notation/#2002" class="Generalizable">D</a> <a id="10309" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="10312" href="../Notation/#2006" class="Generalizable">F</a><a id="10313" class="Symbol">)</a> <a id="10315" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="10318" class="Symbol">(</a><a id="10319" href="../Notation/#2004" class="Generalizable">E</a> <a id="10321" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="10324" href="../Notation/#2006" class="Generalizable">F</a><a id="10325" class="Symbol">)</a> <a id="10327" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="10330" class="Symbol">((</a><a id="10332" href="../Notation/#2002" class="Generalizable">D</a> <a id="10334" href="../Notation/#10089" class="Postulate Operator">+</a> <a id="10336" href="../Notation/#2004" class="Generalizable">E</a><a id="10337" class="Symbol">)</a> <a id="10339" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="10342" href="../Notation/#2006" class="Generalizable">F</a><a id="10343" class="Symbol">)</a> <a id="10345" href="../Notation/#1809" class="Postulate Operator">⟫</a>
     <a id="10351" class="Comment">-- [ φ , ψ ] applies φ to arguments in D, and ψ to arguments in E</a>
 </code></pre>
+
 <p>In published examples of denotational semantics, injection of <span class="arithmatex">\(\delta\)</span> from
 a summand of a domain <span class="arithmatex">\(E\)</span> can be written <span class="arithmatex">\(\delta \textsf{ in } E\)</span> (but is
 usually left implicit), and case analysis on <span class="arithmatex">\(\epsilon\)</span> is written by composing
@@ -6570,6 +6585,7 @@ the unary functions are known to be continuous when <code>E</code> is a sum doma
     <a id="Sums._|⊥_"></a><a id="12094" href="../Notation/#12094" class="Postulate Operator">_|⊥_</a>   <a id="12101" class="Symbol">:</a> <a id="12103" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="12105" href="../Notation/#2004" class="Generalizable">E</a> <a id="12107" href="../Notation/#1809" class="Postulate Operator">⟫</a> <a id="12109" class="Symbol">→</a> <a id="12111" class="Symbol">(</a><a id="12112" href="../Notation/#12112" class="Bound">D</a> <a id="12114" class="Symbol">:</a> <a id="12116" href="../Notation/#1742" class="Postulate">Domain</a><a id="12122" class="Symbol">)</a> <a id="12124" class="Symbol">→</a> <a id="12126" class="Symbol">{{</a><a id="12128" href="../Notation/#2004" class="Generalizable">E</a> <a id="12130" href="../Notation/#11959" class="Postulate Operator">≳</a> <a id="12132" href="../Notation/#11935" class="Generalizable">n</a> <a id="12134" href="../Notation/#11959" class="Postulate Operator">↦</a> <a id="12136" href="../Notation/#12112" class="Bound">D</a><a id="12137" class="Symbol">}}</a> <a id="12140" class="Symbol">→</a> <a id="12142" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="12144" href="../Notation/#12112" class="Bound">D</a> <a id="12146" href="../Notation/#1809" class="Postulate Operator">⟫</a>      <a id="12153" class="Comment">-- ε |⊥ D is projection to D</a>
     <a id="Sums._∈⊥_"></a><a id="12186" href="../Notation/#12186" class="Postulate Operator">_∈⊥_</a>   <a id="12193" class="Symbol">:</a> <a id="12195" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="12197" href="../Notation/#2004" class="Generalizable">E</a> <a id="12199" href="../Notation/#1809" class="Postulate Operator">⟫</a> <a id="12201" class="Symbol">→</a> <a id="12203" class="Symbol">(</a><a id="12204" href="../Notation/#12204" class="Bound">D</a> <a id="12206" class="Symbol">:</a> <a id="12208" href="../Notation/#1742" class="Postulate">Domain</a><a id="12214" class="Symbol">)</a> <a id="12216" class="Symbol">→</a> <a id="12218" class="Symbol">{{</a><a id="12220" href="../Notation/#2004" class="Generalizable">E</a> <a id="12222" href="../Notation/#11959" class="Postulate Operator">≳</a> <a id="12224" href="../Notation/#11935" class="Generalizable">n</a> <a id="12226" href="../Notation/#11959" class="Postulate Operator">↦</a> <a id="12228" href="../Notation/#12204" class="Bound">D</a><a id="12229" class="Symbol">}}</a> <a id="12232" class="Symbol">→</a> <a id="12234" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="12236" href="../Notation/#8829" class="Function">Bool⊥</a> <a id="12242" href="../Notation/#1809" class="Postulate Operator">⟫</a>  <a id="12245" class="Comment">-- ε ∈⊥ D tests an injection</a>
 </code></pre>
+
 <h2 id="product-domains">Product domains</h2>
 <p>The carrier of the binary cartesian product of two domains consists of all
 pairs of elements of the carriers of the agument domains. Neither the product
@@ -6586,6 +6602,7 @@ binary products, and iterated for products of more than two domains.</p>
   <a id="12894" class="Keyword">infixr</a> <a id="12901" class="Number">2</a> <a id="12903" href="../Notation/#12648" class="Postulate Operator">_×_</a>
   <a id="12909" class="Keyword">infixr</a> <a id="12916" class="Number">4</a> <a id="12918" href="../Notation/#12715" class="Postulate Operator">_,_</a>
 </code></pre>
+
 <h3 id="tuples">Tuples</h3>
 <p>The domain <code>D ^ n</code> of <code>n</code>-tuples of elements of a domain <code>D</code> is conventionally
 written <span class="arithmatex">\(D^n\)</span>, but Agda does not support the use of variables as superscripts.</p>
@@ -6597,6 +6614,7 @@ written <span class="arithmatex">\(D^n\)</span>, but Agda does not support the u
     <a id="13299" href="../Notation/#13299" class="Bound">D</a> <a id="13301" href="../Notation/#13190" class="Function Operator">^</a> <a id="13303" class="Number">1</a>            <a id="13316" class="Symbol">=</a> <a id="13318" href="../Notation/#13299" class="Bound">D</a>
     <a id="13324" href="../Notation/#13324" class="Bound">D</a> <a id="13326" href="../Notation/#13190" class="Function Operator">^</a> <a id="13328" href="../Agda/Builtin/Nat/#234" class="InductiveConstructor">suc</a> <a id="13332" class="Symbol">(</a><a id="13333" href="../Agda/Builtin/Nat/#234" class="InductiveConstructor">suc</a> <a id="13337" href="../Notation/#13337" class="Bound">n</a><a id="13338" class="Symbol">)</a>  <a id="13341" class="Symbol">=</a> <a id="13343" href="../Notation/#13324" class="Bound">D</a> <a id="13345" href="../Notation/#12648" class="Postulate Operator">×</a> <a id="13347" class="Symbol">(</a><a id="13348" href="../Notation/#13324" class="Bound">D</a> <a id="13350" href="../Notation/#13190" class="Function Operator">^</a> <a id="13352" href="../Agda/Builtin/Nat/#234" class="InductiveConstructor">suc</a> <a id="13356" href="../Notation/#13337" class="Bound">n</a><a id="13357" class="Symbol">)</a>
 </code></pre>
+
 <p>Making <code>D ^ 2</code> definitionally equal to <code>D × D</code> in Agda supports type-checking
 the conventional notational ambiguity between tuples and iterated products.</p>
 <h3 id="sequences">Sequences</h3>
@@ -6620,6 +6638,7 @@ double angle-brackets <code>⟪ D ⟫</code> used for the carrier of domain <cod
       <a id="Products.Sequences._↓_"></a><a id="14425" href="../Notation/#14425" class="Postulate Operator">_↓_</a>    <a id="14432" class="Symbol">:</a> <a id="14434" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="14436" href="../Notation/#2002" class="Generalizable">D</a> <a id="14438" href="../Notation/#14044" class="Postulate Operator">⋆</a> <a id="14440" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="14443" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="14447" href="../Notation/#5554" class="Postulate Operator">→ˢ</a> <a id="14450" href="../Notation/#2002" class="Generalizable">D</a> <a id="14452" href="../Notation/#1809" class="Postulate Operator">⟫</a>      <a id="14459" class="Comment">-- δ⋆ ↓ n is the nth element</a>
       <a id="Products.Sequences._†_"></a><a id="14494" href="../Notation/#14494" class="Postulate Operator">_†_</a>    <a id="14501" class="Symbol">:</a> <a id="14503" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="14505" href="../Notation/#2002" class="Generalizable">D</a> <a id="14507" href="../Notation/#14044" class="Postulate Operator">⋆</a> <a id="14509" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="14512" href="../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="14516" href="../Notation/#5554" class="Postulate Operator">→ˢ</a> <a id="14519" href="../Notation/#2002" class="Generalizable">D</a> <a id="14521" href="../Notation/#14044" class="Postulate Operator">⋆</a> <a id="14523" href="../Notation/#1809" class="Postulate Operator">⟫</a>    <a id="14528" class="Comment">-- δ⋆ † n is the nth tail</a>
 </code></pre>
+
 <h2 id="updates">Updates</h2>
 <p>When an ordinary Agda type <code>A</code> has an equality operation <code>_==_ : A → A → Bool</code>,
 environments <code>ρ : ⟪ A →ˢ D ⟫</code> can be "updated" (i.e., extended or overridden) using the
@@ -6632,12 +6651,14 @@ conventional notation <code>ρ [ δ / a ]</code>, defined as follows.</p>
   <a id="14919" class="Comment">-- ρ [ δ / a ] maps a to δ, and other arguments a′ to ρ a′</a>
   <a id="14980" href="../Notation/#14980" class="Bound">ρ</a> <a id="14982" href="../Notation/#14862" class="Function Operator">[</a> <a id="14984" href="../Notation/#14984" class="Bound">δ</a> <a id="14986" href="../Notation/#14862" class="Function Operator">/</a> <a id="14988" href="../Notation/#14988" class="Bound">a</a> <a id="14990" href="../Notation/#14862" class="Function Operator">]</a> <a id="14992" class="Symbol">=</a> <a id="14994" class="Symbol">λ</a> <a id="14996" href="../Notation/#14996" class="Bound">a′</a> <a id="14999" class="Symbol">→</a> <a id="15001" href="../Data/Bool/Base/#1515" class="Function Operator">if</a> <a id="15004" href="../Notation/#14988" class="Bound">a</a> <a id="15006" href="../Notation/#9271" class="Field Operator">==</a> <a id="15009" href="../Notation/#14996" class="Bound">a′</a> <a id="15012" href="../Data/Bool/Base/#1515" class="Function Operator">then</a> <a id="15017" href="../Notation/#14984" class="Bound">δ</a> <a id="15019" href="../Data/Bool/Base/#1515" class="Function Operator">else</a> <a id="15024" href="../Notation/#14980" class="Bound">ρ</a> <a id="15026" href="../Notation/#14996" class="Bound">a′</a>
 </code></pre>
+
 <p>Similarly for stores <code>σ : ⟪ (A +⊥) →ᶜ D ⟫</code>:</p>
 <pre class="Agda"><code class="Agda">  <a id="15089" class="Keyword">open</a> <a id="15094" href="../Notation/#8299" class="Module">Flat</a>
   <a id="Updates._[_/_]⊥"></a><a id="15101" href="../Notation/#15101" class="Function Operator">_[_/_]⊥</a> <a id="15109" class="Symbol">:</a> <a id="15111" class="Symbol">{{</a><a id="15113" href="../Notation/#9240" class="Record">Eq</a> <a id="15116" href="../Notation/#520" class="Generalizable">A</a><a id="15117" class="Symbol">}}</a> <a id="15120" class="Symbol">→</a> <a id="15122" href="../Notation/#1809" class="Postulate Operator">⟪</a> <a id="15124" class="Symbol">((</a><a id="15126" href="../Notation/#520" class="Generalizable">A</a> <a id="15128" href="../Notation/#8327" class="Postulate Operator">+⊥</a><a id="15130" class="Symbol">)</a> <a id="15132" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="15135" href="../Notation/#2002" class="Generalizable">D</a><a id="15136" class="Symbol">)</a> <a id="15138" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="15141" href="../Notation/#2002" class="Generalizable">D</a> <a id="15143" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="15146" class="Symbol">(</a><a id="15147" href="../Notation/#520" class="Generalizable">A</a> <a id="15149" href="../Notation/#8327" class="Postulate Operator">+⊥</a><a id="15151" class="Symbol">)</a> <a id="15153" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="15156" class="Symbol">((</a><a id="15158" href="../Notation/#520" class="Generalizable">A</a> <a id="15160" href="../Notation/#8327" class="Postulate Operator">+⊥</a><a id="15162" class="Symbol">)</a> <a id="15164" href="../Notation/#3752" class="Postulate Operator">→ᶜ</a> <a id="15167" href="../Notation/#2002" class="Generalizable">D</a><a id="15168" class="Symbol">)</a> <a id="15170" href="../Notation/#1809" class="Postulate Operator">⟫</a>
   <a id="15174" class="Comment">-- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′</a>
   <a id="15236" href="../Notation/#15236" class="Bound">σ</a> <a id="15238" href="../Notation/#15101" class="Function Operator">[</a> <a id="15240" href="../Notation/#15240" class="Bound">δ</a> <a id="15242" href="../Notation/#15101" class="Function Operator">/</a> <a id="15244" href="../Notation/#15244" class="Bound">α</a> <a id="15246" href="../Notation/#15101" class="Function Operator">]⊥</a> <a id="15249" class="Symbol">=</a> <a id="15251" class="Symbol">λ</a> <a id="15253" href="../Notation/#15253" class="Bound">α′</a> <a id="15256" class="Symbol">→</a> <a id="15258" class="Symbol">(</a><a id="15259" href="../Notation/#15244" class="Bound">α</a> <a id="15261" href="../Notation/#9338" class="Postulate Operator">==⊥</a> <a id="15265" href="../Notation/#15253" class="Bound">α′</a><a id="15267" class="Symbol">)</a> <a id="15269" href="../Notation/#8849" class="Function Operator">⟶</a> <a id="15271" href="../Notation/#15240" class="Bound">δ</a> <a id="15273" href="../Notation/#8849" class="Function Operator">,</a> <a id="15275" href="../Notation/#15236" class="Bound">σ</a> <a id="15277" href="../Notation/#15253" class="Bound">α′</a>
 </code></pre>
+
 <p>Defining extension or overriding of <em>dependent</em> maps is less straightforward,
 as it involves a function that returns an <em>equivalence proof</em> instead of a
 truth value: </p>
