@@ -1,10 +1,26 @@
 <!DOCTYPE HTML>
 <html><head><meta charset="utf-8"><title>Examples</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># Illustrative Examples
 
-</a><a id="26" class="Markup">```agda
-</a><a id="34" class="Symbol">{-#</a> <a id="38" class="Keyword">OPTIONS</a> <a id="46" class="Pragma">--rewriting</a> <a id="58" class="Pragma">--confluence-check</a> <a id="77" class="Pragma">--lossy-unification</a> <a id="97" class="Symbol">#-}</a>
+This section illustrates mechanisation of denotational semantics in Agda
+with three examples, all using the posulated [Notation] for domains and their
+associated operations:
 
-<a id="102" class="Keyword">import</a> <a id="109" href="Examples.LC.html" class="Module">Examples.LC</a>
-<a id="121" class="Keyword">import</a> <a id="128" href="Examples.PCF.html" class="Module">Examples.PCF</a>
-<a id="141" class="Keyword">import</a> <a id="148" href="Examples.Scm.html" class="Module">Examples.Scm</a>
-<a id="161" class="Markup">```</a></pre></body></html>
+-   Untyped Lambda-Calculus [LC] (§4.1)
+-   Programming Computable Functions [PCF] (§4.2)
+-   A simple sublanguage [Scm] of Scheme [(Scheme)] (§4.3)
+
+</a><a id="351" class="Markup">```agda
+</a><a id="359" class="Comment">--&quot;hide&quot;</a>
+<a id="368" class="Symbol">{-#</a> <a id="372" class="Keyword">OPTIONS</a> <a id="380" class="Pragma">--rewriting</a> <a id="392" class="Pragma">--confluence-check</a> <a id="411" class="Pragma">--lossy-unification</a> <a id="431" class="Symbol">#-}</a>
+
+<a id="436" class="Keyword">import</a> <a id="443" href="Examples.LC.html" class="Module">Examples.LC</a>
+<a id="455" class="Keyword">import</a> <a id="462" href="Examples.PCF.html" class="Module">Examples.PCF</a>
+<a id="475" class="Keyword">import</a> <a id="482" href="Examples.Scm.html" class="Module">Examples.Scm</a>
+<a id="495" class="Comment">--&quot;/hide&quot;</a>
+<a id="505" class="Markup">```
+</a><a id="509" class="Background">
+[Notation]: ../Notation.md
+[LC]: LC/index.md
+[PCF]: PCF/index.md
+[Scm]: Scm/index.md
+[(Scheme)]: https://standards.scheme.org</a></pre></body></html>

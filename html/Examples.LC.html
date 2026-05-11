@@ -1,24 +1,22 @@
 <!DOCTYPE HTML>
 <html><head><meta charset="utf-8"><title>Examples.LC</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># Untyped λ-calculus
 
-This module defines a denotational semantics of the untyped λ-calculus in Agda,
-corresponding to Dana Scott&#39;s original $D_\infty$ model. 
+This section presents an Agda formalisation of a denotational semantics
+of the untyped $\lambda$-calculus.
+Elided module imports are shown in the complete code [(MFPS2026-Agda)].
+</a><a id="202" class="Markup">```agda
+</a><a id="210" class="Comment">--&quot;hide&quot;</a>
+<a id="219" class="Symbol">{-#</a> <a id="223" class="Keyword">OPTIONS</a> <a id="231" class="Pragma">--rewriting</a> <a id="243" class="Pragma">--confluence-check</a> <a id="262" class="Pragma">--lossy-unification</a> <a id="282" class="Symbol">#-}</a>
 
-The following options are needed in connection with the lightweight
-formalisation of [function domains] in Agda.
+<a id="287" class="Keyword">module</a> <a id="" href="../Examples/LC/" class="Module Definition">Examples.LC</a> <a id="306" class="Keyword">where</a>
 
-</a><a id="276" class="Markup">```agda
-</a><a id="284" class="Symbol">{-#</a> <a id="288" class="Keyword">OPTIONS</a> <a id="296" class="Pragma">--rewriting</a> <a id="308" class="Pragma">--confluence-check</a> <a id="327" class="Pragma">--lossy-unification</a> <a id="347" class="Symbol">#-}</a>
-
-<a id="352" class="Keyword">module</a> <a id="" href="../Examples/LC/" class="Module Definition">Examples.LC</a> <a id="371" class="Keyword">where</a>
-
-<a id="378" class="Keyword">import</a> <a id="385" href="Examples.LC.Abstract-Syntax.html" class="Module">Examples.LC.Abstract-Syntax</a>
-<a id="413" class="Keyword">import</a> <a id="420" href="Examples.LC.Domain-Equations.html" class="Module">Examples.LC.Domain-Equations</a>
-<a id="449" class="Keyword">import</a> <a id="456" href="Examples.LC.Semantic-Functions.html" class="Module">Examples.LC.Semantic-Functions</a>
-<a id="487" class="Markup">```
-</a><a id="491" class="Background">
-See the [Tests] module for some examples of abstract syntax terms and
+<a id="313" class="Keyword">import</a> <a id="320" href="Examples.LC.Abstract-Syntax.html" class="Module">Examples.LC.Abstract-Syntax</a>
+<a id="348" class="Keyword">import</a> <a id="355" href="Examples.LC.Domain-Equations.html" class="Module">Examples.LC.Domain-Equations</a>
+<a id="384" class="Keyword">import</a> <a id="391" href="Examples.LC.Semantic-Functions.html" class="Module">Examples.LC.Semantic-Functions</a>
+<a id="422" class="Comment">--&quot;/hide&quot;</a>
+<a id="432" class="Markup">```
+</a><a id="436" class="Background">See the [Tests] module for some examples of abstract syntax terms and
 equivalence proofs.
 
-[Function domains]: ../../Notation.md#function-domains
+[(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [Tests]: ../../Tests/LC.md</a></pre></body></html>

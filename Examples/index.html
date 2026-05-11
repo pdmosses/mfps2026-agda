@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -6294,11 +6294,19 @@
 
 
 <h1 id="illustrative-examples">Illustrative Examples</h1>
-<pre class="Agda"><code class="Agda"><a id="34" class="Symbol">{-#</a> <a id="38" class="Keyword">OPTIONS</a> <a id="46" class="Pragma">--rewriting</a> <a id="58" class="Pragma">--confluence-check</a> <a id="77" class="Pragma">--lossy-unification</a> <a id="97" class="Symbol">#-}</a>
+<p>This section illustrates mechanisation of denotational semantics in Agda
+with three examples, all using the posulated <a href="../Notation/">Notation</a> for domains and their
+associated operations:</p>
+<ul>
+<li>Untyped Lambda-Calculus <a href="LC/">LC</a> (§4.1)</li>
+<li>Programming Computable Functions <a href="PCF/">PCF</a> (§4.2)</li>
+<li>A simple sublanguage <a href="Scm/">Scm</a> of Scheme <a href="https://standards.scheme.org">(Scheme)</a> (§4.3)</li>
+</ul>
+<pre class="Agda"><code class="Agda"><a id="368" class="Symbol">{-#</a> <a id="372" class="Keyword">OPTIONS</a> <a id="380" class="Pragma">--rewriting</a> <a id="392" class="Pragma">--confluence-check</a> <a id="411" class="Pragma">--lossy-unification</a> <a id="431" class="Symbol">#-}</a>
 
-<a id="102" class="Keyword">import</a> <a id="109" href="../Examples/LC/" class="Module">Examples.LC</a>
-<a id="121" class="Keyword">import</a> <a id="128" href="../Examples/PCF/" class="Module">Examples.PCF</a>
-<a id="141" class="Keyword">import</a> <a id="148" href="../Examples/Scm/" class="Module">Examples.Scm</a>
+<a id="436" class="Keyword">import</a> <a id="443" href="../Examples/LC/" class="Module">Examples.LC</a>
+<a id="455" class="Keyword">import</a> <a id="462" href="../Examples/PCF/" class="Module">Examples.PCF</a>
+<a id="475" class="Keyword">import</a> <a id="482" href="../Examples/Scm/" class="Module">Examples.Scm</a>
 </code></pre>
 
 

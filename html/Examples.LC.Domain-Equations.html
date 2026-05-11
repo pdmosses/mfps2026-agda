@@ -1,48 +1,51 @@
 <!DOCTYPE HTML>
 <html><head><meta charset="utf-8"><title>Examples.LC.Domain-Equations</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># Domain Equations
 
-The domain equation `D∞ ≅ (D∞ →ᶜ D∞)` below declares the functions
-`unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and `fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞ ⟫`,
-corresponging to a bijection between the postulated domain `D∞` and
-the domain of all continuous endofunctions on `D∞`. (Simply defining
-`D∞ = (D∞ →ᶜ D∞)` would lead to non-termination of the Agda type-checker.)
+The postulate below declares `unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and
+`fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞~⟫`, corresponding to a
+bijection between the domain `D∞` and the domain of
+continuous endofunctions on `D∞`. (Simply defining
+`D∞ = (D∞ →ᶜ D∞)` would lead to non-termination of the Agda
+type-checker.)
+</a><a id="314" class="Markup">```agda
+</a><a id="322" class="Comment">--&quot;hide&quot;</a>
+<a id="331" class="Symbol">{-#</a> <a id="335" class="Keyword">OPTIONS</a> <a id="343" class="Pragma">--rewriting</a> <a id="355" class="Pragma">--confluence-check</a> <a id="374" class="Pragma">--lossy-unification</a> <a id="394" class="Symbol">#-}</a>
 
-</a><a id="368" class="Markup">```agda
-</a><a id="376" class="Symbol">{-#</a> <a id="380" class="Keyword">OPTIONS</a> <a id="388" class="Pragma">--rewriting</a> <a id="400" class="Pragma">--confluence-check</a> <a id="419" class="Pragma">--lossy-unification</a> <a id="439" class="Symbol">#-}</a>
+<a id="399" class="Comment">--&quot;/hide&quot;</a>
+<a id="409" class="Keyword">module</a> <a id="" href="../Examples/LC/Domain-Equations/" class="Module Definition">Examples.LC.Domain-Equations</a> <a id="445" class="Keyword">where</a>
+<a id="451" class="Comment">--&quot;hide&quot;</a>
 
-<a id="444" class="Keyword">module</a> <a id="" href="../Examples/LC/Domain-Equations/" class="Module Definition">Examples.LC.Domain-Equations</a> <a id="480" class="Keyword">where</a>
+<a id="461" class="Keyword">open</a> <a id="466" class="Keyword">import</a> <a id="473" href="Examples.LC.Abstract-Syntax.html" class="Module">Examples.LC.Abstract-Syntax</a>
+<a id="501" class="Keyword">open</a> <a id="506" class="Keyword">import</a> <a id="513" href="Notation.html" class="Module">Notation</a>
+<a id="522" class="Keyword">open</a> <a id="527" href="Notation.html#4977" class="Module">Recursion</a> <a id="537" class="Keyword">using</a> <a id="543" class="Symbol">(</a><a id="544" href="Notation.html#5009" class="Postulate Operator">_≅_</a><a id="547" class="Symbol">;</a> <a id="549" href="Notation.html#5156" class="Postulate">fold</a><a id="553" class="Symbol">;</a> <a id="555" href="Notation.html#5119" class="Postulate">unfold</a><a id="561" class="Symbol">)</a> <a id="563" class="Keyword">public</a>
 
-<a id="487" class="Keyword">open</a> <a id="492" class="Keyword">import</a> <a id="499" href="Examples.LC.Abstract-Syntax.html" class="Module">Examples.LC.Abstract-Syntax</a>
-<a id="527" class="Keyword">open</a> <a id="532" class="Keyword">import</a> <a id="539" href="Notation.html" class="Module">Notation</a>
-<a id="548" class="Keyword">open</a> <a id="553" href="Notation.html#4977" class="Module">Recursion</a> <a id="563" class="Keyword">using</a> <a id="569" class="Symbol">(</a><a id="570" href="Notation.html#5009" class="Postulate Operator">_≅_</a><a id="573" class="Symbol">;</a> <a id="575" href="Notation.html#5156" class="Postulate">fold</a><a id="579" class="Symbol">;</a> <a id="581" href="Notation.html#5119" class="Postulate">unfold</a><a id="587" class="Symbol">)</a> <a id="589" class="Keyword">public</a>
-<a id="596" class="Keyword">postulate</a>
-  <a id="D∞"></a><a id="608" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a> <a id="611" class="Symbol">:</a> <a id="613" href="Notation.html#1119" class="Postulate">Domain</a>                      <a id="641" class="Comment">-- corresponds to Scott&#39;s domain </a>
-  <a id="677" class="Keyword">instance</a> <a id="eqD∞"></a><a id="686" href="Examples.LC.Domain-Equations.html#686" class="Postulate">eqD∞</a> <a id="691" class="Symbol">:</a> <a id="693" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a> <a id="696" href="Notation.html#5009" class="Postulate Operator">≅</a> <a id="698" class="Symbol">(</a><a id="699" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a> <a id="702" href="Notation.html#2910" class="Postulate Operator">→ᶜ</a> <a id="705" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a><a id="707" class="Symbol">)</a>  <a id="710" class="Comment">-- bijection</a>
-<a id="723" class="Keyword">variable</a> <a id="732" href="Examples.LC.Domain-Equations.html#732" class="Generalizable">δ</a> <a id="734" class="Symbol">:</a> <a id="736" href="Notation.html#1186" class="Postulate Operator">⟪</a> <a id="738" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a> <a id="741" href="Notation.html#1186" class="Postulate Operator">⟫</a>
-<a id="743" class="Markup">```
-</a><a id="747" class="Background">
-The one-point domain `𝟙` is a trivial solution for the above domain equation.
-It could be excluded by postulating an embedding of any non-trivial domain
-into `D∞`. 
+<a id="571" class="Comment">--&quot;/hide&quot;</a>
+<a id="581" class="Keyword">postulate</a>
+  <a id="D∞"></a><a id="593" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a> <a id="596" class="Symbol">:</a> <a id="598" href="Notation.html#1119" class="Postulate">Domain</a>                      <a id="626" class="Comment">-- corresponds to Scott&#39;s domain </a>
+  <a id="662" class="Keyword">instance</a> <a id="eqD∞"></a><a id="671" href="Examples.LC.Domain-Equations.html#671" class="Postulate">eqD∞</a> <a id="676" class="Symbol">:</a> <a id="678" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a> <a id="681" href="Notation.html#5009" class="Postulate Operator">≅</a> <a id="683" class="Symbol">(</a><a id="684" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a> <a id="687" href="Notation.html#2910" class="Postulate Operator">→ᶜ</a> <a id="690" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a><a id="692" class="Symbol">)</a>  <a id="695" class="Comment">-- bijection</a>
+<a id="708" class="Comment">--&quot;hide&quot;</a>
+<a id="717" class="Keyword">variable</a> <a id="726" href="Examples.LC.Domain-Equations.html#726" class="Generalizable">δ</a> <a id="728" class="Symbol">:</a> <a id="730" href="Notation.html#1186" class="Postulate Operator">⟪</a> <a id="732" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a> <a id="735" href="Notation.html#1186" class="Postulate Operator">⟫</a>
 
-Environments `ρ` map variables to elements of the carrier of the postulated
-domain `D∞`. The type `Env` could be treated as a domain by ordering the maps
-pointwise.
-
-</a><a id="1080" class="Markup">```agda
-</a><a id="Env"></a><a id="1088" href="Examples.LC.Domain-Equations.html#1088" class="Function">Env</a> <a id="1092" class="Symbol">=</a> <a id="1094" href="Examples.LC.Abstract-Syntax.html#302" class="Datatype">Var</a> <a id="1098" href="Notation.html#4167" class="Postulate Operator">→ˢ</a> <a id="1101" href="Examples.LC.Domain-Equations.html#608" class="Postulate">D∞</a>  <a id="1105" class="Comment">-- environments</a>
-<a id="1121" class="Keyword">variable</a> <a id="1130" href="Examples.LC.Domain-Equations.html#1130" class="Generalizable">ρ</a> <a id="1132" class="Symbol">:</a> <a id="1134" href="Notation.html#1186" class="Postulate Operator">⟪</a> <a id="1136" href="Examples.LC.Domain-Equations.html#1088" class="Function">Env</a> <a id="1140" href="Notation.html#1186" class="Postulate Operator">⟫</a>
-<a id="1142" class="Markup">```
-</a><a id="1146" class="Background">
-The following definitions instantiate the conventional notation `ρ [ δ / v ]`
-for the environment that maps `v` to `δ`, and maps other arguments as `ρ` does. 
-
-</a><a id="1307" class="Markup">```agda
-</a><a id="1315" class="Keyword">open</a> <a id="1320" href="Notation.html#6224" class="Module">Notation.Flat.Booleans</a> <a id="1343" class="Keyword">using</a> <a id="1349" class="Symbol">(</a><a id="1350" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="1354" class="Symbol">;</a> <a id="1356" href="Notation.html#6791" class="Record">Eq</a><a id="1358" class="Symbol">;</a> <a id="1360" href="Notation.html#6822" class="Field Operator">_==_</a><a id="1364" class="Symbol">)</a>
-<a id="1366" class="Keyword">open</a> <a id="1371" href="Notation.html#7187" class="Module">Notation.Flat.Naturals</a> <a id="1394" class="Keyword">using</a> <a id="1400" class="Symbol">(</a><a id="1401" href="Notation.html#7366" class="Postulate">eqNat</a><a id="1406" class="Symbol">)</a>
-<a id="_==ⱽ_"></a><a id="1408" href="Examples.LC.Domain-Equations.html#1408" class="Function Operator">_==ⱽ_</a> <a id="1414" class="Symbol">:</a> <a id="1416" href="Examples.LC.Abstract-Syntax.html#302" class="Datatype">Var</a> <a id="1420" class="Symbol">→</a> <a id="1422" href="Examples.LC.Abstract-Syntax.html#302" class="Datatype">Var</a> <a id="1426" class="Symbol">→</a> <a id="1428" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
-<a id="1433" class="Keyword">open</a> <a id="1438" class="Keyword">import</a> <a id="1445" href="Agda.Builtin.Nat.html" class="Module">Agda.Builtin.Nat</a> <a id="1462" class="Keyword">renaming</a> <a id="1471" class="Symbol">(</a><a id="1472" href="Agda.Builtin.Nat.html#631" class="Primitive Operator">_==_</a> <a id="1477" class="Symbol">to</a> <a id="1480" class="Primitive Operator">_==ᴺ_</a><a id="1485" class="Symbol">)</a> <a id="1487" class="Keyword">public</a>
-<a id="1494" class="Keyword">open</a> <a id="1499" href="Notation.html#12007" class="Module">Notation.Updates</a> <a id="1516" class="Keyword">using</a> <a id="1522" class="Symbol">(</a><a id="1523" href="Notation.html#12056" class="Function Operator">_[_/_]</a><a id="1529" class="Symbol">)</a> <a id="1531" class="Keyword">public</a>
-<a id="1538" class="Symbol">(</a><a id="1539" href="Examples.LC.Abstract-Syntax.html#320" class="InductiveConstructor">x</a> <a id="1541" href="Examples.LC.Domain-Equations.html#1541" class="Bound">n</a> <a id="1543" href="Examples.LC.Domain-Equations.html#1408" class="Function Operator">==ⱽ</a> <a id="1547" href="Examples.LC.Abstract-Syntax.html#320" class="InductiveConstructor">x</a> <a id="1549" href="Examples.LC.Domain-Equations.html#1549" class="Bound">n′</a><a id="1551" class="Symbol">)</a> <a id="1553" class="Symbol">=</a> <a id="1555" class="Symbol">(</a><a id="1556" href="Examples.LC.Domain-Equations.html#1541" class="Bound">n</a> <a id="1558" href="Notation.html#750" class="Primitive Operator">==ᴺ</a> <a id="1562" href="Examples.LC.Domain-Equations.html#1549" class="Bound">n′</a><a id="1564" class="Symbol">)</a>
-<a id="1566" class="Keyword">instance</a> <a id="eqVar"></a><a id="1575" href="Examples.LC.Domain-Equations.html#1575" class="Function">eqVar</a> <a id="1581" class="Symbol">:</a> <a id="1583" href="Notation.html#6791" class="Record">Eq</a> <a id="1586" href="Examples.LC.Abstract-Syntax.html#302" class="Datatype">Var</a><a id="1589" class="Symbol">;</a> <a id="1591" href="Notation.html#6822" class="Field Operator">_==_</a> <a id="1596" class="Symbol">{{</a><a id="1598" href="Examples.LC.Domain-Equations.html#1575" class="Function">eqVar</a><a id="1603" class="Symbol">}}</a> <a id="1606" class="Symbol">=</a> <a id="1608" href="Examples.LC.Domain-Equations.html#1408" class="Function Operator">_==ⱽ_</a>
-<a id="1614" class="Markup">```</a></pre></body></html>
+<a id="738" class="Comment">--&quot;/hide&quot;</a>
+<a id="Env"></a><a id="748" href="Examples.LC.Domain-Equations.html#748" class="Function">Env</a> <a id="752" class="Symbol">=</a> <a id="754" href="Examples.LC.Abstract-Syntax.html#815" class="Datatype">Var</a> <a id="758" href="Notation.html#4167" class="Postulate Operator">→ˢ</a> <a id="761" href="Examples.LC.Domain-Equations.html#593" class="Postulate">D∞</a>  <a id="765" class="Comment">-- environments</a>
+<a id="781" class="Comment">--&quot;hide&quot;</a>
+<a id="790" class="Keyword">variable</a> <a id="799" href="Examples.LC.Domain-Equations.html#799" class="Generalizable">ρ</a> <a id="801" class="Symbol">:</a> <a id="803" href="Notation.html#1186" class="Postulate Operator">⟪</a> <a id="805" href="Examples.LC.Domain-Equations.html#748" class="Function">Env</a> <a id="809" href="Notation.html#1186" class="Postulate Operator">⟫</a>
+<a id="811" class="Comment">--&quot;/hide&quot;</a>
+<a id="821" class="Markup">```
+</a><a id="825" class="Background">Use of the conventional notation
+`ρ [ δ / v ]` for updating an environment `ρ`
+to map `v` to `d` requires
+an equality test for variables [(MFPS2026-Agda)].
+</a><a id="981" class="Markup">```agda
+</a><a id="989" class="Comment">--&quot;hide&quot;</a>
+<a id="998" class="Keyword">open</a> <a id="1003" href="Notation.html#6224" class="Module">Notation.Flat.Booleans</a> <a id="1026" class="Keyword">using</a> <a id="1032" class="Symbol">(</a><a id="1033" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a><a id="1037" class="Symbol">;</a> <a id="1039" href="Notation.html#6791" class="Record">Eq</a><a id="1041" class="Symbol">;</a> <a id="1043" href="Notation.html#6822" class="Field Operator">_==_</a><a id="1047" class="Symbol">)</a>
+<a id="1049" class="Keyword">open</a> <a id="1054" href="Notation.html#7187" class="Module">Notation.Flat.Naturals</a> <a id="1077" class="Keyword">using</a> <a id="1083" class="Symbol">(</a><a id="1084" href="Notation.html#7366" class="Postulate">eqNat</a><a id="1089" class="Symbol">)</a>
+<a id="_==ⱽ_"></a><a id="1091" href="Examples.LC.Domain-Equations.html#1091" class="Function Operator">_==ⱽ_</a> <a id="1097" class="Symbol">:</a> <a id="1099" href="Examples.LC.Abstract-Syntax.html#815" class="Datatype">Var</a> <a id="1103" class="Symbol">→</a> <a id="1105" href="Examples.LC.Abstract-Syntax.html#815" class="Datatype">Var</a> <a id="1109" class="Symbol">→</a> <a id="1111" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
+<a id="1116" class="Keyword">open</a> <a id="1121" class="Keyword">import</a> <a id="1128" href="Agda.Builtin.Nat.html" class="Module">Agda.Builtin.Nat</a> <a id="1145" class="Keyword">renaming</a> <a id="1154" class="Symbol">(</a><a id="1155" href="Agda.Builtin.Nat.html#631" class="Primitive Operator">_==_</a> <a id="1160" class="Symbol">to</a> <a id="1163" class="Primitive Operator">_==ᴺ_</a><a id="1168" class="Symbol">)</a> <a id="1170" class="Keyword">public</a>
+<a id="1177" class="Keyword">open</a> <a id="1182" href="Notation.html#12007" class="Module">Notation.Updates</a> <a id="1199" class="Keyword">using</a> <a id="1205" class="Symbol">(</a><a id="1206" href="Notation.html#12056" class="Function Operator">_[_/_]</a><a id="1212" class="Symbol">)</a> <a id="1214" class="Keyword">public</a>
+<a id="1221" class="Symbol">(</a><a id="1222" href="Examples.LC.Abstract-Syntax.html#833" class="InductiveConstructor">x</a> <a id="1224" href="Examples.LC.Domain-Equations.html#1224" class="Bound">n</a> <a id="1226" href="Examples.LC.Domain-Equations.html#1091" class="Function Operator">==ⱽ</a> <a id="1230" href="Examples.LC.Abstract-Syntax.html#833" class="InductiveConstructor">x</a> <a id="1232" href="Examples.LC.Domain-Equations.html#1232" class="Bound">n′</a><a id="1234" class="Symbol">)</a> <a id="1236" class="Symbol">=</a> <a id="1238" class="Symbol">(</a><a id="1239" href="Examples.LC.Domain-Equations.html#1224" class="Bound">n</a> <a id="1241" href="Notation.html#750" class="Primitive Operator">==ᴺ</a> <a id="1245" href="Examples.LC.Domain-Equations.html#1232" class="Bound">n′</a><a id="1247" class="Symbol">)</a>
+<a id="1249" class="Keyword">instance</a> <a id="eqVar"></a><a id="1258" href="Examples.LC.Domain-Equations.html#1258" class="Function">eqVar</a> <a id="1264" class="Symbol">:</a> <a id="1266" href="Notation.html#6791" class="Record">Eq</a> <a id="1269" href="Examples.LC.Abstract-Syntax.html#815" class="Datatype">Var</a><a id="1272" class="Symbol">;</a> <a id="1274" href="Notation.html#6822" class="Field Operator">_==_</a> <a id="1279" class="Symbol">{{</a><a id="1281" href="Examples.LC.Domain-Equations.html#1258" class="Function">eqVar</a><a id="1286" class="Symbol">}}</a> <a id="1289" class="Symbol">=</a> <a id="1291" href="Examples.LC.Domain-Equations.html#1091" class="Function Operator">_==ⱽ_</a>
+<a id="1297" class="Comment">--&quot;/hide&quot;</a>
+<a id="1307" class="Markup">```
+</a><a id="1311" class="Background">
+[(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/</a></pre></body></html>
