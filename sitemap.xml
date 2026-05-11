@@ -177,7 +177,31 @@
          <lastmod>2026-05-11</lastmod>
     </url>
     <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/LC/Abstract-Syntax/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/LC/Semantic-Functions/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
          <loc>https://pdmosses.github.io/mfps2026-agda/Examples/PCF/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/PCF/Abstract-Syntax/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/PCF/Domain-Equations/</loc>
+         <lastmod>2026-05-11</lastmod>
+    </url>
+    <url>
+         <loc>https://pdmosses.github.io/mfps2026-agda/Examples/PCF/Semantic-Functions/</loc>
          <lastmod>2026-05-11</lastmod>
     </url>
     <url>
