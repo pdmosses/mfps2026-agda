@@ -6304,28 +6304,25 @@
 
 
 <h1 id="scm-tests">Scm Tests</h1>
-<pre class="Agda"><code class="Agda"><a id="22" class="Symbol">{-#</a> <a id="26" class="Keyword">OPTIONS</a> <a id="34" class="Pragma">--rewriting</a> <a id="46" class="Pragma">--confluence-check</a> <a id="65" class="Symbol">#-}</a>
-<a id="69" class="Keyword">module</a> <a id="" href="../../html/Tests.Scm.html" class="Module Definition">Tests.Scm</a> <a id="86" class="Keyword">where</a>
+<pre class="Agda"><code class="Agda"><a id="31" class="Symbol">{-#</a> <a id="35" class="Keyword">OPTIONS</a> <a id="43" class="Pragma">--rewriting</a> <a id="55" class="Pragma">--confluence-check</a> <a id="74" class="Symbol">#-}</a>
 
-<a id="93" class="Keyword">open</a> <a id="98" class="Keyword">import</a> <a id="105" href="../../Examples/Scm/Abstract-Syntax/" class="Module">Examples.Scm.Abstract-Syntax</a>
-<a id="134" class="Keyword">open</a> <a id="139" class="Keyword">import</a> <a id="146" href="../../Examples/Scm/Domain-Equations/" class="Module">Examples.Scm.Domain-Equations</a>
-<a id="176" class="Keyword">open</a> <a id="181" class="Keyword">import</a> <a id="188" href="../../Examples/Scm/Auxiliary-Functions/" class="Module">Examples.Scm.Auxiliary-Functions</a>
-<a id="221" class="Keyword">open</a> <a id="226" class="Keyword">import</a> <a id="233" href="../../Examples/Scm/Semantic-Functions/" class="Module">Examples.Scm.Semantic-Functions</a>
+<a id="89" class="Keyword">module</a> <a id="" href="../../html/Tests.Scm.html" class="Module Definition">Tests.Scm</a> <a id="106" class="Keyword">where</a>
+<a id="121" class="Keyword">open</a> <a id="126" class="Keyword">import</a> <a id="133" href="../../Examples/Scm/Abstract-Syntax/" class="Module">Examples.Scm.Abstract-Syntax</a>
+<a id="162" class="Keyword">open</a> <a id="167" class="Keyword">import</a> <a id="174" href="../../Examples/Scm/Domain-Equations/" class="Module">Examples.Scm.Domain-Equations</a>
+<a id="204" class="Keyword">open</a> <a id="209" class="Keyword">import</a> <a id="216" href="../../Examples/Scm/Auxiliary-Functions/" class="Module">Examples.Scm.Auxiliary-Functions</a>
+<a id="249" class="Keyword">open</a> <a id="254" class="Keyword">import</a> <a id="261" href="../../Examples/Scm/Semantic-Functions/" class="Module">Examples.Scm.Semantic-Functions</a>
 
-<a id="266" class="Keyword">open</a> <a id="271" class="Keyword">import</a> <a id="278" href="../../Notation/" class="Module">Notation</a>
-<a id="287" class="Keyword">open</a> <a id="292" href="../../Notation/#5795" class="Module">Notation.Flat</a>
-<a id="306" class="Keyword">open</a> <a id="311" href="../../Notation/#6224" class="Module">Notation.Flat.Booleans</a>
-<a id="334" class="Keyword">open</a> <a id="339" href="../../Notation/#7651" class="Module">Notation.Sums</a>
-<a id="353" class="Keyword">open</a> <a id="358" class="Keyword">import</a> <a id="365" href="../../Properties/" class="Module">Properties</a>
-<a id="376" class="Keyword">open</a> <a id="381" href="../../Properties/#1548" class="Module">Properties.Flat</a>
-<a id="397" class="Keyword">open</a> <a id="402" href="../../Properties/#1796" class="Module">Properties.Flat.Booleans</a>
-<a id="427" class="Keyword">open</a> <a id="432" href="../../Properties/#2175" class="Module">Properties.Sums</a>
+<a id="294" class="Keyword">open</a> <a id="299" class="Keyword">import</a> <a id="306" href="../../Notation/" class="Module">Notation</a>
+<a id="315" class="Keyword">open</a> <a id="320" href="../../Notation/#5795" class="Module">Notation.Flat</a>
+<a id="334" class="Keyword">open</a> <a id="339" href="../../Notation/#6224" class="Module">Notation.Flat.Booleans</a>
+<a id="362" class="Keyword">open</a> <a id="367" href="../../Notation/#7651" class="Module">Notation.Sums</a>
+<a id="381" class="Keyword">open</a> <a id="386" class="Keyword">import</a> <a id="393" href="../../Properties/" class="Module">Properties</a>
+<a id="404" class="Keyword">open</a> <a id="409" href="../../Properties/#1580" class="Module">Properties.Flat</a>
+<a id="425" class="Keyword">open</a> <a id="430" href="../../Properties/#1828" class="Module">Properties.Flat.Booleans</a>
+<a id="455" class="Keyword">open</a> <a id="460" href="../../Properties/#2179" class="Module">Properties.Sums</a>
 
-<a id="449" class="Comment">-- postulate instance</a>
-<a id="471" class="Comment">--   E+=T2  : 𝐄 ≳ 2 ↦ 𝐓</a>
-
-<a id="check-sum"></a><a id="496" href="../../Tests/Scm/#496" class="Function">check-sum</a> <a id="506" class="Symbol">:</a> <a id="508" class="Symbol">{</a><a id="509" href="../../Tests/Scm/#509" class="Bound">β</a> <a id="511" class="Symbol">:</a> <a id="513" href="../../Notation/#1186" class="Postulate Operator">⟪</a> <a id="515" href="../../Examples/Scm/Domain-Equations/#958" class="Function">𝐓</a> <a id="517" href="../../Notation/#1186" class="Postulate Operator">⟫</a><a id="518" class="Symbol">}</a> <a id="520" class="Symbol">→</a> <a id="522" class="Symbol">(</a><a id="523" href="../../Tests/Scm/#509" class="Bound">β</a> <a id="525" href="../../Notation/#8647" class="Postulate Operator">in⊥</a> <a id="529" href="../../Examples/Scm/Domain-Equations/#1886" class="Postulate">𝐄</a><a id="530" class="Symbol">)</a> <a id="532" href="../../Notation/#8816" class="Postulate Operator">∈⊥</a> <a id="535" href="../../Examples/Scm/Domain-Equations/#958" class="Function">𝐓</a> <a id="537" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="539" href="../../Notation/#5895" class="Postulate">↑</a> <a id="541" href="../../Agda/Builtin/Bool/#198" class="InductiveConstructor">true</a>
-<a id="546" href="../../Tests/Scm/#496" class="Function">check-sum</a> <a id="556" class="Symbol">=</a> <a id="558" href="../../Agda/Builtin/Equality/#207" class="InductiveConstructor">refl</a>
+<a id="check-sum"></a><a id="487" href="../../Tests/Scm/#487" class="Function">check-sum</a> <a id="497" class="Symbol">:</a> <a id="499" class="Symbol">{</a><a id="500" href="../../Tests/Scm/#500" class="Bound">β</a> <a id="502" class="Symbol">:</a> <a id="504" href="../../Notation/#1186" class="Postulate Operator">⟪</a> <a id="506" href="../../Examples/Scm/Domain-Equations/#958" class="Function">𝐓</a> <a id="508" href="../../Notation/#1186" class="Postulate Operator">⟫</a><a id="509" class="Symbol">}</a> <a id="511" class="Symbol">→</a> <a id="513" class="Symbol">(</a><a id="514" href="../../Tests/Scm/#500" class="Bound">β</a> <a id="516" href="../../Notation/#8647" class="Postulate Operator">in⊥</a> <a id="520" href="../../Examples/Scm/Domain-Equations/#1886" class="Postulate">𝐄</a><a id="521" class="Symbol">)</a> <a id="523" href="../../Notation/#8816" class="Postulate Operator">∈⊥</a> <a id="526" href="../../Examples/Scm/Domain-Equations/#958" class="Function">𝐓</a> <a id="528" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="530" href="../../Notation/#5895" class="Postulate">↑</a> <a id="532" href="../../Agda/Builtin/Bool/#198" class="InductiveConstructor">true</a>
+<a id="537" href="../../Tests/Scm/#487" class="Function">check-sum</a> <a id="547" class="Symbol">=</a> <a id="549" href="../../Agda/Builtin/Equality/#207" class="InductiveConstructor">refl</a>
 </code></pre>
 
 
