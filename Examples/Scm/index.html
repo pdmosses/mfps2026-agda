@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://pdmosses.github.io/mfps2026-agda/Definitions/Scm/Abstract-Syntax/">
+        <link rel="canonical" href="https://pdmosses.github.io/mfps2026-agda/Examples/Scm/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../PCF/">
       
       
-        <link rel="next" href="../Auxiliary-Functions/">
+        <link rel="next" href="Abstract-Syntax/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Abstract-Syntax - MFPS2026-Agda</title>
+        <title>Scm - MFPS2026-Agda</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,13 +47,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-material.css">
+      <link rel="stylesheet" href="../../stylesheets/Agda-material.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md.css">
+      <link rel="stylesheet" href="../../stylesheets/Agda-md.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md-dark.css">
+      <link rel="stylesheet" href="../../stylesheets/Agda-md-dark.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#abstract-syntax" class="md-skip">
+        <a href="#scm-a-sublanguage-of-scheme" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MFPS2026-Agda" class="md-header__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
+    <a href="../.." title="MFPS2026-Agda" class="md-header__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abstract-Syntax
+              Scm
             
           </span>
         </div>
@@ -238,7 +238,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
@@ -258,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Notation/" class="md-tabs__link">
+      <a href="../../Notation/" class="md-tabs__link">
         
   
   
@@ -281,13 +281,13 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
     
   
-  Definitions
+  Examples
 
         </a>
       </li>
@@ -301,7 +301,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Properties/" class="md-tabs__link">
+      <a href="../../Properties/" class="md-tabs__link">
         
   
   
@@ -322,7 +322,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Tests/" class="md-tabs__link">
+        <a href="../../Tests/" class="md-tabs__link">
           
   
   
@@ -344,7 +344,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Library/" class="md-tabs__link">
+        <a href="../../Library/" class="md-tabs__link">
           
   
   
@@ -386,7 +386,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MFPS2026-Agda" class="md-nav__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
+    <a href="../.." title="MFPS2026-Agda" class="md-nav__button md-logo" aria-label="MFPS2026-Agda" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -439,7 +439,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
@@ -483,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../meta-notation/" class="md-nav__link">
+      <a href="../../meta-notation/" class="md-nav__link">
         
   
   
@@ -518,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Notation/" class="md-nav__link">
+      <a href="../../Notation/" class="md-nav__link">
         
   
   
@@ -577,14 +577,14 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    Definitions
+    Examples
   
 
     
@@ -606,7 +606,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Definitions
+    Examples
   
 
           </label>
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LC/" class="md-nav__link">
+      <a href="../LC/" class="md-nav__link">
         
   
   
@@ -649,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PCF/" class="md-nav__link">
+      <a href="../PCF/" class="md-nav__link">
         
   
   
@@ -708,7 +708,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -726,7 +726,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -749,37 +749,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Abstract-Syntax
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="Abstract-Syntax/" class="md-nav__link">
         
   
   
@@ -795,70 +768,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#identifiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Identifiers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literal-constants" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Literal Constants
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expressions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definitions-and-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definitions and Programs
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -871,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Auxiliary-Functions/" class="md-nav__link">
+      <a href="Auxiliary-Functions/" class="md-nav__link">
         
   
   
@@ -899,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Domain-Equations/" class="md-nav__link">
+      <a href="Domain-Equations/" class="md-nav__link">
         
   
   
@@ -927,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Semantic-Functions/" class="md-nav__link">
+      <a href="Semantic-Functions/" class="md-nav__link">
         
   
   
@@ -970,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Properties/" class="md-nav__link">
+      <a href="../../Properties/" class="md-nav__link">
         
   
   
@@ -1024,7 +933,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tests/" class="md-nav__link ">
+            <a href="../../Tests/" class="md-nav__link ">
               
   
   
@@ -1068,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tests/LC/" class="md-nav__link">
+      <a href="../../Tests/LC/" class="md-nav__link">
         
   
   
@@ -1096,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tests/PCF/" class="md-nav__link">
+      <a href="../../Tests/PCF/" class="md-nav__link">
         
   
   
@@ -1124,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tests/Scm/" class="md-nav__link">
+      <a href="../../Tests/Scm/" class="md-nav__link">
         
   
   
@@ -1192,7 +1101,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Library/" class="md-nav__link ">
+            <a href="../../Library/" class="md-nav__link ">
               
   
   
@@ -1364,7 +1273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Bool/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Bool/" class="md-nav__link">
         
   
   
@@ -1392,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Char/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Char/" class="md-nav__link">
         
   
   
@@ -1443,7 +1352,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Agda/Builtin/Equality/" class="md-nav__link ">
+            <a href="../../Agda/Builtin/Equality/" class="md-nav__link ">
               
   
   
@@ -1487,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Equality/Rewrite/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Equality/Rewrite/" class="md-nav__link">
         
   
   
@@ -1523,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Int/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Int/" class="md-nav__link">
         
   
   
@@ -1551,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/List/" class="md-nav__link">
+      <a href="../../Agda/Builtin/List/" class="md-nav__link">
         
   
   
@@ -1579,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Maybe/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Maybe/" class="md-nav__link">
         
   
   
@@ -1607,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Nat/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Nat/" class="md-nav__link">
         
   
   
@@ -1635,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Sigma/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Sigma/" class="md-nav__link">
         
   
   
@@ -1663,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/String/" class="md-nav__link">
+      <a href="../../Agda/Builtin/String/" class="md-nav__link">
         
   
   
@@ -1691,7 +1600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Builtin/Unit/" class="md-nav__link">
+      <a href="../../Agda/Builtin/Unit/" class="md-nav__link">
         
   
   
@@ -1727,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Agda/Primitive/" class="md-nav__link">
+      <a href="../../Agda/Primitive/" class="md-nav__link">
         
   
   
@@ -1875,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Bundles/Raw/" class="md-nav__link">
+      <a href="../../Algebra/Bundles/Raw/" class="md-nav__link">
         
   
   
@@ -1911,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Core/" class="md-nav__link">
+      <a href="../../Algebra/Core/" class="md-nav__link">
         
   
   
@@ -1993,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Algebra/Definitions/RawMagma/" class="md-nav__link">
+      <a href="../../Algebra/Definitions/RawMagma/" class="md-nav__link">
         
   
   
@@ -2177,7 +2086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Bool/Base/" class="md-nav__link">
+      <a href="../../Data/Bool/Base/" class="md-nav__link">
         
   
   
@@ -2267,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Char/Base/" class="md-nav__link">
+      <a href="../../Data/Char/Base/" class="md-nav__link">
         
   
   
@@ -2326,7 +2235,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data/Empty/" class="md-nav__link ">
+            <a href="../../Data/Empty/" class="md-nav__link ">
               
   
   
@@ -2370,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Empty/Polymorphic/" class="md-nav__link">
+      <a href="../../Data/Empty/Polymorphic/" class="md-nav__link">
         
   
   
@@ -2460,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Fin/Base/" class="md-nav__link">
+      <a href="../../Data/Fin/Base/" class="md-nav__link">
         
   
   
@@ -2550,7 +2459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Integer/Base/" class="md-nav__link">
+      <a href="../../Data/Integer/Base/" class="md-nav__link">
         
   
   
@@ -2586,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Irrelevant/" class="md-nav__link">
+      <a href="../../Data/Irrelevant/" class="md-nav__link">
         
   
   
@@ -2672,7 +2581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Base/" class="md-nav__link">
+      <a href="../../Data/List/Base/" class="md-nav__link">
         
   
   
@@ -2754,7 +2663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/NonEmpty/Base/" class="md-nav__link">
+      <a href="../../Data/List/NonEmpty/Base/" class="md-nav__link">
         
   
   
@@ -2954,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Relation/Binary/Lex/Core/" class="md-nav__link">
+      <a href="../../Data/List/Relation/Binary/Lex/Core/" class="md-nav__link">
         
   
   
@@ -3044,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/List/Relation/Binary/Pointwise/Base/" class="md-nav__link">
+      <a href="../../Data/List/Relation/Binary/Pointwise/Base/" class="md-nav__link">
         
   
   
@@ -3158,7 +3067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Maybe/Base/" class="md-nav__link">
+      <a href="../../Data/Maybe/Base/" class="md-nav__link">
         
   
   
@@ -3248,7 +3157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Nat/Base/" class="md-nav__link">
+      <a href="../../Data/Nat/Base/" class="md-nav__link">
         
   
   
@@ -3338,7 +3247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Parity/Base/" class="md-nav__link">
+      <a href="../../Data/Parity/Base/" class="md-nav__link">
         
   
   
@@ -3428,7 +3337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Product/Base/" class="md-nav__link">
+      <a href="../../Data/Product/Base/" class="md-nav__link">
         
   
   
@@ -3518,7 +3427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Sign/Base/" class="md-nav__link">
+      <a href="../../Data/Sign/Base/" class="md-nav__link">
         
   
   
@@ -3608,7 +3517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/String/Base/" class="md-nav__link">
+      <a href="../../Data/String/Base/" class="md-nav__link">
         
   
   
@@ -3698,7 +3607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Sum/Base/" class="md-nav__link">
+      <a href="../../Data/Sum/Base/" class="md-nav__link">
         
   
   
@@ -3788,7 +3697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/These/Base/" class="md-nav__link">
+      <a href="../../Data/These/Base/" class="md-nav__link">
         
   
   
@@ -3880,7 +3789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Unit/Base/" class="md-nav__link">
+      <a href="../../Data/Unit/Base/" class="md-nav__link">
         
   
   
@@ -3962,7 +3871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Unit/Polymorphic/Base/" class="md-nav__link">
+      <a href="../../Data/Unit/Polymorphic/Base/" class="md-nav__link">
         
   
   
@@ -4060,7 +3969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data/Vec/Base/" class="md-nav__link">
+      <a href="../../Data/Vec/Base/" class="md-nav__link">
         
   
   
@@ -4166,7 +4075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Base/" class="md-nav__link">
+      <a href="../../Function/Base/" class="md-nav__link">
         
   
   
@@ -4194,7 +4103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Bundles/" class="md-nav__link">
+      <a href="../../Function/Bundles/" class="md-nav__link">
         
   
   
@@ -4247,7 +4156,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Function/Consequences/" class="md-nav__link ">
+            <a href="../../Function/Consequences/" class="md-nav__link ">
               
   
   
@@ -4291,7 +4200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Consequences/Propositional/" class="md-nav__link">
+      <a href="../../Function/Consequences/Propositional/" class="md-nav__link">
         
   
   
@@ -4319,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Consequences/Setoid/" class="md-nav__link">
+      <a href="../../Function/Consequences/Setoid/" class="md-nav__link">
         
   
   
@@ -4355,7 +4264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Definitions/" class="md-nav__link">
+      <a href="../../Function/Definitions/" class="md-nav__link">
         
   
   
@@ -4383,7 +4292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Function/Structures/" class="md-nav__link">
+      <a href="../../Function/Structures/" class="md-nav__link">
         
   
   
@@ -4419,7 +4328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Level/" class="md-nav__link">
+      <a href="../../Level/" class="md-nav__link">
         
   
   
@@ -4600,7 +4509,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Relation/Binary/Bundles/" class="md-nav__link ">
+            <a href="../../Relation/Binary/Bundles/" class="md-nav__link ">
               
   
   
@@ -4644,7 +4553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Bundles/Raw/" class="md-nav__link">
+      <a href="../../Relation/Binary/Bundles/Raw/" class="md-nav__link">
         
   
   
@@ -4680,7 +4589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Consequences/" class="md-nav__link">
+      <a href="../../Relation/Binary/Consequences/" class="md-nav__link">
         
   
   
@@ -4820,7 +4729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Construct/Closure/Reflexive/" class="md-nav__link">
+      <a href="../../Relation/Binary/Construct/Closure/Reflexive/" class="md-nav__link">
         
   
   
@@ -4856,7 +4765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Construct/Composition/" class="md-nav__link">
+      <a href="../../Relation/Binary/Construct/Composition/" class="md-nav__link">
         
   
   
@@ -4938,7 +4847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Construct/Constant/Core/" class="md-nav__link">
+      <a href="../../Relation/Binary/Construct/Constant/Core/" class="md-nav__link">
         
   
   
@@ -4982,7 +4891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Core/" class="md-nav__link">
+      <a href="../../Relation/Binary/Core/" class="md-nav__link">
         
   
   
@@ -5010,7 +4919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Definitions/" class="md-nav__link">
+      <a href="../../Relation/Binary/Definitions/" class="md-nav__link">
         
   
   
@@ -5146,7 +5055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Indexed/Heterogeneous/Core/" class="md-nav__link">
+      <a href="../../Relation/Binary/Indexed/Heterogeneous/Core/" class="md-nav__link">
         
   
   
@@ -5244,7 +5153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Properties/Setoid/" class="md-nav__link">
+      <a href="../../Relation/Binary/Properties/Setoid/" class="md-nav__link">
         
   
   
@@ -5336,7 +5245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/PropositionalEquality/Core/" class="md-nav__link">
+      <a href="../../Relation/Binary/PropositionalEquality/Core/" class="md-nav__link">
         
   
   
@@ -5364,7 +5273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/PropositionalEquality/Properties/" class="md-nav__link">
+      <a href="../../Relation/Binary/PropositionalEquality/Properties/" class="md-nav__link">
         
   
   
@@ -5454,7 +5363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Reasoning/Syntax/" class="md-nav__link">
+      <a href="../../Relation/Binary/Reasoning/Syntax/" class="md-nav__link">
         
   
   
@@ -5490,7 +5399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Binary/Structures/" class="md-nav__link">
+      <a href="../../Relation/Binary/Structures/" class="md-nav__link">
         
   
   
@@ -5557,7 +5466,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Relation/Nullary/" class="md-nav__link ">
+            <a href="../../Relation/Nullary/" class="md-nav__link ">
               
   
   
@@ -5624,7 +5533,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Relation/Nullary/Decidable/" class="md-nav__link ">
+            <a href="../../Relation/Nullary/Decidable/" class="md-nav__link ">
               
   
   
@@ -5668,7 +5577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Nullary/Decidable/Core/" class="md-nav__link">
+      <a href="../../Relation/Nullary/Decidable/Core/" class="md-nav__link">
         
   
   
@@ -5704,7 +5613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Nullary/Irrelevant/" class="md-nav__link">
+      <a href="../../Relation/Nullary/Irrelevant/" class="md-nav__link">
         
   
   
@@ -5786,7 +5695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Nullary/Negation/Core/" class="md-nav__link">
+      <a href="../../Relation/Nullary/Negation/Core/" class="md-nav__link">
         
   
   
@@ -5845,7 +5754,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Relation/Nullary/Recomputable/" class="md-nav__link ">
+            <a href="../../Relation/Nullary/Recomputable/" class="md-nav__link ">
               
   
   
@@ -5889,7 +5798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Nullary/Recomputable/Core/" class="md-nav__link">
+      <a href="../../Relation/Nullary/Recomputable/Core/" class="md-nav__link">
         
   
   
@@ -5925,7 +5834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Nullary/Reflects/" class="md-nav__link">
+      <a href="../../Relation/Nullary/Reflects/" class="md-nav__link">
         
   
   
@@ -5984,7 +5893,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Relation/Unary/" class="md-nav__link ">
+            <a href="../../Relation/Unary/" class="md-nav__link ">
               
   
   
@@ -6028,7 +5937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Relation/Unary/Properties/" class="md-nav__link">
+      <a href="../../Relation/Unary/Properties/" class="md-nav__link">
         
   
   
@@ -6092,58 +6001,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#identifiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Identifiers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literal-constants" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Literal Constants
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expressions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definitions-and-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definitions and Programs
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -6168,10 +6025,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Definitions
+    Examples
   </span>
 
         </a>
@@ -6186,7 +6043,7 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     Scm
@@ -6211,74 +6068,28 @@
   
 
 
-<h1 id="abstract-syntax">Abstract Syntax</h1>
-<pre class="Agda"><code class="Agda"><a id="28" class="Symbol">{-#</a> <a id="32" class="Keyword">OPTIONS</a> <a id="40" class="Pragma">--rewriting</a> <a id="52" class="Pragma">--confluence-check</a> <a id="71" class="Symbol">#-}</a>
+<h1 id="scm-a-sublanguage-of-scheme">Scm: A Sublanguage of Scheme</h1>
+<p><a href="Abstract-Syntax/">Scm.Abstract-Syntax</a> illustrates a simple way to declare phrase types for
+finite sequences.</p>
+<p><a href="Domain-Equations/">Scm.Domain-Equations</a> uses all the domain constructors declared in the module
+<a href="../../Notation/">Notation</a>. It illustrates how a group of mutually recursive domains can be
+embedded by postulating a domain that corresponds to a separated sum domain.</p>
+<p><a href="Auxiliary-Functions/">Scm.Auxiliary-Functions</a> embeds definitions of the auxiliary functions used in
+<a href="Semantic-Functions/">Scm.Semantic-Functions</a>, together with definitions of some functions that
+correspond to standard Scheme procedures. The embeddings of most of the
+definitions are completely straightforward.</p>
+<p><a href="Semantic-Functions/">Scm.Semantic-Functions</a> embeds the definitions of the semantic functions
+without significant notational changes. As in the Scheme Reports <a href="https://standards.scheme.org">(Scheme)</a>, 
+the types of semantic functions are declared before defining the denotations
+of phrases, which supports mutual recursion without further ado.</p>
+<pre class="Agda"><code class="Agda"><a id="935" class="Symbol">{-#</a> <a id="939" class="Keyword">OPTIONS</a> <a id="947" class="Pragma">--rewriting</a> <a id="959" class="Pragma">--confluence-check</a> <a id="978" class="Pragma">--lossy-unification</a> <a id="998" class="Symbol">#-}</a>
 
-<a id="76" class="Keyword">module</a> <a id="" href="../../../html/Definitions.Scm.Abstract-Syntax.html" class="Module Definition">Definitions.Scm.Abstract-Syntax</a> <a id="115" class="Keyword">where</a>
-</code></pre>
+<a id="1003" class="Keyword">module</a> <a id="" href="../../html/Examples.Scm.html" class="Module Definition">Examples.Scm</a> <a id="1023" class="Keyword">where</a>
 
-<h2 id="identifiers">Identifiers</h2>
-<p>In the concrete syntax of the full Scheme programming language, identifiers
-can be almost arbitrary sequences of characters. For abstract syntax in Agda,
-it is convenient to represent identifiers as strings.</p>
-<pre class="Agda"><code class="Agda">  <a id="361" class="Keyword">open</a> <a id="366" class="Keyword">import</a> <a id="373" href="../../../Data/String/Base/" class="Module">Data.String.Base</a> <a id="390" class="Keyword">public</a> <a id="397" class="Keyword">using</a> <a id="403" class="Symbol">(</a><a id="404" href="../../../Agda/Builtin/String/#335" class="Postulate">String</a><a id="410" class="Symbol">)</a>
-  <a id="Ide"></a><a id="414" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="418" class="Symbol">=</a> <a id="420" href="../../../Agda/Builtin/String/#335" class="Postulate">String</a>      <a id="432" class="Comment">-- identifiers</a>
-  <a id="449" class="Keyword">variable</a> <a id="458" href="../../../Definitions/Scm/Abstract-Syntax/#458" class="Generalizable">I</a> <a id="460" class="Symbol">:</a> <a id="462" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a>
-</code></pre>
-
-<h2 id="literal-constants">Literal Constants</h2>
-<p>The abstract syntax of the Scm sublanguage restricts constants to integers
-and truth values. THe Agda formalisation uses the constructor <code>int</code> to include
-integers as ASTs in <code>Con</code>, and the standard Scheme notation <code>#t</code> and <code>#f</code> for
-the truth values.</p>
-<pre class="Agda"><code class="Agda">  <a id="754" class="Keyword">open</a> <a id="759" class="Keyword">import</a> <a id="766" href="../../../Data/Integer/Base/" class="Module">Data.Integer.Base</a> <a id="784" class="Keyword">public</a> <a id="791" class="Keyword">renaming</a> <a id="800" class="Symbol">(</a><a id="801" href="../../../Agda/Builtin/Int/#245" class="Datatype">ℤ</a> <a id="803" class="Symbol">to</a> <a id="806" class="Datatype">Int</a><a id="809" class="Symbol">)</a> <a id="811" class="Keyword">using</a> <a id="817" class="Symbol">()</a>
-  <a id="822" class="Keyword">data</a> <a id="Con"></a><a id="827" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>  <a id="832" class="Symbol">:</a> <a id="834" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="838" class="Keyword">where</a>  <a id="845" class="Comment">-- constants</a>
-    <a id="Con.int"></a><a id="862" href="../../../Definitions/Scm/Abstract-Syntax/#862" class="InductiveConstructor">int</a>     <a id="870" class="Symbol">:</a> <a id="872" href="../../../Definitions/Scm/Abstract-Syntax/#806" class="Datatype">Int</a> <a id="876" class="Symbol">→</a> <a id="878" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>  <a id="883" class="Comment">-- integer numerals</a>
-    <a id="Con.#t"></a><a id="907" href="../../../Definitions/Scm/Abstract-Syntax/#907" class="InductiveConstructor">#t</a>      <a id="915" class="Symbol">:</a> <a id="917" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>        <a id="928" class="Comment">-- true</a>
-    <a id="Con.#f"></a><a id="940" href="../../../Definitions/Scm/Abstract-Syntax/#940" class="InductiveConstructor">#f</a>      <a id="948" class="Symbol">:</a> <a id="950" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>        <a id="961" class="Comment">-- false</a>
-  <a id="972" class="Keyword">variable</a> <a id="981" href="../../../Definitions/Scm/Abstract-Syntax/#981" class="Generalizable">K</a> <a id="983" class="Symbol">:</a> <a id="985" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a>
-</code></pre>
-
-<h2 id="expressions">Expressions</h2>
-<p>Scheme expressions include function application, lambda-abstraction,
-conditional choice, and assignment. The constructors used in the Agda
-formalisation correspond closely to the concrete syntax of Scheme.</p>
-<pre class="Agda"><code class="Agda">  <a id="1227" class="Keyword">mutual</a>
-    <a id="1238" class="Keyword">data</a> <a id="Exp"></a><a id="1243" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>       <a id="1253" class="Symbol">:</a> <a id="1255" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1259" class="Keyword">where</a>              <a id="1278" class="Comment">-- expressions</a>
-      <a id="Exp.con"></a><a id="1299" href="../../../Definitions/Scm/Abstract-Syntax/#1299" class="InductiveConstructor">con</a>          <a id="1312" class="Symbol">:</a> <a id="1314" href="../../../Definitions/Scm/Abstract-Syntax/#827" class="Datatype">Con</a> <a id="1318" class="Symbol">→</a> <a id="1320" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>              <a id="1337" class="Comment">-- constants</a>
-      <a id="Exp.ide"></a><a id="1356" href="../../../Definitions/Scm/Abstract-Syntax/#1356" class="InductiveConstructor">ide</a>          <a id="1369" class="Symbol">:</a> <a id="1371" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="1375" class="Symbol">→</a> <a id="1377" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>              <a id="1394" class="Comment">-- identifiers</a>
-      <a id="Exp.⦅_␣_⦆"></a><a id="1415" href="../../../Definitions/Scm/Abstract-Syntax/#1415" class="InductiveConstructor Operator">⦅_␣_⦆</a>        <a id="1428" class="Symbol">:</a> <a id="1430" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1434" class="Symbol">→</a> <a id="1436" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a> <a id="1441" class="Symbol">→</a> <a id="1443" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>       <a id="1453" class="Comment">-- procedure application </a>
-      <a id="Exp.⦅lambda_␣_⦆"></a><a id="1485" href="../../../Definitions/Scm/Abstract-Syntax/#1485" class="InductiveConstructor Operator">⦅lambda_␣_⦆</a>  <a id="1498" class="Symbol">:</a> <a id="1500" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="1504" class="Symbol">→</a> <a id="1506" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1510" class="Symbol">→</a> <a id="1512" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>        <a id="1523" class="Comment">-- procedure abstraction</a>
-      <a id="Exp.⦅if_␣_␣_⦆"></a><a id="1554" href="../../../Definitions/Scm/Abstract-Syntax/#1554" class="InductiveConstructor Operator">⦅if_␣_␣_⦆</a>    <a id="1567" class="Symbol">:</a> <a id="1569" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1573" class="Symbol">→</a> <a id="1575" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1579" class="Symbol">→</a> <a id="1581" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1585" class="Symbol">→</a> <a id="1587" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>  <a id="1592" class="Comment">-- conditional choice</a>
-      <a id="Exp.⦅set!_␣_⦆"></a><a id="1620" href="../../../Definitions/Scm/Abstract-Syntax/#1620" class="InductiveConstructor Operator">⦅set!_␣_⦆</a>    <a id="1633" class="Symbol">:</a> <a id="1635" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="1639" class="Symbol">→</a> <a id="1641" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1645" class="Symbol">→</a> <a id="1647" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a>        <a id="1658" class="Comment">-- assignment</a>
-    <a id="1676" class="Keyword">data</a> <a id="Exp⋆"></a><a id="1681" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>      <a id="1691" class="Symbol">:</a> <a id="1693" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1697" class="Keyword">where</a>              <a id="1716" class="Comment">-- expression sequences</a>
-      <a id="Exp⋆.␣␣␣"></a><a id="1746" href="../../../Definitions/Scm/Abstract-Syntax/#1746" class="InductiveConstructor">␣␣␣</a>          <a id="1759" class="Symbol">:</a> <a id="1761" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>                   <a id="1784" class="Comment">-- empty sequence</a>
-      <a id="Exp⋆._␣␣_"></a><a id="1808" href="../../../Definitions/Scm/Abstract-Syntax/#1808" class="InductiveConstructor Operator">_␣␣_</a>         <a id="1821" class="Symbol">:</a> <a id="1823" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="1827" class="Symbol">→</a> <a id="1829" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a> <a id="1834" class="Symbol">→</a> <a id="1836" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>      <a id="1846" class="Comment">-- sequence prefix</a>
-  <a id="1867" class="Keyword">variable</a> <a id="1876" href="../../../Definitions/Scm/Abstract-Syntax/#1876" class="Generalizable">E</a> <a id="1878" class="Symbol">:</a> <a id="1880" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a><a id="1883" class="Symbol">;</a> <a id="1885" href="../../../Definitions/Scm/Abstract-Syntax/#1885" class="Generalizable">E⋆</a> <a id="1888" class="Symbol">:</a> <a id="1890" href="../../../Definitions/Scm/Abstract-Syntax/#1681" class="Datatype">Exp⋆</a>
-</code></pre>
-
-<p>Procedure application can take any number of argument expressions. The Agda
-formalisation of the abstract syntax represents the empty sequence by <code>␣␣␣</code>,
-and sequence prefixing by <code>E ␣␣ E⋆</code>. The full Scheme language includes several
-forms of lambda-expression, allowing a fixed number of arguments to be named;
-for simplicity, the Scm sublanguage includes only the form where a single
-identifier corresponds to the entire sequence of argument values.</p>
-<h2 id="definitions-and-programs">Definitions and Programs</h2>
-<p>The Scheme standards do not specify abstract syntax for definitions and
-programs. The Agda formalisation of them in the Scm sublanguage uses notation
-close to their concrete syntax in Scheme.</p>
-<pre class="Agda"><code class="Agda">  <a id="2583" class="Keyword">mutual</a>
-    <a id="2594" class="Keyword">data</a> <a id="Body"></a><a id="2599" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a>      <a id="2609" class="Symbol">:</a> <a id="2611" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="2615" class="Keyword">where</a>             <a id="2633" class="Comment">-- bodies</a>
-      <a id="Body.␣␣_"></a><a id="2649" href="../../../Definitions/Scm/Abstract-Syntax/#2649" class="InductiveConstructor Operator">␣␣_</a>          <a id="2662" class="Symbol">:</a> <a id="2664" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="2668" class="Symbol">→</a> <a id="2670" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a>            <a id="2686" class="Comment">-- expression body</a>
-      <a id="Body.⦅define_␣_⦆"></a><a id="2711" href="../../../Definitions/Scm/Abstract-Syntax/#2711" class="InductiveConstructor Operator">⦅define_␣_⦆</a>  <a id="2724" class="Symbol">:</a> <a id="2726" href="../../../Definitions/Scm/Abstract-Syntax/#414" class="Function">Ide</a> <a id="2730" class="Symbol">→</a> <a id="2732" href="../../../Definitions/Scm/Abstract-Syntax/#1243" class="Datatype">Exp</a> <a id="2736" class="Symbol">→</a> <a id="2738" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a>      <a id="2748" class="Comment">-- definition body</a>
-      <a id="Body.⦅begin_⦆"></a><a id="2773" href="../../../Definitions/Scm/Abstract-Syntax/#2773" class="InductiveConstructor Operator">⦅begin_⦆</a>     <a id="2786" class="Symbol">:</a> <a id="2788" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a> <a id="2794" class="Symbol">→</a> <a id="2796" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a>          <a id="2810" class="Comment">-- body sequence</a>
-    <a id="2831" class="Keyword">data</a> <a id="Body⁺"></a><a id="2836" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a>     <a id="2846" class="Symbol">:</a> <a id="2848" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="2852" class="Keyword">where</a>             <a id="2870" class="Comment">-- body sequences</a>
-      <a id="Body⁺.␣␣_"></a><a id="2894" href="../../../Definitions/Scm/Abstract-Syntax/#2894" class="InductiveConstructor Operator">␣␣_</a>          <a id="2907" class="Symbol">:</a> <a id="2909" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a> <a id="2914" class="Symbol">→</a> <a id="2916" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a>          <a id="2931" class="Comment">-- empty sequence</a>
-      <a id="Body⁺._␣␣_"></a><a id="2955" href="../../../Definitions/Scm/Abstract-Syntax/#2955" class="InductiveConstructor Operator">_␣␣_</a>         <a id="2968" class="Symbol">:</a> <a id="2970" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a> <a id="2975" class="Symbol">→</a> <a id="2977" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a> <a id="2983" class="Symbol">→</a> <a id="2985" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a>  <a id="2992" class="Comment">-- sequence prefix</a>
-  <a id="3013" class="Keyword">data</a> <a id="Prog"></a><a id="3018" href="../../../Definitions/Scm/Abstract-Syntax/#3018" class="Datatype">Prog</a>        <a id="3030" class="Symbol">:</a> <a id="3032" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="3036" class="Keyword">where</a>             <a id="3054" class="Comment">-- programs</a>
-    <a id="Prog.␣␣␣"></a><a id="3070" href="../../../Definitions/Scm/Abstract-Syntax/#3070" class="InductiveConstructor">␣␣␣</a>            <a id="3085" class="Symbol">:</a> <a id="3087" href="../../../Definitions/Scm/Abstract-Syntax/#3018" class="Datatype">Prog</a>                  <a id="3109" class="Comment">-- empty program</a>
-    <a id="Prog.␣␣_"></a><a id="3130" href="../../../Definitions/Scm/Abstract-Syntax/#3130" class="InductiveConstructor Operator">␣␣_</a>            <a id="3145" class="Symbol">:</a> <a id="3147" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a> <a id="3153" class="Symbol">→</a> <a id="3155" href="../../../Definitions/Scm/Abstract-Syntax/#3018" class="Datatype">Prog</a>          <a id="3169" class="Comment">-- body sequence program</a>
-  <a id="3196" class="Keyword">variable</a> <a id="3205" href="../../../Definitions/Scm/Abstract-Syntax/#3205" class="Generalizable">B</a> <a id="3207" class="Symbol">:</a> <a id="3209" href="../../../Definitions/Scm/Abstract-Syntax/#2599" class="Datatype">Body</a><a id="3213" class="Symbol">;</a> <a id="3215" href="../../../Definitions/Scm/Abstract-Syntax/#3215" class="Generalizable">B⁺</a> <a id="3218" class="Symbol">:</a> <a id="3220" href="../../../Definitions/Scm/Abstract-Syntax/#2836" class="Datatype">Body⁺</a><a id="3225" class="Symbol">;</a> <a id="3227" href="../../../Definitions/Scm/Abstract-Syntax/#3227" class="Generalizable">Π</a> <a id="3229" class="Symbol">:</a> <a id="3231" href="../../../Definitions/Scm/Abstract-Syntax/#3018" class="Datatype">Prog</a>
+<a id="1030" class="Keyword">import</a> <a id="1037" href="../../Examples/Scm/Abstract-Syntax/" class="Module">Examples.Scm.Abstract-Syntax</a>
+<a id="1066" class="Keyword">import</a> <a id="1073" href="../../Examples/Scm/Domain-Equations/" class="Module">Examples.Scm.Domain-Equations</a>
+<a id="1103" class="Keyword">import</a> <a id="1110" href="../../Examples/Scm/Semantic-Functions/" class="Module">Examples.Scm.Semantic-Functions</a>
+<a id="1142" class="Keyword">import</a> <a id="1149" href="../../Examples/Scm/Auxiliary-Functions/" class="Module">Examples.Scm.Auxiliary-Functions</a>
 </code></pre>
 
 
@@ -6340,18 +6151,18 @@ close to their concrete syntax in Scheme.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../../../javascripts/highlight-hover.js"></script>
+        <script src="../../javascripts/highlight-hover.js"></script>
       
     
   </body>
