@@ -438,9 +438,8 @@ gen-md: clean-md
 		_='# Remove --"hide" and --"/hide":'; \
 		sd '<a id="[^"]*" class="Comment">--&quot;hide&quot;</a>\n' "" $${file}; \
 		sd '<a id="[^"]*" class="Comment">--&quot;/hide&quot;</a>\n' "" $${file}; \
-		_='# Remove @omit and @/omit:'; \
-		sd '\n@omit\n' "\n" $${file}; \
-		sd '\n@/omit\n' "\n" $${file}; \
+		_='# Remove @latex..@/latex:'; \
+		sd '\n@latex\n[^@]*\n@/latex' '' $${file}; \
 		_='# Ensure the page starts with a heading:'; \
 		line=$$(head -n 1 $${file}); \
 		if [ "$${line#\#}" = "$${line}" ]; then \
@@ -803,10 +802,8 @@ $(LATEX)/%.lagda: %.lagda.md
 #	Comment-out blank lines around code blocks:
 	@sd '\n\n\\begin\{AgdaSuppressSpace\}' "\n%\n\\\\begin{AgdaSuppressSpace}" $@
 	@sd '\\end\{AgdaSuppressSpace\}\n\n' "\\\\end{AgdaSuppressSpace}\n%\n" $@
-#	Replace @omit...@/omit by \begin{comment}...\end{comment}:
-	@sd '\n@omit([^@]*)@/omit\n' \
-	    "\n\\\\begin{comment}\n\$$1\n\\\\end{comment}\n" \
-	    $@
+#	Delete @latex and @/latex:
+	@sd '@[/]?latex' '' $@
 
 LAGDA := agda $(addprefix --include-path=, $(addprefix $(LATEX)/, $(INCLUDE-PATHS)))
 

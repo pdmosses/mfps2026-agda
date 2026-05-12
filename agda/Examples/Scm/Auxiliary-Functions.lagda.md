@@ -110,4 +110,4 @@ setcdr ϵ⋆ κ =
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
-[Notation.Products.Sequences]: #sequences
+[Notation.Products.Sequences]: ../../Notation.md#sequences

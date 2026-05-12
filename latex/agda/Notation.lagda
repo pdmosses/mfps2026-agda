@@ -1,12 +1,12 @@
 \section{Postulated Domain Notation}\label{agda-Notation-postulated-domain-notation}
 
-This section introduces the Agda module
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/}{\AgdaRef{Notation}},\footnote{In PDF, references to modules in
-  the text are links to sections of the generated website that lists all
-  the literate Agda modules
-  \cite{MFPS2026-Agda}.}
-which declares conventional notation for domain constructors and the
-associated functions on their carrier sets.
+This section postulates Agda notation for the domain constructors and
+associated functions used in §4.  See the accompanying website
+\cite{MFPS2026-Agda} for
+hyperlinked, highlighted listings of the complete Agda code for elided
+details such as module imports, fixity declarations, and declarations of
+the types of meta-variables. In the PDF of this paper, module references
+are links to the website. 
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -24,19 +24,18 @@ variable A B C : Set
 %
 \subsection{Domains}\label{agda-Notation-domains}
 
-Domains are elements of the Agda type \AgdaRef{Domain}. A domain
-\AgdaRef{D} is not itself a type, but it has a carrier type
-\AgdaRef{⟪\ D\ ⟫}, which always contains an element \AgdaRef{⊥}. (Agda can
-usually infer the domains in \(\lambda\)-notation, so \AgdaRef{D} is
-declared as an implicit argument of \AgdaRef{⊥}.)
+Domains are embedded in Agda as elements of the type \AgdaRef{Domain}. A
+domain \AgdaRef{D} is not itself a type, but it has a \emph{carrier} type
+\AgdaRef{⟪\ D\ ⟫\ :\ Set}, which always contains an element
+\AgdaRef{⊥\{D\}} (written \AgdaRef{⊥} when Agda can infer \AgdaRef{D}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
 module Domains where
   postulate
     Domain : Set              -- Domain is the type of all domains
-    ⟪_⟫ : Domain → Set        -- ⟪ D ⟫ is the type of elements of D
-    ⊥ : {D : Domain} → ⟪ D ⟫  -- ⊥{D} is the bottom element of D
+    ⟪_⟫ : Domain → Set        -- ⟪ D ⟫ is the carrier type of D
+    ⊥ : {D : Domain} → ⟪ D ⟫  -- ⊥{D} is the 'bottom' element of D
 \end{code}
 \begin{code}[hide]
     𝟙 : Domain                -- 𝟙 is a unit domain
@@ -46,91 +45,96 @@ open Domains public
 \end{code}
 \end{AgdaSuppressSpace}
 %
-In three previous papers based on denotational semantics in Agda,
-\cite{Mosses2025CDS},
-\cite{Mosses2025CSE},
-\cite{Mosses2025LAF},
-the type of domains was defined by \AgdaRef{Domain\ =\ Set}. However,
-postulating \AgdaRef{⊥\ :\ D} for all domains \AgdaRef{D} was then
-\emph{inconsistent} with the existence of an empty type in Agda. The
-current declaration \AgdaRef{Domain\ :\ Set} circumvents that issue, but
-domains \AgdaRef{D} now need to be distinguished from their carrier sets
-\AgdaRef{⟪\ D\ ⟫}.
+Some previous papers on embedding denotational semantics in Agda
+\cite{Mosses2025CDS}
+\cite{Mosses2025CSE}
+\cite{Mosses2025LAF}
+defined domains to be types: \AgdaRef{Domain\ =\ Set}. However,
+postulating \AgdaRef{⊥\ :\ D} for all \AgdaRef{D\ :\ Domain} was then
+\emph{inconsistent} with the existence of an empty type in Agda.
+Postulating \AgdaRef{Domain\ :\ Set} avoids that inconsistency.
 
-The specified postulates that declare types and functions for domains
-are used only for type-checking denotational semantics in Agda. They do
-\emph{not} define the conventional mathematical structure of domains,
-nor the algebraic and universal properties of the associated functions.
+The notation for domains postulated in this section supports
+type-checking embeddings of denotational semantics in Agda, such as
+those illustrated in §4. It does \emph{not} define or constrain the
+\emph{mathematical structure} of domains, nor the algebraic and
+universal properties of the associated functions. (The elimination rules
+postulated in §5 are not used for type-checking.)
 
 \subsection{Function domains}\label{agda-Notation-function-domains}
 
 The conventional notation in denotational definitions for the domain of
-all continuous functions from \(D\) to \(E\) is usually \(D \to E\) or
+continuous functions from \(D\) to \(E\) is \(D \to E\) or
 \([D \to E]\). However, Agda reserves the notation \AgdaRef{D\ →\ E} for
-the \emph{type} of \emph{all} total functions from \AgdaRef{D} to
-\AgdaRef{E}. The following module declares the notation \AgdaRef{D\ →ᶜ\ E}
-for domains of continuous functions.
+the \emph{type} of \emph{all} (total) functions from type \AgdaRef{D} to
+type \AgdaRef{E}; instead, we use the notation \AgdaRef{D\ →ᶜ\ E} for
+embedding continuous function domains:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
 module Functions where
-  postulate _→ᶜ_ : Domain → Domain → Domain
-  -- D →ᶜ E is the domain of continuous functions from D to E
+  postulate
+    _→ᶜ_ : Domain → Domain → Domain
 \end{code}
 \begin{code}[hide]
+    -- D →ᶜ E is the domain of continuous functions from D to E
   infixr 0 _→ᶜ_
 \end{code}
 \end{AgdaSuppressSpace}
 %
-In conventional denotational semantics, functions between domains are
-\emph{automatically} continuous when defined in terms of λ-abstraction
-and application from primitive continuous functions associated with
-specific domain constructors. The carrier \AgdaRef{⟪\ D\ →ᶜ\ E\ ⟫} of a
-function domain \AgdaRef{D\ →ᶜ\ E} should consist of just the
-(Scott-)continuous functions between the carriers \AgdaRef{⟪\ D\ ⟫} and
-\AgdaRef{⟪\ E\ ⟫}. In Agda, however, that would require pairing all
-λ-abstractions with explicit proofs of their continuity, which is quite
-impractical -- especially in continuation-passing style. To support
-type-checking direct use of conventional λ-notation for defining
-functions between domains, the type \AgdaRef{⟪\ D\ →ᶜ\ E\ ⟫} is
-\emph{rewritten} to the Agda type \AgdaRef{⟪\ D\ ⟫\ →\ ⟪\ E\ ⟫}:
-%
-\begin{AgdaSuppressSpace}
-\begin{code}
-  postulate dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
-  {-# REWRITE dom-cts #-}
-\end{code}
-\end{AgdaSuppressSpace}
-%
-Continuous \emph{endofunctions} \AgdaRef{φ} on \AgdaRef{D} have (least)
-fixed points \AgdaRef{fix\ φ}:
+Both λ-abstraction and application preserve continuity. In conventional
+denotational semantics, functions between domains are defined using
+λ-abstraction and application from primitive continuous functions
+associated with specific domain constructors, so they are
+\emph{automatically} continuous.
+
+This motivates treating the carrier \AgdaRef{⟪\ D\ →ᶜ\ E\ ⟫} of the
+embedding of a function domain as a type of continuous functions. In
+particular, embeddings of \emph{endofunctions} \AgdaRef{φ} on a domain
+\AgdaRef{D} should always have fixed points \AgdaRef{fix\ φ}, with
+\AgdaRef{fix} itself also being continuous:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
   postulate fix : ⟪ (D →ᶜ D) →ᶜ D ⟫
-  -- fix φ is the least fixed point of the continuous function φ
 \end{code}
 \end{AgdaSuppressSpace}
 %
-Functions from an ordinary set \AgdaRef{A} to a domain \AgdaRef{D} form a
-domain \AgdaRef{A\ →ˢ\ D}:
+In Agda, it appears that proving specific functions defined in
+λ-notation to be continuous requires pairing each λ-abstraction with an
+explicit proofs of its continuity, which is quite impractical
+(especially when embedding denotations defined in continuation-passing
+style).
+
+However, to support type-checking the \emph{direct} embedding of
+λ-notation from conventional denotational definitions in Agda, it
+appears to be necessary to \emph{rewrite} the carriers of function
+domains to ordinary function types:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-  postulate _→ˢ_ : Set → Domain → Domain
-  -- A →ˢ D is the domain of all functions from A to D
+  postulate
+    dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
+  {-# REWRITE dom-cts #-}
+\end{code}
+\end{AgdaSuppressSpace}
+%
+Similarly, the notation \AgdaRef{A\ →ˢ\ D} is the embedding of the domain
+of all functions from an ordinary type \AgdaRef{A} to a domain \AgdaRef{D}
+(which are trivially continuous, ordered pointwise):
+%
+\begin{AgdaSuppressSpace}
+\begin{code}
+  postulate
+    _→ˢ_    : Set → Domain → Domain
 \end{code}
 \begin{code}[hide]
+  -- A →ˢ D is the domain of all functions from A to D
   infixr 0 _→ˢ_
 \end{code}
-\end{AgdaSuppressSpace}
-%
-The type \AgdaRef{⟪\ A\ →ˢ\ D\ ⟫} is \emph{rewritten} to the Agda type
-\AgdaRef{A\ →\ ⟪\ D\ ⟫}:
-%
-\begin{AgdaSuppressSpace}
 \begin{code}
-  postulate set-cts : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
+  postulate
+    set-cts  : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
   {-# REWRITE set-cts #-}
 \end{code}
 \end{AgdaSuppressSpace}
@@ -158,14 +162,16 @@ module Recursion where
   postulate
     _≅_ : Domain → Domain → Set
     -- an instance of D ≅ E declares that the structure of D is the same as E
-    unfold :  {{D ≅ E}} → ⟪ D →ᶜ E ⟫
-    fold :    {{D ≅ E}} → ⟪ E →ᶜ D ⟫
+    unfold  : {{D ≅ E}} → ⟪ D →ᶜ E ⟫
+    fold    : {{D ≅ E}} → ⟪ E →ᶜ D ⟫
 \end{code}
 \end{AgdaSuppressSpace}
 %
 The \emph{instance parameter} \AgdaRef{\{\{D\ ≅\ E\}\}} of the above
 operations restricts them to domains \AgdaRef{D} and \AgdaRef{E} such that
-\AgdaRef{instance\ \_\ :\ D\ ≅\ E} has been declared.
+\AgdaRef{instance\ \_\ :\ D\ ≅\ E} has been declared. (Instance
+parameters do not correspond to arguments of embedded functions on
+domains.)
 
 \subsection{Flat domains}\label{agda-Notation-flat-domains}
 
@@ -202,22 +208,11 @@ whenever its first argument is \AgdaRef{⊥}.
 \begin{code}
     Bool⊥ = Bool +⊥
     _⟶_,_ : ⟪ Bool⊥ →ᶜ D →ᶜ D →ᶜ D ⟫    -- β ⟶ δ₁ , δ₂ is conditional choice
-    _⟶_,_ = (λ b δ₁ δ₂ → if b then δ₁ else δ₂)♯  
+    _⟶_,_ = (λ b δ₁ δ₂ → if b then δ₁ else δ₂) ♯  
 \end{code}
 \begin{code}[hide]
     infixr 20 _⟶_,_
-\end{code}
-\end{AgdaSuppressSpace}
-%
-\begin{comment}
- The instance parameter of the strict equality test
-\AgdaRef{δ₁\ ==⊥\ δ₂} below declares the operation only for flat domains
-\AgdaRef{A\ +⊥} with \AgdaRef{instance\ \_\ :\ Eq\ A}. (Equality is
-unavailable on non-flat domains because it is not continuous.) 
-\end{comment}
-%
-\begin{AgdaSuppressSpace}
-\begin{code}[hide]
+
     record Eq (A : Set) : Set where field _==_ : A → A → Bool
     open Eq {{...}} public
     postulate
@@ -227,6 +222,11 @@ unavailable on non-flat domains because it is not continuous.)
 \end{code}
 \end{AgdaSuppressSpace}
 %
+The \href{https://pdmosses.github.io/mfps2026-agda/Notation//\#booleans}{\AgdaRef{Booleans}} module also defines
+\AgdaRef{Eq\ A} for use as an instance parameter restricting to types
+\AgdaRef{A} such that \AgdaRef{\_==\_\ :\ A\ →\ A\ →\ Bool}, and
+postulates an operation \AgdaRef{δ₁\ ==⊥\ δ₂} on \AgdaRef{A\ +⊥}.
+
 \subsubsection{Naturals}\label{agda-Notation-naturals}
 
 Agda allows decimal notation for natural numbers, as well as unary
@@ -273,8 +273,7 @@ Agda also supports type-checking the notation explained in §2.1.
 However, instead of defining the summands \AgdaRef{D} of a separated sum
 domain \AgdaRef{E} by an equation \AgdaRef{E\ =\ ...\ +\ D\ +\ ...}, the
 domain \AgdaRef{E} is merely \emph{postulated}, and each summand is
-declared separately by
-\AgdaRef{instance\ \textbackslash{}\_\ :\ E\ ≳\ n\ ↦\ D} (where
+declared separately by \AgdaRef{instance\ \_\ :\ E\ ≳\ n\ ↦\ D} (where
 \AgdaRef{n} should be a different natural number for each summand). The
 inherently \emph{dependent} types of the summand operations are as
 follows.
@@ -319,10 +318,6 @@ module Products where
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The complete Agda code also declares notation for tuple domains
-\AgdaRef{D\ \^{}\ n} and sequence domains \AgdaRef{D\ ⋆} corresponding
-closely to that summarised in §2.1.
-
 \subsubsection{Tuples}\label{agda-Notation-tuples}
 
 The domain \AgdaRef{D\ \^{}\ n} of \AgdaRef{n}-tuples of elements of a
@@ -346,12 +341,6 @@ support the use of variables as superscripts.
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\begin{comment}
- Making \AgdaRef{D\ \^{}\ 2} definitionally equal to
-\AgdaRef{D\ ×\ D} in Agda supports type-checking the conventional
-notational ambiguity between tuples and iterated products. 
-\end{comment}
-
 \subsubsection{Sequences}\label{agda-Notation-sequences}
 
 The domain \AgdaRef{D\ ⋆} of finite sequences of elements of a domain

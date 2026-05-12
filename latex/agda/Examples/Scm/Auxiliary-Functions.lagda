@@ -86,7 +86,7 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
 %
 The remaining auxiliary function definitions shown here involve the
 operations for (finite) sequences \AgdaRef{ϵ⋆}
-\hyperref[sequences]{Notation.Products.Sequences}
+\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{\AgdaRef{Notation.Products.Sequences}}
 \cite{MFPS2026-Agda}.
 %
 \begin{AgdaSuppressSpace}
