@@ -72,7 +72,7 @@ https://pdmosses.github.io/agda-material/
 # ARGUMENT DEFAULT VALUES
 
 DIR  := agda
-ROOT := LC,PCF,Scm
+ROOT := Examples,Tests
 
 # Both DIR and ROOT may be comma-separated lists.
 # The top level of the ROOT module(s) should be located in DIR.
@@ -434,9 +434,16 @@ gen-md: clean-md
 	    *.md) \
 		_='# Replace pre tags by code tags:'; \
 		sd '(<pre class="Agda">)' '$$1<code class="Agda">' $${file}; \
-		sd '(</pre>)' '</code>$$1' $${file}; \
-		_='# Ensure the page has a top-level heading:'; \
-		if ! grep -q '^# ' $${file}; then \
+		sd '(</pre>)' '</code>$$1\n' $${file}; \
+		_='# Remove --"hide" and --"/hide":'; \
+		sd '<a id="[^"]*" class="Comment">--&quot;hide&quot;</a>\n' "" $${file}; \
+		sd '<a id="[^"]*" class="Comment">--&quot;/hide&quot;</a>\n' "" $${file}; \
+		_='# Remove @omit and @/omit:'; \
+		sd '\n@omit\n' "\n" $${file}; \
+		sd '\n@/omit\n' "\n" $${file}; \
+		_='# Ensure the page starts with a heading:'; \
+		line=$$(head -n 1 $${file}); \
+		if [ "$${line#\#}" = "$${line}" ]; then \
 		    sd '\A' "# $${title}\n\n" $${file}; \
 		fi; \
 		;; \
@@ -599,7 +606,7 @@ ifeq ($(MD),docs)
 # 	@echo "Warning: manually remove any obsolete docs/**/*.md files"
 	@find docs -name '*.md' \
 	    ! -path 'docs/javascripts/*' ! -path 'docs/stylesheets/*' \
-	    ! -path 'docs/Library/*' ! -path docs/index.md ! -path docs/meta-notation.md \
+	    ! -path 'docs/Library/*' ! -path 'docs/index.md' ! -path 'docs/meta-notation.md' \
 	    -delete
 	@find docs -type d -empty -delete
 else
@@ -735,5 +742,111 @@ HIDE-INDEXES: $(HIDE-INDEXES)
 INCLUDE-PATHS: $(strip $(INCLUDE-PATHS))
 ROOT-PATHS:    $(strip $(ROOT-PATHS))
 ROOT-FILES:    $(strip $(ROOT-FILES))
+
+endef
+
+##############################################################################
+# GENERATE LATEX
+
+LATEX := latex
+
+# For each *.lagda.md file, a *.lagda and a *.tex file are generated in LATEX
+
+LAGDA-MD-FILES := \
+	$(sort \
+	  $(foreach d, $(INCLUDE-PATHS), \
+	    $(shell find $d -name '*.lagda.md')))
+
+LAGDA-FILES := $(addprefix $(LATEX)/, $(patsubst %.lagda.md,%.lagda, $(LAGDA-MD-FILES)))
+
+LATEX-FILES := $(LAGDA-FILES:.lagda=.tex)
+
+# `make gen-lagda` generates LATEX/DIR_1/*.lagda files from *.lagda.md files using pandoc
+
+.PHONY: gen-lagda
+gen-lagda: $(LAGDA-FILES)
+	@echo "Generated .lagda files in $(LATEX)"
+
+$(LAGDA-FILES): Makefile | $(LATEX)
+
+$(LATEX):
+	@mkdir $(LATEX) && rm -rf $(LATEX)/* && cp postprocess-latex.pl $(LATEX)
+
+$(LATEX)/%.lagda: %.lagda.md
+#	Use pandoc to transform Markdown to LaTeX, adjusting heading levels:
+	@pandoc -f markdown -t latex --syntax-highlighting=none \
+	    --shift-heading-level-by=$(words $(wordlist 2,10, $(subst /, , $(*D)))) \
+	    -o $@ $<
+#	Pandoc transforms ```agda...``` to a verbatim environment:
+	@sd '\\begin\{verbatim\}' '\\begin{code}' $@
+	@sd '\\end\{verbatim\}' '\\end{code}' $@
+#	Pandoc transforms `...` to \texttt{...}:
+	@sd '\\texttt\{' '\\AgdaRef{' $@
+#	Pandoc doesn't support label prefixes:
+	@sd '\\label\{' '\label{$(patsubst agda/%,%, $(*D)-$(*F))-' $@
+#	Transform [(bibkey)] references to \cite{bibkey}:
+	@sd '\\href\{https://[^\{\}]*\}\{\(([^ ()]*)\)\}' \
+	    '\cite{$$1}' $@
+#	Transform references to relative URLs to link to generated website:
+	@sd '\\href\{(\.\./)*([^:\{\}]*)\.md([^\{\}]*)\}\{([^\{\}]*)\}' \
+	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/$$3}{\AgdaRef{$$4}}' \
+	    $@
+	@sd '\\begin\{code\}' "\\\\begin{AgdaSuppressSpace}\n\\\\begin{code}" $@
+	@sd '\\end\{code\}' "\\\\end{code}\n\\\\end{AgdaSuppressSpace}" $@
+#	Transform \n--"hide"\n...\n--"/hide"\n to a hidden code block
+#	where ... does not contain ":
+	@sd '\n--"hide"\n([^\"]*)\n--"/hide"\n' \
+	    "\n\\\\end{code}\n\\\\begin{code}[hide]\n\$$1\n\\\\end{code}\n\\\\begin{code}\n" \
+	    $@
+#	Remove generated empty code blocks:
+	@sd '\n\\begin\{code\}\n\\end\{code\}' '' $@
+#	Comment-out blank lines around code blocks:
+	@sd '\n\n\\begin\{AgdaSuppressSpace\}' "\n%\n\\\\begin{AgdaSuppressSpace}" $@
+	@sd '\\end\{AgdaSuppressSpace\}\n\n' "\\\\end{AgdaSuppressSpace}\n%\n" $@
+#	Replace @omit...@/omit by \begin{comment}...\end{comment}:
+	@sd '\n@omit([^@]*)@/omit\n' \
+	    "\n\\\\begin{comment}\n\$$1\n\\\\end{comment}\n" \
+	    $@
+
+LAGDA := agda $(addprefix --include-path=, $(addprefix $(LATEX)/, $(INCLUDE-PATHS)))
+
+LAGDA-QUIET   := $(LAGDA) --trace-imports=0
+LAGDA-VERBOSE := $(LAGDA) --trace-imports=3
+
+# `make gen-latex` generates *.tex files from *.lagda files using agda and perl
+
+.PHONY: gen-latex
+gen-latex: $(LATEX-FILES)
+	@echo "Generated .tex files in $(LATEX)"
+
+$(LATEX-FILES): Makefile | $(LATEX)
+
+$(LATEX)/%.tex: $(LATEX)/%.lagda
+#	Use agda to transform *.lagda to *.tex:
+	@$(LAGDA-QUIET) --latex --latex-dir=$(LATEX)/$(firstword $(INCLUDE-PATHS)) $<
+#	Use postprocess-latex to fix arguments of \AgdaRef commands:
+	@perl postprocess-latex.pl $@ > $@.processed
+	@mv $@.processed $@
+
+# `make clean-latex` removes all the files generated by gen-lagda and gen-latex
+
+.PHONY: clean-latex
+clean-latex:
+	@rm -rf $(LATEX)/agda
+
+.PHONY: debug-latex
+export DEBUGLATEX
+debug-latex:
+	@echo "$$DEBUGLATEX"
+
+define DEBUGLATEX
+
+LATEX: $(LATEX)
+
+LAGDA-MD-FILES: $(strip $(LAGDA-MD-FILES))
+
+LAGDA-FILES:    $(strip $(LAGDA-FILES))
+
+LATEX-FILES:    $(strip $(LATEX-FILES))
 
 endef

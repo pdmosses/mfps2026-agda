@@ -2,7 +2,7 @@
 
 > Experiments with Agda support for Scott–Strachey denotational semantics
 
-## Examples
+## Illustrative Examples
 
 Complete examples of denotational semantics definitions in Agda:
 
@@ -30,6 +30,9 @@ The current examples use *postulated* domain constructors and
 associated operations declared in the [Notation] module and its submodules.
 Some of the postulates are inconsistent with a classical set-theoretic
 interpretation of Agda.
+
+The `Tests` modules use the postulated equivalences and rewrite rules for the
+associated operations declared in the [Properties] module and its submodules.
 
 ### Implementing Synthetic Domain Theory in Agda
 
@@ -77,10 +80,11 @@ Advice and suggestions are welcome, e.g., by posting to the repo [Discussions].
 
 Peter Mosses <p.d.mosses@tudelft.nl>
 
-[LC]: LC/index.md
-[PCF]: PCF/index.md
-[Scm]: Scm/index.md
+[LC]: Examples/LC/index.md
+[PCF]: Examples/PCF/index.md
+[Scm]: Examples/Scm/index.md
 [Notation]: Notation.md
+[Properties]: Properties.md
 
 [Scheme]: https://scheme.org
 [Formalizing Synthetic Domain Theory]: https://doi.org/10.1023/A:1006258506401

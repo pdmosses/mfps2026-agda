@@ -1,0 +1,170 @@
+%%%	 Use this file as a template for your submission to your conference, and to prepare
+%%%	the final version of your paper, if accepted, for the conference Proceedings. 
+%%%	You can use it "as is" for your initial submission, but alterations may be required if
+%%%	there is a preliminary Proceedings for distribution at the meeting, and additional changes
+%%%	are mandatory for the final version for publication in the official conference Proceedings. 
+%%%. 	If you are preparing your paper in final form for the conference proceedings, 
+%%%. 	add the option "final" to \documentclass{entics} below
+
+\documentclass[twoside,11pt]{entics}
+\usepackage{enticsmacro}
+% \usepackage{graphicx}
+% \usepackage[all]{xy}
+%\usepackage{url}
+\sloppy
+% The following is enclosed to allow easy detection of differences in
+% ascii coding.
+% Upper-case    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+% Lower-case    a b c d e f g h i j k l m n o p q r s t u v w x y z
+% Digits        0 1 2 3 4 5 6 7 8 9
+% Exclamation   !           Double quote "          Hash (number) #
+% Dollar        $           Percent      %          Ampersand     &
+% Acute accent  '           Left paren   (          Right paren   )
+% Asterisk      *           Plus         +          Comma         ,
+% Minus         -           Point        .          Solidus       /
+% Colon         :           Semicolon    ;          Less than     <
+% Equals        =3D           Greater than >          Question mark ?
+% At            @           Left bracket [          Backslash     \
+% Right bracket ]           Circumflex   ^          Underscore    _
+% Grave accent  `           Left brace   {          Vertical bar  |
+% Right brace   }           Tilde        ~
+
+% A couple of exemplary definitions:
+
+\usepackage{main} % patch to avoid font warnings about \scriptsize in math mode
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\DisableLigatures[-]{encoding = T1, family = tt* }
+
+\let\originalparagraph\paragraph
+\renewcommand{\paragraph}{\originalparagraph*}
+
+\usepackage[conor]{agda}
+\usepackage{agda-unicode}
+\usepackage{agda-custom}
+
+\usepackage{comment}
+
+% \newcommand{\Nat}{{\mathbb N}}
+% \newcommand{\Real}{{\mathbb R}}
+
+%%%Fill in the following%%%%
+%%%%%%%%	Your Corresponding Editor will provide the following information:
+\def\conf{MFPS 2026} 	%%Fill in the acronym for your conference (with year)
+\volume{NN}			%Fill in the ENTICS volume number here
+\def\volu{NN}			% and here
+\def\papno{nn}			%Fill in your paper number here
+%%%%%%%%Please fill in the following information:
+\def\lastname{Mosses, Cockx, Reus}
+\def\runtitle{Denotational Semantics in Agda} 
+\def\copynames{P. Mosses, J. Cockx, B. Reus}    %% Fill in the first initial and last name of the authors
+\def\CCB{\ccby}
+%%%%%%	Also, be sure the correct Creative Commons 
+%%%%%%%%%%%%% copyright symbol is chosen - see Section 2 of
+%%%%%%%%%%		http://mirrors.ctan.org/fonts/ccicons/ccicons.pdf
+
+\begin{document}
+
+\begin{frontmatter}
+  \title{Mechanising Denotational Semantics in Agda}
+  \subtitle{Complete Code Listing}
+  %%%%Now the author(s) names(s)%%%%%
+  \author{Peter D. Mosses\thanksref{delft}\thanksref{mosses}}	%%Note NO SPACE between 
+  \author{Jesper Cockx\thanksref{delft}\thanksref{cockx}}		%last name and \thanksref{...} 
+  \author{Bernhard Reus\thanksref{sussex}\thanksref{reus}}		%last name and \thanksref{...} 
+  %%%Next come the addresses%%%%
+  \address[delft]{Department of Computer Science\\ Delft University of Technology\\				%or between \thanksrefs...
+    Delft, Netherlands}  							
+  \thanks[mosses]{Email: \href{mailto:p.d.mosses@tudelft.nl} {\texttt{\normalshape
+      p.d.mosses@tudelft.nl}}} 
+  \thanks[cockx]{Email: \href{mailto:j.g.h.cockx@tudelft.nl} {\texttt{\normalshape
+      j.g.h.cockx@tudelft.nl}}} 
+  %%%Note: if both authors share same institution, only list the address once, after the second 
+  %%%author. 
+  %%%There also is a link from the first author to the co-author's address to show how to list 
+  %%%affiliations to more than one institution, when needed. 
+  \address[sussex]{School of Engineering and Informatics\\ University of Sussex\\
+    Brighton, United Kingdom} 
+  \thanks[reus]{Email:  \href{mailto:bernhard@sussex.ac.uk} {\texttt{\normalshape
+        bernhard@sussex.ac.uk}}}
+
+\begin{abstract} 
+  Formalisation of a semantic definition helps to ensure its wellformedness,
+  and supports proofs about it. To minimise the effort required, formalisation
+  should not involve significant reformulation or extension of the original
+  definition. Here, we show how to formalise conventional Scott–Strachey
+  denotational definitions by embedding them in Agda with almost no changes
+  to $\lambda$-notation or domain equations.
+
+  We illustrate our approach with three examples: Scott’s $D_\infty$ model of
+  the untyped $\lambda$-calculus, Plotkin’s denotational semantics of PCF, and
+  a semantics of a sublanguage of Scheme. Using appropriate postulates for
+  domain constructors and their associated operations, the Agda type checker
+  confirms the wellformedness of the embedded definitions. In previous work,
+  such Agda formalisations have revealed several unsuspected wellformedness
+  issues in published denotational definitions.
+  
+  Some of our postulates are inconsistent with a classical set-theoretic
+  interpretation of Agda. We conjecture that they would be consistent with an
+  interpretation of Agda in the higher-order intuititionistic logic used by
+  Alex Simpson in his work on synthetic domain theory.
+\end{abstract}
+
+\begin{keyword}
+  Denotational semantics, formalisation, mechanisation, Agda, postulates, synthetic domain theory
+\end{keyword}
+
+\end{frontmatter}
+
+\clearpage
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\clearpage
+\setcounter{section}{2}
+
+\begin{AgdaAlign}
+
+\input{agda/Notation}
+
+\clearpage
+\input{agda/Examples}
+
+\input{agda/Examples/LC}
+\input{agda/Examples/LC/Abstract-Syntax}
+\input{agda/Examples/LC/Domain-Equations}
+\input{agda/Examples/LC/Semantic-Functions}
+
+\clearpage
+\input{agda/Examples/PCF}
+\input{agda/Examples/PCF/Abstract-Syntax}
+\input{agda/Examples/PCF/Domain-Equations}
+\input{agda/Examples/PCF/Semantic-Functions}
+
+\clearpage
+\input{agda/Examples/Scm}
+\input{agda/Examples/Scm/Abstract-Syntax}
+\input{agda/Examples/Scm/Domain-Equations}
+\input{agda/Examples/Scm/Auxiliary-Functions}
+\
+\input{agda/Examples/Scm/Semantic-Functions}
+
+\clearpage
+\input{agda/Properties}
+
+\clearpage
+\input{agda/Tests}
+
+\input{agda/Tests/LC}
+\clearpage
+\input{agda/Tests/PCF}
+\input{agda/Tests/Scm}
+
+\end{AgdaAlign}
+
+\clearpage
+\bibliographystyle{./entics}
+\bibliography{Peter,Jesper,Bernhard}
+
+\end{document}

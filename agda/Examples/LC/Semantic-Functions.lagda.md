@@ -1,0 +1,26 @@
+# Semantic Functions
+
+The semantic equations below correspond closely to those found in
+textbooks on denotational semantics
+(e.g., [(Reynolds1998TPL)])
+apart from the need to wrap the domain of denotations in `⟪...⟫`.
+```agda
+--"hide"
+{-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
+
+--"/hide"
+module Examples.LC.Semantic-Functions where
+--"hide"
+
+open import Examples.LC.Abstract-Syntax
+open import Examples.LC.Domain-Equations
+open import Notation
+
+--"/hide"
+⟦_⟧ : Exp → ⟪ Env →ᶜ D∞ ⟫
+⟦ var v ⟧ ρ        = ρ v
+⟦ ⦅λ v ␣ e ⦆ ⟧ ρ   = fold ( λ δ → ⟦ e ⟧ (ρ [ δ / v ]) )
+⟦ ⦅ e₁ ␣ e₂ ⦆ ⟧ ρ  = unfold ( ⟦ e₁ ⟧ ρ ) ( ⟦ e₂ ⟧ ρ )
+```
+
+[(Reynolds1998TPL)]: https://doi.org/10.1017/CBO9780511626364

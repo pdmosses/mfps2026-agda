@@ -1,0 +1,11 @@
+%  patch to avoid font warnings about \scriptsize in math mode
+
+\def\author@fmt#1#2#3{\@newelemtrue
+  \if@firstauthor
+  \first@author \global\@firstauthorfalse \fi
+  \ifnum\prev@elem=\e@author \global\@newelemfalse \fi
+  \if@newelem \author@fmt@init \fi
+  \edef\@tempb{#2}\ifx\@tempb\@empty
+    \hbox{{\author@font #3}}\else
+    \hbox{{\author@font #3}$^{#2}$}%
+  \fi}
