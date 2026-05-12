@@ -190,7 +190,7 @@ The [Booleans] module also defines `Eq A` for use as an instance parameter
 restricting to types `A` such that `_==_ : A → A → Bool`,
 and postulates an operation `δ₁ ==⊥ δ₂` on `A +⊥`.
 
-[Booleans]: ../Notation.md/#booleans
+[Booleans]: Notation.md
 
 ### Naturals
 

@@ -222,10 +222,10 @@ whenever its first argument is \AgdaRef{⊥}.
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The \href{https://pdmosses.github.io/mfps2026-agda/Notation//\#booleans}{\AgdaRef{Booleans}} module also defines
-\AgdaRef{Eq\ A} for use as an instance parameter restricting to types
-\AgdaRef{A} such that \AgdaRef{\_==\_\ :\ A\ →\ A\ →\ Bool}, and
-postulates an operation \AgdaRef{δ₁\ ==⊥\ δ₂} on \AgdaRef{A\ +⊥}.
+The \href{https://pdmosses.github.io/mfps2026-agda/Notation/}{\AgdaRef{Booleans}} module also defines \AgdaRef{Eq\ A} for
+use as an instance parameter restricting to types \AgdaRef{A} such that
+\AgdaRef{\_==\_\ :\ A\ →\ A\ →\ Bool}, and postulates an operation
+\AgdaRef{δ₁\ ==⊥\ δ₂} on \AgdaRef{A\ +⊥}.
 
 \subsubsection{Naturals}\label{agda-Notation-naturals}
 
