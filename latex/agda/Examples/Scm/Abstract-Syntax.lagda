@@ -7,21 +7,17 @@ summarises the abstract syntax of Scm expressions
 constants \(\text{K} : \text{Con}\) and identifiers
 \(\text{I} : \text{Ide}\). The meta-variable
 \(\text{E}^* : \text{Exp}^*\) implicitly ranges over arbitrary sequences
-of expressions.
-
-\begin{align}
+of expressions. \begin{align}
   \text{K} & ::=
     \text{Z} \mid \AgdaRef{\#t} \mid \AgdaRef{\#f}
   \\
   \text{E} & ::=
     \text{K} \mid \text{I} \mid \texttt ( \text{E}_0~\text{E}^* \texttt ) \mid \AgdaRef{(lambda} ~ \text{I} ~ \text{E} \texttt ) \mid
     \AgdaRef{(if} ~ \text{E}_0 ~ \text{E}_1 ~ \text{E}_2 \texttt ) \mid \AgdaRef{(set!} ~ \text{I} ~ \text{E} \texttt )
-\end{align}
-
-In the following Agda formalisation of the above grammar, the abstract
-syntax of sequences \AgdaRef{E⋆\ :\ Exp⋆} is made explicit: the empty
-sequence is represented by \AgdaRef{␣␣␣}, and sequence prefixing by
-\AgdaRef{E\ ␣␣\ E⋆}.
+\end{align} In the following Agda formalisation of the above grammar,
+the abstract syntax of sequences \AgdaRef{E⋆\ :\ Exp⋆} is made explicit:
+the empty sequence is represented by \AgdaRef{␣␣␣}, and sequence
+prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

@@ -37,9 +37,9 @@ module Domains where
     Domain : Set              -- Domain is the type of all domains
     ⟪_⟫ : Domain → Set        -- ⟪ D ⟫ is the type of elements of D
     ⊥ : {D : Domain} → ⟪ D ⟫  -- ⊥{D} is the bottom element of D
-    𝟙 : Domain                -- 𝟙 is a unit domain
 \end{code}
 \begin{code}[hide]
+    𝟙 : Domain                -- 𝟙 is a unit domain
   variable D E F : Domain
 
 open Domains public
@@ -61,8 +61,6 @@ The specified postulates that declare types and functions for domains
 are used only for type-checking denotational semantics in Agda. They do
 \emph{not} define the conventional mathematical structure of domains,
 nor the algebraic and universal properties of the associated functions.
-Postulated equivalences between terms are used for testing denotations
-of terms; adding them as rewrite rules allows implicit use in proofs.
 
 \subsection{Function domains}\label{agda-Notation-function-domains}
 
@@ -76,9 +74,8 @@ for domains of continuous functions.
 \begin{AgdaSuppressSpace}
 \begin{code}
 module Functions where
-  postulate
-    _→ᶜ_ : Domain → Domain → Domain
-    -- D →ᶜ E is the domain of continuous functions from D to E
+  postulate _→ᶜ_ : Domain → Domain → Domain
+  -- D →ᶜ E is the domain of continuous functions from D to E
 \end{code}
 \begin{code}[hide]
   infixr 0 _→ᶜ_
@@ -100,8 +97,7 @@ functions between domains, the type \AgdaRef{⟪\ D\ →ᶜ\ E\ ⟫} is
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-  postulate
-    dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
+  postulate dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
   {-# REWRITE dom-cts #-}
 \end{code}
 \end{AgdaSuppressSpace}
@@ -111,9 +107,8 @@ fixed points \AgdaRef{fix\ φ}:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-  postulate
-    fix : ⟪ (D →ᶜ D) →ᶜ D ⟫
-    -- fix φ is the least fixed point of the continuous function φ
+  postulate fix : ⟪ (D →ᶜ D) →ᶜ D ⟫
+  -- fix φ is the least fixed point of the continuous function φ
 \end{code}
 \end{AgdaSuppressSpace}
 %
@@ -122,8 +117,7 @@ domain \AgdaRef{A\ →ˢ\ D}:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-  postulate
-    _→ˢ_ : Set → Domain → Domain
+  postulate _→ˢ_ : Set → Domain → Domain
   -- A →ˢ D is the domain of all functions from A to D
 \end{code}
 \begin{code}[hide]
@@ -136,8 +130,7 @@ The type \AgdaRef{⟪\ A\ →ˢ\ D\ ⟫} is \emph{rewritten} to the Agda type
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-  postulate
-    set-cts : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
+  postulate set-cts : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
   {-# REWRITE set-cts #-}
 \end{code}
 \end{AgdaSuppressSpace}
@@ -234,21 +227,23 @@ unavailable on non-flat domains because it is not continuous.)
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\begin{comment}
-
-
 \subsubsection{Naturals}\label{agda-Notation-naturals}
 
 Agda allows decimal notation for natural numbers, as well as unary
-notation using \AgdaRef{zero} and \AgdaRef{suc}. 
-\end{comment}
+notation using \AgdaRef{zero} and \AgdaRef{suc}.
 %
 \begin{AgdaSuppressSpace}
-\begin{code}[hide]
+\begin{code}
   module Naturals where
+\end{code}
+\begin{code}[hide]
     open import Agda.Builtin.Nat public
       using (Nat; suc; _+_; _-_) renaming (_==_ to _==ᴺ_)
+\end{code}
+\begin{code}
     Nat⊥ = Nat +⊥
+\end{code}
+\begin{code}[hide]
     open Booleans
     postulate 
       instance eqNat : Eq Nat
@@ -328,19 +323,23 @@ The complete Agda code also declares notation for tuple domains
 \AgdaRef{D\ \^{}\ n} and sequence domains \AgdaRef{D\ ⋆} corresponding
 closely to that summarised in §2.1.
 
-\begin{comment}
- \#\#\# Tuples
+\subsubsection{Tuples}\label{agda-Notation-tuples}
 
 The domain \AgdaRef{D\ \^{}\ n} of \AgdaRef{n}-tuples of elements of a
 domain \AgdaRef{D} is conventionally written \(D^n\), but Agda does not
-support the use of variables as superscripts. 
-\end{comment}
+support the use of variables as superscripts.
 %
 \begin{AgdaSuppressSpace}
-\begin{code}[hide]
+\begin{code}
   module Tuples where
+\end{code}
+\begin{code}[hide]
     open import Agda.Builtin.Nat public using (Nat; suc)
+\end{code}
+\begin{code}
     _^_ : Domain → Nat → Domain         -- D ^ n is the domain of n-tuples (n ≥ 0)
+\end{code}
+\begin{code}[hide]
     D ^ 0            = 𝟙 
     D ^ 1            = D
     D ^ suc (suc n)  = D × (D ^ suc n)
@@ -350,7 +349,8 @@ support the use of variables as superscripts.
 \begin{comment}
  Making \AgdaRef{D\ \^{}\ 2} definitionally equal to
 \AgdaRef{D\ ×\ D} in Agda supports type-checking the conventional
-notational ambiguity between tuples and iterated products.
+notational ambiguity between tuples and iterated products. 
+\end{comment}
 
 \subsubsection{Sequences}\label{agda-Notation-sequences}
 
@@ -361,15 +361,18 @@ The following notation for the various operations on sequences was
 introduced and extensively used by Strachey and his colleagues in the
 early 1970s. (The single angle-brackets \AgdaRef{⟨...⟩} used to form
 sequences are unrelated to the double angle-brackets \AgdaRef{⟪\ D\ ⟫}
-used for the carrier of domain \AgdaRef{D}.) 
-\end{comment}
+used for the carrier of domain \AgdaRef{D}.)
 %
 \begin{AgdaSuppressSpace}
-\begin{code}[hide]
+\begin{code}
   module Sequences where
+\end{code}
+\begin{code}[hide]
     open Flat.Naturals
     open Tuples
     variable n : Nat
+\end{code}
+\begin{code}
     postulate
       _⋆     : Domain → Domain          -- D ⋆ is the finite sequence domain
       ⟨⟩     : ⟪ D ⋆ ⟫                  -- ⟨⟩ is the empty sequence
@@ -383,52 +386,43 @@ used for the carrier of domain \AgdaRef{D}.)
 %
 \subsection{Updates}\label{agda-Notation-updates}
 
-Environments \AgdaRef{ρ\ :\ ⟪\ A\ →ˢ\ D\ ⟫} can be `updated' (i.e.,
-extended or overridden) using the conventional notation
-\AgdaRef{ρ\ {[}\ δ\ /\ a\ {]}}; stores
-\AgdaRef{σ\ :\ ⟪\ (A\ +⊥)\ →ᶜ\ D\ ⟫} use the notation
-\AgdaRef{σ\ {[}\ δ\ /\ α\ {]}⊥} for updates. The complete Agda code
-\cite{MFPS2026-Agda}
-defines these operations for any type \AgdaRef{A} with an equality
-operation \AgdaRef{\_==\_\ :\ A\ →\ A\ →\ Bool}.
-
-\begin{comment}
- When an ordinary Agda type \AgdaRef{A} has an equality operation
+When an ordinary Agda type \AgdaRef{A} has an equality operation
 \AgdaRef{\_==\_\ :\ A\ →\ A\ →\ Bool}, environments
 \AgdaRef{ρ\ :\ ⟪\ A\ →ˢ\ D\ ⟫} can be `updated' (i.e., extended or
 overridden) using the conventional notation
-\AgdaRef{ρ\ {[}\ δ\ /\ a\ {]}}, defined as follows. 
-\end{comment}
+\AgdaRef{ρ\ {[}\ δ\ /\ a\ {]}}, defined as follows.
 %
 \begin{AgdaSuppressSpace}
-\begin{code}[hide]
+\begin{code}
 module Updates where
+\end{code}
+\begin{code}[hide]
   open Flat
   open Flat.Booleans
+\end{code}
+\begin{code}
   _[_/_] : {{Eq A}} → ⟪ (A →ˢ D) →ᶜ D →ᶜ A →ˢ (A →ˢ D) ⟫
   -- ρ [ δ / a ] maps a to δ, and other arguments a′ to ρ a′
   ρ [ δ / a ] = λ a′ → if a == a′ then δ else ρ a′
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\begin{comment}
- Similarly for stores \AgdaRef{σ\ :\ ⟪\ (A\ +⊥)\ →ᶜ\ D\ ⟫}: 
-\end{comment}
+Similarly for stores \AgdaRef{σ\ :\ ⟪\ (A\ +⊥)\ →ᶜ\ D\ ⟫}:
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
   open Flat
+\end{code}
+\begin{code}
   _[_/_]⊥ : {{Eq A}} → ⟪ ((A +⊥) →ᶜ D) →ᶜ D →ᶜ (A +⊥) →ᶜ ((A +⊥) →ᶜ D) ⟫
   -- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\begin{comment}
- Defining extension or overriding of \emph{dependent} maps is less
+Defining extension or overriding of \emph{dependent} maps is less
 straightforward, as it involves a function that returns an
-\emph{equivalence proof} instead of a truth value: 
-\end{comment}
+\emph{equivalence proof} instead of a truth value.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

@@ -12,7 +12,6 @@ and terms $M, N$
 with variables $\alpha_i^\sigma$ ($i \geq 0$) and constants $c$.
 In §4.1.1 we reflect Plotkin's presentation of PCF
 more accurately by exploiting Agda's support for dependent types.
-
 $$\begin{align}
   \sigma, \tau  & ::=
     \iota \mid o \mid (\sigma \to \tau)
@@ -24,7 +23,6 @@ $$\begin{align}
   M, N & ::=
     \alpha_i^\sigma \mid c \mid (M \, N) \mid (\lambda \alpha_i^\sigma M)
 \end{align}$$
-
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}

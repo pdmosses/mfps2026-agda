@@ -39,8 +39,8 @@ module Domains where
     Domain : Set              -- Domain is the type of all domains
     ⟪_⟫ : Domain → Set        -- ⟪ D ⟫ is the type of elements of D
     ⊥ : {D : Domain} → ⟪ D ⟫  -- ⊥{D} is the bottom element of D
-    𝟙 : Domain                -- 𝟙 is a unit domain
 --"hide"
+    𝟙 : Domain                -- 𝟙 is a unit domain
   variable D E F : Domain
 
 open Domains public
@@ -61,13 +61,11 @@ The specified postulates that declare types and functions
 for domains are used only for type-checking denotational semantics in
 Agda. They do *not* define the conventional mathematical structure
 of domains, nor the algebraic and universal properties of the associated
-functions. Postulated equivalences between terms are used for testing denotations of
-terms; adding them as rewrite rules allows implicit use in proofs.
+functions.
 
 [(Mosses2025CDS)]: https://doi.org/10.1145/3759537.3762694
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
 [(Mosses2025LAF)]: https://msp.cis.strath.ac.uk/types2025/abstracts/TYPES2025_paper11.pdf
-
 
 ## Function domains
 
@@ -80,9 +78,8 @@ However, Agda reserves the notation
 `D →ᶜ E` for domains of continuous functions.
 ```agda
 module Functions where
-  postulate
-    _→ᶜ_ : Domain → Domain → Domain
-    -- D →ᶜ E is the domain of continuous functions from D to E
+  postulate _→ᶜ_ : Domain → Domain → Domain
+  -- D →ᶜ E is the domain of continuous functions from D to E
 --"hide"
   infixr 0 _→ᶜ_
 --"/hide"
@@ -101,22 +98,19 @@ To support type-checking direct use of conventional λ-notation for defining fun
 between domains, the type `⟪ D →ᶜ E ⟫` is
 *rewritten* to the Agda type `⟪ D ⟫ → ⟪ E ⟫`:
 ```agda
-  postulate
-    dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
+  postulate dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
   {-# REWRITE dom-cts #-}
 ```
 Continuous *endofunctions* `φ` on `D` have
 (least) fixed points `fix φ`:
 ```agda
-  postulate
-    fix : ⟪ (D →ᶜ D) →ᶜ D ⟫
-    -- fix φ is the least fixed point of the continuous function φ
+  postulate fix : ⟪ (D →ᶜ D) →ᶜ D ⟫
+  -- fix φ is the least fixed point of the continuous function φ
 ```
 Functions from an ordinary set `A` to a domain `D`
 form a domain `A →ˢ D`:
 ```agda
-  postulate
-    _→ˢ_ : Set → Domain → Domain
+  postulate _→ˢ_ : Set → Domain → Domain
   -- A →ˢ D is the domain of all functions from A to D
 --"hide"
   infixr 0 _→ˢ_
@@ -124,8 +118,7 @@ form a domain `A →ˢ D`:
 ```
 The type `⟪ A →ˢ D ⟫` is *rewritten* to the Agda type `A → ⟪ D ⟫`:
 ```agda
-  postulate
-    set-cts : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
+  postulate set-cts : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
   {-# REWRITE set-cts #-}
 ```
 ```agda
@@ -204,19 +197,19 @@ the operation only for flat domains `A +⊥` with `instance _ : Eq A`.
       instance eqBool : Eq Bool
 --"/hide"
 ```
-@omit
 
 ### Naturals
 
 Agda allows decimal notation for natural numbers, as well as unary notation
 using `zero` and `suc`.
-@/omit
 ```agda
---"hide"
   module Naturals where
+--"hide"
     open import Agda.Builtin.Nat public
       using (Nat; suc; _+_; _-_) renaming (_==_ to _==ᴺ_)
+--"/hide"
     Nat⊥ = Nat +⊥
+--"hide"
     open Booleans
     postulate 
       instance eqNat : Eq Nat
@@ -282,17 +275,17 @@ module Products where
 The complete Agda code also declares notation for tuple domains `D ^ n` and
 sequence domains `D ⋆` corresponding closely to that summarised in §2.1.
 
-@omit
 ### Tuples
 
 The domain `D ^ n` of `n`-tuples of elements of a domain `D` is conventionally
 written $D^n$, but Agda does not support the use of variables as superscripts.
-@/omit
 ```agda
---"hide"
   module Tuples where
+--"hide"
     open import Agda.Builtin.Nat public using (Nat; suc)
+--"/hide"
     _^_ : Domain → Nat → Domain         -- D ^ n is the domain of n-tuples (n ≥ 0)
+--"hide"
     D ^ 0            = 𝟙 
     D ^ 1            = D
     D ^ suc (suc n)  = D × (D ^ suc n)
@@ -301,6 +294,7 @@ written $D^n$, but Agda does not support the use of variables as superscripts.
 @omit
 Making `D ^ 2` definitionally equal to `D × D` in Agda supports type-checking
 the conventional notational ambiguity between tuples and iterated products.
+@/omit
 
 ### Sequences
 
@@ -311,13 +305,13 @@ The following notation for the various operations on sequences was introduced
 and extensively used by Strachey and his colleagues in the early 1970s.
 (The single angle-brackets `⟨...⟩` used to form sequences are unrelated to the
 double angle-brackets `⟪ D ⟫` used for the carrier of domain `D`.)
-@/omit
 ```agda
---"hide"
   module Sequences where
+--"hide"
     open Flat.Naturals
     open Tuples
     variable n : Nat
+--"/hide"
     postulate
       _⋆     : Domain → Domain          -- D ⋆ is the finite sequence domain
       ⟨⟩     : ⟪ D ⋆ ⟫                  -- ⟨⟩ is the empty sequence
@@ -326,52 +320,35 @@ double angle-brackets `⟪ D ⟫` used for the carrier of domain `D`.)
       _§_    : ⟪ D ⋆ →ᶜ D ⋆ →ᶜ D ⋆ ⟫    -- δ⋆₁ § δ⋆₂ is sequence concatenation
       _↓_    : ⟪ D ⋆ →ᶜ Nat →ˢ D ⟫      -- δ⋆ ↓ n is the nth element
       _†_    : ⟪ D ⋆ →ᶜ Nat →ˢ D ⋆ ⟫    -- δ⋆ † n is the nth tail
---"/hide"
 ```
 
 ## Updates
 
-Environments
-`ρ : ⟪ A →ˢ D ⟫` can be 'updated' (i.e., extended or
-overridden) using the conventional notation
-`ρ [ δ / a ]`;
-stores `σ : ⟪ (A +⊥) →ᶜ D ⟫` use the notation 
-`σ [ δ / α ]⊥` for updates.
-The complete Agda code [(MFPS2026-Agda)] defines these operations
-for any type `A` with an equality operation
-`_==_ : A → A → Bool`.
-
-@omit
 When an ordinary Agda type `A` has an equality operation `_==_ : A → A → Bool`,
 environments `ρ : ⟪ A →ˢ D ⟫` can be 'updated' (i.e., extended or overridden) using the
 conventional notation `ρ [ δ / a ]`, defined as follows.
-@/omit
 ```agda
---"hide"
 module Updates where
+--"hide"
   open Flat
   open Flat.Booleans
+--"/hide"
   _[_/_] : {{Eq A}} → ⟪ (A →ˢ D) →ᶜ D →ᶜ A →ˢ (A →ˢ D) ⟫
   -- ρ [ δ / a ] maps a to δ, and other arguments a′ to ρ a′
   ρ [ δ / a ] = λ a′ → if a == a′ then δ else ρ a′
---"/hide"
 ```
-@omit
 Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
-@/omit
 ```agda
 --"hide"
   open Flat
+--"/hide"
   _[_/_]⊥ : {{Eq A}} → ⟪ ((A +⊥) →ᶜ D) →ᶜ D →ᶜ (A +⊥) →ᶜ ((A +⊥) →ᶜ D) ⟫
   -- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
---"/hide"
 ```
-@omit
 Defining extension or overriding of *dependent* maps is less straightforward,
 as it involves a function that returns an *equivalence proof* instead of a
-truth value: 
-@/omit
+truth value.
 ```agda
 --"hide"
   open import Data.Maybe.Base public using (Maybe; just; nothing)

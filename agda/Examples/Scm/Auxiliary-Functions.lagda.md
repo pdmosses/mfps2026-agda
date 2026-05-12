@@ -68,15 +68,8 @@ truish : ⟪ 𝐄 →ᶜ 𝐓 ⟫  -- truish ε is true for all ε except false
 truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ false , ↑ true) ,
             ↑ true
 ```
-The remaining auxiliary function definitions shown here involve operations for (finite) sequences `ϵ⋆`
-[(MFPS2026-Agda)] that correspond to notation used in conventional denotational definitions:
-
-- `# ϵ⋆` is the length of `ϵ⋆`;
-- `ϵ⋆ ↓ n` is its `n`th element (or `⊥`);
-- `ϵ⋆ † n` is its `n`th tail;
-- `⟨⟩` is the empty sequence; and
-- `⟨ ϵ , ... ⟩` maps tuples `ϵ , ...` to sequences.
-
+The remaining auxiliary function definitions shown here involve the operations for (finite) sequences `ϵ⋆`
+[Notation.Products.Sequences] [(MFPS2026-Agda)].
 ```agda
 cons : ⟪ 𝐅 ⟫         -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
 cons ϵ⋆ κ =  (# ϵ⋆ ==⊥ ↑ 2) ⟶
@@ -117,3 +110,4 @@ setcdr ϵ⋆ κ =
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
+[Notation.Products.Sequences]: #sequences

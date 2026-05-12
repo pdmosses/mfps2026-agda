@@ -84,24 +84,10 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The remaining auxiliary function definitions shown here involve
+The remaining auxiliary function definitions shown here involve the
 operations for (finite) sequences \AgdaRef{ϵ⋆}
-\cite{MFPS2026-Agda} that
-correspond to notation used in conventional denotational definitions:
-
-\begin{itemize}
-\tightlist
-\item
-  \AgdaRef{\#\ ϵ⋆} is the length of \AgdaRef{ϵ⋆};
-\item
-  \AgdaRef{ϵ⋆\ ↓\ n} is its \AgdaRef{n}th element (or \AgdaRef{⊥});
-\item
-  \AgdaRef{ϵ⋆\ †\ n} is its \AgdaRef{n}th tail;
-\item
-  \AgdaRef{⟨⟩} is the empty sequence; and
-\item
-  \AgdaRef{⟨\ ϵ\ ,\ ...\ ⟩} maps tuples \AgdaRef{ϵ\ ,\ ...} to sequences.
-\end{itemize}
+\hyperref[sequences]{Notation.Products.Sequences}
+\cite{MFPS2026-Agda}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
