@@ -1,4 +1,4 @@
-\subsection{LC Tests}\label{Tests-LC-lc-tests}
+\subsection{LC Tests}\label{Tests/LC-lc-tests}
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -16,8 +16,6 @@ open import Examples.LC.Abstract-Syntax
 open import Examples.LC.Domain-Equations
 open import Examples.LC.Semantic-Functions
 
-\end{code}
-\begin{code}
 check-id : -- (λx1.x1)x42 = x42
   ⟦ ⦅ ⦅λ x 1 ␣ var x 1 ⦆ ␣ var x 42 ⦆ ⟧ ≡ ⟦ var x 42 ⟧
 check-id = refl
@@ -30,6 +28,8 @@ check-const = refl
 --   ⟦ ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⟧
 --   ≡ ⟦ var x 42 ⟧
 -- check-divergence = refl -- Agda type-checker diverges
+\end{code}
+\begin{code}
 
 check-convergence : -- (λx1.x42)((λx0.x0 x0)(λx0.x0 x0)) = x42
   ⟦  ⦅ ⦅λ x 1 ␣ var x 42 ⦆ ␣

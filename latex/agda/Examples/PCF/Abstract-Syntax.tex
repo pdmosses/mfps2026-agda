@@ -1,4 +1,4 @@
-\subsubsection{Abstract Syntax}\label{Examples/PCF-Abstract-Syntax-abstract-syntax}
+\subsubsection{Abstract Syntax}\label{Examples/PCF/Abstract-Syntax-abstract-syntax}
 
 The following abstract syntax of well-formed PCF terms in Agda uses
 indexed datatype definitions. PCF function types \(\sigma \to \tau\) are
@@ -25,10 +25,10 @@ between variables -- it is \emph{not} a De Bruin index).
 %</AgdaTag-Examples.PCF.Abstract-Syntax>
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
+\\
+\>[0]\<%
 \end{code}
 \begin{code}[hide]%
-\>[0]\<%
-\\
 \>[0]\AgdaKeyword{open}\AgdaSpace{}%
 \AgdaKeyword{import}\AgdaSpace{}%
 %
@@ -140,10 +140,10 @@ between variables -- it is \emph{not} a De Bruin index).
 \AgdaDatatype{Nat}%
 %</AgdaTag-Nat>
 \AgdaSymbol{)}\<%
-\\
-\>[0]\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]\AgdaKeyword{data}\AgdaSpace{}%
 %
 %<*AgdaTag-Vars>
@@ -199,10 +199,10 @@ between variables -- it is \emph{not} a De Bruin index).
 \AgdaDatatype{Nat}%
 %</AgdaTag-Nat>
 \<%
-\\
-\>[0]\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]\AgdaKeyword{data}\AgdaSpace{}%
 %
 %<*AgdaTag-ℒᴬ>
@@ -444,10 +444,10 @@ between variables -- it is \emph{not} a De Bruin index).
 %</AgdaTag-ℒᴬ>
 \AgdaSpace{}%
 \AgdaGeneralizable{σ}\<%
-\\
-\>[0]\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]\AgdaKeyword{data}\AgdaSpace{}%
 %
 %<*AgdaTag-Terms>
@@ -578,7 +578,8 @@ between variables -- it is \emph{not} a De Bruin index).
 }\AgdaSpace{}%
 \AgdaGeneralizable{τ}\AgdaSymbol{)}%
 \>[49]\AgdaComment{--\ function\ abstraction}\<%
-\\
+\end{code}
+\begin{code}[hide]%
 \>[0]\AgdaKeyword{variable}\AgdaSpace{}%
 \AgdaGeneralizable{M}\AgdaSpace{}%
 \AgdaGeneralizable{N}\AgdaSpace{}%

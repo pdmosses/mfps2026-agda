@@ -1,9 +1,8 @@
-\subsubsection{Semantic Functions}\label{Examples/LC-Semantic-Functions-semantic-functions}
+\subsubsection{Semantic Functions}\label{Examples/LC/Semantic-Functions-semantic-functions}
 
 The semantic equations below correspond closely to those found in
 textbooks on denotational semantics (e.g.,
-\cite{Reynolds1998TPL})
-apart from the need to wrap the domain of denotations in \AgdaRef{⟪...⟫}.
+\cite{Reynolds1998TPL}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

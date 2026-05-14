@@ -1,4 +1,4 @@
-\subsubsection{Domain Equations}\label{Examples/Scm-Domain-Equations-domain-equations}
+\subsubsection{Domain Equations}\label{Examples/Scm/Domain-Equations-domain-equations}
 
 The domains for Scm are somewhat simpler than for the denotational
 semantics in the Scheme standards
@@ -27,9 +27,9 @@ open Notation.Flat.Naturals using (Nat⊥)
 open Notation.Sums using (_≳_↦_)
 open Notation.Products using (_×_)
 open Notation.Products.Sequences using (_⋆)
-
 \end{code}
 \begin{code}
+
 postulate Loc : Set
 𝐋  =  Loc +⊥                -- locations
 𝐍  =  Nat⊥                  -- natural numbers
@@ -37,8 +37,7 @@ postulate Loc : Set
 𝐑  =  Int +⊥                -- numbers
 𝐏  =  𝐋 × 𝐋                 -- pairs
 𝐔  =  Ide →ˢ 𝐋              -- environments
-data Misc : Set where
-  null unallocated undefined unspecified : Misc
+data Misc : Set where null unallocated undefined unspecified : Misc
 𝐌  =  Misc +⊥               -- miscellaneous
 \end{code}
 \end{AgdaSuppressSpace}
@@ -81,7 +80,7 @@ postulate instance
 \begin{code}[hide]
 
 variable
-  α : ⟪ 𝐋 ⟫;  ρ : ⟪ 𝐔 ⟫;  μ  : ⟪ 𝐌 ⟫;   ϵ : ⟪ 𝐄 ⟫
-  σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;  φ : ⟪ 𝐅 ⟫
+  α : ⟪ 𝐋 ⟫;  ρ : ⟪ 𝐔 ⟫;  μ  : ⟪ 𝐌 ⟫;    ϵ : ⟪ 𝐄 ⟫
+  σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;   φ : ⟪ 𝐅 ⟫
 \end{code}
 \end{AgdaSuppressSpace}

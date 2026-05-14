@@ -1,4 +1,4 @@
-\subsection{PCF Tests}\label{Tests-PCF-pcf-tests}
+\subsection{PCF Tests}\label{Tests/PCF-pcf-tests}
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -17,9 +17,6 @@ open Properties.Flat
 open import Examples.PCF.Abstract-Syntax
 open import Examples.PCF.Domain-Equations
 open import Examples.PCF.Semantic-Functions
-
-\end{code}
-\begin{code}
 
 -- Variables
 e  = α 0 ι
@@ -69,6 +66,8 @@ check-if-nonzero :
 check-if-nonzero = refl
 
 -- Fixed points
+\end{code}
+\begin{code}
 
 check-fix-const :
   𝒜′⟦ ⦅ 𝐿 Y ␣ ⦅λ e ␣ 𝐿 k 42 ⦆ ⦆ ⟧ ρ⊥ ≡ ↑ 42

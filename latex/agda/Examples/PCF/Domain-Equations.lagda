@@ -1,4 +1,4 @@
-\subsubsection{Domain Equations}\label{Examples/PCF-Domain-Equations-domain-equations}
+\subsubsection{Domain Equations}\label{Examples/PCF/Domain-Equations-domain-equations}
 
 The domains \AgdaRef{𝒟\ σ} form a ``standard collection of domains for
 arithmetic'' in PCF, written \(\mathcal D_\sigma\) in
@@ -21,9 +21,9 @@ open import Examples.PCF.Abstract-Syntax
 open import Notation
 open Notation.Flat.Booleans using (Bool; Bool⊥)
 open Notation.Flat.Naturals using (Nat⊥; eqNat)
-
 \end{code}
 \begin{code}
+
 𝒟 : Types → Domain       -- standard domains
 𝒟 ι        = Nat⊥        -- natural numbers
 𝒟 o        = Bool⊥       -- truth-values

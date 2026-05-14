@@ -1,4 +1,4 @@
-\subsubsection{Abstract Syntax}\label{Examples/Scm-Abstract-Syntax-abstract-syntax}
+\subsubsection{Abstract Syntax}\label{Examples/Scm/Abstract-Syntax-abstract-syntax}
 
 The following grammar
 \cite{Mosses2025CSE}
@@ -9,14 +9,14 @@ constants \(\text{K} : \text{Con}\) and identifiers
 \(\text{E}^* : \text{Exp}^*\) implicitly ranges over arbitrary sequences
 of expressions. \begin{align}
   \text{K} & ::=
-    \text{Z} \mid \AgdaRef{\#t} \mid \AgdaRef{\#f}
+    \text{Z} \mid \text{\tt \#t} \mid \text{\tt \#f}
   \\
   \text{E} & ::=
-    \text{K} \mid \text{I} \mid \texttt ( \text{E}_0~\text{E}^* \texttt ) \mid \AgdaRef{(lambda} ~ \text{I} ~ \text{E} \texttt ) \mid
-    \AgdaRef{(if} ~ \text{E}_0 ~ \text{E}_1 ~ \text{E}_2 \texttt ) \mid \AgdaRef{(set!} ~ \text{I} ~ \text{E} \texttt )
+    \text{K} \mid \text{I} \mid \texttt ( \text{E}_0~\text{E}^* \texttt ) \mid \text{\tt (lambda} ~ \text{I} ~ \text{E} \texttt ) \mid
+    \text{\tt (if} ~ \text{E}_0 ~ \text{E}_1 ~ \text{E}_2 \texttt ) \mid \text{\tt (set!} ~ \text{I} ~ \text{E} \texttt )
 \end{align} In the following Agda formalisation of the above grammar,
 the abstract syntax of sequences \AgdaRef{E⋆\ :\ Exp⋆} is made explicit:
-the empty sequence is represented by \AgdaRef{␣␣␣}, and sequence
+the empty sequence is represented by \AgdaRef{␣␣␣} , and sequence
 prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 %
 \begin{AgdaSuppressSpace}
@@ -55,10 +55,10 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaPostulate{String}%
 %</AgdaTag-String>
 \AgdaSymbol{)}\<%
-\\
-\>[0]\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]%
 %<*AgdaTag-Ide>
 \AgdaFunction{Ide}%
@@ -108,6 +108,8 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaSymbol{()}\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]\AgdaKeyword{data}\AgdaSpace{}%
 %
 %<*AgdaTag-Con>
@@ -176,10 +178,10 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Con}%
 %</AgdaTag-Con>
 \<%
-\\
-\>[0]\<%
 \end{code}
 \begin{code}%
+\>[0]\<%
+\\
 \>[0]\AgdaKeyword{mutual}\<%
 \\
 \>[0][@{}l@{\AgdaIndent{0}}]%
@@ -427,7 +429,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \>[17]\AgdaSymbol{:}\AgdaSpace{}%
 \AgdaPrimitive{Set}\AgdaSpace{}%
 \AgdaKeyword{where}%
-\>[41]\AgdaComment{--\ bodies}\<%
+\>[42]\AgdaComment{--\ bodies}\<%
 \\
 \>[2][@{}l@{\AgdaIndent{0}}]%
 \>[4]\AgdaOperator{%
@@ -447,7 +449,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Body}%
 %</AgdaTag-Body>
 %
-\>[41]\AgdaComment{--\ expression\ body}\<%
+\>[42]\AgdaComment{--\ expression\ body}\<%
 \\
 %
 \>[4]\AgdaOperator{%
@@ -473,7 +475,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Body}%
 %</AgdaTag-Body>
 %
-\>[41]\AgdaComment{--\ definition\ body}\<%
+\>[42]\AgdaComment{--\ definition\ body}\<%
 \\
 %
 \>[4]\AgdaOperator{%
@@ -493,7 +495,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Body}%
 %</AgdaTag-Body>
 %
-\>[41]\AgdaComment{--\ body\ sequence}\<%
+\>[42]\AgdaComment{--\ body\ sequence}\<%
 \\
 %
 \>[2]\AgdaKeyword{data}\AgdaSpace{}%
@@ -505,7 +507,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \>[17]\AgdaSymbol{:}\AgdaSpace{}%
 \AgdaPrimitive{Set}\AgdaSpace{}%
 \AgdaKeyword{where}%
-\>[41]\AgdaComment{--\ body\ sequences}\<%
+\>[42]\AgdaComment{--\ body\ sequences}\<%
 \\
 \>[2][@{}l@{\AgdaIndent{0}}]%
 \>[4]\AgdaOperator{%
@@ -525,7 +527,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Body⁺}%
 %</AgdaTag-Body⁺>
 %
-\>[41]\AgdaComment{--\ empty\ sequence}\<%
+\>[42]\AgdaComment{--\ empty\ sequence}\<%
 \\
 %
 \>[4]\AgdaOperator{%
@@ -551,7 +553,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Body⁺}%
 %</AgdaTag-Body⁺>
 %
-\>[41]\AgdaComment{--\ sequence\ prefix}\<%
+\>[42]\AgdaComment{--\ sequence\ prefix}\<%
 \\
 \>[0]\AgdaKeyword{data}\AgdaSpace{}%
 %
@@ -562,7 +564,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \>[17]\AgdaSymbol{:}\AgdaSpace{}%
 \AgdaPrimitive{Set}\AgdaSpace{}%
 \AgdaKeyword{where}%
-\>[41]\AgdaComment{--\ programs}\<%
+\>[42]\AgdaComment{--\ programs}\<%
 \\
 \>[0][@{}l@{\AgdaIndent{0}}]%
 \>[2]%
@@ -576,7 +578,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Prog}%
 %</AgdaTag-Prog>
 %
-\>[41]\AgdaComment{--\ empty\ program}\<%
+\>[42]\AgdaComment{--\ empty\ program}\<%
 \\
 %
 \>[2]\AgdaOperator{%
@@ -596,7 +598,7 @@ prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 \AgdaDatatype{Prog}%
 %</AgdaTag-Prog>
 %
-\>[41]\AgdaComment{--\ body\ sequence\ program}\<%
+\>[42]\AgdaComment{--\ body\ sequence\ program}\<%
 \\
 \>[0]\AgdaKeyword{variable}\AgdaSpace{}%
 \AgdaGeneralizable{B}\AgdaSpace{}%

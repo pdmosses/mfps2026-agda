@@ -1,4 +1,4 @@
-\subsubsection{Auxiliary Functions}\label{Examples/Scm-Auxiliary-Functions-auxiliary-functions}
+\subsubsection{Auxiliary Functions}\label{Examples/Scm/Auxiliary-Functions-auxiliary-functions}
 
 The \(\lambda\)-notation in the Agda definitions of auxiliary functions
 for Scm corresponds closely to that in its conventional denotational
@@ -69,10 +69,10 @@ postulate new : ⟪ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫  -- new gives an unalloca
 
 alloc : ⟪ 𝐄 →ᶜ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫     -- alloc ϵ allocates a location for ϵ
 alloc ϵ κ = new (λ α → assign α ϵ (κ α))
-\end{code}
-\begin{code}[hide]
 
 postulate initial-store : ⟪ 𝐒 ⟫    -- may have initialised locations
+\end{code}
+\begin{code}[hide]
 
 postulate finished : ⟪ 𝐒 →ᶜ 𝐀 ⟫    -- obtain answer from the final store
 \end{code}
@@ -85,9 +85,8 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
 \end{AgdaSuppressSpace}
 %
 The remaining auxiliary function definitions shown here involve the
-operations for (finite) sequences \AgdaRef{ϵ⋆}
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{\AgdaRef{Notation.Products.Sequences}}
-\cite{MFPS2026-Agda}.
+operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
+\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{Notation.Products.Sequences} (Section~\ref{Notation-sequences}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
@@ -109,9 +108,9 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \begin{AgdaSuppressSpace}
 \begin{code}
 list : ⟪ 𝐅 ⟫         -- list ϵ⋆ allocates and initialises a list
-list =  fix λ (list′ : ⟪ 𝐅 ⟫) → λ ϵ⋆ κ →
-          (# ϵ⋆ ==⊥ ↑ 0) ⟶ κ (↑ null in⊥ 𝐄) ,
-          list′ (ϵ⋆ † 1) (λ ϵ → cons ⟨ (ϵ⋆ ↓ 1) , ϵ ⟩ κ)
+list =   fix λ (list′ : ⟪ 𝐅 ⟫) → λ ϵ⋆ κ →
+           (# ϵ⋆ ==⊥ ↑ 0) ⟶ κ (↑ null in⊥ 𝐄) ,
+           list′ (ϵ⋆ † 1) (λ ϵ → cons ⟨ (ϵ⋆ ↓ 1) , ϵ ⟩ κ)
 \end{code}
 \begin{code}[hide]
 

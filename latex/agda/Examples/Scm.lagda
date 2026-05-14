@@ -1,5 +1,5 @@
 \subsection{Scm: A Sublanguage of
-Scheme}\label{Examples-Scm-scm-a-sublanguage-of-scheme}
+Scheme}\label{Examples/Scm-scm-a-sublanguage-of-scheme}
 
 Scm is a particularly basic sublanguage of the core Scheme expression
 language whose denotational semantics is defined in the Scheme reports

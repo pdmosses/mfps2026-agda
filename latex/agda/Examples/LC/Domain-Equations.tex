@@ -1,6 +1,6 @@
-\subsubsection{Domain Equations}\label{Examples/LC-Domain-Equations-domain-equations}
+\subsubsection{Domain Equations}\label{Examples/LC/Domain-Equations-domain-equations}
 
-The postulate below declares
+The postulate \AgdaRef{eqD∞} below declares
 \AgdaRef{unfold\ :\ ⟪\ D∞\ →ᶜ\ (D∞\ →ᶜ\ D∞)\ ⟫} and
 \AgdaRef{fold\ :\ ⟪\ (D∞\ →ᶜ\ D∞)\ →ᶜ\ D∞\textasciitilde{}⟫},
 corresponding to a bijection between the domain \AgdaRef{D∞} and the
@@ -195,8 +195,9 @@ type-checker.)
 %
 Use of the conventional notation \AgdaRef{ρ\ {[}\ δ\ /\ v\ {]}} for
 updating an environment \AgdaRef{ρ} to map \AgdaRef{v} to \AgdaRef{d}
-requires an equality test for variables
-\cite{MFPS2026-Agda}.
+requires an equality test for variables (see the
+\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/}{complete
+code listing}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -325,8 +326,9 @@ requires an equality test for variables
 %<*AgdaTag-Var>
 \AgdaDatatype{Var}%
 %</AgdaTag-Var>
-\AgdaSymbol{;}\AgdaSpace{}%
-\AgdaOperator{%
+\<%
+\\
+\>[0]\AgdaOperator{%
 %<*AgdaTag-\AgdaUnderscore{>
 \AgdaField{\AgdaUnderscore{}%
 %</AgdaTag-\AgdaUnderscore{>

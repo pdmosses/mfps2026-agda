@@ -1,4 +1,4 @@
-\section{Illustrative Tests}\label{agda-Tests-illustrative-tests}
+\section{Illustrative Tests}\label{Tests-illustrative-tests}
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

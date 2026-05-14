@@ -1,6 +1,6 @@
-\subsubsection{Domain Equations}\label{Examples/LC-Domain-Equations-domain-equations}
+\subsubsection{Domain Equations}\label{Examples/LC/Domain-Equations-domain-equations}
 
-The postulate below declares
+The postulate \AgdaRef{eqD∞} below declares
 \AgdaRef{unfold\ :\ ⟪\ D∞\ →ᶜ\ (D∞\ →ᶜ\ D∞)\ ⟫} and
 \AgdaRef{fold\ :\ ⟪\ (D∞\ →ᶜ\ D∞)\ →ᶜ\ D∞\textasciitilde{}⟫},
 corresponding to a bijection between the domain \AgdaRef{D∞} and the
@@ -42,8 +42,9 @@ variable ρ : ⟪ Env ⟫
 %
 Use of the conventional notation \AgdaRef{ρ\ {[}\ δ\ /\ v\ {]}} for
 updating an environment \AgdaRef{ρ} to map \AgdaRef{v} to \AgdaRef{d}
-requires an equality test for variables
-\cite{MFPS2026-Agda}.
+requires an equality test for variables (see the
+\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/}{complete
+code listing}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -53,6 +54,7 @@ _==ⱽ_ : Var → Var → Bool
 open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 open Notation.Updates using (_[_/_]) public
 (x n ==ⱽ x n′) = (n ==ᴺ n′)
-instance eqVar : Eq Var; _==_ {{eqVar}} = _==ⱽ_
+instance eqVar : Eq Var
+_==_ {{eqVar}} = _==ⱽ_
 \end{code}
 \end{AgdaSuppressSpace}

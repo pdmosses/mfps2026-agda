@@ -1,4 +1,4 @@
-\subsubsection{Semantic functions}\label{Examples/PCF-Semantic-Functions-semantic-functions}
+\subsubsection{Semantic functions}\label{Examples/PCF/Semantic-Functions-semantic-functions}
 
 The notation \AgdaRef{ρ\ ⟦\ α\ i\ σ\ ⟧} gives the value of the variable
 \AgdaRef{α\ i\ σ} in \AgdaRef{ρ} by applying \AgdaRef{ρ\ σ} to the
@@ -17,9 +17,9 @@ module Examples.PCF.Semantic-Functions where
 open import Notation
 open import Examples.PCF.Abstract-Syntax
 open import Examples.PCF.Domain-Equations
-
 \end{code}
 \begin{code}
+
 _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
 ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
 \end{code}

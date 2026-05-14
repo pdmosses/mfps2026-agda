@@ -1,4 +1,4 @@
-\subsubsection{Abstract Syntax}\label{Examples/LC-Abstract-Syntax-abstract-syntax}
+\subsubsection{Abstract Syntax}\label{Examples/LC/Abstract-Syntax-abstract-syntax}
 
 Abstract syntax is \emph{not} regarded as a domain. In conventional
 Scott--Strachey style denotational semantics, abstract syntax is
@@ -6,13 +6,12 @@ generally first-order: terms are finite, totally-defined elements.
 
 A variable is written \AgdaRef{x\ n}. The argument \AgdaRef{n} merely
 distinguishes between variables -- it is \emph{not} a De Bruin index.
-The term constructor \AgdaRef{var} below merely includes variables in
-terms.
+The term constructor \AgdaRef{var} below includes variables in terms.
 
-In Agda, mixfix notation requires argument positions to be separated by
-characters other than spaces. Below, the constructors for function
-abstraction and application use the Unicode character \AgdaRef{␣} as a
-separator.
+In Agda, mixfix notation requires argument positions \AgdaRef{\_} to be
+separated by characters other than spaces. The term constructors for
+function abstraction and application use the Unicode character
+\AgdaRef{␣} as a separator.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%

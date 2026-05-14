@@ -1,12 +1,7 @@
-\section{Postulated Properties}\label{agda-Properties-postulated-properties}
+\section{Postulated Properties}\label{Properties-postulated-properties}
 
 This module declares some properties of the conventional notation for
 Scott domains and the associated functions on their carrier sets.
-
-The specified postulates that declare types and functions for domains
-are used only for type-checking denotational semantics in Agda. They do
-\emph{not} define the conventional mathematical structure of domains,
-nor the algebraic and universal properties of the associated functions.
 Postulated equivalences between terms are used for testing denotations
 of terms; adding them as rewrite rules allows implicit use in proofs.
 %
@@ -29,9 +24,9 @@ open Notation using (A; B; C)
 module Domains where
   open Notation.Domains using (Domain; ⟪_⟫; ⊥; 𝟙; D; E; F) public
 open Domains public
-
 \end{code}
 \begin{code}
+
 module Functions where
 \end{code}
 \begin{code}[hide]
@@ -45,9 +40,9 @@ module Functions where
 \end{code}
 \begin{code}[hide]
 open Functions public
-
 \end{code}
 \begin{code}
+
 module Recursion where
 \end{code}
 \begin{code}[hide]
@@ -57,6 +52,7 @@ module Recursion where
   postulate
     elim-unfold-fold : {{_ : D ≅ E}} → {e : ⟪ E ⟫} → unfold (fold e) ≡ e
   {-# REWRITE elim-unfold-fold #-}
+
 module Flat where
 \end{code}
 \begin{code}[hide]
@@ -76,6 +72,7 @@ module Flat where
     open Notation.Flat.Booleans using (Bool⊥; _⟶_,_; Eq; _==⊥_; eqBool) public
 \end{code}
 \begin{code}
+
   module Naturals where
 \end{code}
 \begin{code}[hide]
@@ -88,6 +85,7 @@ module Flat where
     postulate
       elim-==⊥ : (↑ n₁ ==⊥ ↑ n₂) ≡ ↑ (n₁ ==ᴺ n₂)
     {-# REWRITE elim-==⊥ #-} 
+
 module Sums where
 \end{code}
 \begin{code}[hide]
@@ -112,6 +110,7 @@ module Sums where
   variable D′ : Domain; n′ : Nat
 \end{code}
 \begin{code}
+
   postulate
     elim-∈⊥    :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →
                   (δ in⊥ E) ∈⊥ D′ ≡ ↑ (n ==ᴺ n′)
@@ -119,6 +118,7 @@ module Sums where
     elim-∈⊥-⊥  :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →
                   {n ≢ n′} → (δ in⊥ E) |⊥ D′ ≡ ⊥
   {-# REWRITE elim-∈⊥ elim-|⊥ #-} 
+
 module Products where
 \end{code}
 \begin{code}[hide]

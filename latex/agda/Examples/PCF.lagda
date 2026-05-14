@@ -1,4 +1,5 @@
-\subsection{PCF}\label{Examples-PCF-pcf}
+\subsection{PCF: A Programming Language for Computable
+Functions}\label{Examples/PCF-pcf-a-programming-language-for-computable-functions}
 
 PCF and its denotational semantics were orginally defined by Dana Scott
 in 1969
@@ -7,7 +8,8 @@ combinators (\AgdaRef{S}, \AgdaRef{K}) instead of \(\lambda\)-abstraction.
 Gordon Plotkin subsequently defined a denotational semantics for PCF
 including \(\lambda\)-abstraction
 \cite{Plotkin1977LCP}.
-The Agda modules presented below formalise the latter definition.
+The Agda modules presented below are an embedding of the latter
+definition.
 
 PCF is an intrinsically typed language: every well-formed term has a
 unique type. The following grammar summarises the context-free abstract

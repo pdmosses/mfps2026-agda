@@ -1,4 +1,4 @@
-\subsubsection{Auxiliary Functions}\label{Examples/Scm-Auxiliary-Functions-auxiliary-functions}
+\subsubsection{Auxiliary Functions}\label{Examples/Scm/Auxiliary-Functions-auxiliary-functions}
 
 The \(\lambda\)-notation in the Agda definitions of auxiliary functions
 for Scm corresponds closely to that in its conventional denotational
@@ -767,10 +767,9 @@ continuity.
 \AgdaBound{ϵ}\AgdaSpace{}%
 \AgdaSymbol{(}\AgdaBound{κ}\AgdaSpace{}%
 \AgdaBound{α}\AgdaSymbol{))}\<%
-\end{code}
-\begin{code}[hide]%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{postulate}\AgdaSpace{}%
 %
 %<*AgdaTag-initial-store>
@@ -794,9 +793,10 @@ continuity.
 %</AgdaTag-⟫>
 }%
 \>[35]\AgdaComment{--\ may\ have\ initialised\ locations}\<%
+\end{code}
+\begin{code}[hide]%
+\>[0]\<%
 \\
-%
-\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{postulate}\AgdaSpace{}%
 %
 %<*AgdaTag-finished>
@@ -967,9 +967,8 @@ continuity.
 \end{AgdaSuppressSpace}
 %
 The remaining auxiliary function definitions shown here involve the
-operations for (finite) sequences \AgdaRef{ϵ⋆}
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{\AgdaRef{Notation.Products.Sequences}}
-\cite{MFPS2026-Agda}.
+operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
+\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{Notation.Products.Sequences} (Section~\ref{Notation-sequences}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}%
@@ -1131,7 +1130,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 %</AgdaTag-list>
 \AgdaSpace{}%
 \AgdaSymbol{=}%
-\>[8]%
+\>[9]%
 %<*AgdaTag-fix>
 \AgdaPostulate{fix}%
 %</AgdaTag-fix>
@@ -1160,8 +1159,8 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaBound{κ}\AgdaSpace{}%
 \AgdaSymbol{→}\<%
 \\
-\>[8][@{}l@{\AgdaIndent{0}}]%
-\>[10]\AgdaSymbol{(}%
+\>[9][@{}l@{\AgdaIndent{0}}]%
+\>[11]\AgdaSymbol{(}%
 %<*AgdaTag-\#>
 \AgdaPostulate{\#}%
 %</AgdaTag-\#>
@@ -1211,7 +1210,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 }\<%
 \\
 %
-\>[10]\AgdaBound{list′}\AgdaSpace{}%
+\>[11]\AgdaBound{list′}\AgdaSpace{}%
 \AgdaSymbol{(}\AgdaBound{ϵ⋆}\AgdaSpace{}%
 \AgdaOperator{%
 %<*AgdaTag-†>
