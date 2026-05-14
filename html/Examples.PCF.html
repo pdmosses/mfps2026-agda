@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html><head><meta charset="utf-8"><title>Examples.PCF</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># PCF
+<html><head><meta charset="utf-8"><title>Examples.PCF</title><link rel="stylesheet" href="Agda.css"><script type="text/javascript" src="highlight-hover.js"></script></head><body><pre class="Agda"><a id="1" class="Background"># PCF: A Programming Language for Computable Functions
 
 PCF and its denotational semantics were orginally defined by Dana Scott in 1969 [(Scott1993TTA)]
 with combinators (`S`, `K`) instead of $\lambda$-abstraction.
 Gordon Plotkin subsequently defined a denotational semantics for PCF including $\lambda$-abstraction
 [(Plotkin1977LCP)].
-The Agda modules presented below formalise the latter definition.
+The Agda modules presented below are an embedding of the latter definition.
 
 PCF is an intrinsically typed language: every well-formed term has a unique type.
 The following grammar summarises the context-free abstract syntax of types $\sigma, \tau$
@@ -24,17 +24,17 @@ $$\begin{align}
   M, N &amp; ::=
     \alpha_i^\sigma \mid c \mid (M \, N) \mid (\lambda \alpha_i^\sigma M)
 \end{align}$$
-</a><a id="1038" class="Markup">```agda
-</a><a id="1046" class="Comment">--&quot;hide&quot;</a>
-<a id="1055" class="Symbol">{-#</a> <a id="1059" class="Keyword">OPTIONS</a> <a id="1067" class="Pragma">--rewriting</a> <a id="1079" class="Pragma">--confluence-check</a> <a id="1098" class="Pragma">--lossy-unification</a> <a id="1118" class="Symbol">#-}</a>
+</a><a id="1097" class="Markup">```agda
+</a><a id="1105" class="Comment">--&quot;hide&quot;</a>
+<a id="1114" class="Symbol">{-#</a> <a id="1118" class="Keyword">OPTIONS</a> <a id="1126" class="Pragma">--rewriting</a> <a id="1138" class="Pragma">--confluence-check</a> <a id="1157" class="Pragma">--lossy-unification</a> <a id="1177" class="Symbol">#-}</a>
 
-<a id="1123" class="Keyword">module</a> <a id="" href="../Examples/PCF/" class="Module Definition">Examples.PCF</a> <a id="1143" class="Keyword">where</a>
+<a id="1182" class="Keyword">module</a> <a id="" href="../Examples/PCF/" class="Module Definition">Examples.PCF</a> <a id="1202" class="Keyword">where</a>
 
-<a id="1150" class="Keyword">import</a> <a id="1157" href="Examples.PCF.Abstract-Syntax.html" class="Module">Examples.PCF.Abstract-Syntax</a>
-<a id="1186" class="Keyword">import</a> <a id="1193" href="Examples.PCF.Domain-Equations.html" class="Module">Examples.PCF.Domain-Equations</a>
-<a id="1223" class="Keyword">import</a> <a id="1230" href="Examples.PCF.Semantic-Functions.html" class="Module">Examples.PCF.Semantic-Functions</a>
-<a id="1262" class="Comment">--&quot;/hide&quot;</a>
-<a id="1272" class="Markup">```
-</a><a id="1276" class="Background">
+<a id="1209" class="Keyword">import</a> <a id="1216" href="Examples.PCF.Abstract-Syntax.html" class="Module">Examples.PCF.Abstract-Syntax</a>
+<a id="1245" class="Keyword">import</a> <a id="1252" href="Examples.PCF.Domain-Equations.html" class="Module">Examples.PCF.Domain-Equations</a>
+<a id="1282" class="Keyword">import</a> <a id="1289" href="Examples.PCF.Semantic-Functions.html" class="Module">Examples.PCF.Semantic-Functions</a>
+<a id="1321" class="Comment">--&quot;/hide&quot;</a>
+<a id="1331" class="Markup">```
+</a><a id="1335" class="Background">
 [(Plotkin1977LCP)]: https://doi.org/10.1016/0304-3975(77)90044-5
 [(Scott1993TTA)]: https://doi.org/10.1016/0304-3975(93)90095-B</a></pre></body></html>
