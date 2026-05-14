@@ -439,7 +439,7 @@ gen-md: clean-md
 		sd '<a id="[^"]*" class="Comment">--&quot;hide&quot;</a>\n' "" $${file}; \
 		sd '<a id="[^"]*" class="Comment">--&quot;/hide&quot;</a>\n' "" $${file}; \
 		_='# Remove @latex..@/latex:'; \
-		sd '\n@latex\n[^@]*\n@/latex' '' $${file}; \
+		sd '@latex[^@]*@/latex' '' $${file}; \
 		_='# Ensure the page starts with a heading:'; \
 		line=$$(head -n 1 $${file}); \
 		if [ "$${line#\#}" = "$${line}" ]; then \
@@ -782,13 +782,18 @@ $(LATEX)/%.lagda: %.lagda.md
 #	Pandoc transforms `...` to \texttt{...}:
 	@sd '\\texttt\{' '\\AgdaRef{' $@
 #	Pandoc doesn't support label prefixes:
-	@sd '\\label\{' '\label{$(patsubst agda/%,%, $(*D)-$(*F))-' $@
+	@sd '\\label\{' '\label{$(patsubst agda/%,%, $(*D)/$(*F))-' $@
 #	Transform [(bibkey)] references to \cite{bibkey}:
 	@sd '\\href\{https://[^\{\}]*\}\{\(([^ ()]*)\)\}' \
 	    '\cite{$$1}' $@
+#	Transform \cite{bibkey1}...\cite{bibkeyN} to \cite{bibkey1,...,bibkeyN}:
+	@sd '\}\n\\cite\{' ',' $@
 #	Transform references to relative URLs to link to generated website:
-	@sd '\\href\{(\.\./)*([^:\{\}]*)\.md([^\{\}]*)\}\{([^\{\}]*)\}' \
-	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/$$3}{\AgdaRef{$$4}}' \
+	@sd '\\href\{(\.\./)*([^:\{\}]*)/index\.md\\#([^\{\}]*)\}\{([^\{\}]*)\}' \
+	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$4} (Section~\ref{$$2-$$3})' \
+	    $@
+	@sd '\\href\{(\.\./)*([^:\{\}]*)\.md\\#([^\{\}]*)\}\{([^\{\}]*)\}' \
+	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$4} (Section~\ref{$$2-$$3})' \
 	    $@
 	@sd '\\begin\{code\}' "\\\\begin{AgdaSuppressSpace}\n\\\\begin{code}" $@
 	@sd '\\end\{code\}' "\\\\end{code}\n\\\\end{AgdaSuppressSpace}" $@
