@@ -16,8 +16,6 @@ open import Examples.PCF.Abstract-Syntax
 open import Examples.PCF.Domain-Equations
 open import Examples.PCF.Semantic-Functions
 
---"/hide"
-
 -- Variables
 e  = α 0 ι
 g  = α 1 (ι ⇒ ι)
@@ -66,6 +64,7 @@ check-if-nonzero :
 check-if-nonzero = refl
 
 -- Fixed points
+--"/hide"
 
 check-fix-const :
   𝒜′⟦ ⦅ 𝐿 Y ␣ ⦅λ e ␣ 𝐿 k 42 ⦆ ⦆ ⟧ ρ⊥ ≡ ↑ 42

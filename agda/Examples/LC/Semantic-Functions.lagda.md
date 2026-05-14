@@ -1,9 +1,7 @@
 # Semantic Functions
 
-The semantic equations below correspond closely to those found in
-textbooks on denotational semantics
-(e.g., [(Reynolds1998TPL)])
-apart from the need to wrap the domain of denotations in `⟪...⟫`.
+The semantic equations below correspond closely to those found in textbooks on denotational semantics
+(e.g., [(Reynolds1998TPL)]).
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}

@@ -23,8 +23,8 @@ open Notation.Flat.Naturals using (Nat⊥)
 open Notation.Sums using (_≳_↦_)
 open Notation.Products using (_×_)
 open Notation.Products.Sequences using (_⋆)
-
 --"/hide"
+
 postulate Loc : Set
 𝐋  =  Loc +⊥                -- locations
 𝐍  =  Nat⊥                  -- natural numbers
@@ -32,8 +32,7 @@ postulate Loc : Set
 𝐑  =  Int +⊥                -- numbers
 𝐏  =  𝐋 × 𝐋                 -- pairs
 𝐔  =  Ide →ˢ 𝐋              -- environments
-data Misc : Set where
-  null unallocated undefined unspecified : Misc
+data Misc : Set where null unallocated undefined unspecified : Misc
 𝐌  =  Misc +⊥               -- miscellaneous
 ```
 The conventional denotational semantics of Scm [(Mosses2025CSE)] defines the domain $𝐄$
@@ -65,8 +64,8 @@ postulate instance
 --"hide"
 
 variable
-  α : ⟪ 𝐋 ⟫;  ρ : ⟪ 𝐔 ⟫;  μ  : ⟪ 𝐌 ⟫;   ϵ : ⟪ 𝐄 ⟫
-  σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;  φ : ⟪ 𝐅 ⟫
+  α : ⟪ 𝐋 ⟫;  ρ : ⟪ 𝐔 ⟫;  μ  : ⟪ 𝐌 ⟫;    ϵ : ⟪ 𝐄 ⟫
+  σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;   φ : ⟪ 𝐅 ⟫
 --"/hide"
 ```
 

@@ -13,8 +13,8 @@ module Examples.PCF.Semantic-Functions where
 open import Notation
 open import Examples.PCF.Abstract-Syntax
 open import Examples.PCF.Domain-Equations
-
 --"/hide"
+
 _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
 ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
 ```

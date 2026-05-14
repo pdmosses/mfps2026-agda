@@ -2,12 +2,7 @@
 
 This module declares some properties of the conventional notation for
 Scott domains and the associated functions on their carrier sets.
-
-The specified postulates that declare types and functions
-for domains are used only for type-checking denotational semantics in
-Agda. They do *not* define the conventional mathematical structure
-of domains, nor the algebraic and universal properties of the associated
-functions. Postulated equivalences between terms are used for testing denotations of
+Postulated equivalences between terms are used for testing denotations of
 terms; adding them as rewrite rules allows implicit use in proofs.
 ```agda
 --"hide"
@@ -26,8 +21,8 @@ open Notation using (A; B; C)
 module Domains where
   open Notation.Domains using (Domain; ⟪_⟫; ⊥; 𝟙; D; E; F) public
 open Domains public
-
 --"/hide"
+
 module Functions where
 --"hide"
   open Notation.Functions using (_→ᶜ_; dom-cts; _→ˢ_; set-cts; fix) public
@@ -38,8 +33,8 @@ module Functions where
   {-# REWRITE apply-fix #-}
 --"hide"
 open Functions public
-
 --"/hide"
+
 module Recursion where
 --"hide"
   open Notation.Recursion using (_≅_; unfold; fold) public
@@ -47,6 +42,7 @@ module Recursion where
   postulate
     elim-unfold-fold : {{_ : D ≅ E}} → {e : ⟪ E ⟫} → unfold (fold e) ≡ e
   {-# REWRITE elim-unfold-fold #-}
+
 module Flat where
 --"hide"
   open Notation.Flat using (_+⊥; ↑; _♯) public
@@ -62,6 +58,7 @@ module Flat where
 
     open Notation.Flat.Booleans using (Bool⊥; _⟶_,_; Eq; _==⊥_; eqBool) public
 --"/hide"
+
   module Naturals where
 --"hide"
     open Notation.Flat.Naturals using (Nat⊥; eqNat) public
@@ -72,6 +69,7 @@ module Flat where
     postulate
       elim-==⊥ : (↑ n₁ ==⊥ ↑ n₂) ≡ ↑ (n₁ ==ᴺ n₂)
     {-# REWRITE elim-==⊥ #-} 
+
 module Sums where
 --"hide"
   open Notation.Sums using (_+_; inj₁; inj₂; [_,_]) public
@@ -92,6 +90,7 @@ module Sums where
   open import Relation.Binary.PropositionalEquality.Core using (_≢_)
   variable D′ : Domain; n′ : Nat
 --"/hide"
+
   postulate
     elim-∈⊥    :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →
                   (δ in⊥ E) ∈⊥ D′ ≡ ↑ (n ==ᴺ n′)
@@ -99,6 +98,7 @@ module Sums where
     elim-∈⊥-⊥  :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →
                   {n ≢ n′} → (δ in⊥ E) |⊥ D′ ≡ ⊥
   {-# REWRITE elim-∈⊥ elim-|⊥ #-} 
+
 module Products where
 --"hide"
   open Notation.Products using (_×_; _,_; _↓₁; _↓₂) public

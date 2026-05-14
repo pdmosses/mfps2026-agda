@@ -14,7 +14,6 @@ open import Examples.LC.Abstract-Syntax
 open import Examples.LC.Domain-Equations
 open import Examples.LC.Semantic-Functions
 
---"/hide"
 check-id : -- (λx1.x1)x42 = x42
   ⟦ ⦅ ⦅λ x 1 ␣ var x 1 ⦆ ␣ var x 42 ⦆ ⟧ ≡ ⟦ var x 42 ⟧
 check-id = refl
@@ -27,6 +26,7 @@ check-const = refl
 --   ⟦ ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⟧
 --   ≡ ⟦ var x 42 ⟧
 -- check-divergence = refl -- Agda type-checker diverges
+--"/hide"
 
 check-convergence : -- (λx1.x42)((λx0.x0 x0)(λx0.x0 x0)) = x42
   ⟦  ⦅ ⦅λ x 1 ␣ var x 42 ⦆ ␣

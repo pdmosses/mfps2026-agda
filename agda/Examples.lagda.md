@@ -1,11 +1,11 @@
 # Illustrative Examples
 
 This section illustrates mechanisation of denotational semantics in Agda
-with three examples, all using the posulated [Notation] for domains and their
+with three examples, all using the [postulated notation] for domains and their
 associated operations:
-Untyped Lambda-Calculus [LC] (§4.1),
-Programming Computable Functions [PCF] (§4.2),
-a simple sublanguage [Scm] of Scheme [(Scheme)] (§4.3).
+the [Untyped Lambda-Calculus],
+[PCF: A Programming Language for Computable Functions], and
+[Scm: A Sublanguage of Scheme].
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
@@ -16,8 +16,7 @@ import Examples.Scm
 --"/hide"
 ```
 
-[Notation]: ../Notation.md
-[LC]: LC/index.md
-[PCF]: PCF/index.md
-[Scm]: Scm/index.md
-[(Scheme)]: https://standards.scheme.org
+[Postulated Notation]: ../Notation.md#postulated-domain-notation
+[Untyped Lambda-Calculus]: ../Examples/LC/index.md#untyped-lambda-calculus
+[PCF: A Programming Language for Computable Functions]: ../Examples/PCF/index.md#pcf-a-programming-language-for-computable-functions
+[Scm: A Sublanguage of Scheme]: ../Examples/Scm/index.md#scm-a-sublanguage-of-scheme

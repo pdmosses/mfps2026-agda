@@ -5,14 +5,12 @@ In conventional Scott–Strachey style denotational semantics,
 abstract syntax is generally first-order:
 terms are finite, totally-defined elements.
 
-A variable is written `x n`. The argument `n` merely
-distinguishes between variables – it is \emph{not} a De Bruin index.
-The term constructor `var` below merely includes variables in
-terms.
+A variable is written `x n`. The argument `n` merely distinguishes between variables –
+it is \emph{not} a De Bruin index.
+The term constructor `var` below includes variables in terms.
 
-In Agda, mixfix notation requires argument positions to be separated by
-characters other than spaces. Below, the constructors for function abstraction and application use
-the Unicode character `␣` as a separator.
+In Agda, mixfix notation requires argument positions `_` to be separated by characters other than spaces.
+The term constructors for function abstraction and application use the Unicode character `␣` as a separator.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}

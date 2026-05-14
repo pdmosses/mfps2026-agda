@@ -17,8 +17,8 @@ open import Examples.PCF.Abstract-Syntax
 open import Notation
 open Notation.Flat.Booleans using (Bool; Bool⊥)
 open Notation.Flat.Naturals using (Nat⊥; eqNat)
-
 --"/hide"
+
 𝒟 : Types → Domain       -- standard domains
 𝒟 ι        = Nat⊥        -- natural numbers
 𝒟 o        = Bool⊥       -- truth-values

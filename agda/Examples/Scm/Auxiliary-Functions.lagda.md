@@ -57,9 +57,9 @@ postulate new : ⟪ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫  -- new gives an unalloca
 
 alloc : ⟪ 𝐄 →ᶜ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫     -- alloc ϵ allocates a location for ϵ
 alloc ϵ κ = new (λ α → assign α ϵ (κ α))
---"hide"
 
 postulate initial-store : ⟪ 𝐒 ⟫    -- may have initialised locations
+--"hide"
 
 postulate finished : ⟪ 𝐒 →ᶜ 𝐀 ⟫    -- obtain answer from the final store
 --"/hide"
@@ -69,7 +69,7 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
             ↑ true
 ```
 The remaining auxiliary function definitions shown here involve the operations for (finite) sequences `ϵ⋆`
-[Notation.Products.Sequences] [(MFPS2026-Agda)].
+declared in the module [Notation.Products.Sequences].
 ```agda
 cons : ⟪ 𝐅 ⟫         -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
 cons ϵ⋆ κ =  (# ϵ⋆ ==⊥ ↑ 2) ⟶
@@ -83,9 +83,9 @@ which is not the case for arguments in postulated types.
 The following definition uses the postulated operation `fix` to avoid recursion.
 ```agda
 list : ⟪ 𝐅 ⟫         -- list ϵ⋆ allocates and initialises a list
-list =  fix λ (list′ : ⟪ 𝐅 ⟫) → λ ϵ⋆ κ →
-          (# ϵ⋆ ==⊥ ↑ 0) ⟶ κ (↑ null in⊥ 𝐄) ,
-          list′ (ϵ⋆ † 1) (λ ϵ → cons ⟨ (ϵ⋆ ↓ 1) , ϵ ⟩ κ)
+list =   fix λ (list′ : ⟪ 𝐅 ⟫) → λ ϵ⋆ κ →
+           (# ϵ⋆ ==⊥ ↑ 0) ⟶ κ (↑ null in⊥ 𝐄) ,
+           list′ (ϵ⋆ † 1) (λ ϵ → cons ⟨ (ϵ⋆ ↓ 1) , ϵ ⟩ κ)
 --"hide"
 
 car : ⟪ 𝐅 ⟫          -- car ⟨ ϵ ⟩ gives the head of the list ϵ

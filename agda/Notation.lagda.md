@@ -1,14 +1,15 @@
 # Postulated Domain Notation
 
 This section postulates Agda notation for the domain constructors and
-associated functions used in §4.
+associated functions used in the [illustrative examples].
 @latex
 See the accompanying website [(MFPS2026-Agda)] for hyperlinked, highlighted
 listings of the complete Agda code for elided details such as module
 imports, fixity declarations, and declarations of the types of meta-variables.
-In the PDF of this paper, module references are links to the website.
+In the PDF, references to names of sections are links to the website.
 @/latex
 
+[Illustrative Examples]: Examples/index.md#illustrative-examples
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 
 ```agda
@@ -52,10 +53,10 @@ However, postulating `⊥ : D` for all `D : Domain` was then
 Postulating `Domain : Set` avoids that inconsistency.
 
 The notation for domains postulated in this section supports type-checking
-embeddings of denotational semantics in Agda, such as those illustrated in §4.
+embeddings of denotational semantics in Agda such as those in the
+[illustrative examples].
 It does *not* define or constrain the *mathematical structure* of domains,
 nor the algebraic and universal properties of the associated functions.
-(The elimination rules postulated in §5 are not used for type-checking.)
 
 [(Mosses2025CDS)]: https://doi.org/10.1145/3759537.3762694
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
@@ -70,10 +71,9 @@ functions from type `D` to type `E`;
 instead, we use the notation `D →ᶜ E` for embedding continuous function domains:
 ```agda
 module Functions where
-  postulate
-    _→ᶜ_ : Domain → Domain → Domain
+  postulate _→ᶜ_ : Domain → Domain → Domain
 --"hide"
-    -- D →ᶜ E is the domain of continuous functions from D to E
+  -- D →ᶜ E is the domain of continuous functions from D to E
   infixr 0 _→ᶜ_
 --"/hide"
 ```
@@ -100,22 +100,19 @@ from conventional denotational definitions in Agda,
 it appears to be necessary to *rewrite* the carriers of function domains
 to ordinary function types:
 ```agda
-  postulate
-    dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
+  postulate dom-cts : ⟪ D →ᶜ E ⟫ ≡ (⟪ D ⟫ → ⟪ E ⟫)
   {-# REWRITE dom-cts #-}
 ```
 Similarly, the notation `A →ˢ D` is the embedding of the domain of all functions
 from an ordinary type `A` to a domain `D` (which are trivially continuous,
 ordered pointwise):
 ```agda
-  postulate
-    _→ˢ_    : Set → Domain → Domain
+  postulate _→ˢ_    : Set → Domain → Domain
 --"hide"
   -- A →ˢ D is the domain of all functions from A to D
   infixr 0 _→ˢ_
 --"/hide"
-  postulate
-    set-cts  : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
+  postulate set-cts  : ⟪ A →ˢ D ⟫ ≡ (A → ⟪ D ⟫)
   {-# REWRITE set-cts #-}
 ```
 ```agda
@@ -186,11 +183,12 @@ conditional choice to domains. It returns `⊥` whenever its first argument is `
       instance eqBool : Eq Bool
 --"/hide"
 ```
-The [Booleans] module also defines `Eq A` for use as an instance parameter
+@latex
+The [Booleans](https://pdmosses.github.io/mfps2026-agda/Notation/#booleans) module
+also defines `Eq A` for use as an instance parameter
 restricting to types `A` such that `_==_ : A → A → Bool`,
 and postulates an operation `δ₁ ==⊥ δ₂` on `A +⊥`.
-
-[Booleans]: Notation.md
+@/latex
 
 ### Naturals
 
@@ -247,6 +245,8 @@ follows.
     _|⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ D ⟫      -- ε |⊥ D  projection
     _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  test
 ```
+The operations are defined only for `D` and `E`
+where an instance of type `E ≳ n ↦ D` is declared for some `n`.
 
 ## Product domains
 
@@ -254,6 +254,7 @@ The carrier of the binary cartesian product of two domains consists of all
 pairs of elements of the carriers of the agument domains. Neither the product
 nor pairing is associative. The following operations can be used directly for
 binary products, and iterated for products of more than two domains.
+@latex \pagebreak @/latex
 ```agda
 module Products where
   postulate
@@ -334,9 +335,9 @@ Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
   -- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 ```
-Defining extension or overriding of *dependent* maps is less straightforward,
-as it involves a function that returns an *equivalence proof* instead of a
-truth value.
+Defining an operation `_[_←_]` for extension or overriding of *dependent* maps is 
+[less straightforward](https://pdmosses.github.io/mfps2026-agda/Notation/#updates),
+as it involves a function that returns an *equivalence proof* instead of a truth value.
 ```agda
 --"hide"
   open import Data.Maybe.Base public using (Maybe; just; nothing)
