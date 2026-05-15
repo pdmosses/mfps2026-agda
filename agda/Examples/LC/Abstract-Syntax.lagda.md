@@ -1,12 +1,12 @@
 # Abstract Syntax
 
-Abstract syntax is \emph{not} regarded as a domain.
+Abstract syntax is *not* regarded as a domain.
 In conventional Scott–Strachey style denotational semantics,
 abstract syntax is generally first-order:
 terms are finite, totally-defined elements.
 
 A variable is written `x n`. The argument `n` merely distinguishes between variables –
-it is \emph{not} a De Bruin index.
+it is *not* a De Bruin index.
 The term constructor `var` below includes variables in terms.
 
 In Agda, mixfix notation requires argument positions `_` to be separated by characters other than spaces.

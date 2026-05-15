@@ -7,6 +7,7 @@ constants $\text{K} : \text{Con}$ and
 identifiers $\text{I} : \text{Ide}$.
 The meta-variable $\text{E}^* : \text{Exp}^*$ implicitly ranges over
 arbitrary sequences of expressions.
+@latex@/latex
 $$\begin{align}
   \text{K} & ::=
     \text{Z} \mid \text{\tt \#t} \mid \text{\tt \#f}
@@ -15,6 +16,7 @@ $$\begin{align}
     \text{K} \mid \text{I} \mid \texttt ( \text{E}_0~\text{E}^* \texttt ) \mid \text{\tt (lambda} ~ \text{I} ~ \text{E} \texttt ) \mid
     \text{\tt (if} ~ \text{E}_0 ~ \text{E}_1 ~ \text{E}_2 \texttt ) \mid \text{\tt (set!} ~ \text{I} ~ \text{E} \texttt )
 \end{align}$$
+@latex@/latex
 In the following Agda formalisation of the above grammar,
 the abstract syntax of sequences `E⋆ : Exp⋆`
 is made explicit:

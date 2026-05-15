@@ -843,6 +843,7 @@ debug-latex:
 
 define DEBUGLATEX
 
+LAGDA: $(LAGDA)
 LATEX: $(LATEX)
 
 LAGDA-MD-FILES: $(strip $(LAGDA-MD-FILES))
