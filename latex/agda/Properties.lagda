@@ -1,9 +1,30 @@
 \section{Postulated Properties}\label{Properties-postulated-properties}
 
-This module declares some properties of the conventional notation for
-Scott domains and the associated functions on their carrier sets.
-Postulated equivalences between terms are used for testing denotations
-of terms; adding them as rewrite rules allows implicit use in proofs.
+This module postulates basic properties of some of the operations of the
+\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#postulated-domain-notation}{postulated domain
+notation} (Section~\ref{Notation-postulated-domain-notation}). These properties are expected to hold in various categories
+of domains
+\cite{Abramsky1995DT}
+but they do \emph{not} define or constrain the \emph{mathematical
+structure} of domains.
+
+The postulated properties support proofs that terms have identical
+denotations. For example, some
+\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{illustrative tests} (Section~\ref{Tests-illustrative-tests}) declare
+that the denotation of a function application is equivalent to the
+denotation of a constant; other tests declare that particular instances
+of renaming do not affect denotations.
+
+When postulated properties are declared as \emph{rewrite rules}, Agda
+can use them \emph{automatically} in proofs. Agda also has an option to
+check that the declared rewrite rules form a confluent system. Rewrite
+rules are safe to use with \AgdaRef{Agda.Builtin.Equality} when that
+option is enabled. Confluent but non-terminating rewrite rules cannot
+break consistency, as shown by Cockx, Tabareau, and Winterhalter
+\cite{Cockx2021TRT}.
+
+The rewrite rules declared below support automatic proof of identity for
+all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -38,6 +59,16 @@ module Functions where
     -- apply-fix{φ} unfolds fix φ once
   {-# REWRITE apply-fix #-}
 \end{code}
+\end{AgdaSuppressSpace}
+%
+The rewrite rule \AgdaRef{apply-fix} does not cause the type-checker to
+diverge, despite the obvious non-termination. Agda's type checker uses
+\emph{weak head evaluation}: it only unfolds expressions to the point
+where the top-level constructor becomes visible. In particular, it will
+not evaluate under a λ-abstraction unless it is being compared to
+another λ-abstraction and the bodies are not syntactically equal.
+%
+\begin{AgdaSuppressSpace}
 \begin{code}[hide]
 open Functions public
 \end{code}
@@ -52,7 +83,14 @@ module Recursion where
   postulate
     elim-unfold-fold : {{_ : D ≅ E}} → {e : ⟪ E ⟫} → unfold (fold e) ≡ e
   {-# REWRITE elim-unfold-fold #-}
-
+\end{code}
+\end{AgdaSuppressSpace}
+%
+A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
+\AgdaRef{elim-unfold-fold} is needed for the current illustrative tests.
+%
+\begin{AgdaSuppressSpace}
+\begin{code}
 module Flat where
 \end{code}
 \begin{code}[hide]
@@ -85,22 +123,27 @@ module Flat where
     postulate
       elim-==⊥ : (↑ n₁ ==⊥ ↑ n₂) ≡ ↑ (n₁ ==ᴺ n₂)
     {-# REWRITE elim-==⊥ #-} 
-
-module Sums where
 \end{code}
+\end{AgdaSuppressSpace}
+%
+The remaining postulated properties are for domains that are not used in
+the semantics of the LC and PCF languages. They will be needed when
+tests for equivalence of denotations of Scm expressions are added.
+Postulated properties for operations on tuples, sequences, and updates
+have not yet been developed.
+%
+\begin{AgdaSuppressSpace}
 \begin{code}[hide]
+module Sums where
   open Notation.Sums using (_+_; inj₁; inj₂; [_,_]) public
 
   variable φ : ⟪ D →ᶜ F ⟫; ψ : ⟪ E →ᶜ F ⟫; δ : ⟪ D ⟫; ε : ⟪ E ⟫
-\end{code}
-\begin{code}
   postulate
     elim-inj₁  :  [ φ , ψ ] (inj₁ δ)  ≡  φ δ
     elim-inj₂  :  [ φ , ψ ] (inj₂ ε)  ≡  ψ ε
     elim-[]-⊥  :  [ φ , ψ ] ⊥         ≡  ⊥
   {-# REWRITE elim-inj₁ elim-inj₂ #-} 
-\end{code}
-\begin{code}[hide]
+
   open Notation.Sums using (n; _≳_↦_; _in⊥_; _|⊥_; _∈⊥_) public
   open Flat
   open Flat.Booleans
@@ -108,9 +151,6 @@ module Sums where
 
   open import Relation.Binary.PropositionalEquality.Core using (_≢_)
   variable D′ : Domain; n′ : Nat
-\end{code}
-\begin{code}
-
   postulate
     elim-∈⊥    :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →
                   (δ in⊥ E) ∈⊥ D′ ≡ ↑ (n ==ᴺ n′)
@@ -120,19 +160,14 @@ module Sums where
   {-# REWRITE elim-∈⊥ elim-|⊥ #-} 
 
 module Products where
-\end{code}
-\begin{code}[hide]
   open Notation.Products using (_×_; _,_; _↓₁; _↓₂) public
 
   variable δ : ⟪ D ⟫; ε : ⟪ E ⟫
-\end{code}
-\begin{code}
   postulate
     elim-↓₁  :  ( δ , ε ) ↓₁  ≡  δ
     elim-↓₂  :  ( δ , ε ) ↓₂  ≡  ε
   {-# REWRITE elim-↓₁ elim-↓₂ #-} 
-\end{code}
-\begin{code}[hide]
+
   module Tuples where
     open Notation.Products.Tuples using (_^_) public
 

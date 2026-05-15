@@ -16,7 +16,7 @@ unique type. The following grammar summarises the context-free abstract
 syntax of types \(\sigma, \tau\) and terms \(M, N\) with variables
 \(\alpha_i^\sigma\) (\(i \geq 0\)) and constants \(c\). In §4.1.1 we
 reflect Plotkin's presentation of PCF more accurately by exploiting
-Agda's support for dependent types.  \begin{align}
+Agda's support for dependent types.   \begin{align}
   \sigma, \tau  & ::=
     \iota \mid o \mid (\sigma \to \tau)
   \\
