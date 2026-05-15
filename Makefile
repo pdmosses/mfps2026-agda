@@ -72,7 +72,7 @@ https://pdmosses.github.io/agda-material/
 # ARGUMENT DEFAULT VALUES
 
 DIR  := agda
-ROOT := Examples,Tests
+ROOT := Background,Examples,Tests
 
 # Both DIR and ROOT may be comma-separated lists.
 # The top level of the ROOT module(s) should be located in DIR.
@@ -786,8 +786,8 @@ $(LATEX)/%.lagda: %.lagda.md
 #	Transform [(bibkey)] references to \cite{bibkey}:
 	@sd '\\href\{https://[^\{\}]*\}\{\(([^ ()]*)\)\}' \
 	    '\cite{$$1}' $@
-#	Transform \cite{bibkey1}...\cite{bibkeyN} to \cite{bibkey1,...,bibkeyN}:
-	@sd '\}\n\\cite\{' ',' $@
+#	Transform \cite{bibkey1}~...~\cite{bibkeyN} to \cite{bibkey1,...,bibkeyN}:
+	@sd '\}~\\cite\{' ',' $@
 #	Transform references to relative URLs to link to generated website:
 	@sd '\\href\{(\.\./)*([^:\{\}]*)/index\.md\\#([^\{\}]*)\}\{([^\{\}]*)\}' \
 	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$4} (Section~\ref{$$2-$$3})' \
