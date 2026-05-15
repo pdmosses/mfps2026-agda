@@ -48,7 +48,9 @@ open Domains public
 \end{AgdaSuppressSpace}
 %
 Some previous papers on embedding denotational semantics in Agda
-\cite{Mosses2025CDS,Mosses2025CSE,Mosses2025LAF}
+\cite{Mosses2025CDS}
+\cite{Mosses2025CSE}
+\cite{Mosses2025LAF}
 defined domains to be types: \AgdaRef{Domain\ =\ Set}. However,
 postulating \AgdaRef{⊥\ :\ D} for all \AgdaRef{D\ :\ Domain} was then
 \emph{inconsistent} with the existence of an empty type in Agda.

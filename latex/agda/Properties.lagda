@@ -71,9 +71,9 @@ another λ-abstraction and the bodies are not syntactically equal.
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
 open Functions public
+
 \end{code}
 \begin{code}
-
 module Recursion where
 \end{code}
 \begin{code}[hide]
@@ -126,11 +126,14 @@ module Flat where
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The remaining postulated properties are for domains that are not used in
-the semantics of the LC and PCF languages. They will be needed when
-tests for equivalence of denotations of Scm expressions are added.
-Postulated properties for operations on tuples, sequences, and updates
-have not yet been developed.
+The remaining \href{https://pdmosses.github.io/mfps2026-agda/Properties/\#postulated-properties}{postulated
+properties} (Section~\ref{Properties-postulated-properties}) are for domains that are not used in the semantics of the
+\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/\#untyped-lambda-calculus}{LC} (Section~\ref{Examples/LC-untyped-lambda-calculus}) and
+\href{https://pdmosses.github.io/mfps2026-agda/Examples/PCF/\#pcf-a-programming-language-for-computable-functions}{PCF} (Section~\ref{Examples/PCF-pcf-a-programming-language-for-computable-functions})
+languages; they will be needed when tests for equivalence of denotations
+of \href{https://pdmosses.github.io/mfps2026-agda/Examples/Scm/\#scm-a-sublanguage-of-scheme}{Scm} (Section~\ref{Examples/Scm-scm-a-sublanguage-of-scheme})
+expressions are added. Postulated properties for operations on tuples
+and sequences will also be needed, but have not yet been developed.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

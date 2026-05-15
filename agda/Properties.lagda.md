@@ -62,8 +62,8 @@ unless it is being compared to another λ-abstraction and the bodies are not syn
 ```agda
 --"hide"
 open Functions public
---"/hide"
 
+--"/hide"
 module Recursion where
 --"hide"
   open Notation.Recursion using (_≅_; unfold; fold) public
@@ -102,11 +102,17 @@ module Flat where
       elim-==⊥ : (↑ n₁ ==⊥ ↑ n₂) ≡ ↑ (n₁ ==ᴺ n₂)
     {-# REWRITE elim-==⊥ #-} 
 ```
-The remaining postulated properties are for domains that are not used
-in the semantics of the LC and PCF languages.
-They will be needed when tests for equivalence of denotations of Scm expressions are added.
-Postulated properties for operations on tuples, sequences, and updates
-have not yet been developed.
+The remaining [postulated properties] are for domains that are not used
+in the semantics of the [LC] and [PCF] languages;
+they will be needed when tests for equivalence of denotations of [Scm] expressions are added.
+Postulated properties for operations on tuples and sequences will also be needed,
+but have not yet been developed.
+
+[Postulated Properties]: Properties.md#postulated-properties
+[LC]: Examples/LC/index.md#untyped-lambda-calculus
+[PCF]: Examples/PCF/index.md#pcf-a-programming-language-for-computable-functions
+[Scm]: Examples/Scm/index.md#scm-a-sublanguage-of-scheme
+
 ```agda
 --"hide"
 module Sums where
