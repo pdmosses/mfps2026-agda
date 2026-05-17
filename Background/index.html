@@ -601,10 +601,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#some-notes-on-agdas-syntax-and-features" class="md-nav__link">
+  <a href="#notes-on-some-of-agdas-syntax-and-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Some notes on Agda's syntax and features
+        Notes on some of Agda's syntax and features
       
     </span>
   </a>
@@ -6415,10 +6415,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#some-notes-on-agdas-syntax-and-features" class="md-nav__link">
+  <a href="#notes-on-some-of-agdas-syntax-and-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Some notes on Agda's syntax and features
+        Notes on some of Agda's syntax and features
       
     </span>
   </a>
@@ -6457,54 +6457,52 @@
 
 
 <h1 id="background">Background</h1>
-<p><a href="./#denotational-semantics">Denotational Semantics</a> recalls the main concepts and notation of Scott–Strachey denotational semantics.
-<a href="./#agda">Agda</a> highlights features of the Agda language whose use or meaning might not be immediately obvious.</p>
 <h2 id="denotational-semantics">Denotational Semantics</h2>
 <p>A conventional Scott–Strachey denotational semantics of a programming language consists of
 definitions of <em>abstract syntax</em>, <em>semantic domains</em>, and <em>semantic functions</em>.
-The abstract syntax uses a context-free grammar to define sets of abstract syntax trees (ASTs)
+The abstract syntax uses a <em>context-free grammar</em> to define sets of abstract syntax trees (ASTs)
 that model the compositional structure of programs and their phrases.
-The semantic domains are defined by equations in terms of domain constructors,
+The semantic domains are defined by equations in terms of <em>domain constructors</em>,
 and can be mutually recursive.
-The semantic functions are defined inductively, also with mutual recursion,
-and map ASTs to their denotations, which are elements of domains.
+The semantic functions are defined <em>inductively</em>, also with mutual recursion,
+and map ASTs to their <em>denotations</em>, which are elements of domains.
 The denotation of an AST models its contribution to the semantics of complete programs,
-and is defined compositionally in terms of the denotations of its direct components.
-The arguments of semantic functions are enclosed by <span class="arithmatex">\(\llbracket\dots\rrbracket\)</span>,
+and is defined <em>compositionally</em> in terms of the denotations of its direct components.
+The AST arguments of semantic functions are enclosed by <span class="arithmatex">\(\llbracket\dots\rrbracket\)</span>,
 to avoid potential confusion between abstract syntax terms and semantic notation.</p>
-<p>Domains were originally continuous lattices <a href="https://ncatlab.org/nlab/files/Scott-TheoryOfComputation.pdf">(Scott1970OMT)</a> <a href="https://doi.org/10.1007/BFb0073967">(Scott1972CL)</a> <a href="https://mitpress.mit.edu/9780262690768/denotational-semantics/">(Stoy1977DSS)</a> <a href="https://doi.org/10.1145/360303.360308">(Tennent1976DSP)</a>.
-A more general notion of domain is a dcpo (an algebraic, bounded-complete and directed-complete partial order) 
+<p>Domains were originally required to be continuous lattices <a href="https://ncatlab.org/nlab/files/Scott-TheoryOfComputation.pdf">(Scott1970OMT)</a> <a href="https://doi.org/10.1007/BFb0073967">(Scott1972CL)</a> <a href="https://mitpress.mit.edu/9780262690768/denotational-semantics/">(Stoy1977DSS)</a> <a href="https://doi.org/10.1145/360303.360308">(Tennent1976DSP)</a>.
+A more general notion of domain is a <em>dcpo</em> (an algebraic, bounded-complete and directed-complete partial order) 
 <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>.
-The notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
-summarised below, is independent of the mathematical structure of domains.
-Let <span class="arithmatex">\(D, E\)</span> be domains, <span class="arithmatex">\(\delta : D\)</span>, and <span class="arithmatex">\(\epsilon : E\)</span>.</p>
+However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
+summarised below, is independent of the mathematical structure of domains.</p>
+<p>Let <span class="arithmatex">\(D, E\)</span> be domains with elements <span class="arithmatex">\(\delta : D\)</span>, <span class="arithmatex">\(\epsilon : E\)</span>.</p>
 <ul>
 <li>
-<p>Every domain <span class="arithmatex">\(D\)</span> has a 'bottom' element <span class="arithmatex">\(\bot_D\)</span> that represents
+<p>Every domain <span class="arithmatex">\(D\)</span> has a <em>bottom</em> element <span class="arithmatex">\(\bot_D\)</span> that represents
   absence of information (e.g., due to an error or nontermination of a
   computation), usually written just <span class="arithmatex">\(\bot\)</span>.</p>
 </li>
 <li>
-<p>A function <span class="arithmatex">\(\phi : D \to E\)</span> is (Scott-) continuous if it is monotone and
+<p>A function <span class="arithmatex">\(\phi : D \to E\)</span> is (Scott-) <em>continuous</em> if it is monotone and
   preserves limits of directed subsets of <span class="arithmatex">\(D\)</span> <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>.
-  A function domain <span class="arithmatex">\(F = D \to E\)</span> consists of continuous (total) functions from <span class="arithmatex">\(D\)</span> to <span class="arithmatex">\(E\)</span>.
-  The set of all functions from a set <span class="arithmatex">\(A\)</span> to a domain also forms a domain, ordered point-wise.
+  The <em>function domain</em> <span class="arithmatex">\(F = D \to E\)</span> consists of all continuous (total) functions from <span class="arithmatex">\(D\)</span> to <span class="arithmatex">\(E\)</span>.
+  The set of all functions from a set <span class="arithmatex">\(A\)</span> to a domain also forms a domain, ordered pointwise.
   Functions between domains are defined using abstraction <span class="arithmatex">\(\lambda \delta.\epsilon\)</span>, application <span class="arithmatex">\(\phi\,\delta\)</span>,
-  the operation <span class="arithmatex">\(\texttt{fix}\)</span> that maps each <span class="arithmatex">\(\phi : D \to D\)</span> to its least fixed point,
+  the operation <span class="arithmatex">\(\texttt{fix}\)</span> that maps each endofunction <span class="arithmatex">\(\phi : D \to D\)</span> to its least fixed point,
   and the operations associated with other domain constructors.</p>
 </li>
 <li>
-<p>For any set <span class="arithmatex">\(A\)</span> the flat domain <span class="arithmatex">\(A_\bot\)</span> is formed by adding <span class="arithmatex">\(\bot\)</span> to <span class="arithmatex">\(A\)</span>.
+<p>For any set <span class="arithmatex">\(A\)</span> the <em>flat domain</em> <span class="arithmatex">\(A_\bot\)</span> is formed by adding <span class="arithmatex">\(\bot\)</span> as a fresh element of <span class="arithmatex">\(A\)</span>.
   Functions on sets are implicitly extended to (continuous) functions on flat domains,
   returning <span class="arithmatex">\(\bot\)</span> when any argument is <span class="arithmatex">\(\bot\)</span>.
-  Elements <span class="arithmatex">\(\tau\)</span> of the domain of truth-values <span class="arithmatex">\(\textbf{T} = \{ \text{true}, \text{false} \}_\bot\)</span>
-  are used in conditionals written <span class="arithmatex">\(\tau \to \delta_1, \delta_2\)</span>,
+  Elements <span class="arithmatex">\(\tau\)</span> of the domain of <em>truth-values</em> <span class="arithmatex">\(\textbf{T} = \{ \text{true}, \text{false} \}_\bot\)</span>
+  are used in <em>conditionals</em> written <span class="arithmatex">\(\tau \to \delta_1, \delta_2\)</span>,
   where <span class="arithmatex">\(\text{true} \to \delta_1, \delta_2\)</span> is <span class="arithmatex">\(\delta_1\)</span>,
   <span class="arithmatex">\(\text{false} \to \delta_1, \delta_2\)</span> is <span class="arithmatex">\(\delta_2\)</span>, and
   <span class="arithmatex">\(\bot_{\textbf{T}} \to \delta_1, \delta_2\)</span> is <span class="arithmatex">\(\bot_D\)</span>.</p>
 </li>
 <li>
-<p>A separated sum domain <span class="arithmatex">\(X = \ldots + Y + \ldots\)</span> consists of injected elements
+<p>The <em>separated sum domain</em> <span class="arithmatex">\(X = \ldots + Y + \ldots\)</span> consists of injected elements
   written '<span class="arithmatex">\(\upsilon \textsf{ in } X\)</span>' (where <span class="arithmatex">\(\upsilon : Y\)</span> for some summand <span class="arithmatex">\(Y\)</span>)
   together with <span class="arithmatex">\(\bot_X\)</span>.
   The <span class="arithmatex">\(\textbf{T}\)</span>-valued operation <span class="arithmatex">\(\chi \mathbin{\textsf{E}} Y\)</span>
@@ -6512,25 +6510,25 @@ Let <span class="arithmatex">\(D, E\)</span> be domains, <span class="arithmatex
   if so, <span class="arithmatex">\(\chi \mid Y\)</span> projects <span class="arithmatex">\(\chi\)</span> to <span class="arithmatex">\(\upsilon\)</span>, otherwise to <span class="arithmatex">\(\bot_Y\)</span>.</p>
 </li>
 <li>
-<p>A cartesian product domain <span class="arithmatex">\(P = D \times E\)</span> consists of pairs
+<p>The <em>cartesian product domain</em> <span class="arithmatex">\(P = D \times E\)</span> consists of pairs
   <span class="arithmatex">\(\langle \delta, \epsilon \rangle\)</span> with
   <span class="arithmatex">\(\bot_P = \langle \bot_D, \bot_E \rangle\)</span>. When <span class="arithmatex">\(\pi : P\)</span>,
   the operations <span class="arithmatex">\(\pi \downarrow 1\)</span> and <span class="arithmatex">\(\pi \downarrow 2\)</span> select its components;
-  similarly for domains of <span class="arithmatex">\(n\)</span>-tuples <span class="arithmatex">\(D^n\)</span> and finite sequences <span class="arithmatex">\(D^*\)</span>.
+  similarly for domains of <span class="arithmatex">\(n\)</span>-<em>tuples</em> <span class="arithmatex">\(D^n\)</span> and finite <em>sequences</em> <span class="arithmatex">\(D^*\)</span>.
   Further operations on <span class="arithmatex">\(D^*\)</span> include the empty sequence <span class="arithmatex">\(\langle \rangle\)</span>,
   concatenation <span class="arithmatex">\(\delta^*_1 \mathbin{\S} \delta^*_2\)</span>, length <span class="arithmatex">\(\text{\#}\,\delta^*\)</span>,
   <span class="arithmatex">\(n\)</span>th component <span class="arithmatex">\(\delta^* \downarrow n\)</span>, and <span class="arithmatex">\(n\)</span>th tail <span class="arithmatex">\(\delta^* \mathbin{\dagger} n\)</span> (<span class="arithmatex">\(n \geq 1\)</span>).</p>
 </li>
 </ul>
-<p>Bob Tennent's highly accessible tutorial on denotational semantics <a href="https://doi.org/10.1145/360303.360308">(Tennent1976DSP)</a>
-includes illustrative examples (partly in continuation-passing style) and
-further details of the conventional Scott–Strachey style.</p>
+<p>Robert Tennent's highly accessible tutorial on denotational semantics <a href="https://doi.org/10.1145/360303.360308">(Tennent1976DSP)</a>
+includes illustrative examples using the above notation (partly in continuation-passing style)
+and further details of the conventional Scott–Strachey style.</p>
 <h2 id="agda">Agda</h2>
 <p>Agda <a href="https://agda.readthedocs.io/en/v2.8.0/language/">(Agda-Language)</a> <a href="https://en.wikipedia.org/wiki/Agda_(programming_language)">(Agda-Wikipedia)</a> is both a strongly typed
-functional programming language with support for first-class <em>dependent
-types</em> and a <em>proof assistant</em> based on the Curry-Howard correspondence
-between propositions and types. A number of features set Agda apart from
-a typical functional programming language:</p>
+functional <em>programming language</em> with support for first-class
+<em>dependent types</em> and a <em>proof assistant</em> based on the Curry–Howard
+correspondence between propositions and types. A number of features set
+Agda apart from a typical functional programming language:</p>
 <ul>
 <li>
 <p>Types in Agda are first-class values of a <em>universe</em> <span class="arithmatex">\(\textsf{Set}_i\)</span> where
@@ -6553,33 +6551,43 @@ a typical functional programming language:</p>
 used as a higher-order logic for writing mathematical statements and
 proofs, where types correspond to propositions and type checking
 corresponds to checking the validity of the proof.</p>
-<h3 -="-" id="some-notes-on-agdas-syntax-and-features">Some notes on Agda's syntax and features</h3>
+<h3 -="-" id="notes-on-some-of-agdas-syntax-and-features">Notes on some of Agda's syntax and features</h3>
 <dl>
+<dt>Comments.</dt>
+<dd>End-of-line comments are initiated by <code>--</code>, while multi-line comments
+are between <code>{-</code> and <code>-}</code>.</dd>
 <dt>Naming.</dt>
-<dd>Defined symbols, variables, and type constructors all share a single
-namespace. Names can be any sequence of ASCII and Unicode characters
-except <code>.;{}()@"</code>.</dd>
-<dt>Anonymous functions.</dt>
-<dd>Lambda expressions use the syntax <code>λ x → u</code> instead of <code>λ x. u</code>.</dd>
+<dd>Declared symbols, variables, and type constructors all share a
+single namespace. Names can be any sequence of non-whitespace ASCII
+and Unicode characters except <code>.;{}()@"</code>, excluding reserved symbols
+and keywords such as <code>→</code> or <code>where</code>. Underscores in names play a special role
+for mixfix notation.</dd>
 <dt>Mixfix notation.</dt>
 <dd>Agda supports <em>mixfix notation</em> for defining operators, with
 underscores in the name of a symbol indicating argument positions.
 For example, if we declare <code>_+_ : Nat → Nat → Nat</code>,
 we can use it as <code>1 + 1</code> (the spaces are required, since <code>1+1</code> is a valid Agda name!).</dd>
+<dt>Anonymous functions.</dt>
+<dd>Lambda abstractions use the syntax <code>λ x → u</code> instead of <code>λ x. u</code>.</dd>
 <dt>Implicit arguments.</dt>
-<dd>Arguments marked by single curly braces <code>{...}</code> in the type of a symbol are
+<dd>Arguments marked by single curly braces <code>{…}</code> in the type of a symbol are
 considered to be <em>implicit</em>. These arguments may be omitted, and are
 then inferred by Agda's type checker.</dd>
 <dt>Type classes.</dt>
 <dd>Agda has no direct support for type classes, but they can be
 simulated using Agda's <em>instance arguments</em> to resolve type class
-instances. Instance arguments are marked by double curly braces <code>{{...}}</code> and
+instances. Instance arguments are marked by double curly braces <code>{{…}}</code> and
 are resolved automatically by using definitions marked as <code>instance</code>.</dd>
 <dt>Rewrite rules.</dt>
-<dd>Agda has support for <em>rewrite rules</em> <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2">(cockx:LIPIcs.TYPES.2019.2)</a> <a href="https://doi.org/10.1145/3434341">(Cockx2021TRT)</a>
-that are applied automatically during type checking.
-Rewrite rules are declared by marking proofs of the equality type <code>a ≡ b</code>
-with a <code>REWRITE</code> pragma.</dd>
+<dd>Agda has support for <em>rewrite rules</em> <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2">(cockx:LIPIcs.TYPES.2019.2)</a>
+that are applied automatically during type checking. Rewrite rules
+are declared by marking an equality proof 
+<code>eq : a ≡ b</code> with a <code>{-# REWRITE eq #-}</code> pragma. Agda can
+optionally check confluence of rewrite rules, but currently does not
+check their termination. Since only <em>proven</em> (or postulated)
+equalities can be added as rewrite rules, non-confluence and
+non-termination can only affect completeness of Agda's type checker
+but not its soundness <a href="https://doi.org/10.1145/3434341">(10.1145/3434341)</a>.</dd>
 </dl>
 
 
