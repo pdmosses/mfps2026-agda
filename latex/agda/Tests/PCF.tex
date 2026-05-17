@@ -9,9 +9,8 @@
 \AgdaPragma{--lossy-unification}\AgdaSpace{}%
 \AgdaSymbol{\#-\}}\<%
 \\
-\>[0]\<%
-\end{code}
-\begin{code}%
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{module}\AgdaSpace{}%
 %
 %<*AgdaTag-Tests.PCF>
@@ -19,10 +18,9 @@
 %</AgdaTag-Tests.PCF>
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
-\end{code}
-\begin{code}[hide]%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{open}\AgdaSpace{}%
 \AgdaKeyword{import}\AgdaSpace{}%
 %
@@ -1373,10 +1371,9 @@
 %
 \\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaComment{--\ Fixed\ points}\<%
-\end{code}
-\begin{code}%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]%
 %<*AgdaTag-check-fix-const>
 \AgdaFunction{check-fix-const}%
@@ -1480,16 +1477,16 @@
 %</AgdaTag-refl>
 \<%
 \\
-%
-\\[\AgdaEmptyExtraSkip]%
-\>[0]\AgdaComment{--\ fix\ (λg.\ λa.\ 42)\ 2\ ≡\ 42}\<%
-\\
+\>[0]\<%
+\end{code}
+\begin{code}%
 \>[0]%
 %<*AgdaTag-check-fix-lambda>
 \AgdaFunction{check-fix-lambda}%
 %</AgdaTag-check-fix-lambda>
 \AgdaSpace{}%
-\AgdaSymbol{:}\<%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaComment{--\ fix\ (λg.\ λa.\ 42)\ 2\ ≡\ 42}\<%
 \\
 \>[0][@{}l@{\AgdaIndent{0}}]%
 \>[2]\AgdaOperator{%
@@ -1635,22 +1632,21 @@
 \\
 %
 \\[\AgdaEmptyExtraSkip]%
-\>[0]\AgdaComment{--\ fix\ (λg.\ λa.\ ifz\ a\ then\ 42\ else\ g\ (pred\ a))\ 5\ ≡\ 42}\<%
-\\
 \>[0]%
 %<*AgdaTag-check-countdown>
 \AgdaFunction{check-countdown}%
 %</AgdaTag-check-countdown>
 \AgdaSpace{}%
-\AgdaSymbol{:}\<%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaComment{--\ fix\ (λg.\ λa.\ ifz\ a\ then\ 42\ else\ g\ (pred\ a))\ 5\ ≡\ 42}\<%
 \\
 \>[0][@{}l@{\AgdaIndent{0}}]%
 \>[2]\AgdaOperator{%
 %<*AgdaTag-𝒜′⟦>
 \AgdaFunction{𝒜′⟦}%
 %</AgdaTag-𝒜′⟦>
-}%
-\>[317I]\AgdaOperator{%
+}\AgdaSpace{}%
+\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
 %</AgdaTag-⦅>
@@ -1670,7 +1666,7 @@
 \AgdaInductiveConstructor{Y}%
 %</AgdaTag-Y>
 %
-\>[321I]\AgdaOperator{%
+\>[323I]\AgdaOperator{%
 %<*AgdaTag-␣>
 \AgdaInductiveConstructor{␣}%
 %</AgdaTag-␣>
@@ -1706,7 +1702,7 @@
 %</AgdaTag-␣>
 }\<%
 \\
-\>[.][@{}l@{}]\<[321I]%
+\>[.][@{}l@{}]\<[323I]%
 \>[14]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
@@ -1722,7 +1718,7 @@
 \AgdaInductiveConstructor{⦅}%
 %</AgdaTag-⦅>
 }%
-\>[330I]\AgdaOperator{%
+\>[332I]\AgdaOperator{%
 %<*AgdaTag-𝐿>
 \AgdaInductiveConstructor{𝐿}%
 %</AgdaTag-𝐿>
@@ -1804,7 +1800,7 @@
 %</AgdaTag-␣>
 }\<%
 \\
-\>[.][@{}l@{}]\<[330I]%
+\>[.][@{}l@{}]\<[332I]%
 \>[20]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
@@ -1884,10 +1880,8 @@
 %<*AgdaTag-⦆>
 \AgdaInductiveConstructor{⦆}%
 %</AgdaTag-⦆>
-}\<%
-\\
-\>[.][@{}l@{}]\<[317I]%
-\>[6]\AgdaOperator{%
+}\AgdaSpace{}%
+\AgdaOperator{%
 %<*AgdaTag-␣>
 \AgdaInductiveConstructor{␣}%
 %</AgdaTag-␣>
@@ -1941,17 +1935,15 @@
 \AgdaInductiveConstructor{refl}%
 %</AgdaTag-refl>
 \<%
-\\
-%
-\\[\AgdaEmptyExtraSkip]%
-\>[0]\AgdaComment{--\ fix\ (λh.\ λa.\ λb.\ ifz\ a\ then\ b\ else\ h\ (pred\ a)\ (𝐿\ ⦅+1⦆\ b))\ 4\ 38\ ≡\ 42}\<%
-\\
+\end{code}
+\begin{code}[hide]%
 \>[0]%
 %<*AgdaTag-check-sum-42>
 \AgdaFunction{check-sum-42}%
 %</AgdaTag-check-sum-42>
 \AgdaSpace{}%
-\AgdaSymbol{:}\<%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaComment{--\ fix\ (λh.\ λa.\ λb.\ ifz\ a\ then\ b\ else\ h\ (pred\ a)\ (𝐿\ ⦅+1⦆\ b))\ 4\ 38\ ≡\ 42}\<%
 \\
 \>[0][@{}l@{\AgdaIndent{0}}]%
 \>[2]\AgdaOperator{%
@@ -1959,7 +1951,7 @@
 \AgdaFunction{𝒜′⟦}%
 %</AgdaTag-𝒜′⟦>
 }%
-\>[373I]\AgdaOperator{%
+\>[377I]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
 %</AgdaTag-⦅>
@@ -1989,7 +1981,7 @@
 \AgdaInductiveConstructor{␣}%
 %</AgdaTag-␣>
 }%
-\>[379I]\AgdaOperator{%
+\>[383I]\AgdaOperator{%
 %<*AgdaTag-⦅λ>
 \AgdaInductiveConstructor{⦅λ}%
 %</AgdaTag-⦅λ>
@@ -2035,13 +2027,13 @@
 %</AgdaTag-␣>
 }\<%
 \\
-\>[.][@{}l@{}]\<[379I]%
+\>[.][@{}l@{}]\<[383I]%
 \>[18]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
 %</AgdaTag-⦅>
 }%
-\>[388I]\AgdaOperator{%
+\>[392I]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
 %</AgdaTag-⦅>
@@ -2132,7 +2124,7 @@
 %</AgdaTag-␣>
 }\<%
 \\
-\>[.][@{}l@{}]\<[388I]%
+\>[.][@{}l@{}]\<[392I]%
 \>[20]\AgdaOperator{%
 %<*AgdaTag-⦅>
 \AgdaInductiveConstructor{⦅}%
@@ -2269,7 +2261,7 @@
 %</AgdaTag-⦆>
 }\<%
 \\
-\>[.][@{}l@{}]\<[373I]%
+\>[.][@{}l@{}]\<[377I]%
 \>[6]\AgdaOperator{%
 %<*AgdaTag-␣>
 \AgdaInductiveConstructor{␣}%

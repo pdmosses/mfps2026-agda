@@ -24,9 +24,9 @@ open Notation.Products.Sequences using (_⋆; ⟨⟩; ⟨_⟩; _§_)
 open Notation.Updates using (_[_/_])
 --"/hide"
 
-𝒦⟦_⟧    :  ⟪ Con →ˢ 𝐄 ⟫                      -- constant denotations
-ℰ⟦_⟧    :  ⟪ Exp →ˢ 𝐔 →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂 ⟫     -- expression denotations
-ℰ⋆⟦_⟧   :  ⟪ Exp⋆ →ˢ 𝐔 →ᶜ (𝐄 ⋆ →ᶜ 𝐂) →ᶜ 𝐂 ⟫  -- sequence denotations
+𝒦⟦_⟧   :  ⟪ Con →ˢ 𝐄 ⟫                      -- constant denotations
+ℰ⟦_⟧   :  ⟪ Exp →ˢ 𝐔 →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂 ⟫     -- expression denotations
+ℰ⋆⟦_⟧  :  ⟪ Exp⋆ →ˢ 𝐔 →ᶜ (𝐄 ⋆ →ᶜ 𝐂) →ᶜ 𝐂 ⟫  -- sequence denotations
 
 𝒦⟦ int Z ⟧  = ↑ Z in⊥ 𝐄
 𝒦⟦ #t ⟧     = ↑ true in⊥ 𝐄

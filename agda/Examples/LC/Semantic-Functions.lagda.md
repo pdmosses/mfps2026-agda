@@ -2,6 +2,8 @@
 
 The semantic equations below correspond closely to those found in textbooks on denotational semantics
 (e.g., [(Reynolds1998TPL)]).
+In larger conventional definitions, `fold` and `unfold` are usually left implicit,
+but Agda does not support this.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}

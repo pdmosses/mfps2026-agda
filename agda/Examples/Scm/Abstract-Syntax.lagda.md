@@ -5,8 +5,7 @@ expressions $\text{E} : \text{Exp}$
 with integers $\text{Z} : \text{Int}$,
 constants $\text{K} : \text{Con}$ and 
 identifiers $\text{I} : \text{Ide}$.
-The meta-variable $\text{E}^* : \text{Exp}^*$ implicitly ranges over
-arbitrary sequences of expressions.
+The meta-variable $\text{E}^* : \text{Exp}^*$ implicitly ranges over arbitrary sequences of expressions.
 @latex
 @/latex
 $$\begin{align}
@@ -19,11 +18,8 @@ $$\begin{align}
 \end{align}$$
 @latex
 @/latex
-In the following Agda formalisation of the above grammar,
-the abstract syntax of sequences `E⋆ : Exp⋆`
-is made explicit:
-the empty sequence is represented by `␣␣␣` ,
-and sequence prefixing by `E ␣␣ E⋆`.
+In the following Agda embedding of the above grammar, the abstract syntax of sequences `E⋆ : Exp⋆` is made explicit:
+the empty sequence is represented by `␣␣␣` , and sequence prefixing by `E ␣␣ E⋆`.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}

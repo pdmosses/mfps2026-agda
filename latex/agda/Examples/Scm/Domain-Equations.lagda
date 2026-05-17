@@ -64,7 +64,7 @@ postulate 𝐀 : Domain        -- answers
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The following postulates instantiate embedding (\AgdaRef{δ\ in⊥\ 𝐄}),
+The following postulates instantiate injection (\AgdaRef{δ\ in⊥\ 𝐄}),
 inspection (\AgdaRef{ε\ ∈⊥\ D}), and projection
 (\AgdaRef{ε\ \textbar{}⊥\ D}) for each summand \AgdaRef{D} of \AgdaRef{𝐄}.
 %

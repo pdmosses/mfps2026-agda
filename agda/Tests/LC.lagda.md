@@ -4,9 +4,7 @@
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
---"/hide"
 module Tests.LC where
---"hide"
 
 open import Notation
 open import Properties
@@ -23,15 +21,13 @@ check-const : -- (λx1.x42)x0 = x42
 check-const = refl 
 
 -- check-divergence : -- (λx0.x0 x0)(λx0.x0 x0) = ...
---   ⟦ ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⟧
---   ≡ ⟦ var x 42 ⟧
+--   ⟦ ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⟧ ≡ ⟦ var x 42 ⟧
 -- check-divergence = refl -- Agda type-checker diverges
---"/hide"
 
+--"/hide"
 check-convergence : -- (λx1.x42)((λx0.x0 x0)(λx0.x0 x0)) = x42
   ⟦  ⦅ ⦅λ x 1 ␣ var x 42 ⦆ ␣
-     ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⦆ ⟧
-  ≡ ⟦ var x 42 ⟧
+     ⦅ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ␣ ⦅λ x 0 ␣ ⦅ var x 0 ␣ var x 0 ⦆ ⦆ ⦆ ⦆ ⟧ ≡ ⟦ var x 42 ⟧
 check-convergence = refl
 
 check-abs : -- (λx1.x1)(λx1.x42) = λx2.x42

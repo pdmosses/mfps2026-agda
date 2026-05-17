@@ -14,9 +14,9 @@ of expressions.   \begin{align}
   \text{E} & ::=
     \text{K} \mid \text{I} \mid \texttt ( \text{E}_0~\text{E}^* \texttt ) \mid \text{\tt (lambda} ~ \text{I} ~ \text{E} \texttt ) \mid
     \text{\tt (if} ~ \text{E}_0 ~ \text{E}_1 ~ \text{E}_2 \texttt ) \mid \text{\tt (set!} ~ \text{I} ~ \text{E} \texttt )
-\end{align}   In the following Agda formalisation of the
-above grammar, the abstract syntax of sequences \AgdaRef{E⋆\ :\ Exp⋆} is
-made explicit: the empty sequence is represented by \AgdaRef{␣␣␣} , and
+\end{align}   In the following Agda embedding of the above
+grammar, the abstract syntax of sequences \AgdaRef{E⋆\ :\ Exp⋆} is made
+explicit: the empty sequence is represented by \AgdaRef{␣␣␣} , and
 sequence prefixing by \AgdaRef{E\ ␣␣\ E⋆}.
 %
 \begin{AgdaSuppressSpace}

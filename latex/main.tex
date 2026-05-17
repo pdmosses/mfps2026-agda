@@ -70,12 +70,14 @@
   \title{Mechanising Denotational Semantics in Agda}
   \subtitle{Complete Code Listing}
   %%%%Now the author(s) names(s)%%%%%
-  \author{Peter D. Mosses\thanksref{delft}\thanksref{mosses}}	%%Note NO SPACE between 
+  \author{Peter D. Mosses\thanksref{delft}\thanksref{swansea}\thanksref{mosses}}	%%Note NO SPACE between 
   \author{Jesper Cockx\thanksref{delft}\thanksref{cockx}}		%last name and \thanksref{...} 
   \author{Bernhard Reus\thanksref{sussex}\thanksref{reus}}		%last name and \thanksref{...} 
   %%%Next come the addresses%%%%
-  \address[delft]{Department of Computer Science\\ Delft University of Technology\\				%or between \thanksrefs...
+  \address[delft]{Department of Software Technology\\ Delft University of Technology\\	%or between \thanksrefs...
     Delft, Netherlands}  							
+  \address[swansea]{Faculty of Science and Engineering\\ Swansea University\\
+    Swansea, United Kingdom}  							
   \thanks[mosses]{Email: \href{mailto:p.d.mosses@tudelft.nl} {\texttt{\normalshape
       p.d.mosses@tudelft.nl}}} 
   \thanks[cockx]{Email: \href{mailto:j.g.h.cockx@tudelft.nl} {\texttt{\normalshape
@@ -90,25 +92,31 @@
         bernhard@sussex.ac.uk}}}
 
 \begin{abstract} 
-  Formalisation of a semantic definition helps to ensure its wellformedness,
-  and supports proofs about it. To minimise the effort required, formalisation
-  should not involve significant reformulation or extension of the original
-  definition. Here, we show how to formalise conventional Scott–Strachey
-  denotational definitions by embedding them in Agda with almost no changes
-  to $\lambda$-notation or domain equations.
-
-  We illustrate our approach with three examples: Scott’s $D_\infty$ model of
-  the untyped $\lambda$-calculus, Plotkin’s denotational semantics of PCF, and
-  a semantics of a sublanguage of Scheme. Using appropriate postulates for
-  domain constructors and their associated operations, the Agda type checker
-  confirms the wellformedness of the embedded definitions. In previous work,
-  such Agda formalisations have revealed several unsuspected wellformedness
-  issues in published denotational definitions.
+  Mechanisation of a mathematical definition (also referred to as formalisation)
+  has many benefits. Here, we focus on mechanising denotational semantic definitions
+  of programming languages by embedding them in the Agda language. The Agda
+  type-checker detects and reports any issues with the wellformedness and type
+  correctness of the embedded definitions.
   
-  Some of our postulates are inconsistent with a classical set-theoretic
-  interpretation of Agda. We conjecture that they would be consistent with an
-  interpretation of Agda in the higher-order intuititionistic logic used by
-  Alex Simpson in his work on synthetic domain theory.
+  To minimise the effort required, and to facilitate correlation of the original
+  definition with its Agda embedding, mechanisation should not involve significant
+  reformulation or extension. Here, we show how  to embed conventional Scott–Strachey
+  denotational definitions in Agda with almost no changes to $\lambda$-notation or
+  domain equations.
+
+  Agda notation for definitions of types and functions corresponds closely
+  to the conventional meta-notation of denotational semantics. We have developed
+  a collection of Agda modules with postulated types for commonly used domain
+  constructors and their associated operations. Some of our postulates are
+  inconsistent with a classical set-theoretic interpretation of Agda; we conjecture
+  that they would be consistent with an interpretation of Agda in the higher-order
+  intuititionistic logic used by Simpson in his work on synthetic domain theory.
+
+  We illustrate our approach with mechanisations of three denotational definitions:
+  Scott’s $D_\infty$ model of the untyped $\lambda$-calculus, Plotkin’s denotational
+  semantics of PCF, and a semantics of a sublanguage of Scheme. In previous work,
+  similar mechanisations in Agda have revealed several unsuspected wellformedness
+  issues in published denotational definitions.
 \end{abstract}
 
 \begin{keyword}
@@ -162,7 +170,6 @@
 \input{agda/Properties}
 \end{AgdaAlign}
 
-\clearpage
 \input{agda/Tests}
 
 \begin{AgdaAlign}

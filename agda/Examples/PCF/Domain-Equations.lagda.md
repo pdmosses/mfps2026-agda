@@ -3,8 +3,8 @@
 The domains `𝒟 σ` form a "standard collection of domains for arithmetic"
 in PCF, written $\mathcal D_\sigma$ in [(Plotkin1977LCP)].
 As PCF is a simply-typed language, the domains `𝒟 σ` are not reflexive,
-so their formalisation in Agda can use ordinary type definitions,
-not involving bijections or embeddings.
+so their embedding in Agda can use ordinary type definitions,
+not involving bijections.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
@@ -41,7 +41,7 @@ variable ρ : Env
 ρ⊥ _ _ = ⊥
 ```
 Extension or overriding environments requires instances of the equality tests
-for both variables and types. The definition of the latter [(MFPS2026-Agda)] is somewhat tedious.
+for both variables and types. The definition of the latter is somewhat tedious.
 ```agda
 --"hide"
 open Notation.Flat.Booleans using (Eq; _==_)

@@ -1,16 +1,17 @@
 \section{Postulated Properties}\label{Properties-postulated-properties}
 
-This module postulates basic properties of some of the operations of the
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#postulated-domain-notation}{postulated domain
-notation} (Section~\ref{Notation-postulated-domain-notation}). These properties are expected to hold in various categories
+The \AgdaRef{Properties} module postulates basic properties of some of
+the operations of the
+postulated domain
+notation (Section~\ref{Notation-postulated-domain-notation}\,\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#postulated-domain-notation}{$\Uparrow$}). These properties are expected to hold in various categories
 of domains
 \cite{Abramsky1995DT}
-but they do \emph{not} define or constrain the \emph{mathematical
-structure} of domains.
+but they do \emph{not} define the \emph{mathematical structure} of
+domains.
 
 The postulated properties support proofs that terms have identical
 denotations. For example, some
-\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{illustrative tests} (Section~\ref{Tests-illustrative-tests}) declare
+illustrative tests (Section~\ref{Tests-illustrative-tests}\,\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{$\Uparrow$}) declare
 that the denotation of a function application is equivalent to the
 denotation of a constant; other tests declare that particular instances
 of renaming do not affect denotations.
@@ -23,18 +24,16 @@ option is enabled. Confluent but non-terminating rewrite rules cannot
 break consistency, as shown by Cockx, Tabareau, and Winterhalter
 \cite{Cockx2021TRT}.
 
-The rewrite rules declared below support automatic proof of identity for
-all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
+The rewrite rules declared below support \emph{automatic} proof of
+identity for all the
+illustrative tests (Section~\ref{Tests-illustrative-tests}\,\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{$\Uparrow$}): the proof
+terms are simply \AgdaRef{refl} (i.e., reflexivity).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
 
-\end{code}
-\begin{code}
 module Properties where
-\end{code}
-\begin{code}[hide]
 
 open import Agda.Builtin.Equality public using (_≡_; refl)
 open import Agda.Builtin.Equality.Rewrite using ()
@@ -45,9 +44,9 @@ open Notation using (A; B; C)
 module Domains where
   open Notation.Domains using (Domain; ⟪_⟫; ⊥; 𝟙; D; E; F) public
 open Domains public
+
 \end{code}
 \begin{code}
-
 module Functions where
 \end{code}
 \begin{code}[hide]
@@ -55,8 +54,7 @@ module Functions where
 \end{code}
 \begin{code}
   postulate
-    apply-fix : {φ : ⟪ D →ᶜ D ⟫} → fix φ ≡ φ (fix φ)
-    -- apply-fix{φ} unfolds fix φ once
+    apply-fix : {φ : ⟪ D →ᶜ D ⟫} → fix φ ≡ φ (fix φ) -- apply-fix{φ} unfolds fix φ once
   {-# REWRITE apply-fix #-}
 \end{code}
 \end{AgdaSuppressSpace}
@@ -86,8 +84,8 @@ module Recursion where
 \end{code}
 \end{AgdaSuppressSpace}
 %
-A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
-\AgdaRef{elim-unfold-fold} is needed for the current illustrative tests.
+A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but it is
+not needed for the current illustrative tests.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
@@ -102,38 +100,30 @@ module Flat where
   postulate
     elim-♯-↑  : (f ♯) (↑ a′)  ≡ f a′
     elim-♯-⊥  : (f ♯) ⊥      ≡ ⊥
-  {-# REWRITE elim-♯-↑ elim-♯-⊥ #-} 
+  {-# REWRITE elim-♯-↑ elim-♯-⊥ #-}
 \end{code}
 \begin{code}[hide]
+
   module Booleans where
 
     open Notation.Flat.Booleans using (Bool⊥; _⟶_,_; Eq; _==⊥_; eqBool) public
-\end{code}
-\begin{code}
 
   module Naturals where
-\end{code}
-\begin{code}[hide]
-    open Notation.Flat.Naturals using (Nat⊥; eqNat) public
-    open Booleans
 
-    variable n₁ n₂ : Nat
-\end{code}
-\begin{code}
-    postulate
-      elim-==⊥ : (↑ n₁ ==⊥ ↑ n₂) ≡ ↑ (n₁ ==ᴺ n₂)
-    {-# REWRITE elim-==⊥ #-} 
+    open Notation.Flat.Naturals using (Nat⊥; eqNat) public
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The remaining \href{https://pdmosses.github.io/mfps2026-agda/Properties/\#postulated-properties}{postulated
-properties} (Section~\ref{Properties-postulated-properties}) are for domains that are not used in the semantics of the
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/\#untyped-lambda-calculus}{LC} (Section~\ref{Examples/LC-untyped-lambda-calculus}) and
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/PCF/\#pcf-a-programming-language-for-computable-functions}{PCF} (Section~\ref{Examples/PCF-pcf-a-programming-language-for-computable-functions})
-languages; they will be needed when tests for equivalence of denotations
-of \href{https://pdmosses.github.io/mfps2026-agda/Examples/Scm/\#scm-a-sublanguage-of-scheme}{Scm} (Section~\ref{Examples/Scm-scm-a-sublanguage-of-scheme})
-expressions are added. Postulated properties for operations on tuples
-and sequences will also be needed, but have not yet been developed.
+Removing any of the above rewrite rules breaks the proof in at least one
+of the illustrative tests. In principle, all \AgdaRef{refl} proof terms
+that rely on rewrite rules could be replaced by proofs that apply the
+postulated properties to specified subterms. However, we expect that it
+would be quite tedious to develop such proofs, and reading them is
+unlikely to provide new insights.
+
+The remaining postulated properties are for domains that are not used in
+the semantics of the LC and PCF languages; they will be needed when
+tests for equivalence of denotations of Scm expressions are added.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -163,6 +153,7 @@ module Sums where
   {-# REWRITE elim-∈⊥ elim-|⊥ #-} 
 
 module Products where
+
   open Notation.Products using (_×_; _,_; _↓₁; _↓₂) public
 
   variable δ : ⟪ D ⟫; ε : ⟪ E ⟫
@@ -181,3 +172,6 @@ module Updates where
   open Notation.Updates using (_[_/_]; _[_/_]⊥; _[_←_]) public
 \end{code}
 \end{AgdaSuppressSpace}
+%
+Postulated properties for operations on tuples and sequences have not
+yet been developed.

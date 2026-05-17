@@ -28,8 +28,8 @@ _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
 The semantic function \AgdaRef{𝒜⟦\ c\ ⟧} gives the standard
 interpretation of the constant \AgdaRef{c}. The corresponding definitions
 in \cite{Plotkin1977LCP}
-use case analysis on the domain \AgdaRef{𝒟\ ι}, which is not supported in
-our Agda formalisation (partly because it can express non-continuous
+use case analysis on the domain \AgdaRef{𝒟\ ι}, which our Agda embedding
+does not support (partly because it can express non-continuous
 functions).
 %
 \begin{AgdaSuppressSpace}
@@ -71,4 +71,4 @@ environment \AgdaRef{ρ}.
 %
 Comparison with Plotkin's original definition of PCF
 \cite{Plotkin1977LCP}
-confirms the directness of our Agda formalisation.
+confirms the directness of our Agda embedding.

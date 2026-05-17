@@ -20,7 +20,7 @@ _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
 ```
 The semantic function `𝒜⟦ c ⟧` gives the standard interpretation of the
 constant `c`. The corresponding definitions in [(Plotkin1977LCP)] use
-case analysis on the domain `𝒟 ι`, which is not supported in our Agda formalisation
+case analysis on the domain `𝒟 ι`, which our Agda embedding does not support
 (partly because it can express non-continuous functions).
 ```agda
 --"hide"
@@ -51,6 +51,6 @@ denotation of the term `M` as a function of the environment `ρ`.
 𝒜′⟦ ⦅λ α i σ ␣ M ⦆ ⟧ ρ x  =  𝒜′⟦ M ⟧ (ρ [ x / α i σ ]′)
 ```
 Comparison with Plotkin's original definition of PCF [(Plotkin1977LCP)] confirms
-the directness of our Agda formalisation.
+the directness of our Agda embedding.
 
 [(Plotkin1977LCP)]: https://doi.org/10.1016/0304-3975(77)90044-5

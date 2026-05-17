@@ -1,8 +1,8 @@
 # Domain Equations
 
-The postulate `eqD∞` below declares `unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and `fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞~⟫`,
-corresponding to a bijection between the domain `D∞` and the domain of continuous endofunctions on `D∞`.
-(Simply defining `D∞ = (D∞ →ᶜ D∞)` would lead to non-termination of the Agda type-checker.)
+Simply defining `D∞ = (D∞ →ᶜ D∞)` would lead to non-termination of the Agda type-checker.
+Instead, we postulate the domain `D∞`, together with a bijection `D∞ ≅ (D∞ →ᶜ D∞)`.
+This declares `unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and `fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞ ⟫`.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
@@ -29,7 +29,7 @@ variable ρ : ⟪ Env ⟫
 --"/hide"
 ```
 Use of the conventional notation `ρ [ δ / v ]` for updating an environment `ρ` to map `v` to `d`
-requires an equality test for variables@latex (see the [complete code listing])@/latex.
+requires an equality test for variables@latex, elided here@/latex.
 ```agda
 --"hide"
 open Notation.Flat.Booleans using (Bool; Eq; _==_)
@@ -42,5 +42,3 @@ instance eqVar : Eq Var
 _==_ {{eqVar}} = _==ⱽ_
 --"/hide"
 ```
-
-[complete code listing]: https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/

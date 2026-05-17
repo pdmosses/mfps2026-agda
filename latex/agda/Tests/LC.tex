@@ -8,9 +8,8 @@
 \AgdaPragma{--confluence-check}\AgdaSpace{}%
 \AgdaSymbol{\#-\}}\<%
 \\
-\>[0]\<%
-\end{code}
-\begin{code}%
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{module}\AgdaSpace{}%
 %
 %<*AgdaTag-Tests.LC>
@@ -18,10 +17,9 @@
 %</AgdaTag-Tests.LC>
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
-\end{code}
-\begin{code}[hide]%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{open}\AgdaSpace{}%
 \AgdaKeyword{import}\AgdaSpace{}%
 %
@@ -302,15 +300,13 @@
 \\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaComment{--\ check-divergence\ :\ --\ (λx0.x0\ x0)(λx0.x0\ x0)\ =\ ...}\<%
 \\
-\>[0]\AgdaComment{--\ \ \ ⟦\ ⦅\ ⦅λ\ x\ 0\ ␣\ ⦅\ var\ x\ 0\ ␣\ var\ x\ 0\ ⦆\ ⦆\ ␣\ ⦅λ\ x\ 0\ ␣\ ⦅\ var\ x\ 0\ ␣\ var\ x\ 0\ ⦆\ ⦆\ ⦆\ ⟧}\<%
-\\
-\>[0]\AgdaComment{--\ \ \ ≡\ ⟦\ var\ x\ 42\ ⟧}\<%
+\>[0]\AgdaComment{--\ \ \ ⟦\ ⦅\ ⦅λ\ x\ 0\ ␣\ ⦅\ var\ x\ 0\ ␣\ var\ x\ 0\ ⦆\ ⦆\ ␣\ ⦅λ\ x\ 0\ ␣\ ⦅\ var\ x\ 0\ ␣\ var\ x\ 0\ ⦆\ ⦆\ ⦆\ ⟧\ ≡\ ⟦\ var\ x\ 42\ ⟧}\<%
 \\
 \>[0]\AgdaComment{--\ check-divergence\ =\ refl\ --\ Agda\ type-checker\ diverges}\<%
+\\
+\>[0]\<%
 \end{code}
 \begin{code}%
-\>[0]\<%
-\\
 \>[0]%
 %<*AgdaTag-check-convergence>
 \AgdaFunction{check-convergence}%
@@ -509,10 +505,8 @@
 %<*AgdaTag-⟧>
 \AgdaFunction{⟧}%
 %</AgdaTag-⟧>
-}\<%
-\\
-%
-\>[2]\AgdaOperator{%
+}\AgdaSpace{}%
+\AgdaOperator{%
 %<*AgdaTag-≡>
 \AgdaDatatype{≡}%
 %</AgdaTag-≡>

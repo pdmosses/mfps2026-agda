@@ -4,8 +4,8 @@ The domains \AgdaRef{𝒟\ σ} form a ``standard collection of domains for
 arithmetic'' in PCF, written \(\mathcal D_\sigma\) in
 \cite{Plotkin1977LCP}.
 As PCF is a simply-typed language, the domains \AgdaRef{𝒟\ σ} are not
-reflexive, so their formalisation in Agda can use ordinary type
-definitions, not involving bijections or embeddings.
+reflexive, so their embedding in Agda can use ordinary type definitions,
+not involving bijections.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -54,8 +54,7 @@ variable ρ : Env
 \end{AgdaSuppressSpace}
 %
 Extension or overriding environments requires instances of the equality
-tests for both variables and types. The definition of the latter
-\cite{MFPS2026-Agda} is
+tests for both variables and types. The definition of the latter is
 somewhat tedious.
 %
 \begin{AgdaSuppressSpace}

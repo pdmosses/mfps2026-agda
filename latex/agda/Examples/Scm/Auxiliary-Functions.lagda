@@ -3,10 +3,7 @@
 The \(\lambda\)-notation in the Agda definitions of auxiliary functions
 for Scm corresponds closely to that in its conventional denotational
 semantics
-\cite{Mosses2025CSE}. The
-main difference is the explicit application here of the function
-\AgdaRef{↑} to inject elements of sets into the carriers of flat domains,
-cf.~the definition of \AgdaRef{truish} below.
+\cite{Mosses2025CSE}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -71,14 +68,20 @@ alloc : ⟪ 𝐄 →ᶜ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫     -- alloc ϵ alloc
 alloc ϵ κ = new (λ α → assign α ϵ (κ α))
 
 postulate initial-store : ⟪ 𝐒 ⟫    -- may have initialised locations
+
 \end{code}
 \begin{code}[hide]
-
 postulate finished : ⟪ 𝐒 →ᶜ 𝐀 ⟫    -- obtain answer from the final store
 \end{code}
+\end{AgdaSuppressSpace}
+%
+Conventional denotational definitions usually leave the injection
+function \AgdaRef{↑} from sets into flat domains implicit, in contrast to
+the embedding of the definition of \AgdaRef{truish}:
+%
+\begin{AgdaSuppressSpace}
 \begin{code}
-
-truish : ⟪ 𝐄 →ᶜ 𝐓 ⟫  -- truish ε is true for all ε except false
+truish : ⟪ 𝐄 →ᶜ 𝐓 ⟫                -- truish ε is true for all ε except false
 truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ false , ↑ true) ,
             ↑ true
 \end{code}
@@ -86,11 +89,11 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
 %
 The remaining auxiliary function definitions shown here involve the
 operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{Notation.Products.Sequences} (Section~\ref{Notation-sequences}).
+Notation.Products.Sequences (Section~\ref{Notation-sequences}\,\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{$\Uparrow$}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-cons : ⟪ 𝐅 ⟫         -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
+cons : ⟪ 𝐅 ⟫                       -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
 cons ϵ⋆ κ =  (# ϵ⋆ ==⊥ ↑ 2) ⟶
                 alloc (ϵ⋆ ↓ 1) (λ α₁ →
                   alloc (ϵ⋆ ↓ 2) (λ α₂ → κ ((α₁ , α₂) in⊥ 𝐄))) ,
@@ -107,26 +110,26 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
-list : ⟪ 𝐅 ⟫         -- list ϵ⋆ allocates and initialises a list
+list : ⟪ 𝐅 ⟫                       -- list ϵ⋆ allocates and initialises a list
 list =   fix λ (list′ : ⟪ 𝐅 ⟫) → λ ϵ⋆ κ →
            (# ϵ⋆ ==⊥ ↑ 0) ⟶ κ (↑ null in⊥ 𝐄) ,
            list′ (ϵ⋆ † 1) (λ ϵ → cons ⟨ (ϵ⋆ ↓ 1) , ϵ ⟩ κ)
 \end{code}
 \begin{code}[hide]
 
-car : ⟪ 𝐅 ⟫          -- car ⟨ ϵ ⟩ gives the head of the list ϵ
+car : ⟪ 𝐅 ⟫                        -- car ⟨ ϵ ⟩ gives the head of the list ϵ
 car ϵ⋆ κ = (# ϵ⋆ ==⊥ ↑ 1) ⟶ hold (((ϵ⋆ ↓ 1) |⊥ 𝐏) ↓₁) κ , ⊥
 
-cdr : ⟪ 𝐅 ⟫          -- cdr ⟨ ϵ ⟩ gives the tail of the list ϵ
+cdr : ⟪ 𝐅 ⟫                        -- cdr ⟨ ϵ ⟩ gives the tail of the list ϵ
 cdr ϵ⋆ κ = (# ϵ⋆ ==⊥ ↑ 1) ⟶ hold (((ϵ⋆ ↓ 1) |⊥ 𝐏) ↓₂) κ , ⊥
 
-setcar : ⟪ 𝐅 ⟫       -- setcar ⟨ ϵ₁ , ϵ₂ ⟩ stores ϵ₂ in the head of list ϵ₁
+setcar : ⟪ 𝐅 ⟫                     -- setcar ⟨ ϵ₁ , ϵ₂ ⟩ stores ϵ₂ in the head of list ϵ₁
 setcar ϵ⋆ κ =
   (# ϵ⋆ ==⊥ ↑ 2) ⟶
     assign (((ϵ⋆ ↓ 1) |⊥ 𝐏) ↓₁) (ϵ⋆ ↓ 2) (κ (↑ unspecified in⊥ 𝐄)) ,
   ⊥
 
-setcdr : ⟪ 𝐅 ⟫       -- setcdr ⟨ ϵ₁ , ϵ₂ ⟩ stores ϵ₂ in the tail of list ϵ₁
+setcdr : ⟪ 𝐅 ⟫                     -- setcdr ⟨ ϵ₁ , ϵ₂ ⟩ stores ϵ₂ in the tail of list ϵ₁
 setcdr ϵ⋆ κ =
   (# ϵ⋆ ==⊥ ↑ 2) ⟶
     assign (((ϵ⋆ ↓ 1) |⊥ 𝐏) ↓₂) (ϵ⋆ ↓ 2) (κ (↑ unspecified in⊥ 𝐄)) ,

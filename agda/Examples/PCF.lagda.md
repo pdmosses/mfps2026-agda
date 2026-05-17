@@ -10,7 +10,7 @@ PCF is an intrinsically typed language: every well-formed term has a unique type
 The following grammar summarises the context-free abstract syntax of types $\sigma, \tau$
 and terms $M, N$
 with variables $\alpha_i^\sigma$ ($i \geq 0$) and constants $c$.
-In §4.1.1 we reflect Plotkin's presentation of PCF
+In [§ Abstract Syntax] we reflect Plotkin's presentation of PCF
 more accurately by exploiting Agda's support for dependent types.
 @latex
 @/latex
@@ -37,5 +37,6 @@ import Examples.PCF.Semantic-Functions
 --"/hide"
 ```
 
+[§ Abstract Syntax]: ../../Examples/PCF/Abstract-Syntax.md#abstract-syntax
 [(Plotkin1977LCP)]: https://doi.org/10.1016/0304-3975(77)90044-5
 [(Scott1993TTA)]: https://doi.org/10.1016/0304-3975(93)90095-B

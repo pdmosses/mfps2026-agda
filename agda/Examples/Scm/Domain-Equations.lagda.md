@@ -51,7 +51,7 @@ postulate 𝐀 : Domain        -- answers
 𝐂  =  𝐒 →ᶜ 𝐀                -- command continuations
 𝐅  =  𝐄 ⋆ →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂  -- procedure values
 ```
-The following postulates instantiate embedding (`δ in⊥ 𝐄`),
+The following postulates instantiate injection (`δ in⊥ 𝐄`),
 inspection (`ε ∈⊥ D`),
 and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.
 ```agda

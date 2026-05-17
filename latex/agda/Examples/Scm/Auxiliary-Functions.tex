@@ -3,10 +3,7 @@
 The \(\lambda\)-notation in the Agda definitions of auxiliary functions
 for Scm corresponds closely to that in its conventional denotational
 semantics
-\cite{Mosses2025CSE}. The
-main difference is the explicit application here of the function
-\AgdaRef{↑} to inject elements of sets into the carriers of flat domains,
-cf.~the definition of \AgdaRef{truish} below.
+\cite{Mosses2025CSE}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -793,10 +790,10 @@ continuity.
 %</AgdaTag-⟫>
 }%
 \>[35]\AgdaComment{--\ may\ have\ initialised\ locations}\<%
+\\
+\>[0]\<%
 \end{code}
 \begin{code}[hide]%
-\>[0]\<%
-\\
 \>[0]\AgdaKeyword{postulate}\AgdaSpace{}%
 %
 %<*AgdaTag-finished>
@@ -831,9 +828,14 @@ continuity.
 }%
 \>[35]\AgdaComment{--\ obtain\ answer\ from\ the\ final\ store}\<%
 \end{code}
+\end{AgdaSuppressSpace}
+%
+Conventional denotational definitions usually leave the injection
+function \AgdaRef{↑} from sets into flat domains implicit, in contrast to
+the embedding of the definition of \AgdaRef{truish}:
+%
+\begin{AgdaSuppressSpace}
 \begin{code}%
-\>[0]\<%
-\\
 \>[0]%
 %<*AgdaTag-truish>
 \AgdaFunction{truish}%
@@ -865,7 +867,7 @@ continuity.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ truish\ ε\ is\ true\ for\ all\ ε\ except\ false}\<%
+\>[35]\AgdaComment{--\ truish\ ε\ is\ true\ for\ all\ ε\ except\ false}\<%
 \\
 \>[0]%
 %<*AgdaTag-truish>
@@ -968,7 +970,7 @@ continuity.
 %
 The remaining auxiliary function definitions shown here involve the
 operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{Notation.Products.Sequences} (Section~\ref{Notation-sequences}).
+Notation.Products.Sequences (Section~\ref{Notation-sequences}\,\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{$\Uparrow$}).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}%
@@ -993,7 +995,7 @@ operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ cons\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ allocates\ and\ initialises\ a\ pair}\<%
+\>[35]\AgdaComment{--\ cons\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ allocates\ and\ initialises\ a\ pair}\<%
 \\
 \>[0]%
 %<*AgdaTag-cons>
@@ -1122,7 +1124,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ list\ ϵ⋆\ allocates\ and\ initialises\ a\ list}\<%
+\>[35]\AgdaComment{--\ list\ ϵ⋆\ allocates\ and\ initialises\ a\ list}\<%
 \\
 \>[0]%
 %<*AgdaTag-list>
@@ -1275,7 +1277,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ car\ ⟨\ ϵ\ ⟩\ gives\ the\ head\ of\ the\ list\ ϵ}\<%
+\>[35]\AgdaComment{--\ car\ ⟨\ ϵ\ ⟩\ gives\ the\ head\ of\ the\ list\ ϵ}\<%
 \\
 \>[0]%
 %<*AgdaTag-car>
@@ -1369,7 +1371,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ cdr\ ⟨\ ϵ\ ⟩\ gives\ the\ tail\ of\ the\ list\ ϵ}\<%
+\>[35]\AgdaComment{--\ cdr\ ⟨\ ϵ\ ⟩\ gives\ the\ tail\ of\ the\ list\ ϵ}\<%
 \\
 \>[0]%
 %<*AgdaTag-cdr>
@@ -1463,7 +1465,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ setcar\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ stores\ ϵ₂\ in\ the\ head\ of\ list\ ϵ₁}\<%
+\>[35]\AgdaComment{--\ setcar\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ stores\ ϵ₂\ in\ the\ head\ of\ list\ ϵ₁}\<%
 \\
 \>[0]%
 %<*AgdaTag-setcar>
@@ -1590,7 +1592,7 @@ postulated operation \AgdaRef{fix} to avoid recursion.
 \AgdaPostulate{⟫}%
 %</AgdaTag-⟫>
 }%
-\>[21]\AgdaComment{--\ setcdr\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ stores\ ϵ₂\ in\ the\ tail\ of\ list\ ϵ₁}\<%
+\>[35]\AgdaComment{--\ setcdr\ ⟨\ ϵ₁\ ,\ ϵ₂\ ⟩\ stores\ ϵ₂\ in\ the\ tail\ of\ list\ ϵ₁}\<%
 \\
 \>[0]%
 %<*AgdaTag-setcdr>

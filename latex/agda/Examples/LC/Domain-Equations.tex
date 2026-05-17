@@ -1,12 +1,11 @@
 \subsubsection{Domain Equations}\label{Examples/LC/Domain-Equations-domain-equations}
 
-The postulate \AgdaRef{eqD∞} below declares
+Simply defining \AgdaRef{D∞\ =\ (D∞\ →ᶜ\ D∞)} would lead to
+non-termination of the Agda type-checker. Instead, we postulate the
+domain \AgdaRef{D∞}, together with a bijection
+\AgdaRef{D∞\ ≅\ (D∞\ →ᶜ\ D∞)}. This declares
 \AgdaRef{unfold\ :\ ⟪\ D∞\ →ᶜ\ (D∞\ →ᶜ\ D∞)\ ⟫} and
-\AgdaRef{fold\ :\ ⟪\ (D∞\ →ᶜ\ D∞)\ →ᶜ\ D∞\textasciitilde{}⟫},
-corresponding to a bijection between the domain \AgdaRef{D∞} and the
-domain of continuous endofunctions on \AgdaRef{D∞}. (Simply defining
-\AgdaRef{D∞\ =\ (D∞\ →ᶜ\ D∞)} would lead to non-termination of the Agda
-type-checker.)
+\AgdaRef{fold\ :\ ⟪\ (D∞\ →ᶜ\ D∞)\ →ᶜ\ D∞\ ⟫}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -195,9 +194,7 @@ type-checker.)
 %
 Use of the conventional notation \AgdaRef{ρ\ {[}\ δ\ /\ v\ {]}} for
 updating an environment \AgdaRef{ρ} to map \AgdaRef{v} to \AgdaRef{d}
-requires an equality test for variables (see the
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/}{complete
-code listing}).
+requires an equality test for variables, elided here.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%

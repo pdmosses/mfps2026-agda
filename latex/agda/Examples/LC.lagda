@@ -1,10 +1,7 @@
 \subsection{Untyped Lambda-Calculus}\label{Examples/LC-untyped-lambda-calculus}
 
-This section presents an Agda formalisation of a denotational semantics
-of the untyped \(\lambda\)-calculus.  Elided module imports are
-included in the
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/Domain-Equations/}{complete
-code listing}. 
+This section presents our Agda embedding of a denotational semantics of
+the untyped \(\lambda\)-calculus.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

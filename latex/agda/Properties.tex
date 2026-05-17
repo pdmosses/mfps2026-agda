@@ -1,16 +1,17 @@
 \section{Postulated Properties}\label{Properties-postulated-properties}
 
-This module postulates basic properties of some of the operations of the
-\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#postulated-domain-notation}{postulated domain
-notation} (Section~\ref{Notation-postulated-domain-notation}). These properties are expected to hold in various categories
+The \AgdaRef{Properties} module postulates basic properties of some of
+the operations of the
+postulated domain
+notation (Section~\ref{Notation-postulated-domain-notation}\,\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#postulated-domain-notation}{$\Uparrow$}). These properties are expected to hold in various categories
 of domains
 \cite{Abramsky1995DT}
-but they do \emph{not} define or constrain the \emph{mathematical
-structure} of domains.
+but they do \emph{not} define the \emph{mathematical structure} of
+domains.
 
 The postulated properties support proofs that terms have identical
 denotations. For example, some
-\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{illustrative tests} (Section~\ref{Tests-illustrative-tests}) declare
+illustrative tests (Section~\ref{Tests-illustrative-tests}\,\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{$\Uparrow$}) declare
 that the denotation of a function application is equivalent to the
 denotation of a constant; other tests declare that particular instances
 of renaming do not affect denotations.
@@ -23,8 +24,10 @@ option is enabled. Confluent but non-terminating rewrite rules cannot
 break consistency, as shown by Cockx, Tabareau, and Winterhalter
 \cite{Cockx2021TRT}.
 
-The rewrite rules declared below support automatic proof of identity for
-all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
+The rewrite rules declared below support \emph{automatic} proof of
+identity for all the
+illustrative tests (Section~\ref{Tests-illustrative-tests}\,\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{$\Uparrow$}): the proof
+terms are simply \AgdaRef{refl} (i.e., reflexivity).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -35,9 +38,8 @@ all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
 \AgdaPragma{--lossy-unification}\AgdaSpace{}%
 \AgdaSymbol{\#-\}}\<%
 \\
-\>[0]\<%
-\end{code}
-\begin{code}%
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{module}\AgdaSpace{}%
 %
 %<*AgdaTag-Properties>
@@ -45,10 +47,9 @@ all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
 %</AgdaTag-Properties>
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
-\end{code}
-\begin{code}[hide]%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0]\AgdaKeyword{open}\AgdaSpace{}%
 \AgdaKeyword{import}\AgdaSpace{}%
 %
@@ -166,10 +167,10 @@ all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
 %</AgdaTag-Domains>
 \AgdaSpace{}%
 \AgdaKeyword{public}\<%
+\\
+\>[0]\<%
 \end{code}
 \begin{code}%
-\>[0]\<%
-\\
 \>[0]\AgdaKeyword{module}\AgdaSpace{}%
 %
 %<*AgdaTag-Functions>
@@ -262,10 +263,8 @@ all the illustrative tests: the proof terms are simply \AgdaRef{refl}.
 \AgdaPostulate{fix}%
 %</AgdaTag-fix>
 \AgdaSpace{}%
-\AgdaBound{φ}\AgdaSymbol{)}\<%
-\\
-%
-\>[4]\AgdaComment{--\ apply-fix\{φ\}\ unfolds\ fix\ φ\ once}\<%
+\AgdaBound{φ}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaComment{--\ apply-fix\{φ\}\ unfolds\ fix\ φ\ once}\<%
 \\
 %
 \>[2]\AgdaSymbol{\{-\#}\AgdaSpace{}%
@@ -398,8 +397,8 @@ another λ-abstraction and the bodies are not syntactically equal.
 \end{code}
 \end{AgdaSuppressSpace}
 %
-A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
-\AgdaRef{elim-unfold-fold} is needed for the current illustrative tests.
+A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but it is
+not needed for the current illustrative tests.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}%
@@ -536,6 +535,8 @@ A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
 \AgdaSymbol{\#-\}}\<%
 \end{code}
 \begin{code}[hide]%
+\>[0]\<%
+\\
 %
 \>[2]\AgdaKeyword{module}\AgdaSpace{}%
 %
@@ -581,10 +582,9 @@ A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
 %</AgdaTag-eqBool>
 \AgdaSymbol{)}\AgdaSpace{}%
 \AgdaKeyword{public}\<%
-\end{code}
-\begin{code}%
-\>[0]\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 %
 \>[2]\AgdaKeyword{module}\AgdaSpace{}%
 %
@@ -593,9 +593,10 @@ A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
 %</AgdaTag-Naturals>
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
-\end{code}
-\begin{code}[hide]%
-\>[2][@{}l@{\AgdaIndent{1}}]%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[2][@{}l@{\AgdaIndent{0}}]%
 \>[4]\AgdaKeyword{open}\AgdaSpace{}%
 %
 %<*AgdaTag-Notation.Flat.Naturals>
@@ -614,90 +615,19 @@ A rule for \AgdaRef{fold\ (unfold\ d)\ ≡\ d} could be added, but only
 %</AgdaTag-eqNat>
 \AgdaSymbol{)}\AgdaSpace{}%
 \AgdaKeyword{public}\<%
-\\
-%
-\>[4]\AgdaKeyword{open}\AgdaSpace{}%
-%
-%<*AgdaTag-Booleans>
-\AgdaModule{Booleans}%
-%</AgdaTag-Booleans>
-\<%
-\\
-%
-\\[\AgdaEmptyExtraSkip]%
-%
-\>[4]\AgdaKeyword{variable}\AgdaSpace{}%
-\AgdaGeneralizable{n₁}\AgdaSpace{}%
-\AgdaGeneralizable{n₂}\AgdaSpace{}%
-\AgdaSymbol{:}\AgdaSpace{}%
-%
-%<*AgdaTag-Nat>
-\AgdaDatatype{Nat}%
-%</AgdaTag-Nat>
-\<%
-\end{code}
-\begin{code}%
-%
-\>[4]\AgdaKeyword{postulate}\<%
-\\
-\>[4][@{}l@{\AgdaIndent{0}}]%
-\>[6]%
-%<*AgdaTag-elim-==⊥>
-\AgdaPostulate{elim-==⊥}%
-%</AgdaTag-elim-==⊥>
-\AgdaSpace{}%
-\AgdaSymbol{:}\AgdaSpace{}%
-\AgdaSymbol{(}%
-%<*AgdaTag-↑>
-\AgdaPostulate{↑}%
-%</AgdaTag-↑>
-\AgdaSpace{}%
-\AgdaGeneralizable{n₁}\AgdaSpace{}%
-\AgdaOperator{%
-%<*AgdaTag-==⊥>
-\AgdaPostulate{==⊥}%
-%</AgdaTag-==⊥>
-}\AgdaSpace{}%
-%
-%<*AgdaTag-↑>
-\AgdaPostulate{↑}%
-%</AgdaTag-↑>
-\AgdaSpace{}%
-\AgdaGeneralizable{n₂}\AgdaSymbol{)}\AgdaSpace{}%
-\AgdaOperator{%
-%<*AgdaTag-≡>
-\AgdaDatatype{≡}%
-%</AgdaTag-≡>
-}\AgdaSpace{}%
-%
-%<*AgdaTag-↑>
-\AgdaPostulate{↑}%
-%</AgdaTag-↑>
-\AgdaSpace{}%
-\AgdaSymbol{(}\AgdaGeneralizable{n₁}\AgdaSpace{}%
-\AgdaOperator{\AgdaPrimitive{==ᴺ}}\AgdaSpace{}%
-\AgdaGeneralizable{n₂}\AgdaSymbol{)}\<%
-\\
-%
-\>[4]\AgdaSymbol{\{-\#}\AgdaSpace{}%
-\AgdaKeyword{REWRITE}\AgdaSpace{}%
-%
-%<*AgdaTag-elim-==⊥>
-\AgdaPostulate{elim-==⊥}%
-%</AgdaTag-elim-==⊥>
-\AgdaSpace{}%
-\AgdaSymbol{\#-\}}\<%
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The remaining \href{https://pdmosses.github.io/mfps2026-agda/Properties/\#postulated-properties}{postulated
-properties} (Section~\ref{Properties-postulated-properties}) are for domains that are not used in the semantics of the
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/LC/\#untyped-lambda-calculus}{LC} (Section~\ref{Examples/LC-untyped-lambda-calculus}) and
-\href{https://pdmosses.github.io/mfps2026-agda/Examples/PCF/\#pcf-a-programming-language-for-computable-functions}{PCF} (Section~\ref{Examples/PCF-pcf-a-programming-language-for-computable-functions})
-languages; they will be needed when tests for equivalence of denotations
-of \href{https://pdmosses.github.io/mfps2026-agda/Examples/Scm/\#scm-a-sublanguage-of-scheme}{Scm} (Section~\ref{Examples/Scm-scm-a-sublanguage-of-scheme})
-expressions are added. Postulated properties for operations on tuples
-and sequences will also be needed, but have not yet been developed.
+Removing any of the above rewrite rules breaks the proof in at least one
+of the illustrative tests. In principle, all \AgdaRef{refl} proof terms
+that rely on rewrite rules could be replaced by proofs that apply the
+postulated properties to specified subterms. However, we expect that it
+would be quite tedious to develop such proofs, and reading them is
+unlikely to provide new insights.
+
+The remaining postulated properties are for domains that are not used in
+the semantics of the LC and PCF languages; they will be needed when
+tests for equivalence of denotations of Scm expressions are added.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -1287,6 +1217,8 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaSpace{}%
 \AgdaKeyword{where}\<%
 \\
+%
+\\[\AgdaEmptyExtraSkip]%
 \>[0][@{}l@{\AgdaIndent{0}}]%
 \>[2]\AgdaKeyword{open}\AgdaSpace{}%
 %
@@ -1541,3 +1473,6 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaKeyword{public}\<%
 \end{code}
 \end{AgdaSuppressSpace}
+%
+Postulated properties for operations on tuples and sequences have not
+yet been developed.
