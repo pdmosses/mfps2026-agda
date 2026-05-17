@@ -789,11 +789,19 @@ $(LATEX)/%.lagda: %.lagda.md
 #	Transform \cite{bibkey1}~...~\cite{bibkeyN} to \cite{bibkey1,...,bibkeyN}:
 	@sd '\}~\\cite\{' ',' $@
 #	Transform references to relative URLs to link to generated website:
+#	[§ ...] -> Section~\ref{...} '||`
+	@sd '\\href\{(\.\./)*([^:\{\}]*)/index\.md\\#([^\{\}]*)\}\{§ ([^\{\}]*)\}' \
+	    'Section~\ref{$$2-$$3}\,\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$\Uparrow$$}' \
+	    $@
+	@sd '\\href\{(\.\./)*([^:\{\}]*)\.md\\#([^\{\}]*)\}\{§ ([^\{\}]*)\}' \
+	    'Section~\ref{$$2-$$3}\,\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$\Uparrow$$}' \
+	    $@
+#	[...] -> ... (Section~\ref{...} '||`)
 	@sd '\\href\{(\.\./)*([^:\{\}]*)/index\.md\\#([^\{\}]*)\}\{([^\{\}]*)\}' \
-	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$4} (Section~\ref{$$2-$$3})' \
+	    '$$4 (Section~\ref{$$2-$$3}\,\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$\Uparrow$$})' \
 	    $@
 	@sd '\\href\{(\.\./)*([^:\{\}]*)\.md\\#([^\{\}]*)\}\{([^\{\}]*)\}' \
-	    '\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$4} (Section~\ref{$$2-$$3})' \
+	    '$$4 (Section~\ref{$$2-$$3}\,\href{https://pdmosses.github.io/mfps2026-agda/$$2/\#$$3}{$$\Uparrow$$})' \
 	    $@
 	@sd '\\begin\{code\}' "\\\\begin{AgdaSuppressSpace}\n\\\\begin{code}" $@
 	@sd '\\end\{code\}' "\\\\end{code}\n\\\\end{AgdaSuppressSpace}" $@
