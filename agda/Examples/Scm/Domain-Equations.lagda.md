@@ -1,9 +1,9 @@
 # Domain Equations
 
-The domains for Scm are somewhat simpler than for the denotational semantics in
+The domains for *Scm* are somewhat simpler than for the denotational semantics in
 the Scheme standards [(Scheme)],
 but still involve all our postulated domain constructors.
-Using definitional equations instead of postulated domain equivalences `D ≅ E`
+Using definitional equations `D = E` instead of postulated bijections `D ≅ E`
 avoids the need for the functions `fold` and `unfold`.
 ```agda
 --"hide"
@@ -34,8 +34,13 @@ postulate Loc : Set
 𝐔  =  Ide →ˢ 𝐋              -- environments
 data Misc : Set where null unallocated undefined unspecified : Misc
 𝐌  =  Misc +⊥               -- miscellaneous
+postulate 𝐄 : Domain        -- expressed values
+𝐒  =  𝐋 →ᶜ 𝐄                -- stores
+postulate 𝐀 : Domain        -- answers
+𝐂  =  𝐒 →ᶜ 𝐀                -- command continuations
+𝐅  =  𝐄 ⋆ →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂  -- procedure values
 ```
-The conventional denotational semantics of Scm [(Mosses2025CSE)] defines the domain $𝐄$
+The published denotational semantics of *Scm* [(Mosses2025CSE)] defines the domain $𝐄$
 of expression values by the equation $𝐄 = 𝐓 + 𝐑 + 𝐏 + 𝐌 + 𝐅$,
 and the domain $𝐅$ of procedure values by $𝐅 = 𝐄^* \to (𝐄 \to 𝐂) \to 𝐂$.
 Mutually recursive groups of domain equations have well-defined solutions,
@@ -44,13 +49,7 @@ would cause the type checker to diverge.
 Postulating one (or both) of these domains avoids divergence;
 postulating `𝐄` also has the benefit that the embeddings and projections for its summands
 subsume the bijection between `𝐄` and its intended structure.
-```agda
-postulate 𝐄 : Domain        -- expressed values
-𝐒  =  𝐋 →ᶜ 𝐄                -- stores
-postulate 𝐀 : Domain        -- answers
-𝐂  =  𝐒 →ᶜ 𝐀                -- command continuations
-𝐅  =  𝐄 ⋆ →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂  -- procedure values
-```
+
 The following postulates instantiate injection (`δ in⊥ 𝐄`),
 inspection (`ε ∈⊥ D`),
 and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.

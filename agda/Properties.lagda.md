@@ -17,7 +17,7 @@ Rewrite rules are safe to use with `Agda.Builtin.Equality` when that option is e
 Confluent but non-terminating rewrite rules cannot break consistency,
 as shown by Cockx, Tabareau, and Winterhalter [(Cockx2021TRT)].
 
-The rewrite rules declared below support *automatic* proof of identity for all the [illustrative tests]:
+The rewrite rules declared below support *automatic* proof of identity for all the illustrative tests:
 the proof terms are simply `refl` (i.e., reflexivity).
 ```agda
 --"hide"

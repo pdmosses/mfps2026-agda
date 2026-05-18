@@ -1,7 +1,7 @@
 \subsubsection{Auxiliary Functions}\label{Examples/Scm/Auxiliary-Functions-auxiliary-functions}
 
 The \(\lambda\)-notation in the Agda definitions of auxiliary functions
-for Scm corresponds closely to that in its conventional denotational
+for \emph{Scm} corresponds closely to that in its published denotational
 semantics
 \cite{Mosses2025CSE}.
 %
@@ -55,9 +55,9 @@ hold α κ σ = κ (σ α) σ
 \end{AgdaSuppressSpace}
 %
 In the continuation-passing style used to define auxilary functions for
-Scm, giving explicit continuity proofs would be particulary tedious. For
-example, the function \AgdaRef{hold} is simply a combination of
-\(\lambda\)-abstraction and application, which is wellknown to ensure
+\emph{Scm}, giving explicit continuity proofs would be particulary
+tedious. For example, the function \AgdaRef{hold} is simply a combination
+of \(\lambda\)-abstraction and application, which is wellknown to ensure
 continuity.
 %
 \begin{AgdaSuppressSpace}
@@ -89,7 +89,7 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
 %
 The remaining auxiliary function definitions shown here involve the
 operations for (finite) sequences \AgdaRef{ϵ⋆} declared in the module
-Notation.Products.Sequences (Section~\ref{Notation-sequences}\,\href{https://pdmosses.github.io/mfps2026-agda/Notation/\#sequences}{$\Uparrow$}).
+\AgdaRef{Notation.Products.Sequences}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}

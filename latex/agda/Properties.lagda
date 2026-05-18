@@ -25,9 +25,8 @@ break consistency, as shown by Cockx, Tabareau, and Winterhalter
 \cite{Cockx2021TRT}.
 
 The rewrite rules declared below support \emph{automatic} proof of
-identity for all the
-illustrative tests (Section~\ref{Tests-illustrative-tests}\,\href{https://pdmosses.github.io/mfps2026-agda/Tests/\#illustrative-tests}{$\Uparrow$}): the proof
-terms are simply \AgdaRef{refl} (i.e., reflexivity).
+identity for all the illustrative tests: the proof terms are simply
+\AgdaRef{refl} (i.e., reflexivity).
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

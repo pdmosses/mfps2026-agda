@@ -1,8 +1,8 @@
 \subsubsection{Semantic Functions}\label{Examples/Scm/Semantic-Functions-semantic-functions}
 
 The \(\lambda\)-notation in the Agda definitions of semantic functions
-for Scm corresponds closely to that in its conventional denotational
-semantics
+for \emph{Scm} corresponds closely to that in its conventional
+denotational semantics
 \cite{Mosses2025CSE}.
 %
 \begin{AgdaSuppressSpace}

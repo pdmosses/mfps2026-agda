@@ -55,7 +55,7 @@ Postulating `Domain : Set` avoids that inconsistency.
 
 The notation for domains postulated here supports *type-checking*
 embeddings of denotational semantics in Agda such as those in the
-[illustrative examples].
+illustrative examples.
 It does *not* define or constrain the *mathematical structure* of domains,
 nor the algebraic and universal properties of the associated functions.
 
@@ -63,7 +63,7 @@ nor the algebraic and universal properties of the associated functions.
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
 [(Mosses2025LAF)]: https://msp.cis.strath.ac.uk/types2025/abstracts/TYPES2025_paper11.pdf
 
-## Function domains
+## Function Domains
 
 The conventional notation in denotational definitions for the domain of
 continuous functions from $D$ to $E$ is $D \to E$ or $[D \to E]$.
@@ -121,7 +121,7 @@ open Functions public
 --"/hide"
 ```
 
-## Recursive domains
+## Recursive Domains
 
 Conventional denotational semantics often involves groups of mutually
 recursive domain definitions.
@@ -140,11 +140,11 @@ module Recursion where
     fold    : {{D ≅ E}} → ⟪ E →ᶜ D ⟫
 ```
 The *instance parameter* `{{D ≅ E}}` of the above operations restricts them
-to domains `D` and `E` such that `instance _ : D ≅ E` has been declared.
+to domains `D` and `E` for which `instance _ : D ≅ E` has been declared.
 
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 
-## Flat domains
+## Flat Domains
 
 Lifting an ordinary set $A$ by adding a $\bot$ element gives a flat domain,
 usually written $A_\bot$.
@@ -207,7 +207,7 @@ using `zero` and `suc`.
 --"/hide"
 ```
 
-## Sum domains
+## Sum Domains
 
 The separated sum `D + E` of two domains corresponds to lifting the disjoint
 union of their carrier sets. 
@@ -237,7 +237,7 @@ The inherently *dependent* types of the Agda embedding of these operations are a
     _≳_↦_  : Domain → Nat → Domain → Set
     _in⊥_  : ⟪ D ⟫ → (E : Domain) → {{E ≳ n ↦ D}} → ⟪ E ⟫      -- δ in⊥ E injection
     _|⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ D ⟫      -- ε |⊥ D  projection
-    _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  test
+    _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  inspection
 ```
 The operations are defined only for `D` and `E`
 where an instance of type `E ≳ n ↦ D` is declared for some `n`.
@@ -249,12 +249,14 @@ declared separately by `instance _ : E ≳ n ↦ D` (where
 
 [(Scheme)]: https://standards.scheme.org
 
-## Product domains
+## Product Domains
 
-The carrier of the binary cartesian product of two domains consists of all
-pairs of elements of the carriers of the agument domains. Neither the product
-nor pairing is associative. The following operations can be used directly for
-binary products, and iterated for products of more than two domains.
+The carrier of the binary product `D × E` of two domains consists of all
+pairs `(d , e)` of elements of `D` and `E`
+with the pair `(⊥{D} , ⊥{E})` as the bottom element `⊥{D × E}`.
+Neither the product nor pairing is associative.
+The following operations can be used directly for binary products,
+and iterated for products of more than two domains.
 ```agda
 module Products where
   postulate
@@ -291,7 +293,7 @@ The domain `D ⋆` of finite sequences of elements of a domain `D` is
 conventionally written $D^*$.
 
 The following notation for the various operations on sequences was introduced
-and extensively used by Strachey and his colleagues in the early 1970s.
+in the early 1970s, and is used in the *Scheme* semantics [(Scheme)].
 (The single angle-brackets `⟨...⟩` used to form sequences are unrelated to the
 double angle-brackets `⟪ D ⟫` used for the carrier of domain `D`.)
 ```agda
@@ -323,7 +325,9 @@ module Updates where
   open Flat.Booleans
 --"/hide"
   _[_/_] : {{Eq A}} → ⟪ (A →ˢ D) →ᶜ D →ᶜ A →ˢ (A →ˢ D) ⟫
+--"hide"
   -- ρ [ δ / a ] maps a to δ, and other arguments a′ to ρ a′
+--"/hide"
   ρ [ δ / a ] = λ a′ → if a == a′ then δ else ρ a′
 ```
 Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
@@ -332,10 +336,12 @@ Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
   open Flat
 --"/hide"
   _[_/_]⊥ : {{Eq A}} → ⟪ ((A +⊥) →ᶜ D) →ᶜ D →ᶜ (A +⊥) →ᶜ ((A +⊥) →ᶜ D) ⟫
+--"hide"
   -- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′
+--"/hide"
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 ```
-Defining an operation `m [ x ← y]` for extension or overriding of *dependent* maps `m` is less straightforward,
+Defining an operation `m [ x ← y ]` for extension or overriding of *dependent* maps `m` is less straightforward,
 as it involves an equality test that may return an *equivalence proof*.
 ```agda
 --"hide"

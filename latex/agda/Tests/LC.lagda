@@ -40,3 +40,8 @@ check-free : -- (λx1.(λx42.x1)x2)x42 = x42
 check-free = refl
 \end{code}
 \end{AgdaSuppressSpace}
+%
+A reviewer pointed out that the only interpretation of
+\AgdaRef{⟪\ D∞\ ⟫}, so that one should expect many equalities to hold.
+However, when the proof of an equality is simply by \AgdaRef{refl},
+Agda's type-checker does not automatically use such reasoning.

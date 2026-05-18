@@ -1,6 +1,6 @@
 # Abstract Syntax
 
-The following grammar [(Mosses2025CSE)] summarises the abstract syntax of Scm
+The following grammar [(Mosses2025CSE)] summarises the abstract syntax of *Scm*
 expressions $\text{E} : \text{Exp}$
 with integers $\text{Z} : \text{Int}$,
 constants $\text{K} : \text{Con}$ and 

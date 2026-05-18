@@ -1,11 +1,11 @@
 \subsubsection{Domain Equations}\label{Examples/Scm/Domain-Equations-domain-equations}
 
-The domains for Scm are somewhat simpler than for the denotational
-semantics in the Scheme standards
+The domains for \emph{Scm} are somewhat simpler than for the
+denotational semantics in the Scheme standards
 \cite{Scheme}, but still involve all our
-postulated domain constructors. Using definitional equations instead of
-postulated domain equivalences \AgdaRef{D\ ≅\ E} avoids the need for the
-functions \AgdaRef{fold} and \AgdaRef{unfold}.
+postulated domain constructors. Using definitional equations
+\AgdaRef{D\ =\ E} instead of postulated bijections \AgdaRef{D\ ≅\ E}
+avoids the need for the functions \AgdaRef{fold} and \AgdaRef{unfold}.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]
@@ -39,10 +39,15 @@ postulate Loc : Set
 𝐔  =  Ide →ˢ 𝐋              -- environments
 data Misc : Set where null unallocated undefined unspecified : Misc
 𝐌  =  Misc +⊥               -- miscellaneous
+postulate 𝐄 : Domain        -- expressed values
+𝐒  =  𝐋 →ᶜ 𝐄                -- stores
+postulate 𝐀 : Domain        -- answers
+𝐂  =  𝐒 →ᶜ 𝐀                -- command continuations
+𝐅  =  𝐄 ⋆ →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂  -- procedure values
 \end{code}
 \end{AgdaSuppressSpace}
 %
-The conventional denotational semantics of Scm
+The published denotational semantics of \emph{Scm}
 \cite{Mosses2025CSE} defines
 the domain \(𝐄\) of expression values by the equation
 \(𝐄 = 𝐓 + 𝐑 + 𝐏 + 𝐌 + 𝐅\), and the domain \(𝐅\) of procedure values by
@@ -53,17 +58,7 @@ the type checker to diverge. Postulating one (or both) of these domains
 avoids divergence; postulating \AgdaRef{𝐄} also has the benefit that the
 embeddings and projections for its summands subsume the bijection
 between \AgdaRef{𝐄} and its intended structure.
-%
-\begin{AgdaSuppressSpace}
-\begin{code}
-postulate 𝐄 : Domain        -- expressed values
-𝐒  =  𝐋 →ᶜ 𝐄                -- stores
-postulate 𝐀 : Domain        -- answers
-𝐂  =  𝐒 →ᶜ 𝐀                -- command continuations
-𝐅  =  𝐄 ⋆ →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂  -- procedure values
-\end{code}
-\end{AgdaSuppressSpace}
-%
+
 The following postulates instantiate injection (\AgdaRef{δ\ in⊥\ 𝐄}),
 inspection (\AgdaRef{ε\ ∈⊥\ D}), and projection
 (\AgdaRef{ε\ \textbar{}⊥\ D}) for each summand \AgdaRef{D} of \AgdaRef{𝐄}.

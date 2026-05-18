@@ -19,7 +19,7 @@ Domains were originally required to be continuous lattices [(Scott1970OMT)]\ [(S
 A more general notion of domain is a *dcpo* (an algebraic, bounded-complete and directed-complete partial order) 
 [(Abramsky1995DT)].
 However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
-summarised below, is independent of the mathematical structure of domains.
+summarised below, is independent of the choice of domains.
 
 Let $D, E$ be domains with elements $\delta : D$, $\epsilon : E$.
 
@@ -35,7 +35,7 @@ Let $D, E$ be domains with elements $\delta : D$, $\epsilon : E$.
   the operation $\texttt{fix}$ that maps each endofunction $\phi : D \to D$ to its least fixed point,
   and the operations associated with other domain constructors.
 
-- For any set $A$ the *flat domain* $A_\bot$ is formed by adding $\bot$ as a fresh element of $A$.
+- For any set $A$ the *flat domain* $A_\bot$ is formed by adding $\bot$ as a fresh element.
   Functions on sets are implicitly extended to (continuous) functions on flat domains,
   returning\ $\bot$ when any argument is\ $\bot$.
   Elements\ $\tau$ of the domain of *truth-values* $\textbf{T} = \{ \text{true}, \text{false} \}_\bot$
@@ -48,10 +48,11 @@ Let $D, E$ be domains with elements $\delta : D$, $\epsilon : E$.
   written '$\upsilon \textsf{ in } X$' (where $\upsilon : Y$ for some summand $Y$)
   together with $\bot_X$.
   The $\textbf{T}$-valued operation $\chi \mathbin{\textsf{E}} Y$
+  (written $\chi \in Y$ in [(Scheme)])
   tests whether $\chi : X$ is the injection of some $\upsilon : Y$;
   if so, $\chi \mid Y$ projects $\chi$ to $\upsilon$, otherwise to $\bot_Y$.
 
-- The *cartesian product domain* $P = D \times E$ consists of pairs
+- The *product domain* $P = D \times E$ consists of pairs
   $\langle \delta, \epsilon \rangle$ with
   $\bot_P = \langle \bot_D, \bot_E \rangle$. When $\pi : P$,
   the operations $\pi \downarrow 1$ and $\pi \downarrow 2$ select its components;
@@ -131,8 +132,8 @@ Rewrite rules.
     optionally check confluence of rewrite rules, but currently does not
     check their termination. Since only *proven* (or postulated)
     equalities can be added as rewrite rules, non-confluence and
-    non-termination can only affect completeness of Agda's type checker
-    but not its soundness [(10.1145/3434341)].
+    non-termination cannot affect the soundness of Agda's type checker,
+    only its completeness [(10.1145/3434341)].
 
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 [(Agda-Language)]: https://agda.readthedocs.io/en/v2.8.0/language/

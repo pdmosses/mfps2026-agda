@@ -25,7 +25,7 @@ bounded-complete and directed-complete partial order)
 \cite{Abramsky1995DT}.
 However, the notation for domain constructors and their accompanying
 operations in a conventional Scott--Strachey semantics, summarised
-below, is independent of the mathematical structure of domains.
+below, is independent of the choice of domains.
 
 Let \(D, E\) be domains with elements \(\delta : D\), \(\epsilon : E\).
 
@@ -48,10 +48,10 @@ Let \(D, E\) be domains with elements \(\delta : D\), \(\epsilon : E\).
   associated with other domain constructors.
 \item
   For any set \(A\) the \emph{flat domain} \(A_\bot\) is formed by
-  adding \(\bot\) as a fresh element of \(A\). Functions on sets are
-  implicitly extended to (continuous) functions on flat domains,
-  returning~\(\bot\) when any argument is~\(\bot\). Elements~\(\tau\) of
-  the domain of \emph{truth-values}
+  adding \(\bot\) as a fresh element. Functions on sets are implicitly
+  extended to (continuous) functions on flat domains, returning~\(\bot\)
+  when any argument is~\(\bot\). Elements~\(\tau\) of the domain of
+  \emph{truth-values}
   \(\textbf{T} = \{ \text{true}, \text{false} \}_\bot\) are used in
   \emph{conditionals} written \(\tau \to \delta_1, \delta_2\), where
   \(\text{true} \to \delta_1, \delta_2\) is \(\delta_1\),
@@ -61,13 +61,13 @@ Let \(D, E\) be domains with elements \(\delta : D\), \(\epsilon : E\).
   The \emph{separated sum domain} \(X = \ldots + Y + \ldots\) consists
   of injected elements written `\(\upsilon \textsf{ in } X\)' (where
   \(\upsilon : Y\) for some summand \(Y\)) together with \(\bot_X\). The
-  \(\textbf{T}\)-valued operation \(\chi \mathbin{\textsf{E}} Y\) tests
-  whether \(\chi : X\) is the injection of some \(\upsilon : Y\); if so,
-  \(\chi \mid Y\) projects \(\chi\) to \(\upsilon\), otherwise to
-  \(\bot_Y\).
+  \(\textbf{T}\)-valued operation \(\chi \mathbin{\textsf{E}} Y\)
+  (written \(\chi \in Y\) in {[}(Scheme){]}) tests whether \(\chi : X\)
+  is the injection of some \(\upsilon : Y\); if so, \(\chi \mid Y\)
+  projects \(\chi\) to \(\upsilon\), otherwise to \(\bot_Y\).
 \item
-  The \emph{cartesian product domain} \(P = D \times E\) consists of
-  pairs \(\langle \delta, \epsilon \rangle\) with
+  The \emph{product domain} \(P = D \times E\) consists of pairs
+  \(\langle \delta, \epsilon \rangle\) with
   \(\bot_P = \langle \bot_D, \bot_E \rangle\). When \(\pi : P\), the
   operations \(\pi \downarrow 1\) and \(\pi \downarrow 2\) select its
   components; similarly for domains of \(n\)-\emph{tuples}~\(D^n\) and
@@ -161,7 +161,7 @@ declared by marking an equality proof \AgdaRef{eq\ :\ a\ ≡\ b} with a
 \AgdaRef{\{-\#\ REWRITE\ eq\ \#-\}} pragma. Agda can optionally check
 confluence of rewrite rules, but currently does not check their
 termination. Since only \emph{proven} (or postulated) equalities can be
-added as rewrite rules, non-confluence and non-termination can only
-affect completeness of Agda's type checker but not its
-soundness~\cite{10.1145/3434341}.
+added as rewrite rules, non-confluence and non-termination cannot affect
+the soundness of Agda's type checker, only its
+completeness~\cite{10.1145/3434341}.
 \end{description}

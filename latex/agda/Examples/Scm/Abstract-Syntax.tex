@@ -2,7 +2,7 @@
 
 The following grammar
 \cite{Mosses2025CSE}
-summarises the abstract syntax of Scm expressions
+summarises the abstract syntax of \emph{Scm} expressions
 \(\text{E} : \text{Exp}\) with integers \(\text{Z} : \text{Int}\),
 constants \(\text{K} : \text{Con}\) and identifiers
 \(\text{I} : \text{Ide}\). The meta-variable

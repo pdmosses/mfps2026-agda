@@ -1,6 +1,6 @@
 # Semantic Functions
 
-The $\lambda$-notation in the Agda definitions of semantic functions for Scm
+The $\lambda$-notation in the Agda definitions of semantic functions for *Scm*
 corresponds closely to that in its conventional denotational semantics [(Mosses2025CSE)].
 ```agda
 --"hide"

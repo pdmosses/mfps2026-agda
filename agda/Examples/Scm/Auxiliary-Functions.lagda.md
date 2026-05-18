@@ -1,7 +1,7 @@
 # Auxiliary Functions
 
-The $\lambda$-notation in the Agda definitions of auxiliary functions for Scm
-corresponds closely to that in its conventional denotational semantics [(Mosses2025CSE)].
+The $\lambda$-notation in the Agda definitions of auxiliary functions for *Scm*
+corresponds closely to that in its published denotational semantics [(Mosses2025CSE)].
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
@@ -46,7 +46,7 @@ assign α ϵ θ σ = θ (σ [ ϵ / α ]⊥)
 hold : ⟪ 𝐋 →ᶜ (𝐄 →ᶜ 𝐂) →ᶜ 𝐂 ⟫      -- hold α gives the value stored at α
 hold α κ σ = κ (σ α) σ
 ```
-In the continuation-passing style used to define auxilary functions for Scm,
+In the continuation-passing style used to define auxilary functions for *Scm*,
 giving explicit continuity proofs would be particulary tedious.
 For example, the function `hold` is simply a combination of
 $\lambda$-abstraction and application, which is wellknown to ensure continuity.
@@ -71,7 +71,7 @@ truish ϵ =  (ϵ ∈⊥ 𝐓) ⟶ (((ϵ |⊥ 𝐓) ==⊥ ↑ false) ⟶ ↑ fals
             ↑ true
 ```
 The remaining auxiliary function definitions shown here involve the operations for (finite) sequences `ϵ⋆`
-declared in the module [Notation.Products.Sequences].
+declared in the module `Notation.Products.Sequences`.
 ```agda
 cons : ⟪ 𝐅 ⟫                       -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
 cons ϵ⋆ κ =  (# ϵ⋆ ==⊥ ↑ 2) ⟶
@@ -112,4 +112,4 @@ setcdr ϵ⋆ κ =
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
-[Notation.Products.Sequences]: ../../Notation.md#sequences
+[Notation.Products.Sequences]: ../../Notation.md#Products.Sequences

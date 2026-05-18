@@ -57,12 +57,11 @@ Postulating \AgdaRef{Domain\ :\ Set} avoids that inconsistency.
 
 The notation for domains postulated here supports \emph{type-checking}
 embeddings of denotational semantics in Agda such as those in the
-illustrative examples (Section~\ref{Examples-illustrative-examples}\,\href{https://pdmosses.github.io/mfps2026-agda/Examples/\#illustrative-examples}{$\Uparrow$}).
-It does \emph{not} define or constrain the \emph{mathematical structure}
-of domains, nor the algebraic and universal properties of the associated
-functions.
+illustrative examples. It does \emph{not} define or constrain the
+\emph{mathematical structure} of domains, nor the algebraic and
+universal properties of the associated functions.
 
-\subsection{Function domains}\label{Notation-function-domains}
+\subsection{Function Domains}\label{Notation-function-domains}
 
 The conventional notation in denotational definitions for the domain of
 continuous functions from \(D\) to \(E\) is \(D \to E\) or
@@ -140,7 +139,7 @@ open Functions public
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\subsection{Recursive domains}\label{Notation-recursive-domains}
+\subsection{Recursive Domains}\label{Notation-recursive-domains}
 
 Conventional denotational semantics often involves groups of mutually
 recursive domain definitions. In Agda, recursive type definitions lead
@@ -161,10 +160,10 @@ module Recursion where
 \end{AgdaSuppressSpace}
 %
 The \emph{instance parameter} \AgdaRef{\{\{D\ ≅\ E\}\}} of the above
-operations restricts them to domains \AgdaRef{D} and \AgdaRef{E} such that
+operations restricts them to domains \AgdaRef{D} and \AgdaRef{E} for which
 \AgdaRef{instance\ \_\ :\ D\ ≅\ E} has been declared.
 
-\subsection{Flat domains}\label{Notation-flat-domains}
+\subsection{Flat Domains}\label{Notation-flat-domains}
 
 Lifting an ordinary set \(A\) by adding a \(\bot\) element gives a flat
 domain, usually written \(A_\bot\). Our Agda embedding postulates a
@@ -245,7 +244,7 @@ notation using \AgdaRef{zero} and \AgdaRef{suc}.
 \end{code}
 \end{AgdaSuppressSpace}
 %
-\subsection{Sum domains}\label{Notation-sum-domains}
+\subsection{Sum Domains}\label{Notation-sum-domains}
 
 The separated sum \AgdaRef{D\ +\ E} of two domains corresponds to lifting
 the disjoint union of their carrier sets. The following operations can
@@ -283,7 +282,7 @@ operations are as follows.
     _≳_↦_  : Domain → Nat → Domain → Set
     _in⊥_  : ⟪ D ⟫ → (E : Domain) → {{E ≳ n ↦ D}} → ⟪ E ⟫      -- δ in⊥ E injection
     _|⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ D ⟫      -- ε |⊥ D  projection
-    _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  test
+    _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  inspection
 \end{code}
 \end{AgdaSuppressSpace}
 %
@@ -295,13 +294,14 @@ Instead of defining the summands \AgdaRef{D} of a separated sum domain
 separately by \AgdaRef{instance\ \_\ :\ E\ ≳\ n\ ↦\ D} (where \AgdaRef{n}
 should be a different natural number for each summand).
 
-\subsection{Product domains}\label{Notation-product-domains}
+\subsection{Product Domains}\label{Notation-product-domains}
 
-The carrier of the binary cartesian product of two domains consists of
-all pairs of elements of the carriers of the agument domains. Neither
-the product nor pairing is associative. The following operations can be
-used directly for binary products, and iterated for products of more
-than two domains.
+The carrier of the binary product \AgdaRef{D\ ×\ E} of two domains
+consists of all pairs \AgdaRef{(d\ ,\ e)} of elements of \AgdaRef{D} and
+\AgdaRef{E} with the pair \AgdaRef{(⊥\{D\}\ ,\ ⊥\{E\})} as the bottom
+element \AgdaRef{⊥\{D\ ×\ E\}}. Neither the product nor pairing is
+associative. The following operations can be used directly for binary
+products, and iterated for products of more than two domains.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
@@ -347,10 +347,11 @@ The domain \AgdaRef{D\ ⋆} of finite sequences of elements of a domain
 \AgdaRef{D} is conventionally written \(D^*\).
 
 The following notation for the various operations on sequences was
-introduced and extensively used by Strachey and his colleagues in the
-early 1970s. (The single angle-brackets \AgdaRef{⟨...⟩} used to form
-sequences are unrelated to the double angle-brackets \AgdaRef{⟪\ D\ ⟫}
-used for the carrier of domain \AgdaRef{D}.)
+introduced in the early 1970s, and is used in the \emph{Scheme}
+semantics \cite{Scheme}. (The single
+angle-brackets \AgdaRef{⟨...⟩} used to form sequences are unrelated to
+the double angle-brackets \AgdaRef{⟪\ D\ ⟫} used for the carrier of
+domain \AgdaRef{D}.)
 %
 \begin{AgdaSuppressSpace}
 \begin{code}
@@ -391,7 +392,11 @@ module Updates where
 \end{code}
 \begin{code}
   _[_/_] : {{Eq A}} → ⟪ (A →ˢ D) →ᶜ D →ᶜ A →ˢ (A →ˢ D) ⟫
+\end{code}
+\begin{code}[hide]
   -- ρ [ δ / a ] maps a to δ, and other arguments a′ to ρ a′
+\end{code}
+\begin{code}
   ρ [ δ / a ] = λ a′ → if a == a′ then δ else ρ a′
 \end{code}
 \end{AgdaSuppressSpace}
@@ -404,12 +409,16 @@ Similarly for stores \AgdaRef{σ\ :\ ⟪\ (A\ +⊥)\ →ᶜ\ D\ ⟫}:
 \end{code}
 \begin{code}
   _[_/_]⊥ : {{Eq A}} → ⟪ ((A +⊥) →ᶜ D) →ᶜ D →ᶜ (A +⊥) →ᶜ ((A +⊥) →ᶜ D) ⟫
+\end{code}
+\begin{code}[hide]
   -- σ [ δ / α ]⊥ maps α to δ, and other arguments α′ to σ α′
+\end{code}
+\begin{code}
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 \end{code}
 \end{AgdaSuppressSpace}
 %
-Defining an operation \AgdaRef{m\ {[}\ x\ ←\ y{]}} for extension or
+Defining an operation \AgdaRef{m\ {[}\ x\ ←\ y\ {]}} for extension or
 overriding of \emph{dependent} maps \AgdaRef{m} is less straightforward,
 as it involves an equality test that may return an \emph{equivalence
 proof}.

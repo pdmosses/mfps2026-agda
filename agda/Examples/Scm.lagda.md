@@ -1,9 +1,9 @@
-# Scm: A Sublanguage of Scheme
+# *Scm*: A Sublanguage of *Scheme*
 
-Scm is a particularly basic sublanguage of the core Scheme expression language
-whose denotational semantics is defined in the Scheme reports [(Scheme)].
+*Scm* is a particularly basic sublanguage of the core *Scheme* expression language
+whose denotational semantics is defined in the *Scheme* reports [(Scheme)].
 The domains and auxiliary functions declared in this section are explained
-in the presentation of the conventional denotational semantics of Scm [(Mosses2025CSE)];
+in the presentation of the conventional denotational semantics of *Scm* [(Mosses2025CSE)];
 they involve the notation for [sequence domains].
 
 ```agda

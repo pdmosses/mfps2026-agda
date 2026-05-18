@@ -53,9 +53,10 @@ variable ρ : Env
 \end{code}
 \end{AgdaSuppressSpace}
 %
-Extension or overriding environments requires instances of the equality
-tests for both variables and types. The definition of the latter is
-somewhat tedious.
+Extension or overriding typed environments, written
+\AgdaRef{ρ\ {[}\ v\ /\ x\ {]}′}, requires instances of the equality tests
+for both variables and types. The definition of the latter is somewhat
+tedious.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]

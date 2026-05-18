@@ -40,7 +40,8 @@ variable ρ : Env
 ρ⊥ : Env                               -- initial environment
 ρ⊥ _ _ = ⊥
 ```
-Extension or overriding environments requires instances of the equality tests
+Extension or overriding typed environments, written `ρ [ v / x ]′`,
+requires instances of the equality tests
 for both variables and types. The definition of the latter is somewhat tedious.
 ```agda
 --"hide"

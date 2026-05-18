@@ -38,3 +38,7 @@ check-free : -- (λx1.(λx42.x1)x2)x42 = x42
   ⟦ ⦅ ⦅λ x 1 ␣ ⦅ ⦅λ x 42 ␣ var x 1 ⦆ ␣ var x 2 ⦆ ⦆ ␣ var x 42 ⦆ ⟧ ≡ ⟦ var x 42 ⟧
 check-free = refl
 ```
+A reviewer pointed out that the only interpretation of `⟪ D∞ ⟫`,
+so that one should expect many equalities to hold.
+However, when the proof of an equality is simply by `refl`,
+Agda's type-checker does not automatically use such reasoning.
