@@ -52,8 +52,8 @@ The currently available domain constructors are:
 - **`A →ˢ D`**, the domain of *all* functions from a set **`A`** to a domain
   **`D`**;
 - **`A +⊥`**. the flat domain constructed by adding `⊥`to a set **`A`;
-- **`D + E`**, the coalesced sum of domains **`D`** and **`E`**;
-- **`D × E`**, the cartesian product of domains **`D`** and **`E`**;
+- **`D + E`**, the *separated* sum of domains **`D`** and **`E`**;
+- **`D × E`**, the product of domains **`D`** and **`E`**;
 - **`D ^ n`**, the domain of n-tuples of elements of a domain **`D`**;
 - **`D ⋆`**, the domain of finite sequences of elements of a domain **`D`**.
 
@@ -65,9 +65,10 @@ Agda types can also be defined by equations, but recursion causes
 non-termination of the type-checker. A recursive definition `D = E` where `E`
 references `D` is formalised by postulating `D` as a domain, together with
 inverse functions mapping elements of `⟪ D ⟫` to elements of `⟪ E ⟫` and
-vice versa. When `E` is a domain sum, the inverse functions are subsumed by
-postulated projections and injections between domains and their summands.
-See the [Scm] semantics for an example.
+vice versa. When `E` is a separated sum domain, the inverse functions are
+subsumed by postulated projections and injections between domains and their
+summands. For example, see the postulated domain **E** in the module
+[Examples.Scm.Domain-Equations].
 
 ### Semantic Functions
 
@@ -119,3 +120,4 @@ its submodules for the required domain constructors.
 [Agda docs]: https://agda.readthedocs.io/en/latest/getting-started/a-taste-of-agda.html
 [Agda Wikipedia page]: https://en.wikipedia.org/wiki/Agda_(programming_language)
 [Notation]: Notation.md
+[Examples.Scm.Domain-Equations]: Examples/Scm/Domain-Equations.md
