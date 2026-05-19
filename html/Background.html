@@ -17,9 +17,10 @@ The AST arguments of semantic functions are enclosed by $\llbracket\dots\rrbrack
 to avoid potential confusion between abstract syntax terms and semantic notation.
 
 Domains were originally required to be continuous lattices [(Scott1970OMT)]\ [(Scott1972CL)]\ [(Stoy1977DSS)]\ [(Tennent1976DSP)].
-A more general notion of domain is a *dcpo* (an algebraic, bounded-complete and directed-complete partial order) 
-[(Abramsky1995DT)].
-However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
+Various more general notions of domain have been suggested (see [(Abramsky1995DT)])
+but for us it is only important that endomaps between domains have fixpoints,
+recursive domain equations have solutions, and each domain comes with a bottom element.
+The notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
 summarised below, is independent of the choice of domains.
 
 Let $D, E$ be domains with elements $\delta : D$, $\epsilon : E$.
@@ -126,7 +127,7 @@ Type classes.
     are resolved automatically by using definitions marked as `instance`.
 
 Rewrite rules.
-:   Agda has support for *rewrite rules* [(cockx:LIPIcs.TYPES.2019.2)]
+:   Agda has support for *rewrite rules* [(Cockx2020TTU)]
     that are applied automatically during type checking. Rewrite rules
     are declared by marking an equality proof 
     `eq : a ≡ b` with a `{-# REWRITE eq #-}` pragma. Agda can
@@ -134,7 +135,7 @@ Rewrite rules.
     check their termination. Since only *proven* (or postulated)
     equalities can be added as rewrite rules, non-confluence and
     non-termination cannot affect the soundness of Agda&#39;s type checker,
-    only its completeness [(10.1145/3434341)].
+    only its completeness [(Cockx2021TRT)].
 
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 [(Agda-Language)]: https://agda.readthedocs.io/en/v2.8.0/language/
