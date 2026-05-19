@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -6471,10 +6471,9 @@ and is defined <em>compositionally</em> in terms of the denotations of its direc
 The AST arguments of semantic functions are enclosed by <span class="arithmatex">\(\llbracket\dots\rrbracket\)</span>,
 to avoid potential confusion between abstract syntax terms and semantic notation.</p>
 <p>Domains were originally required to be continuous lattices <a href="https://ncatlab.org/nlab/files/Scott-TheoryOfComputation.pdf">(Scott1970OMT)</a> <a href="https://doi.org/10.1007/BFb0073967">(Scott1972CL)</a> <a href="https://mitpress.mit.edu/9780262690768/denotational-semantics/">(Stoy1977DSS)</a> <a href="https://doi.org/10.1145/360303.360308">(Tennent1976DSP)</a>.
-Various more general notions of domain have been suggested (see <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>)
-but for us it is only important that endomaps between domains have fixpoints,
-recursive domain equations have solutions, and each domain comes with a bottom element.
-The notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
+A more general notion of domain is a <em>dcpo</em> (an algebraic, bounded-complete and directed-complete partial order) 
+<a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>.
+However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
 summarised below, is independent of the choice of domains.</p>
 <p>Let <span class="arithmatex">\(D, E\)</span> be domains with elements <span class="arithmatex">\(\delta : D\)</span>, <span class="arithmatex">\(\epsilon : E\)</span>.</p>
 <ul>
@@ -6507,7 +6506,7 @@ summarised below, is independent of the choice of domains.</p>
   written '<span class="arithmatex">\(\upsilon \textsf{ in } X\)</span>' (where <span class="arithmatex">\(\upsilon : Y\)</span> for some summand <span class="arithmatex">\(Y\)</span>)
   together with <span class="arithmatex">\(\bot_X\)</span>.
   The <span class="arithmatex">\(\textbf{T}\)</span>-valued operation <span class="arithmatex">\(\chi \mathbin{\textsf{E}} Y\)</span>
-  (written <span class="arithmatex">\(\chi \in Y\)</span> in <a href="https://standards.scheme.org">(Scheme)</a>)
+  (written <span class="arithmatex">\(\chi \in Y\)</span> in [(Scheme)])
   tests whether <span class="arithmatex">\(\chi : X\)</span> is the injection of some <span class="arithmatex">\(\upsilon : Y\)</span>;
   if so, <span class="arithmatex">\(\chi \mid Y\)</span> projects <span class="arithmatex">\(\chi\)</span> to <span class="arithmatex">\(\upsilon\)</span>, otherwise to <span class="arithmatex">\(\bot_Y\)</span>.</p>
 </li>
@@ -6581,7 +6580,7 @@ simulated using Agda's <em>instance arguments</em> to resolve type class
 instances. Instance arguments are marked by double curly braces <code>{{…}}</code> and
 are resolved automatically by using definitions marked as <code>instance</code>.</dd>
 <dt>Rewrite rules.</dt>
-<dd>Agda has support for <em>rewrite rules</em> <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2">(Cockx2020TTU)</a>
+<dd>Agda has support for <em>rewrite rules</em> <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2">(cockx:LIPIcs.TYPES.2019.2)</a>
 that are applied automatically during type checking. Rewrite rules
 are declared by marking an equality proof 
 <code>eq : a ≡ b</code> with a <code>{-# REWRITE eq #-}</code> pragma. Agda can
@@ -6589,7 +6588,7 @@ optionally check confluence of rewrite rules, but currently does not
 check their termination. Since only <em>proven</em> (or postulated)
 equalities can be added as rewrite rules, non-confluence and
 non-termination cannot affect the soundness of Agda's type checker,
-only its completeness <a href="https://doi.org/10.1145/3434341">(Cockx2021TRT)</a>.</dd>
+only its completeness <a href="https://doi.org/10.1145/3434341">(10.1145/3434341)</a>.</dd>
 </dl>
 
 
