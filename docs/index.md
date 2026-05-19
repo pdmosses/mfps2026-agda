@@ -1,78 +1,32 @@
-# About this website
+# Mechanising Denotational Semantics in Agda
 
-> Experiments with Agda support for Scott–Strachey denotational semantics
+## Abstract
 
-## Illustrative Examples
+Mechanisation of a mathematical definition (also referred to as formalisation)
+has many benefits. Here, we focus on mechanising denotational semantic definitions
+of programming languages by embedding them in the Agda language. The Agda
+type-checker detects and reports any issues with the wellformedness and type
+correctness of the embedded definitions.
 
-Complete examples of denotational semantics definitions in Agda:
+To minimise the effort required, and to facilitate correlation of the original
+definition with its Agda embedding, mechanisation should not involve significant
+reformulation or extension. Here, we show how  to embed conventional Scott–Strachey
+denotational definitions in Agda with almost no changes to $\lambda$-notation or
+domain equations.
 
-- [LC]: the untyped λ-calculus
-- [PCF]: an intrinsically (simply) typed programming language based on LCF.[^1]
-- [Scm]: a sublanguage of [Scheme]
+Agda notation for definitions of types and functions corresponds closely
+to the conventional meta-notation of denotational semantics. We have developed
+a collection of Agda modules with postulated types for commonly used domain
+constructors and their associated operations. Some of our postulates are
+inconsistent with a classical set-theoretic interpretation of Agda; we conjecture
+that they would be consistent with an interpretation of Agda in the higher-order
+intuititionistic logic used by Simpson in his work on synthetic domain theory.
 
-[^1]: LCF is Scott's logic of computable functions.
-
-## Domains in Denotational Semantics
-
-In the Scott–Strachey style of denotational semantics:
-
-- types of denotations are (Scott-)domains;
-- domains are cpos with least elements, and can be defined recursively;
-- denotations are defined in λ-notation, and functions are continuous;
-- the isomorphisms between domains and their definitions are left implicit.
-
-## Postulating Domains in Agda
-
-The purpose of this repository is to experiment with defining denotational
-semantics straightforwardly in Agda.
-
-The current examples use *postulated* domain constructors and
-associated operations declared in the [Notation] module and its submodules.
-Some of the postulates are inconsistent with a classical set-theoretic
-interpretation of Agda.
-
-The `Tests` modules use the postulated equivalences and rewrite rules for the
-associated operations declared in the [Properties] module and its submodules.
-
-### Implementing Synthetic Domain Theory in Agda
-
-An implementation of *Synthetic Domain Theory* (SDT) in Agda would allow
-domain constructors and associated operations to be defined from a smaller
-collection of postulates that are known to have a model.
-
-From the abstract of [Formalizing Synthetic Domain Theory] by Bernhard Reus
-(J. Automated Reasoning, 1999):
-
-> Synthetic Domain Theory (SDT) is a constructive variant of Domain Theory
-> where all functions are continuous following Dana Scott’s idea of
-> “domains as sets”.
-> 
-> In this article a logical and axiomatic version of SDT capturing the essence
-> of Domain Theory à la Scott is presented. It is based on a sufficiently
-> expressive version of constructive type theory and fully implemented in the
-> proof checker [Lego].
-
-It appears that the implementation uses impredicativity and proof-irrelevance,
-which may prevent migration to Agda.
-
-From the abstract of
-[Computational adequacy for recursive types in models of intuitionistic set theory]
-by Alex Simpson (Ann. Pure and Applied Logic, 2004):
-
-> This paper provides a unifying axiomatic account of the interpretation of
-> recursive types that incorporates both domain-theoretic and realizability
-> models as concrete instances. Our approach is to view such models as full
-> subcategories of categorical models of intuitionistic set theory. 
-
-From §3:
-
-> Although in this paper we use models of IZF set theory to achieve algebraic
-> compactness, many other set theories and type theories appear rich enough to
-> carry out the proofs in this paper. ... In fact, it seems likely that, with
-> appropriate reformulations, the development of this paper could be carried
-> out in the (predicative) context of Martin-Löf’s Type Theory.
-
-It remains to be seen whether the development can be implemented in Agda...
+We illustrate our approach with mechanisations of three denotational definitions:
+Scott’s $D_\infty$ model of the untyped $\lambda$-calculus, Plotkin’s denotational
+semantics of PCF, and a semantics of a sublanguage of Scheme. In previous work,
+similar mechanisations in Agda have revealed several unsuspected wellformedness
+issues in published denotational definitions.
 
 ## Discussion
 
