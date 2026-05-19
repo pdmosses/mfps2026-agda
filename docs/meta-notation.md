@@ -51,7 +51,7 @@ The currently available domain constructors are:
   **`D`** to a domain **`E`**;
 - **`A →ˢ D`**, the domain of *all* functions from a set **`A`** to a domain
   **`D`**;
-- **`A +⊥`**. the flat domain constructed by adding `⊥`to a set **`A`;
+- **`A +⊥`**. the flat domain constructed by adding `⊥`to a set **`A`**;
 - **`D + E`**, the *separated* sum of domains **`D`** and **`E`**;
 - **`D × E`**, the product of domains **`D`** and **`E`**;
 - **`D ^ n`**, the domain of n-tuples of elements of a domain **`D`**;
