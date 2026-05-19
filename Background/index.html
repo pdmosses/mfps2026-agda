@@ -6581,7 +6581,7 @@ simulated using Agda's <em>instance arguments</em> to resolve type class
 instances. Instance arguments are marked by double curly braces <code>{{…}}</code> and
 are resolved automatically by using definitions marked as <code>instance</code>.</dd>
 <dt>Rewrite rules.</dt>
-<dd>Agda has support for <em>rewrite rules</em> [(Cockx2020TTU)]
+<dd>Agda has support for <em>rewrite rules</em> <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2">(Cockx2020TTU)</a>
 that are applied automatically during type checking. Rewrite rules
 are declared by marking an equality proof 
 <code>eq : a ≡ b</code> with a <code>{-# REWRITE eq #-}</code> pragma. Agda can
@@ -6589,7 +6589,7 @@ optionally check confluence of rewrite rules, but currently does not
 check their termination. Since only <em>proven</em> (or postulated)
 equalities can be added as rewrite rules, non-confluence and
 non-termination cannot affect the soundness of Agda's type checker,
-only its completeness [(Cockx2021TRT)].</dd>
+only its completeness <a href="https://doi.org/10.1145/3434341">(Cockx2021TRT)</a>.</dd>
 </dl>
 
 
