@@ -155,14 +155,13 @@ Instance arguments are marked by double curly braces \AgdaRef{\{\{…\}\}}
 and are resolved automatically by using definitions marked as
 \AgdaRef{instance}.
 \item[Rewrite rules.]
-Agda has support for \emph{rewrite rules}
-\cite{cockx:LIPIcs.TYPES.2019.2}
-that are applied automatically during type checking. Rewrite rules are
-declared by marking an equality proof \AgdaRef{eq\ :\ a\ ≡\ b} with a
+Agda has support for \emph{rewrite rules} {[}(Cockx2020TTU){]} that are
+applied automatically during type checking. Rewrite rules are declared
+by marking an equality proof \AgdaRef{eq\ :\ a\ ≡\ b} with a
 \AgdaRef{\{-\#\ REWRITE\ eq\ \#-\}} pragma. Agda can optionally check
 confluence of rewrite rules, but currently does not check their
 termination. Since only \emph{proven} (or postulated) equalities can be
 added as rewrite rules, non-confluence and non-termination cannot affect
 the soundness of Agda's type checker, only its
-completeness~\cite{10.1145/3434341}.
+completeness~{[}(Cockx2021TRT){]}.
 \end{description}

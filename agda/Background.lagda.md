@@ -126,7 +126,7 @@ Type classes.
     are resolved automatically by using definitions marked as `instance`.
 
 Rewrite rules.
-:   Agda has support for *rewrite rules* [(cockx:LIPIcs.TYPES.2019.2)]
+:   Agda has support for *rewrite rules* [(Cockx2020TTU)]
     that are applied automatically during type checking. Rewrite rules
     are declared by marking an equality proof 
     `eq : a ≡ b` with a `{-# REWRITE eq #-}` pragma. Agda can
@@ -134,7 +134,7 @@ Rewrite rules.
     check their termination. Since only *proven* (or postulated)
     equalities can be added as rewrite rules, non-confluence and
     non-termination cannot affect the soundness of Agda's type checker,
-    only its completeness [(10.1145/3434341)].
+    only its completeness [(Cockx2021TRT)].
 
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 [(Agda-Language)]: https://agda.readthedocs.io/en/v2.8.0/language/
