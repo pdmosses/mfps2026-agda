@@ -1,7 +1,7 @@
 *.agdai
 /docs/html/
 /docs/**/*.md
-!/docs/index.md
+!/docs/README.md
 !/docs/meta-notation.md
 /site
 /temp
