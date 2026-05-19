@@ -1,8 +1,8 @@
 nav:
   - About:
-    - index.md
-    - meta-notation.md
+    - README.md
     - Background.md
+    - meta-notation.md
   - Notation.md
   - Examples:
     - Examples/index.md
