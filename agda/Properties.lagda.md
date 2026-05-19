@@ -94,7 +94,7 @@ and reading them is unlikely to provide new insights.
 
 The remaining postulated properties are for domains that are not used
 in the semantics of the LC and PCF languages;
-they will be needed when tests for equivalence of denotations of Scm expressions are added.
+they will be needed when tests for equivalence of denotations of *Scm* expressions are added.
 
 ```agda
 --"hide"
@@ -129,8 +129,9 @@ module Products where
 
   variable δ : ⟪ D ⟫; ε : ⟪ E ⟫
   postulate
-    elim-↓₁  :  ( δ , ε ) ↓₁  ≡  δ
-    elim-↓₂  :  ( δ , ε ) ↓₂  ≡  ε
+    elim-↓₁   :  ( δ , ε ) ↓₁     ≡  δ
+    elim-↓₂   :  ( δ , ε ) ↓₂     ≡  ε
+    elim-⊥-⊥  :  ( ⊥{D} , ⊥{E} )  ≡  ⊥{D × E}
   {-# REWRITE elim-↓₁ elim-↓₂ #-} 
 
   module Tuples where

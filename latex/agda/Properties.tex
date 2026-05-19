@@ -626,7 +626,8 @@ unlikely to provide new insights.
 
 The remaining postulated properties are for domains that are not used in
 the semantics of the LC and PCF languages; they will be needed when
-tests for equivalence of denotations of Scm expressions are added.
+tests for equivalence of denotations of \emph{Scm} expressions are
+added.
 %
 \begin{AgdaSuppressSpace}
 \begin{code}[hide]%
@@ -1288,8 +1289,8 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaPostulate{elim-↓₁}%
 %</AgdaTag-elim-↓₁>
 %
-\>[13]\AgdaSymbol{:}%
-\>[16]\AgdaSymbol{(}\AgdaSpace{}%
+\>[14]\AgdaSymbol{:}%
+\>[17]\AgdaSymbol{(}\AgdaSpace{}%
 \AgdaGeneralizable{δ}\AgdaSpace{}%
 \AgdaOperator{%
 %<*AgdaTag-,>
@@ -1303,12 +1304,12 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaPostulate{↓₁}%
 %</AgdaTag-↓₁>
 }%
-\>[30]\AgdaOperator{%
+\>[34]\AgdaOperator{%
 %<*AgdaTag-≡>
 \AgdaDatatype{≡}%
 %</AgdaTag-≡>
 }%
-\>[33]\AgdaGeneralizable{δ}\<%
+\>[37]\AgdaGeneralizable{δ}\<%
 \\
 %
 \>[4]%
@@ -1316,8 +1317,8 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaPostulate{elim-↓₂}%
 %</AgdaTag-elim-↓₂>
 %
-\>[13]\AgdaSymbol{:}%
-\>[16]\AgdaSymbol{(}\AgdaSpace{}%
+\>[14]\AgdaSymbol{:}%
+\>[17]\AgdaSymbol{(}\AgdaSpace{}%
 \AgdaGeneralizable{δ}\AgdaSpace{}%
 \AgdaOperator{%
 %<*AgdaTag-,>
@@ -1331,12 +1332,53 @@ in⊥\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
 \AgdaPostulate{↓₂}%
 %</AgdaTag-↓₂>
 }%
-\>[30]\AgdaOperator{%
+\>[34]\AgdaOperator{%
 %<*AgdaTag-≡>
 \AgdaDatatype{≡}%
 %</AgdaTag-≡>
 }%
-\>[33]\AgdaGeneralizable{ε}\<%
+\>[37]\AgdaGeneralizable{ε}\<%
+\\
+%
+\>[4]%
+%<*AgdaTag-elim-⊥-⊥>
+\AgdaPostulate{elim-⊥-⊥}%
+%</AgdaTag-elim-⊥-⊥>
+%
+\>[14]\AgdaSymbol{:}%
+\>[17]\AgdaSymbol{(}\AgdaSpace{}%
+%
+%<*AgdaTag-⊥>
+\AgdaPostulate{⊥}%
+%</AgdaTag-⊥>
+\AgdaSymbol{\{}\AgdaGeneralizable{D}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaOperator{%
+%<*AgdaTag-,>
+\AgdaPostulate{,}%
+%</AgdaTag-,>
+}\AgdaSpace{}%
+%
+%<*AgdaTag-⊥>
+\AgdaPostulate{⊥}%
+%</AgdaTag-⊥>
+\AgdaSymbol{\{}\AgdaGeneralizable{E}\AgdaSymbol{\}}\AgdaSpace{}%
+\AgdaSymbol{)}%
+\>[34]\AgdaOperator{%
+%<*AgdaTag-≡>
+\AgdaDatatype{≡}%
+%</AgdaTag-≡>
+}%
+\>[37]%
+%<*AgdaTag-⊥>
+\AgdaPostulate{⊥}%
+%</AgdaTag-⊥>
+\AgdaSymbol{\{}\AgdaGeneralizable{D}\AgdaSpace{}%
+\AgdaOperator{%
+%<*AgdaTag-×>
+\AgdaPostulate{×}%
+%</AgdaTag-×>
+}\AgdaSpace{}%
+\AgdaGeneralizable{E}\AgdaSymbol{\}}\<%
 \\
 %
 \>[2]\AgdaSymbol{\{-\#}\AgdaSpace{}%
