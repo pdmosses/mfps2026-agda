@@ -15,7 +15,7 @@ Agda can use them *automatically* in proofs.
 Agda also has an option to check that the declared rewrite rules form a confluent system.
 Rewrite rules are safe to use with `Agda.Builtin.Equality` when that option is enabled.
 Confluent but non-terminating rewrite rules cannot break consistency,
-as shown by Cockx, Tabareau, and Winterhalter [(10.1145/3434341)].
+as shown by Cockx, Tabareau, and Winterhalter [(Cockx2021TRT)].
 
 The rewrite rules declared below support *automatic* proof of identity for all the illustrative tests:
 the proof terms are simply `refl` (i.e., reflexivity).
@@ -144,7 +144,7 @@ module Updates where
   open Notation.Updates using (_[_/_]; _[_/_]⊥; _[_←_]) public
 --"/hide"
 ```
-Postulated properties for operations on tuples and sequences have not yet been developed.
+Postulates of properties for our operations on tuples and sequences have not yet been developed.
 
 
 [Postulated Domain Notation]: Notation.md#postulated-domain-notation

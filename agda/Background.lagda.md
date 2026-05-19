@@ -139,8 +139,9 @@ Rewrite rules.
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 [(Agda-Language)]: https://agda.readthedocs.io/en/v2.8.0/language/
 [(Agda-Wikipedia)]: https://en.wikipedia.org/wiki/Agda_(programming_language)
-[(10.1145/3434341)]: https://doi.org/10.1145/3434341
-[(cockx:LIPIcs.TYPES.2019.2)]: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2
+[(Cockx2021TRT)]: https://doi.org/10.1145/3434341
+[(Cockx2020TTU)]: https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.TYPES.2019.2
+[(Scheme)]: https://standards.scheme.org
 [(Scott1970OMT)]: https://ncatlab.org/nlab/files/Scott-TheoryOfComputation.pdf
 [(Scott1972CL)]: https://doi.org/10.1007/BFb0073967
 [(Stoy1977DSS)]: https://mitpress.mit.edu/9780262690768/denotational-semantics/

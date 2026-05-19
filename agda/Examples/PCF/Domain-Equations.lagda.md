@@ -1,6 +1,6 @@
 # Domain Equations
 
-The domains `𝒟 σ` form a "standard collection of domains for arithmetic"
+The domains `𝒟 σ` form a "*standard collection of domains for arithmetic*"
 in PCF, written $\mathcal D_\sigma$ in [(Plotkin1977LCP)].
 As PCF is a simply-typed language, the domains `𝒟 σ` are not reflexive,
 so their embedding in Agda can use ordinary type definitions,

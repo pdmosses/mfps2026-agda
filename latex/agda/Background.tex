@@ -63,9 +63,11 @@ Let \(D, E\) be domains with elements \(\delta : D\), \(\epsilon : E\).
   of injected elements written `\(\upsilon \textsf{ in } X\)' (where
   \(\upsilon : Y\) for some summand \(Y\)) together with \(\bot_X\). The
   \(\textbf{T}\)-valued operation \(\chi \mathbin{\textsf{E}} Y\)
-  (written \(\chi \in Y\) in {[}(Scheme){]}) tests whether \(\chi : X\)
-  is the injection of some \(\upsilon : Y\); if so, \(\chi \mid Y\)
-  projects \(\chi\) to \(\upsilon\), otherwise to \(\bot_Y\).
+  (written \(\chi \in Y\) in
+  \cite{Scheme}) tests whether
+  \(\chi : X\) is the injection of some \(\upsilon : Y\); if so,
+  \(\chi \mid Y\) projects \(\chi\) to \(\upsilon\), otherwise to
+  \(\bot_Y\).
 \item
   The \emph{product domain} \(P = D \times E\) consists of pairs
   \(\langle \delta, \epsilon \rangle\) with
@@ -155,13 +157,14 @@ Instance arguments are marked by double curly braces \AgdaRef{\{\{…\}\}}
 and are resolved automatically by using definitions marked as
 \AgdaRef{instance}.
 \item[Rewrite rules.]
-Agda has support for \emph{rewrite rules} {[}(Cockx2020TTU){]} that are
-applied automatically during type checking. Rewrite rules are declared
-by marking an equality proof \AgdaRef{eq\ :\ a\ ≡\ b} with a
+Agda has support for \emph{rewrite rules}
+\cite{Cockx2020TTU}
+that are applied automatically during type checking. Rewrite rules are
+declared by marking an equality proof \AgdaRef{eq\ :\ a\ ≡\ b} with a
 \AgdaRef{\{-\#\ REWRITE\ eq\ \#-\}} pragma. Agda can optionally check
 confluence of rewrite rules, but currently does not check their
 termination. Since only \emph{proven} (or postulated) equalities can be
 added as rewrite rules, non-confluence and non-termination cannot affect
 the soundness of Agda's type checker, only its
-completeness~{[}(Cockx2021TRT){]}.
+completeness~\cite{Cockx2021TRT}.
 \end{description}
