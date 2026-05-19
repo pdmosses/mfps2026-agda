@@ -20,12 +20,13 @@ notation.
 
 Domains were originally required to be continuous lattices
 \cite{Scott1970OMT,Scott1972CL,Stoy1977DSS,Tennent1976DSP}.
-A more general notion of domain is a \emph{dcpo} (an algebraic,
-bounded-complete and directed-complete partial order)
-\cite{Abramsky1995DT}.
-However, the notation for domain constructors and their accompanying
-operations in a conventional Scott--Strachey semantics, summarised
-below, is independent of the choice of domains.
+Various more general notions of domain have been suggested (see
+\cite{Abramsky1995DT})
+but for us it is only important that endomaps between domains have
+fixpoints, recursive domain equations have solutions, and each domain
+comes with a bottom element. The notation for domain constructors and
+their accompanying operations in a conventional Scott--Strachey
+semantics, summarised below, is independent of the choice of domains.
 
 Let \(D, E\) be domains with elements \(\delta : D\), \(\epsilon : E\).
 

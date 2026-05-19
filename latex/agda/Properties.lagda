@@ -22,7 +22,7 @@ check that the declared rewrite rules form a confluent system. Rewrite
 rules are safe to use with \AgdaRef{Agda.Builtin.Equality} when that
 option is enabled. Confluent but non-terminating rewrite rules cannot
 break consistency, as shown by Cockx, Tabareau, and Winterhalter
-\cite{Cockx2021TRT}.
+{[}(10.1145/3434341){]}.
 
 The rewrite rules declared below support \emph{automatic} proof of
 identity for all the illustrative tests: the proof terms are simply

@@ -16,9 +16,10 @@ The AST arguments of semantic functions are enclosed by $\llbracket\dots\rrbrack
 to avoid potential confusion between abstract syntax terms and semantic notation.
 
 Domains were originally required to be continuous lattices [(Scott1970OMT)]\ [(Scott1972CL)]\ [(Stoy1977DSS)]\ [(Tennent1976DSP)].
-A more general notion of domain is a *dcpo* (an algebraic, bounded-complete and directed-complete partial order) 
-[(Abramsky1995DT)].
-However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
+Various more general notions of domain have been suggested (see [(Abramsky1995DT)])
+but for us it is only important that endomaps between domains have fixpoints,
+recursive domain equations have solutions, and each domain comes with a bottom element.
+The notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
 summarised below, is independent of the choice of domains.
 
 Let $D, E$ be domains with elements $\delta : D$, $\epsilon : E$.
