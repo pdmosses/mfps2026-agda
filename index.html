@@ -23,7 +23,7 @@
     
     
       
-        <title>About this website - MFPS2026-Agda</title>
+        <title>Mechanising Denotational Semantics in Agda - MFPS2026-Agda</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about-this-website" class="md-skip">
+        <a href="#mechanising-denotational-semantics-in-agda" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About this website
+              Mechanising Denotational Semantics in Agda
             
           </span>
         </div>
@@ -6304,52 +6304,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#illustrative-examples" class="md-nav__link">
+  <a href="#abstract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Illustrative Examples
+        Abstract
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domains-in-denotational-semantics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domains in Denotational Semantics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postulating-domains-in-agda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Postulating Domains in Agda
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Postulating Domains in Agda">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#implementing-synthetic-domain-theory-in-agda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementing Synthetic Domain Theory in Agda
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6390,80 +6351,33 @@
   
 
 
-<h1 id="about-this-website">About this website</h1>
-<blockquote>
-<p>Experiments with Agda support for Scott–Strachey denotational semantics</p>
-</blockquote>
-<h2 id="illustrative-examples">Illustrative Examples</h2>
-<p>Complete examples of denotational semantics definitions in Agda:</p>
-<ul>
-<li><a href="Examples/LC/">LC</a>: the untyped λ-calculus</li>
-<li><a href="Examples/PCF/">PCF</a>: an intrinsically (simply) typed programming language based on LCF.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li><a href="Examples/Scm/">Scm</a>: a sublanguage of <a href="https://scheme.org">Scheme</a></li>
-</ul>
-<h2 id="domains-in-denotational-semantics">Domains in Denotational Semantics</h2>
-<p>In the Scott–Strachey style of denotational semantics:</p>
-<ul>
-<li>types of denotations are (Scott-)domains;</li>
-<li>domains are cpos with least elements, and can be defined recursively;</li>
-<li>denotations are defined in λ-notation, and functions are continuous;</li>
-<li>the isomorphisms between domains and their definitions are left implicit.</li>
-</ul>
-<h2 id="postulating-domains-in-agda">Postulating Domains in Agda</h2>
-<p>The purpose of this repository is to experiment with defining denotational
-semantics straightforwardly in Agda.</p>
-<p>The current examples use <em>postulated</em> domain constructors and
-associated operations declared in the <a href="Notation/">Notation</a> module and its submodules.
-Some of the postulates are inconsistent with a classical set-theoretic
-interpretation of Agda.</p>
-<p>The <code>Tests</code> modules use the postulated equivalences and rewrite rules for the
-associated operations declared in the <a href="Properties/">Properties</a> module and its submodules.</p>
-<h3 id="implementing-synthetic-domain-theory-in-agda">Implementing Synthetic Domain Theory in Agda</h3>
-<p>An implementation of <em>Synthetic Domain Theory</em> (SDT) in Agda would allow
-domain constructors and associated operations to be defined from a smaller
-collection of postulates that are known to have a model.</p>
-<p>From the abstract of <a href="https://doi.org/10.1023/A:1006258506401">Formalizing Synthetic Domain Theory</a> by Bernhard Reus
-(J. Automated Reasoning, 1999):</p>
-<blockquote>
-<p>Synthetic Domain Theory (SDT) is a constructive variant of Domain Theory
-where all functions are continuous following Dana Scott’s idea of
-“domains as sets”.</p>
-<p>In this article a logical and axiomatic version of SDT capturing the essence
-of Domain Theory à la Scott is presented. It is based on a sufficiently
-expressive version of constructive type theory and fully implemented in the
-proof checker <a href="https://www.dcs.ed.ac.uk/home/lego/">Lego</a>.</p>
-</blockquote>
-<p>It appears that the implementation uses impredicativity and proof-irrelevance,
-which may prevent migration to Agda.</p>
-<p>From the abstract of
-<a href="https://doi.org/10.1016/j.apal.2003.12.005">Computational adequacy for recursive types in models of intuitionistic set theory</a>
-by Alex Simpson (Ann. Pure and Applied Logic, 2004):</p>
-<blockquote>
-<p>This paper provides a unifying axiomatic account of the interpretation of
-recursive types that incorporates both domain-theoretic and realizability
-models as concrete instances. Our approach is to view such models as full
-subcategories of categorical models of intuitionistic set theory. </p>
-</blockquote>
-<p>From §3:</p>
-<blockquote>
-<p>Although in this paper we use models of IZF set theory to achieve algebraic
-compactness, many other set theories and type theories appear rich enough to
-carry out the proofs in this paper. ... In fact, it seems likely that, with
-appropriate reformulations, the development of this paper could be carried
-out in the (predicative) context of Martin-Löf’s Type Theory.</p>
-</blockquote>
-<p>It remains to be seen whether the development can be implemented in Agda...</p>
+<h1 id="mechanising-denotational-semantics-in-agda">Mechanising Denotational Semantics in Agda</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Mechanisation of a mathematical definition (also referred to as formalisation)
+has many benefits. Here, we focus on mechanising denotational semantic definitions
+of programming languages by embedding them in the Agda language. The Agda
+type-checker detects and reports any issues with the wellformedness and type
+correctness of the embedded definitions.</p>
+<p>To minimise the effort required, and to facilitate correlation of the original
+definition with its Agda embedding, mechanisation should not involve significant
+reformulation or extension. Here, we show how  to embed conventional Scott–Strachey
+denotational definitions in Agda with almost no changes to <span class="arithmatex">\(\lambda\)</span>-notation or
+domain equations.</p>
+<p>Agda notation for definitions of types and functions corresponds closely
+to the conventional meta-notation of denotational semantics. We have developed
+a collection of Agda modules with postulated types for commonly used domain
+constructors and their associated operations. Some of our postulates are
+inconsistent with a classical set-theoretic interpretation of Agda; we conjecture
+that they would be consistent with an interpretation of Agda in the higher-order
+intuititionistic logic used by Simpson in his work on synthetic domain theory.</p>
+<p>We illustrate our approach with mechanisations of three denotational definitions:
+Scott’s <span class="arithmatex">\(D_\infty\)</span> model of the untyped <span class="arithmatex">\(\lambda\)</span>-calculus, Plotkin’s denotational
+semantics of PCF, and a semantics of a sublanguage of Scheme. In previous work,
+similar mechanisations in Agda have revealed several unsuspected wellformedness
+issues in published denotational definitions.</p>
 <h2 id="discussion">Discussion</h2>
 <p>Advice and suggestions are welcome, e.g., by posting to the repo <a href="https://github.com/pdmosses/xds-agda/discussions">Discussions</a>.</p>
 <p>Peter Mosses <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#46;&#100;&#46;&#109;&#111;&#115;&#115;&#101;&#115;&#64;&#116;&#117;&#100;&#101;&#108;&#102;&#116;&#46;&#110;&#108;">&#112;&#46;&#100;&#46;&#109;&#111;&#115;&#115;&#101;&#115;&#64;&#116;&#117;&#100;&#101;&#108;&#102;&#116;&#46;&#110;&#108;</a></p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>LCF is Scott's logic of computable functions.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 
