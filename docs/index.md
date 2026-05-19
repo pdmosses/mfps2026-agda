@@ -1,5 +1,13 @@
 # Mechanising Denotational Semantics in Agda
 
+Code repository accompanying a paper ([PDF]) to be [presented] at [MFPS 2026]:
+
+> Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
+
+[PDF]: https://ul-fmf.github.io/mfps-sstt-2026/files/pdfs/mfps/MFPS26-17.pdf
+[presented]: https://ul-fmf.github.io/mfps-sstt-2026/programme/#wednesday-june-3-mfps
+[MFPS 2026]: https://ul-fmf.github.io/mfps-sstt-2026/mfps/
+
 ## Abstract
 
 Mechanisation of a mathematical definition (also referred to as formalisation)
