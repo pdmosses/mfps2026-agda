@@ -6324,11 +6324,24 @@
 
 
 <h1 id="illustrative-tests">Illustrative Tests</h1>
-<pre class="Agda"><code class="Agda"><a id="40" class="Symbol">{-#</a> <a id="44" class="Keyword">OPTIONS</a> <a id="52" class="Pragma">--rewriting</a> <a id="64" class="Pragma">--confluence-check</a> <a id="83" class="Symbol">#-}</a>
+<p>The tests below illustrate <em>automatic</em> proof of equivalence of term denotations
+by the Agda type-checker:
+the type-correctness of the <code>refl</code> definitions of the declared equivalences
+confirms that they hold.
+Such tests can check that the denotation of a function call is equivalent to
+the denotation of a constant in the embedding of a denotational semantics.
+They can even check that a specific renaming preserves the denotation of a term.</p>
+<p>Apart from confirming that a denotational semantics defines denotations
+which satisfy some expected equivalences at least for some terms,
+some of the tests also depend on rewrite rules for the <a href="../Properties/#postulated-properties">postulated properties</a>.
+The success of those tests indirectly checks that the rewrite rules preserve denotations.
+(A more systematic approach would be to develop a suite of unit tests for consequences
+of postulated properties, independently of denotational definitions.)</p>
+<pre class="Agda"><code class="Agda"><a id="1013" class="Symbol">{-#</a> <a id="1017" class="Keyword">OPTIONS</a> <a id="1025" class="Pragma">--rewriting</a> <a id="1037" class="Pragma">--confluence-check</a> <a id="1056" class="Symbol">#-}</a>
 
-<a id="88" class="Keyword">import</a> <a id="95" href="../Tests/LC/" class="Module">Tests.LC</a>
-<a id="104" class="Keyword">import</a> <a id="111" href="../Tests/PCF/" class="Module">Tests.PCF</a>
-<a id="121" class="Keyword">import</a> <a id="128" href="../Tests/Scm/" class="Module">Tests.Scm</a>
+<a id="1061" class="Keyword">import</a> <a id="1068" href="../Tests/LC/" class="Module">Tests.LC</a>
+<a id="1077" class="Keyword">import</a> <a id="1084" href="../Tests/PCF/" class="Module">Tests.PCF</a>
+<a id="1094" class="Keyword">import</a> <a id="1101" href="../Tests/Scm/" class="Module">Tests.Scm</a>
 </code></pre>
 
 

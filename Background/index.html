@@ -6474,7 +6474,7 @@ to avoid potential confusion between abstract syntax terms and semantic notation
 A more general notion of domain is a <em>dcpo</em> (an algebraic, bounded-complete and directed-complete partial order) 
 <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>.
 However, the notation for domain constructors and their accompanying operations in a conventional Scott–Strachey semantics, 
-summarised below, is independent of the mathematical structure of domains.</p>
+summarised below, is independent of the choice of domains.</p>
 <p>Let <span class="arithmatex">\(D, E\)</span> be domains with elements <span class="arithmatex">\(\delta : D\)</span>, <span class="arithmatex">\(\epsilon : E\)</span>.</p>
 <ul>
 <li>
@@ -6492,7 +6492,7 @@ summarised below, is independent of the mathematical structure of domains.</p>
   and the operations associated with other domain constructors.</p>
 </li>
 <li>
-<p>For any set <span class="arithmatex">\(A\)</span> the <em>flat domain</em> <span class="arithmatex">\(A_\bot\)</span> is formed by adding <span class="arithmatex">\(\bot\)</span> as a fresh element of <span class="arithmatex">\(A\)</span>.
+<p>For any set <span class="arithmatex">\(A\)</span> the <em>flat domain</em> <span class="arithmatex">\(A_\bot\)</span> is formed by adding <span class="arithmatex">\(\bot\)</span> as a fresh element.
   Functions on sets are implicitly extended to (continuous) functions on flat domains,
   returning <span class="arithmatex">\(\bot\)</span> when any argument is <span class="arithmatex">\(\bot\)</span>.
   Elements <span class="arithmatex">\(\tau\)</span> of the domain of <em>truth-values</em> <span class="arithmatex">\(\textbf{T} = \{ \text{true}, \text{false} \}_\bot\)</span>
@@ -6506,11 +6506,12 @@ summarised below, is independent of the mathematical structure of domains.</p>
   written '<span class="arithmatex">\(\upsilon \textsf{ in } X\)</span>' (where <span class="arithmatex">\(\upsilon : Y\)</span> for some summand <span class="arithmatex">\(Y\)</span>)
   together with <span class="arithmatex">\(\bot_X\)</span>.
   The <span class="arithmatex">\(\textbf{T}\)</span>-valued operation <span class="arithmatex">\(\chi \mathbin{\textsf{E}} Y\)</span>
+  (written <span class="arithmatex">\(\chi \in Y\)</span> in [(Scheme)])
   tests whether <span class="arithmatex">\(\chi : X\)</span> is the injection of some <span class="arithmatex">\(\upsilon : Y\)</span>;
   if so, <span class="arithmatex">\(\chi \mid Y\)</span> projects <span class="arithmatex">\(\chi\)</span> to <span class="arithmatex">\(\upsilon\)</span>, otherwise to <span class="arithmatex">\(\bot_Y\)</span>.</p>
 </li>
 <li>
-<p>The <em>cartesian product domain</em> <span class="arithmatex">\(P = D \times E\)</span> consists of pairs
+<p>The <em>product domain</em> <span class="arithmatex">\(P = D \times E\)</span> consists of pairs
   <span class="arithmatex">\(\langle \delta, \epsilon \rangle\)</span> with
   <span class="arithmatex">\(\bot_P = \langle \bot_D, \bot_E \rangle\)</span>. When <span class="arithmatex">\(\pi : P\)</span>,
   the operations <span class="arithmatex">\(\pi \downarrow 1\)</span> and <span class="arithmatex">\(\pi \downarrow 2\)</span> select its components;
@@ -6586,8 +6587,8 @@ are declared by marking an equality proof
 optionally check confluence of rewrite rules, but currently does not
 check their termination. Since only <em>proven</em> (or postulated)
 equalities can be added as rewrite rules, non-confluence and
-non-termination can only affect completeness of Agda's type checker
-but not its soundness <a href="https://doi.org/10.1145/3434341">(10.1145/3434341)</a>.</dd>
+non-termination cannot affect the soundness of Agda's type checker,
+only its completeness <a href="https://doi.org/10.1145/3434341">(10.1145/3434341)</a>.</dd>
 </dl>
 
 
