@@ -1,104 +1,16 @@
-# Denotational Semantics in Agda
+# Mechanising Denotational Semantics in Agda: Complete Code Listing
 
-> Experiments with Agda support for Scott–Strachey denotational semantics
+Code repository accompanying a paper ([PDF]) to be [presented] at [MFPS 2026]:
 
-The `Makefile` in this repository has the following targets:
+> Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
 
-- `check`: check the Agda code;
-- `website`: generate a website for browsing the code;
-- `serve`: preview the website locally;
-- `deploy`: deploy the website to GitHub Pages; and
-- `help`: list all targets.
-
-The generated website is deployed at https://pdmosses.github.io/mfps2026-agda/.
-
-## About
-
-For background and motivation, see the generated [website].
-
-## Examples
-
-- [Lambda-calculus]
-- [PCF]
-- [Scm]
-
-## Repository contents
-
-The [repository] contains the following files and directories:
-
-- `agda`: directory for Agda source code of the ScmQE language
-- `docs`: directory for generating a website
-    - `docs/javascripts`: directory for added Javascript files
-    - `docs/stylesheets`: directory for added CSS files
-    - `docs/.nav.yml`: configuration file for navigation panels
-    - `docs/*.md`: Markdown sources for non-generated pages
-- `LICENSE`: release into the public domain
-- `Makefile`: automation of website and PDF generation
-- `mkdocs.yml`: configuration file for generated websites
-
-The repository does not contain any generated files.
-
-## Software dependencies
-
-- [Agda] (2.8.0)
-- [Awesome-nav] (3.3.0)
-- [GNU Make] (3.81)
-- [Material for MkDocs] (9.7.6)
-- [mike] (2.0.0)
-- [MkDocs] (1.6.1)
-- [pip] (26.0.1)
-- [Python 3] (3.14.0)
-- [sd] (1.0.0)
-
-## Platform dependencies
-
-Agda-Material has been developed and tested on MacBook laptops
-with Apple M1 and M3 chips running macOS Sequoia (15.5) with CLI Tools.
-
-Please report any [issues] with using Agda-Material on other platforms,
-including all relevant details.
-
-[Pull requests] for addressing such issues are welcome. They should include the
-results of tests that demonstrate the benefit of the PR.
-
-## Getting started
-
-All `make` commands are to be run in the repository root directory.
-
-### Test the Agda code
-
-```sh
-make check
-```
-
-### Generate a website listing the Agda code
-
-```sh
-make web
-```
-
-### Browse the website locally
-
-```sh
-make serve
-```
-
-### Deploy the website on GitHub Pages
-
-Update the following fields in `mkdocs.yml`:
-
-- `site_name`
-- `site_url`
-- `repo_name`
-- `repo_url`
-
-```sh
-make deploy
-```
+[PDF]: https://ul-fmf.github.io/mfps-sstt-2026/files/pdfs/mfps/MFPS26-17.pdf
+[presented]: https://ul-fmf.github.io/mfps-sstt-2026/programme/#wednesday-june-3-mfps
+[MFPS 2026]: https://ul-fmf.github.io/mfps-sstt-2026/mfps/
 
 ## Contributing
 
-Please report any [issues] that arise.
+Please report any [issues] that you notice.
 
 Comments and suggestions for improvement are welcome, and can be added as [Discussions].
 
