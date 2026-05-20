@@ -605,7 +605,7 @@ ifeq ($(MD),docs)
 # 	@echo "Warning: manually remove any obsolete docs/**/*.md files"
 	@find docs -name '*.md' \
 	    ! -path 'docs/javascripts/*' ! -path 'docs/stylesheets/*' \
-	    ! -path 'docs/Library/*' ! -path 'docs/index.md' ! -path 'docs/meta-notation.md' \
+	    ! -path 'docs/Library/*' ! -path 'docs/README.md' ! -path 'docs/meta-notation.md' \
 	    -delete
 	@find docs -type d -empty -delete
 else
@@ -745,7 +745,9 @@ ROOT-FILES:    $(strip $(ROOT-FILES))
 endef
 
 ##############################################################################
-# GENERATE LATEX
+# GENERATE PLAIN AGDA AND LATEX
+
+PLAIN := plain
 
 LATEX := latex
 
@@ -756,9 +758,36 @@ LAGDA-MD-FILES := \
 	  $(foreach d, $(INCLUDE-PATHS), \
 	    $(shell find $d -name '*.lagda.md')))
 
+PLAIN-FILES := $(addprefix $(PLAIN)/, $(patsubst %.lagda.md,%.agda, $(LAGDA-MD-FILES)))
+
 LAGDA-FILES := $(addprefix $(LATEX)/, $(patsubst %.lagda.md,%.lagda, $(LAGDA-MD-FILES)))
 
 LATEX-FILES := $(LAGDA-FILES:.lagda=.tex)
+
+# `make gen-plain` generates PLAIN/DIR_1/*.agda files from *.lagda.md files
+
+gen-plain: $(PLAIN-FILES)
+	@echo "Generated .agda files in $(PLAIN)"
+
+$(PLAIN-FILES): Makefile | $(PLAIN)
+
+$(PLAIN):
+	@mkdir $(PLAIN) && rm -rf $(PLAIN)/*
+
+$(PLAIN)/%.agda: %.lagda.md
+	@mkdir -p $(@D) && cp -f $< $@
+#	Make start and end of code blocks easy to match:
+	@sd '```agda' '%agda' $@
+	@sd '```' '%/agda' $@
+#	Remove pure prose:
+	@sd '\A[^%]*\z' '' $@
+#	Remove prose blocks:
+	@sd '%/agda[^%]*%agda' '' $@
+	@sd '\A[^%]*%agda\n' '' $@
+	@sd '\n%/agda[^%]*\z' '' $@
+#	Remove --"hide" and --"/hide" lines
+	@sd -- '--"hide"\n' '' $@
+	@sd '\n--"/hide"' '' $@
 
 # `make gen-lagda` generates LATEX/DIR_1/*.lagda files from *.lagda.md files using pandoc
 
@@ -855,6 +884,8 @@ LAGDA: $(LAGDA)
 LATEX: $(LATEX)
 
 LAGDA-MD-FILES: $(strip $(LAGDA-MD-FILES))
+
+PLAIN-FILES:    $(strip $(PLAIN-FILES))
 
 LAGDA-FILES:    $(strip $(LAGDA-FILES))
 
