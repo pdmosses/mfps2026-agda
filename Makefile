@@ -764,7 +764,7 @@ LAGDA-FILES := $(addprefix $(LATEX)/, $(patsubst %.lagda.md,%.lagda, $(LAGDA-MD-
 
 LATEX-FILES := $(LAGDA-FILES:.lagda=.tex)
 
-# `make gen-plain` generates PLAIN/DIR_1/*.agda files from *.lagda.md files
+# `make gen-plain` generates PLAIN/*.agda files from *.lagda.md files
 
 gen-plain: $(PLAIN-FILES)
 	@echo "Generated .agda files in $(PLAIN)"
