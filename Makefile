@@ -766,6 +766,7 @@ LATEX-FILES := $(LAGDA-FILES:.lagda=.tex)
 
 # `make gen-plain` generates PLAIN/*.agda files from *.lagda.md files
 
+.phony: gen-plain
 gen-plain: $(PLAIN-FILES)
 	@echo "Generated .agda files in $(PLAIN)"
 
