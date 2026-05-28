@@ -5,7 +5,7 @@ Scott--Strachey style denotational semantics, abstract syntax is
 generally first-order: terms are finite, totally-defined elements.
 
 A variable is written \AgdaRef{x\ n}. The argument \AgdaRef{n} merely
-distinguishes between variables -- it is \emph{not} a De Bruin index.
+distinguishes between variables -- it is \emph{not} a De Bruijn index.
 The term constructor \AgdaRef{var} below includes variables in terms.
 
 In Agda, mixfix notation requires argument positions \AgdaRef{\_} to be
