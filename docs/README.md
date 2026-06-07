@@ -1,6 +1,6 @@
 # Mechanising Denotational Semantics in Agda
 
-Agda code accompanying a paper ([PDF]) to be [presented] at [MFPS 2026]:
+Agda code accompanying the preliminary version of a paper ([PDF]) [presented] at [MFPS 2026]:
 
 > Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
 
