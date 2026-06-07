@@ -7,33 +7,33 @@ abstract syntax is generally first-order:
 terms are finite, totally-defined elements.
 
 A variable is written `x n`. The argument `n` merely distinguishes between variables –
-it is *not* a De Bruin index.
+it is *not* a De Bruijn index.
 The term constructor `var` below includes variables in terms.
 
 In Agda, mixfix notation requires argument positions `_` to be separated by characters other than spaces.
 The term constructors for function abstraction and application use the Unicode character `␣` as a separator.
-</a><a id="610" class="Markup">```agda
-</a><a id="618" class="Comment">--&quot;hide&quot;</a>
-<a id="627" class="Symbol">{-#</a> <a id="631" class="Keyword">OPTIONS</a> <a id="639" class="Pragma">--rewriting</a> <a id="651" class="Pragma">--confluence-check</a> <a id="670" class="Symbol">#-}</a>
+</a><a id="611" class="Markup">```agda
+</a><a id="619" class="Comment">--&quot;hide&quot;</a>
+<a id="628" class="Symbol">{-#</a> <a id="632" class="Keyword">OPTIONS</a> <a id="640" class="Pragma">--rewriting</a> <a id="652" class="Pragma">--confluence-check</a> <a id="671" class="Symbol">#-}</a>
 
-<a id="675" class="Comment">--&quot;/hide&quot;</a>
-<a id="685" class="Keyword">module</a> <a id="" href="../Examples/LC/Abstract-Syntax/" class="Module Definition">Examples.LC.Abstract-Syntax</a> <a id="720" class="Keyword">where</a>
-<a id="726" class="Comment">--&quot;hide&quot;</a>
+<a id="676" class="Comment">--&quot;/hide&quot;</a>
+<a id="686" class="Keyword">module</a> <a id="" href="../Examples/LC/Abstract-Syntax/" class="Module Definition">Examples.LC.Abstract-Syntax</a> <a id="721" class="Keyword">where</a>
+<a id="727" class="Comment">--&quot;hide&quot;</a>
 
-<a id="736" class="Keyword">open</a> <a id="741" class="Keyword">import</a> <a id="748" href="Agda.Builtin.Nat.html" class="Module">Agda.Builtin.Nat</a> <a id="765" class="Keyword">public</a> <a id="772" class="Keyword">using</a> <a id="778" class="Symbol">(</a><a id="779" href="Agda.Builtin.Nat.html#203" class="Datatype">Nat</a><a id="782" class="Symbol">)</a>
+<a id="737" class="Keyword">open</a> <a id="742" class="Keyword">import</a> <a id="749" href="Agda.Builtin.Nat.html" class="Module">Agda.Builtin.Nat</a> <a id="766" class="Keyword">public</a> <a id="773" class="Keyword">using</a> <a id="779" class="Symbol">(</a><a id="780" href="Agda.Builtin.Nat.html#203" class="Datatype">Nat</a><a id="783" class="Symbol">)</a>
 
-<a id="785" class="Comment">--&quot;/hide&quot;</a>
-<a id="795" class="Keyword">data</a> <a id="Var"></a><a id="800" href="Examples.LC.Abstract-Syntax.html#800" class="Datatype">Var</a> <a id="804" class="Symbol">:</a> <a id="806" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="810" class="Keyword">where</a>
-  <a id="Var.x"></a><a id="818" href="Examples.LC.Abstract-Syntax.html#818" class="InductiveConstructor">x</a> <a id="820" class="Symbol">:</a> <a id="822" href="Agda.Builtin.Nat.html#203" class="Datatype">Nat</a> <a id="826" class="Symbol">→</a> <a id="828" href="Examples.LC.Abstract-Syntax.html#800" class="Datatype">Var</a>
-<a id="832" class="Comment">--&quot;hide&quot;</a>
-<a id="841" class="Keyword">variable</a> <a id="850" href="Examples.LC.Abstract-Syntax.html#850" class="Generalizable">v</a> <a id="852" class="Symbol">:</a> <a id="854" href="Examples.LC.Abstract-Syntax.html#800" class="Datatype">Var</a>
+<a id="786" class="Comment">--&quot;/hide&quot;</a>
+<a id="796" class="Keyword">data</a> <a id="Var"></a><a id="801" href="Examples.LC.Abstract-Syntax.html#801" class="Datatype">Var</a> <a id="805" class="Symbol">:</a> <a id="807" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="811" class="Keyword">where</a>
+  <a id="Var.x"></a><a id="819" href="Examples.LC.Abstract-Syntax.html#819" class="InductiveConstructor">x</a> <a id="821" class="Symbol">:</a> <a id="823" href="Agda.Builtin.Nat.html#203" class="Datatype">Nat</a> <a id="827" class="Symbol">→</a> <a id="829" href="Examples.LC.Abstract-Syntax.html#801" class="Datatype">Var</a>
+<a id="833" class="Comment">--&quot;hide&quot;</a>
+<a id="842" class="Keyword">variable</a> <a id="851" href="Examples.LC.Abstract-Syntax.html#851" class="Generalizable">v</a> <a id="853" class="Symbol">:</a> <a id="855" href="Examples.LC.Abstract-Syntax.html#801" class="Datatype">Var</a>
 
-<a id="859" class="Comment">--&quot;/hide&quot;</a>
-<a id="869" class="Keyword">data</a> <a id="Exp"></a><a id="874" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a> <a id="878" class="Symbol">:</a> <a id="880" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="884" class="Keyword">where</a>
-  <a id="Exp.var_"></a><a id="892" href="Examples.LC.Abstract-Syntax.html#892" class="InductiveConstructor Operator">var_</a>    <a id="900" class="Symbol">:</a> <a id="902" href="Examples.LC.Abstract-Syntax.html#800" class="Datatype">Var</a> <a id="906" class="Symbol">→</a> <a id="908" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a>        <a id="919" class="Comment">-- variable reference</a>
-  <a id="Exp.⦅λ_␣_⦆"></a><a id="943" href="Examples.LC.Abstract-Syntax.html#943" class="InductiveConstructor Operator">⦅λ_␣_⦆</a>  <a id="951" class="Symbol">:</a> <a id="953" href="Examples.LC.Abstract-Syntax.html#800" class="Datatype">Var</a> <a id="957" class="Symbol">→</a> <a id="959" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a> <a id="963" class="Symbol">→</a> <a id="965" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a>  <a id="970" class="Comment">-- function abstraction</a>
-  <a id="Exp.⦅_␣_⦆"></a><a id="996" href="Examples.LC.Abstract-Syntax.html#996" class="InductiveConstructor Operator">⦅_␣_⦆</a>   <a id="1004" class="Symbol">:</a> <a id="1006" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a> <a id="1010" class="Symbol">→</a> <a id="1012" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a> <a id="1016" class="Symbol">→</a> <a id="1018" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a>  <a id="1023" class="Comment">-- function application</a>
-<a id="1047" class="Comment">--&quot;hide&quot;</a>
-<a id="1056" class="Keyword">variable</a> <a id="1065" href="Examples.LC.Abstract-Syntax.html#1065" class="Generalizable">e</a> <a id="1067" href="Examples.LC.Abstract-Syntax.html#1067" class="Generalizable">e₁</a> <a id="1070" href="Examples.LC.Abstract-Syntax.html#1070" class="Generalizable">e₂</a> <a id="1073" class="Symbol">:</a> <a id="1075" href="Examples.LC.Abstract-Syntax.html#874" class="Datatype">Exp</a>
-<a id="1079" class="Comment">--&quot;/hide&quot;</a>
-<a id="1089" class="Markup">```</a></pre></body></html>
+<a id="860" class="Comment">--&quot;/hide&quot;</a>
+<a id="870" class="Keyword">data</a> <a id="Exp"></a><a id="875" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a> <a id="879" class="Symbol">:</a> <a id="881" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="885" class="Keyword">where</a>
+  <a id="Exp.var_"></a><a id="893" href="Examples.LC.Abstract-Syntax.html#893" class="InductiveConstructor Operator">var_</a>    <a id="901" class="Symbol">:</a> <a id="903" href="Examples.LC.Abstract-Syntax.html#801" class="Datatype">Var</a> <a id="907" class="Symbol">→</a> <a id="909" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a>        <a id="920" class="Comment">-- variable reference</a>
+  <a id="Exp.⦅λ_␣_⦆"></a><a id="944" href="Examples.LC.Abstract-Syntax.html#944" class="InductiveConstructor Operator">⦅λ_␣_⦆</a>  <a id="952" class="Symbol">:</a> <a id="954" href="Examples.LC.Abstract-Syntax.html#801" class="Datatype">Var</a> <a id="958" class="Symbol">→</a> <a id="960" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a> <a id="964" class="Symbol">→</a> <a id="966" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a>  <a id="971" class="Comment">-- function abstraction</a>
+  <a id="Exp.⦅_␣_⦆"></a><a id="997" href="Examples.LC.Abstract-Syntax.html#997" class="InductiveConstructor Operator">⦅_␣_⦆</a>   <a id="1005" class="Symbol">:</a> <a id="1007" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a> <a id="1011" class="Symbol">→</a> <a id="1013" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a> <a id="1017" class="Symbol">→</a> <a id="1019" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a>  <a id="1024" class="Comment">-- function application</a>
+<a id="1048" class="Comment">--&quot;hide&quot;</a>
+<a id="1057" class="Keyword">variable</a> <a id="1066" href="Examples.LC.Abstract-Syntax.html#1066" class="Generalizable">e</a> <a id="1068" href="Examples.LC.Abstract-Syntax.html#1068" class="Generalizable">e₁</a> <a id="1071" href="Examples.LC.Abstract-Syntax.html#1071" class="Generalizable">e₂</a> <a id="1074" class="Symbol">:</a> <a id="1076" href="Examples.LC.Abstract-Syntax.html#875" class="Datatype">Exp</a>
+<a id="1080" class="Comment">--&quot;/hide&quot;</a>
+<a id="1090" class="Markup">```</a></pre></body></html>
