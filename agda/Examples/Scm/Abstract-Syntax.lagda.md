@@ -28,6 +28,7 @@ the empty sequence is represented by `␣␣␣` , and sequence prefixing by `E 
 module Examples.Scm.Abstract-Syntax where
 --"hide"
 
+open import Data.Integer.Base public renaming (ℤ to Int) using ()
 open import Data.String.Base public using (String)
 --"/hide"
 
@@ -35,7 +36,6 @@ Ide = String      -- identifiers
 --"hide"
 variable I : Ide
 
-open import Data.Integer.Base public renaming (ℤ to Int) using ()
 --"/hide"
 
 data Con  : Set where  -- constants

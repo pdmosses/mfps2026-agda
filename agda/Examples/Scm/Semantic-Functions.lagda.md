@@ -14,14 +14,13 @@ module Examples.Scm.Semantic-Functions where
 open import Examples.Scm.Abstract-Syntax
 open import Examples.Scm.Domain-Equations
 open import Examples.Scm.Auxiliary-Functions
-import Notation
-open Notation.Domains using (⟪_⟫)
-open Notation.Functions using (_→ᶜ_; _→ˢ_)
-open Notation.Flat using (↑)
-open Notation.Flat.Booleans using (_⟶_,_; _==⊥_; true; false)
-open Notation.Sums using (_in⊥_; _|⊥_)
-open Notation.Products.Sequences using (_⋆; ⟨⟩; ⟨_⟩; _§_)
-open Notation.Updates using (_[_/_])
+open import Notation.Domains using (⟪_⟫)
+open import Notation.Functions using (_→ᶜ_; _→ˢ_)
+open import Notation.Flat using (↑)
+open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; true; false)
+open import Notation.Sums using (_in⊥_; _|⊥_)
+open import Notation.Products.Sequences using (_⋆; ⟨⟩; ⟨_⟩; _§_)
+open import Notation.Updates using (_[_/_])
 --"/hide"
 
 𝒦⟦_⟧   :  ⟪ Con →ˢ 𝐄 ⟫                      -- constant denotations

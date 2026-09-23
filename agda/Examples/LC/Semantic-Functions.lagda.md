@@ -14,7 +14,9 @@ module Examples.LC.Semantic-Functions where
 
 open import Examples.LC.Abstract-Syntax
 open import Examples.LC.Domain-Equations
-open import Notation
+open import Notation.Domains
+open import Notation.Functions
+open import Notation.Recursion
 
 --"/hide"
 ⟦_⟧ : Exp → ⟪ Env →ᶜ D∞ ⟫

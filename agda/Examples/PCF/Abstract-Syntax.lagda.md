@@ -11,7 +11,7 @@ PCF function types $\sigma \to \tau$ are written `σ ⇒ τ`, and variables $\al
 module Examples.PCF.Abstract-Syntax where
 
 --"hide"
-open import Notation
+open import Agda.Builtin.Nat public using (Nat)
 
 --"/hide"
 data Types  : Set where                          -- type terms
@@ -22,7 +22,6 @@ data Types  : Set where                          -- type terms
 infixr 1 _⇒_
 variable σ τ : Types
 
-open import Agda.Builtin.Nat public using (Nat)
 --"/hide"
 
 data Vars   : Types → Set where                  -- typed variables

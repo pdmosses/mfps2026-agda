@@ -14,9 +14,12 @@ module Examples.PCF.Domain-Equations where
 --"hide"
 
 open import Examples.PCF.Abstract-Syntax
-open import Notation
-open Notation.Flat.Booleans using (Bool; Bool⊥)
-open Notation.Flat.Naturals using (Nat⊥; eqNat)
+open import Notation.Domains
+open import Notation.Functions
+open import Notation.Flat.Booleans using (Bool; Bool⊥; Eq; _==_)
+open import Notation.Flat.Naturals using (Nat⊥; eqNat)
+open import Notation.Updates using (MaybeEq; _==?_; just; nothing; refl; _[_/_]; _[_←_])
+open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 --"/hide"
 
 𝒟 : Types → Domain       -- standard domains
@@ -45,15 +48,11 @@ requires instances of the equality tests
 for both variables and types. The definition of the latter is somewhat tedious.
 ```agda
 --"hide"
-open Notation.Flat.Booleans using (Eq; _==_)
-open Notation.Updates using (_[_/_])
 _==ⱽ_ : Vars σ → Vars σ → Bool
-open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 (α i σ ==ⱽ α i′ σ)  =  (i ==ᴺ i′)
 instance
   eqV : Eq (Vars σ)
   _==_ {{eqV}} = _==ⱽ_
-open Notation.Updates using (MaybeEq; _==?_; just; nothing; refl; _[_←_])
 instance
   eqT : MaybeEq Types
   eqT ._==?_ ι ι = just refl

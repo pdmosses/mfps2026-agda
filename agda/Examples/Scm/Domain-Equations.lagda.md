@@ -14,15 +14,14 @@ module Examples.Scm.Domain-Equations where
 --"hide"
 
 open import Examples.Scm.Abstract-Syntax using (Ide; Int)
-import Notation
-open Notation.Domains using (Domain; ⟪_⟫)
-open Notation.Functions using (_→ᶜ_; _→ˢ_)
-open Notation.Flat using (_+⊥)
-open Notation.Flat.Booleans using (Bool⊥)
-open Notation.Flat.Naturals using (Nat⊥)
-open Notation.Sums using (_≳_↦_)
-open Notation.Products using (_×_)
-open Notation.Products.Sequences using (_⋆)
+open import Notation.Domains using (Domain; ⟪_⟫)
+open import Notation.Functions using (_→ᶜ_; _→ˢ_)
+open import Notation.Flat using (_+⊥)
+open import Notation.Flat.Booleans using (Bool⊥)
+open import Notation.Flat.Naturals using (Nat⊥)
+open import Notation.Sums using (_≳_↦_)
+open import Notation.Products using (_×_)
+open import Notation.Products.Sequences using (_⋆)
 --"/hide"
 
 postulate Loc : Set

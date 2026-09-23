@@ -12,28 +12,27 @@ module Examples.Scm.Auxiliary-Functions where
 
 open import Examples.Scm.Abstract-Syntax
 open import Examples.Scm.Domain-Equations
-import Notation
-open Notation.Domains using (⟪_⟫; ⊥)
-open Notation.Functions using (_→ᶜ_; fix)
-open Notation.Flat using (↑)
-open Notation.Flat.Booleans using (_⟶_,_; Eq; _==⊥_; true; false)
-open Notation.Sums using (_in⊥_; _∈⊥_; _|⊥_)
-open Notation.Products using (_,_; _↓₁; _↓₂)
-open Notation.Products.Sequences using (⟨_⟩; #; _↓_; _†_)
-open Notation.Updates using (_[_/_]⊥)
+open import Notation.Domains using (⟪_⟫; ⊥)
+open import Notation.Functions using (_→ᶜ_; fix)
+open import Notation.Flat using (↑)
+open import Notation.Flat.Booleans using (_⟶_,_; Eq; _==⊥_; true; false)
+open import Notation.Sums using (_in⊥_; _∈⊥_; _|⊥_)
+open import Notation.Products using (_,_; _↓₁; _↓₂)
+open import Notation.Products.Sequences using (⟨_⟩; #; _↓_; _†_)
+open import Notation.Updates using (_[_/_]⊥)
+open import Agda.Builtin.Nat using (Nat)
 
 postulate instance
   eqL   : Eq Loc
   eqM   : Eq Misc
   eqR   : Eq Int
+  eqNat : Eq Nat
+  eqIde : Eq Ide
 
 postulate
   _<ᴿ_  : ⟪ 𝐑 →ᶜ 𝐑 →ᶜ 𝐓 ⟫
   _+ᴿ_  : ⟪ 𝐑 →ᶜ 𝐑 →ᶜ 𝐑 ⟫
   _∧ᵀ_  : ⟪ 𝐓 →ᶜ 𝐓 →ᶜ 𝐓 ⟫
-
-postulate instance
-  eqIde : Eq Ide
 
 postulate unknown : Loc
 

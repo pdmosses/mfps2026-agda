@@ -12,8 +12,13 @@ module Examples.LC.Domain-Equations where
 --"hide"
 
 open import Examples.LC.Abstract-Syntax
-open import Notation
-open Recursion using (_≅_; fold; unfold) public
+open import Notation.Domains
+open import Notation.Functions
+open import Notation.Recursion using (_≅_; fold; unfold) public
+open import Notation.Flat.Booleans using (Bool; Eq; _==_)
+open import Notation.Flat.Naturals using (eqNat)
+open import Notation.Updates using (_[_/_]) public
+open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 
 --"/hide"
 postulate
@@ -32,11 +37,7 @@ Use of the conventional notation `ρ [ δ / v ]` for updating an environment `ρ
 requires an equality test for variables@latex, elided here@/latex.
 ```agda
 --"hide"
-open Notation.Flat.Booleans using (Bool; Eq; _==_)
-open Notation.Flat.Naturals using (eqNat)
 _==ⱽ_ : Var → Var → Bool
-open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
-open Notation.Updates using (_[_/_]) public
 (x n ==ⱽ x n′) = (n ==ᴺ n′)
 instance eqVar : Eq Var
 _==_ {{eqVar}} = _==ⱽ_

@@ -10,9 +10,14 @@ applying `ρ σ` to the variable.
 module Examples.PCF.Semantic-Functions where
 --"hide"
 
-open import Notation
 open import Examples.PCF.Abstract-Syntax
 open import Examples.PCF.Domain-Equations
+open import Notation.Domains
+open import Notation.Functions
+open import Notation.Flat using (↑; _♯)
+open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; false; true)
+open import Notation.Flat.Naturals using (_+_; _-_)
+
 --"/hide"
 
 _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
@@ -23,13 +28,6 @@ constant `c`. The corresponding definitions in [(Plotkin1977LCP)] use
 case analysis on the domain `𝒟 ι`, which our Agda embedding does not support
 (partly because it can express non-continuous functions).
 ```agda
---"hide"
-
-open Notation.Flat using (↑; _♯)
-open Notation.Flat.Booleans using (_⟶_,_; _==⊥_; false; true)
-open Notation.Flat.Naturals using (_+_; _-_)
-
---"/hide"
 𝒜⟦_⟧ : ℒᴬ σ → ⟪ 𝒟 σ ⟫             -- typed constant denotations
 𝒜⟦ tt ⟧    =  ↑ true
 𝒜⟦ ff ⟧    =  ↑ false
