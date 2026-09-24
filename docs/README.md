@@ -93,7 +93,7 @@ Peter Mosses
 
 [About]:                  https://pdmosses.github.io/mfps2026-agda/preliminary/
 [Background]:             https://pdmosses.github.io/mfps2026-agda/preliminary/Background/
-[Meta-notation]:          https://pdmosses.github.io/mfps2026-agda/preliminary/meta-notation/
+[Meta-notation]:          https://pdmosses.github.io/mfps2026-agda/preliminary/Meta-notation/
 [Notation]:               https://pdmosses.github.io/mfps2026-agda/preliminary/Notation/
 [Examples]:               https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/
 [Examples.LC]:            https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/LC/
