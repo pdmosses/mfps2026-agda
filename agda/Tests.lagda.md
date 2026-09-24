@@ -22,8 +22,10 @@ of postulated properties, independently of denotational definitions.)
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
-import Tests.LC
-import Tests.PCF
-import Tests.Scm
+module Tests where
+
+  import Tests.LC
+  import Tests.PCF
+  -- import Tests.Scm
 --"/hide"
 ```

@@ -13,21 +13,21 @@ not involving bijections.
 module Examples.PCF.Domain-Equations where
 --"hide"
 
-open import Examples.PCF.Abstract-Syntax
-open import Notation.Domains
-open import Notation.Functions
-open import Notation.Flat.Booleans using (Bool; Bool⊥; Eq; _==_)
-open import Notation.Flat.Naturals using (Nat⊥; eqNat)
-open import Notation.Updates using (MaybeEq; _==?_; just; nothing; refl; _[_/_]; _[_←_])
-open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
+  open import Examples.PCF.Abstract-Syntax
+  open import Notation.Domains
+  open import Notation.Functions
+  open import Notation.Flat.Booleans using (Bool; Bool⊥; Eq; _==_)
+  open import Notation.Flat.Naturals using (Nat⊥; eqNat)
+  open import Notation.Updates using (MaybeEq; _==?_; just; nothing; refl; _[_/_]; _[_←_])
+  open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 --"/hide"
 
-𝒟 : Types → Domain       -- standard domains
-𝒟 ι        = Nat⊥        -- natural numbers
-𝒟 o        = Bool⊥       -- truth-values
-𝒟 (σ ⇒ τ)  = 𝒟 σ →ᶜ 𝒟 τ  -- functions
+  𝒟 : Types → Domain       -- standard domains
+  𝒟 ι        = Nat⊥        -- natural numbers
+  𝒟 o        = Bool⊥       -- truth-values
+  𝒟 (σ ⇒ τ)  = 𝒟 σ →ᶜ 𝒟 τ  -- functions
 --"hide"
-variable x y z : ⟪ 𝒟 σ ⟫
+  variable x y z : ⟪ 𝒟 σ ⟫
 --"/hide"
 ```
 
@@ -36,36 +36,36 @@ naturally modeled by a dependent type: `Env σ` consists of type-preserving maps
 from variables in `Vars σ` to their values in the domain `𝒟 σ`.
 The environment `ρ⊥` maps all variables to `⊥`.
 ```agda
-Env = (σ : Types) → ⟪ Vars σ →ˢ 𝒟 σ ⟫  -- typed environments
+  Env = (σ : Types) → ⟪ Vars σ →ˢ 𝒟 σ ⟫  -- typed environments
 --"hide"
-variable ρ : Env
+  variable ρ : Env
 --"/hide"
-ρ⊥ : Env                               -- initial environment
-ρ⊥ _ _ = ⊥
+  ρ⊥ : Env                               -- initial environment
+  ρ⊥ _ _ = ⊥
 ```
 Extension or overriding typed environments, written `ρ [ v / x ]′`,
 requires instances of the equality tests
 for both variables and types. The definition of the latter is somewhat tedious.
 ```agda
 --"hide"
-_==ⱽ_ : Vars σ → Vars σ → Bool
-(α i σ ==ⱽ α i′ σ)  =  (i ==ᴺ i′)
-instance
-  eqV : Eq (Vars σ)
-  _==_ {{eqV}} = _==ⱽ_
-instance
-  eqT : MaybeEq Types
-  eqT ._==?_ ι ι = just refl
-  eqT ._==?_ o o = just refl
-  eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁) with σ ==? σ₁  | τ ==? τ₁
-  eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁)    | just refl | just refl = just refl
-  eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁)    | _         | _         = nothing
-  eqT ._==?_ _ _ = nothing
+  _==ⱽ_ : Vars σ → Vars σ → Bool
+  (α i σ ==ⱽ α i′ σ)  =  (i ==ᴺ i′)
+  instance
+    eqV : Eq (Vars σ)
+    _==_ {{eqV}} = _==ⱽ_
+  instance
+    eqT : MaybeEq Types
+    eqT ._==?_ ι ι = just refl
+    eqT ._==?_ o o = just refl
+    eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁) with σ ==? σ₁  | τ ==? τ₁
+    eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁)    | just refl | just refl = just refl
+    eqT ._==?_ (σ ⇒ τ) (σ₁ ⇒ τ₁)    | _         | _         = nothing
+    eqT ._==?_ _ _ = nothing
 
-_[_/_]′ : Env → ⟪ 𝒟 σ ⟫ → Vars σ → Env
--- ρ [ v / x ]′ maps x to v, and other x′ to ρ x′
-_[_/_]′ {σ} ρ x v = ρ [ σ ← ρ σ [ x / v ] ]
---"/hide"
+  _[_/_]′ : Env → ⟪ 𝒟 σ ⟫ → Vars σ → Env
+  -- ρ [ v / x ]′ maps x to v, and other x′ to ρ x′
+  _[_/_]′ {σ} ρ x v = ρ [ σ ← ρ σ [ x / v ] ]
+  --"/hide"
 ```
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/

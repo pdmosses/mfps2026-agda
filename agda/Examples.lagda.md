@@ -12,9 +12,9 @@ the [Untyped Lambda-Calculus],
 
 module Examples where
 
-import Examples.LC
-import Examples.PCF
-import Examples.Scm
+  import Examples.LC
+  import Examples.PCF
+  import Examples.Scm
 --"/hide"
 ```
 

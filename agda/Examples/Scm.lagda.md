@@ -8,14 +8,14 @@ they involve the notation for [sequence domains].
 
 ```agda
 --"hide"
-{-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
+{-# OPTIONS --rewriting --confluence-check #-}
 
 module Examples.Scm where
 
-import Examples.Scm.Abstract-Syntax
-import Examples.Scm.Domain-Equations
-import Examples.Scm.Semantic-Functions
-import Examples.Scm.Auxiliary-Functions
+  import Examples.Scm.Abstract-Syntax
+  import Examples.Scm.Domain-Equations
+  import Examples.Scm.Semantic-Functions
+  import Examples.Scm.Auxiliary-Functions
 --"/hide"
 ```
 

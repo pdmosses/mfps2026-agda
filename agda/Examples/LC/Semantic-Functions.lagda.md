@@ -12,17 +12,17 @@ but Agda does not support this.
 module Examples.LC.Semantic-Functions where
 --"hide"
 
-open import Examples.LC.Abstract-Syntax
-open import Examples.LC.Domain-Equations
-open import Notation.Domains
-open import Notation.Functions
-open import Notation.Recursion
+  open import Examples.LC.Abstract-Syntax
+  open import Examples.LC.Domain-Equations
+  open import Notation.Domains
+  open import Notation.Functions
+  open import Notation.Recursion
 
 --"/hide"
-⟦_⟧ : Exp → ⟪ Env →ᶜ D∞ ⟫
-⟦ var v ⟧ ρ        = ρ v
-⟦ ⦅λ v ␣ e ⦆ ⟧ ρ   = fold ( λ δ → ⟦ e ⟧ (ρ [ δ / v ]) )
-⟦ ⦅ e₁ ␣ e₂ ⦆ ⟧ ρ  = unfold ( ⟦ e₁ ⟧ ρ ) ( ⟦ e₂ ⟧ ρ )
+  ⟦_⟧ : Exp → ⟪ Env →ᶜ D∞ ⟫
+  ⟦ var v ⟧ ρ        = ρ v
+  ⟦ ⦅λ v ␣ e ⦆ ⟧ ρ   = fold ( λ δ → ⟦ e ⟧ (ρ [ δ / v ]) )
+  ⟦ ⦅ e₁ ␣ e₂ ⦆ ⟧ ρ  = unfold ( ⟦ e₁ ⟧ ρ ) ( ⟦ e₂ ⟧ ρ )
 ```
 
 [(Reynolds1998TPL)]: https://doi.org/10.1017/CBO9780511626364

@@ -5,50 +5,50 @@ PCF function types $\sigma \to \tau$ are written `σ ⇒ τ`, and variables $\al
 (where the argument `i` merely distinguishes between variables – it is *not* a De Bruijn index).
 ```agda
 --"hide"
-{-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
+{-# OPTIONS --rewriting --confluence-check #-}
 
 --"/hide"
 module Examples.PCF.Abstract-Syntax where
 
 --"hide"
-open import Agda.Builtin.Nat public using (Nat)
+  open import Agda.Builtin.Nat public using (Nat)
 
 --"/hide"
-data Types  : Set where                          -- type terms
-  ι         : Types                              -- individuals
-  o         : Types                              -- truth-values
-  _⇒_       : Types → Types → Types              -- functions
+  data Types  : Set where                          -- type terms
+    ι         : Types                              -- individuals
+    o         : Types                              -- truth-values
+    _⇒_       : Types → Types → Types              -- functions
 --"hide"
-infixr 1 _⇒_
-variable σ τ : Types
+  infixr 1 _⇒_
+  variable σ τ : Types
 
 --"/hide"
 
-data Vars   : Types → Set where                  -- typed variables
-  α         : Nat → (σ : Types) → Vars σ         -- α i σ is a variable of type σ
+  data Vars   : Types → Set where                  -- typed variables
+    α         : Nat → (σ : Types) → Vars σ         -- α i σ is a variable of type σ
 --"hide"
-variable i  : Nat
+  variable i  : Nat
 --"/hide"
 
-data ℒᴬ     : Types → Set where                  -- typed constants
-  tt        : ℒᴬ o                               -- true
-  ff        : ℒᴬ o                               -- false
-  ⊃         : ℒᴬ (o ⇒ σ ⇒ σ ⇒ σ)                 -- conditional
-  Y         : ℒᴬ ((σ ⇒ σ) ⇒ σ)                   -- fixed point
-  k         : Nat → ℒᴬ ι                         -- numerals
-  ⦅+1⦆      : ℒᴬ (ι ⇒ ι)                         -- successor
-  ⦅−1⦆      : ℒᴬ (ι ⇒ ι)                         -- predecessor
-  Z         : ℒᴬ (ι ⇒ o)                         -- zero test
+  data ℒᴬ     : Types → Set where                  -- typed constants
+    tt        : ℒᴬ o                               -- true
+    ff        : ℒᴬ o                               -- false
+    ⊃         : ℒᴬ (o ⇒ σ ⇒ σ ⇒ σ)                 -- conditional
+    Y         : ℒᴬ ((σ ⇒ σ) ⇒ σ)                   -- fixed point
+    k         : Nat → ℒᴬ ι                         -- numerals
+    ⦅+1⦆      : ℒᴬ (ι ⇒ ι)                         -- successor
+    ⦅−1⦆      : ℒᴬ (ι ⇒ ι)                         -- predecessor
+    Z         : ℒᴬ (ι ⇒ o)                         -- zero test
 --"hide"
-variable c  : ℒᴬ σ
+  variable c  : ℒᴬ σ
 --"/hide"
 
-data Terms  : Types → Set where                  -- typed terms
-  𝑉_        : Vars σ → Terms σ                   -- variable
-  𝐿_        : ℒᴬ σ → Terms σ                     -- constant
-  ⦅_␣_⦆     : Terms (σ ⇒ τ) → Terms σ → Terms τ  -- function application
-  ⦅λ_␣_⦆    : Vars σ → Terms τ → Terms (σ ⇒ τ)   -- function abstraction
+  data Terms  : Types → Set where                  -- typed terms
+    𝑉_        : Vars σ → Terms σ                   -- variable
+    𝐿_        : ℒᴬ σ → Terms σ                     -- constant
+    ⦅_␣_⦆     : Terms (σ ⇒ τ) → Terms σ → Terms τ  -- function application
+    ⦅λ_␣_⦆    : Vars σ → Terms τ → Terms (σ ⇒ τ)   -- function abstraction
 --"hide"
-variable M N : Terms σ
+  variable M N : Terms σ
 --"/hide"
 ```

@@ -10,43 +10,43 @@ applying `ρ σ` to the variable.
 module Examples.PCF.Semantic-Functions where
 --"hide"
 
-open import Examples.PCF.Abstract-Syntax
-open import Examples.PCF.Domain-Equations
-open import Notation.Domains
-open import Notation.Functions
-open import Notation.Flat using (↑; _♯)
-open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; false; true)
-open import Notation.Flat.Naturals using (_+_; _-_)
+  open import Examples.PCF.Abstract-Syntax
+  open import Examples.PCF.Domain-Equations
+  open import Notation.Domains
+  open import Notation.Functions
+  open import Notation.Flat using (↑; _♯)
+  open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; false; true)
+  open import Notation.Flat.Naturals using (_+_; _-_)
 
 --"/hide"
 
-_⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
-ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
+  _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
+  ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
 ```
 The semantic function `𝒜⟦ c ⟧` gives the standard interpretation of the
 constant `c`. The corresponding definitions in [(Plotkin1977LCP)] use
 case analysis on the domain `𝒟 ι`, which our Agda embedding does not support
 (partly because it can express non-continuous functions).
 ```agda
-𝒜⟦_⟧ : ℒᴬ σ → ⟪ 𝒟 σ ⟫             -- typed constant denotations
-𝒜⟦ tt ⟧    =  ↑ true
-𝒜⟦ ff ⟧    =  ↑ false
-𝒜⟦ ⊃ ⟧     =  λ β δ₁ δ₂ → (β ⟶ δ₁ , δ₂)
-𝒜⟦ Y ⟧     =  fix
-𝒜⟦ k n ⟧   =  ↑ n
-𝒜⟦ ⦅+1⦆ ⟧  =  (λ n → ↑ (n + 1)) ♯
-𝒜⟦ ⦅−1⦆ ⟧  =  (λ n → ↑ (n ==ᴺ 0) ⟶ ⊥ , ↑ (n - 1)) ♯
-𝒜⟦ Z ⟧     =  (λ n → ↑ (n ==ᴺ 0)) ♯
+  𝒜⟦_⟧ : ℒᴬ σ → ⟪ 𝒟 σ ⟫             -- typed constant denotations
+  𝒜⟦ tt ⟧    =  ↑ true
+  𝒜⟦ ff ⟧    =  ↑ false
+  𝒜⟦ ⊃ ⟧     =  λ β δ₁ δ₂ → (β ⟶ δ₁ , δ₂)
+  𝒜⟦ Y ⟧     =  fix
+  𝒜⟦ k n ⟧   =  ↑ n
+  𝒜⟦ ⦅+1⦆ ⟧  =  (λ n → ↑ (n + 1)) ♯
+  𝒜⟦ ⦅−1⦆ ⟧  =  (λ n → ↑ (n ==ᴺ 0) ⟶ ⊥ , ↑ (n - 1)) ♯
+  𝒜⟦ Z ⟧     =  (λ n → ↑ (n ==ᴺ 0)) ♯
 ```
 The semantic function `𝒜′⟦ M ⟧` is written
 $\hat{\mathcal A} \llbracket M \rrbracket$ in [(Plotkin1977LCP)]. It gives the
 denotation of the term `M` as a function of the environment `ρ`.
 ```agda
-𝒜′⟦_⟧ : Terms σ → ⟪ Env →ˢ 𝒟 σ ⟫  -- typed term denotations
-𝒜′⟦ 𝑉 α i σ ⟧ ρ           =  ρ ⟦ α i σ ⟧
-𝒜′⟦ 𝐿 c ⟧ ρ               =  𝒜⟦ c ⟧
-𝒜′⟦ ⦅ M ␣ N ⦆ ⟧ ρ         =  𝒜′⟦ M ⟧ ρ (𝒜′⟦ N ⟧ ρ) 
-𝒜′⟦ ⦅λ α i σ ␣ M ⦆ ⟧ ρ x  =  𝒜′⟦ M ⟧ (ρ [ x / α i σ ]′)
+  𝒜′⟦_⟧ : Terms σ → ⟪ Env →ˢ 𝒟 σ ⟫  -- typed term denotations
+  𝒜′⟦ 𝑉 α i σ ⟧ ρ           =  ρ ⟦ α i σ ⟧
+  𝒜′⟦ 𝐿 c ⟧ ρ               =  𝒜⟦ c ⟧
+  𝒜′⟦ ⦅ M ␣ N ⦆ ⟧ ρ         =  𝒜′⟦ M ⟧ ρ (𝒜′⟦ N ⟧ ρ) 
+  𝒜′⟦ ⦅λ α i σ ␣ M ⦆ ⟧ ρ x  =  𝒜′⟦ M ⟧ (ρ [ x / α i σ ]′)
 ```
 Comparison with Plotkin's original definition of PCF [(Plotkin1977LCP)] confirms
 the directness of our Agda embedding.
