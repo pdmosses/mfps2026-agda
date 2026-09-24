@@ -26,6 +26,6 @@ module Tests where
 
   import Tests.LC
   import Tests.PCF
-  -- import Tests.Scm
+  import Tests.Scm
 --"/hide"
 ```
