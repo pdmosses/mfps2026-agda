@@ -1,6 +1,6 @@
 # Mechanising Denotational Semantics in Agda
 
-Agda code accompanying the preliminary version of a paper ([PDF]) [presented] at [MFPS 2026]:
+Agda code accompanying the **preliminary version** of a paper ([PDF]) [presented] at [MFPS 2026]:
 
 > Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
 
@@ -41,7 +41,9 @@ When scrolling up, a **back to top** button is shown near the top of the window.
   but without the `--"hide"` and  `--"/hide"` comments.
 - The [plain] directory contains the corresponding plain Agda code.
 - The [docs] directory contains source code for generating the website.
-- The [latex] directory contains files used for generating LaTeX sources.
+- The [latex] directory contains files used for generating LaTeX sources
+  used when formatting the paper.
+- The [docs] directory contains source code for generating the website.
 
 ## Abstract
 
@@ -85,28 +87,30 @@ Peter Mosses
 
 [pdmosses.github.io](https://pdmosses.github.io)
 
-[Issues]: https://github.com/pdmosses/mfps2026-agda/issues
-[Pull requests]: https://github.com/pdmosses/mfps2026-agda/pulls
-[Discussions]: https://github.com/pdmosses/mfps2026-agda/discussions
+[Issues]:                 https://github.com/pdmosses/mfps2026-agda/issues
+[Pull requests]:          https://github.com/pdmosses/mfps2026-agda/pulls
+[Discussions]:            https://github.com/pdmosses/mfps2026-agda/discussions
 
-[About]: https://pdmosses.github.io/mfps2026-agda/
-[README]: https://github.com/pdmosses/mfps2026-agda/blob/main/docs/README.md
-[Background]: https://pdmosses.github.io/mfps2026-agda/Background/
-[Meta-notation]: https://pdmosses.github.io/mfps2026-agda/meta-notation/
-[Notation]: https://pdmosses.github.io/mfps2026-agda/Notation/
-[Examples]: https://pdmosses.github.io/mfps2026-agda/Examples/
-[Examples.LC]: https://pdmosses.github.io/mfps2026-agda/Examples/LC/
-[Examples.PCF]: https://pdmosses.github.io/mfps2026-agda/Examples/PCF/
-[Examples.Scm]: https://pdmosses.github.io/mfps2026-agda/Examples/Scm/
-[Properties]: https://pdmosses.github.io/mfps2026-agda/Properties/
-[Tests]: https://pdmosses.github.io/mfps2026-agda/Tests/
-[Tests.LC]: https://pdmosses.github.io/mfps2026-agda/Tests/LC/
-[Tests.PCF]: https://pdmosses.github.io/mfps2026-agda/Tests/PCF/
-[Library]: https://pdmosses.github.io/mfps2026-agda/Library/
-[Standard Agda library]: https://agda.github.io/agda-stdlib/v2.3/
+[About]:                  https://pdmosses.github.io/mfps2026-agda/
+[Background]:             https://pdmosses.github.io/mfps2026-agda/Background/
+[Meta-notation]:          https://pdmosses.github.io/mfps2026-agda/Meta-notation/
+[Notation]:               https://pdmosses.github.io/mfps2026-agda/Notation/
+[Examples]:               https://pdmosses.github.io/mfps2026-agda/Examples/
+[Examples.LC]:            https://pdmosses.github.io/mfps2026-agda/Examples/LC/
+[Examples.PCF]:           https://pdmosses.github.io/mfps2026-agda/Examples/PCF/
+[Examples.Scm]:           https://pdmosses.github.io/mfps2026-agda/Examples/Scm/
+[Properties]:             https://pdmosses.github.io/mfps2026-agda/Properties/
+[Tests]:                  https://pdmosses.github.io/mfps2026-agda/Tests/
+[Tests.LC]:               https://pdmosses.github.io/mfps2026-agda/Tests/LC/
+[Tests.PCF]:              https://pdmosses.github.io/mfps2026-agda/Tests/PCF/
+[Library]:                https://pdmosses.github.io/mfps2026-agda/Library/
+
 [pdmosses/mfps2026-agda]: https://github.com/pdmosses/mfps2026-agda/
-[agda]: https://github.com/pdmosses/mfps2026-agda/tree/main/agda
-[complete]: https://github.com/pdmosses/mfps2026-agda/tree/main/complete
-[plain]: https://github.com/pdmosses/mfps2026-agda/tree/main/plain
-[docs]: https://github.com/pdmosses/mfps2026-agda/tree/main/docs
-[latex]: https://github.com/pdmosses/mfps2026-agda/tree/main/latex
+[agda]:                   https://github.com/pdmosses/mfps2026-agda/tree/main/agda
+[complete]:               https://github.com/pdmosses/mfps2026-agda/tree/main/complete
+[plain]:                  https://github.com/pdmosses/mfps2026-agda/tree/main/plain
+[docs]:                   https://github.com/pdmosses/mfps2026-agda/tree/main/docs
+[README]:                 https://github.com/pdmosses/mfps2026-agda/blob/main/docs/README.md
+[latex]:                  https://github.com/pdmosses/mfps2026-agda/tree/main/latex
+
+[Standard Agda library]:  https://agda.github.io/agda-stdlib/v2.3/
