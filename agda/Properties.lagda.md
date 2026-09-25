@@ -52,7 +52,7 @@ Postulates of properties for the operations on tuples and sequences have not yet
   import Properties.Updates
 ```
 
-[Postulated Domain Notation]: Notation.md#postulated-domain-notation
-[Illustrative Tests]: Tests/index.md#illustrative-tests
+[Postulated Domain Notation]: ../Notation/index.md#postulated-domain-notation
+[Illustrative Tests]: ../Tests/index.md#illustrative-tests
 [(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
 [(Cockx2021TRT)]: https://doi.org/10.1145/3434341

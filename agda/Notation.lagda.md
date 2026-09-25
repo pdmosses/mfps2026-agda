@@ -10,7 +10,7 @@ In the PDF, the symbol $\Uparrow$ following a reference to a numbered section
 is a link to the corresponding page on the website.
 @/latex
 
-[Illustrative Examples]: Examples/index.md#illustrative-examples
+[Illustrative Examples]: ../Examples/index.md#illustrative-examples
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 
 ```agda

@@ -19,6 +19,6 @@ module Examples.Scm where
 --"/hide"
 ```
 
-[Sequence Domains]: ../../Notation.md#sequences
+[Sequence Domains]: ../../Notation/Products/Sequences.md
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
 [(Scheme)]: https://standards.scheme.org
