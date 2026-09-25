@@ -119,5 +119,5 @@ its submodules for the required domain constructors.
 
 [Agda docs]: https://agda.readthedocs.io/en/latest/getting-started/a-taste-of-agda.html
 [Agda Wikipedia page]: https://en.wikipedia.org/wiki/Agda_(programming_language)
-[Notation]: Notation.md
+[Notation]: Notation/index.md
 [Examples.Scm.Domain-Equations]: Examples/Scm/Domain-Equations.md

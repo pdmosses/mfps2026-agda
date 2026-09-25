@@ -3,7 +3,7 @@ nav:
     - README.md
     - Background.md
     - Meta-notation.md
-  - Notation.md
+  - Notation
   - Examples:
     - Examples/index.md
     - LC:
@@ -15,7 +15,7 @@ nav:
     - Scm:
       - Examples/Scm/index.md
       - Examples/Scm/*
-  - Properties.md
+  - Properties
   - Tests:
     - Tests/index.md
     - Tests/LC.md

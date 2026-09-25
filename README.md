@@ -1,6 +1,6 @@
 # Mechanising Denotational Semantics in Agda
 
-Agda code accompanying the **preliminary version** of a paper ([PDF]) [presented] at [MFPS 2026]:
+Agda code accompanying the **final version** of a paper ([PDF]) [presented] at [MFPS 2026]:
 
 > Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
 
@@ -91,26 +91,26 @@ Peter Mosses
 [Pull requests]:          https://github.com/pdmosses/mfps2026-agda/pulls
 [Discussions]:            https://github.com/pdmosses/mfps2026-agda/discussions
 
-[About]:                  https://pdmosses.github.io/mfps2026-agda/preliminary/
-[Background]:             https://pdmosses.github.io/mfps2026-agda/preliminary/Background/
-[Meta-notation]:          https://pdmosses.github.io/mfps2026-agda/preliminary/Meta-notation/
-[Notation]:               https://pdmosses.github.io/mfps2026-agda/preliminary/Notation/
-[Examples]:               https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/
-[Examples.LC]:            https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/LC/
-[Examples.PCF]:           https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/PCF/
-[Examples.Scm]:           https://pdmosses.github.io/mfps2026-agda/preliminary/Examples/Scm/
-[Properties]:             https://pdmosses.github.io/mfps2026-agda/preliminary/Properties/
-[Tests]:                  https://pdmosses.github.io/mfps2026-agda/preliminary/Tests/
-[Tests.LC]:               https://pdmosses.github.io/mfps2026-agda/preliminary/Tests/LC/
-[Tests.PCF]:              https://pdmosses.github.io/mfps2026-agda/preliminary/Tests/PCF/
-[Library]:                https://pdmosses.github.io/mfps2026-agda/preliminary/Library/
+[About]:                  https://pdmosses.github.io/mfps2026-agda/
+[Background]:             https://pdmosses.github.io/mfps2026-agda/Background/
+[Meta-notation]:          https://pdmosses.github.io/mfps2026-agda/Meta-notation/
+[Notation]:               https://pdmosses.github.io/mfps2026-agda/Notation/
+[Examples]:               https://pdmosses.github.io/mfps2026-agda/Examples/
+[Examples.LC]:            https://pdmosses.github.io/mfps2026-agda/Examples/LC/
+[Examples.PCF]:           https://pdmosses.github.io/mfps2026-agda/Examples/PCF/
+[Examples.Scm]:           https://pdmosses.github.io/mfps2026-agda/Examples/Scm/
+[Properties]:             https://pdmosses.github.io/mfps2026-agda/Properties/
+[Tests]:                  https://pdmosses.github.io/mfps2026-agda/Tests/
+[Tests.LC]:               https://pdmosses.github.io/mfps2026-agda/Tests/LC/
+[Tests.PCF]:              https://pdmosses.github.io/mfps2026-agda/Tests/PCF/
+[Library]:                https://pdmosses.github.io/mfps2026-agda/Library/
 
-[pdmosses/mfps2026-agda]: https://github.com/pdmosses/mfps2026-agda/tree/preliminary
-[agda]:                   https://github.com/pdmosses/mfps2026-agda/tree/preliminary/agda
-[complete]:               https://github.com/pdmosses/mfps2026-agda/tree/preliminary/complete
-[plain]:                  https://github.com/pdmosses/mfps2026-agda/tree/preliminary/plain
-[docs]:                   https://github.com/pdmosses/mfps2026-agda/tree/preliminary/docs
-[README]:                 https://github.com/pdmosses/mfps2026-agda/blob/preliminary/docs/README.md
-[latex]:                  https://github.com/pdmosses/mfps2026-agda/tree/preliminary/latex
+[pdmosses/mfps2026-agda]: https://github.com/pdmosses/mfps2026-agda/
+[agda]:                   https://github.com/pdmosses/mfps2026-agda/tree/agda
+[complete]:               https://github.com/pdmosses/mfps2026-agda/tree/complete
+[plain]:                  https://github.com/pdmosses/mfps2026-agda/tree/plain
+[docs]:                   https://github.com/pdmosses/mfps2026-agda/tree/docs
+[README]:                 https://github.com/pdmosses/mfps2026-agda/blob/README.md
+[latex]:                  https://github.com/pdmosses/mfps2026-agda/tree/latex
 
 [Standard Agda library]:  https://agda.github.io/agda-stdlib/v2.3/
