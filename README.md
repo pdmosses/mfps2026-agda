@@ -20,37 +20,46 @@ make web
 make serve
 ```
 
-Browse the generated website [locally](localhost:8026).
+Browse the generated website [locally](http://localhost:8026/mfps2026-agda/).
 
 ## Website deployment
 
 ```sh
 cd pages
+make check
+make web
 make deploy
 ```
 
 Browse the generated website [on GitHub Pages](https://pdmosses.github.io/mfps2026-agda/).
 
-## PDF generation
+## LaTeX generation
 
 ```sh
 cd pages
-make lagda
-make latex
-cd latex
+make clean-latex
+make gen-lagda
+make gen-latex
+```
+
+## PDF generation
+
+Copy the generated LaTeX files to a sibling clone of the [mfps-2026] repository
+then generate the PDF:
+
+```sh
+cd ../mfps-2026/final
+rm -rf generated
+cp -rf ../../mfps2026-agda/pages/latex generated
 pdflatex main
 bibtex main
 pdflatex main
 pdflatex main
 ```
 
-Browse the generated PDF [in the repository](latex/main.pdf).
-(The PDF is not included in the generated website.)
-
 ## Repository contents
 
 -   [agda] – Agda code, embedded in Markdown files
--   [latex] – LaTeX and BibTeX  code for generating a PDF
 -   [pages] – website generation
 
     -   [pages/agda-pages] – a Git submodule reference to the [Agda-Pages] repository
