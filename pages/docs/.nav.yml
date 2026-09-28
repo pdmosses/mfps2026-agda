@@ -1,6 +1,7 @@
 nav:
   - About:
-    - README.md
+    - index.md
+    - Abstract.md
     - Background.md
     - Meta-notation.md
   - Notation
