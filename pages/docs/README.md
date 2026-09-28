@@ -8,6 +8,12 @@ Agda code accompanying the **final version** of a paper ([PDF]) [presented] at [
 [presented]: https://ul-fmf.github.io/mfps-sstt-2026/programme/#wednesday-june-3-mfps
 [MFPS 2026]: https://ul-fmf.github.io/mfps-sstt-2026/mfps/
 
+!!! info
+
+    The Agda code presented in the **preliminary version** of the paper is
+    available in the [preliminary branch] of the mfps2026-agda repository.
+    The [preliminary website] generated from it has been relocated.
+ 
 ## Navigation
 
 On **wide displays**, the **top panel** of each page shows:
@@ -104,6 +110,9 @@ Peter Mosses
 [Tests.LC]:               https://pdmosses.github.io/mfps2026-agda/Tests/LC/
 [Tests.PCF]:              https://pdmosses.github.io/mfps2026-agda/Tests/PCF/
 [Library]:                https://pdmosses.github.io/mfps2026-agda/Library/
+
+[preliminary website]:    https://pdmosses.github.io/mfps2026-agda/preliminary/
+[preliminary branch]:     https://github.com/pdmosses/mfps2026-agda/tree/preliminary
 
 [pdmosses/mfps2026-agda]: https://github.com/pdmosses/mfps2026-agda/
 [agda]:                   https://github.com/pdmosses/mfps2026-agda/tree/agda
