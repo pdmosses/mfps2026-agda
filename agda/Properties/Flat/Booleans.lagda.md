@@ -1,3 +1,5 @@
+# Booleans
+
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}

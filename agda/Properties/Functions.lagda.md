@@ -1,3 +1,5 @@
+# Function Domains
+
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check --lossy-unification #-}

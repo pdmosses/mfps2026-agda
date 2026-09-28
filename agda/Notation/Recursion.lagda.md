@@ -1,4 +1,4 @@
-## Recursive Domains
+# Recursive Domains
 
 Conventional denotational semantics often involves groups of mutually
 recursive domain definitions.

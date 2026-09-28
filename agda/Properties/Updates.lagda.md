@@ -1,3 +1,5 @@
+# Updates
+
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
