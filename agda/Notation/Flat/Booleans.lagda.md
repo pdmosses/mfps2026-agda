@@ -8,10 +8,12 @@ conditional choice to domains. It returns `⊥` whenever its first argument is `
 
 --"/hide"
 module Notation.Flat.Booleans where
+--"hide"
 
   open import Notation.Domains
   open import Notation.Functions
   open import Notation.Flat
+--"/hide"
   open import Data.Bool.Base public using (Bool; false; true; if_then_else_)
 
   Bool⊥ = Bool +⊥

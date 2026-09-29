@@ -14,10 +14,12 @@ to its structure and *vice versa*.
 
 --"/hide"
 module Notation.Recursion where
+--"hide"
   
   open import Notation.Domains
   open import Notation.Functions
 
+--"/hide"
   postulate
     _≅_ : Domain → Domain → Set
     -- an instance of D ≅ E declares that the structure of D is the same as E

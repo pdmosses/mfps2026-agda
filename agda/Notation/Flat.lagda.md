@@ -11,10 +11,12 @@ and an operator `f ♯` for extending functions on `A` to arguments in `A +⊥`.
 
 --"/hide"
 module Notation.Flat where
+--"hide"
   
   open import Notation.Domains
   open import Notation.Functions
   
+--"/hide"
   postulate
     _+⊥  : Set → Domain                 -- A +⊥ constructs a flat domain
     ↑    : ⟪ A →ˢ (A +⊥) ⟫              -- (↑ a) injects a into A +⊥

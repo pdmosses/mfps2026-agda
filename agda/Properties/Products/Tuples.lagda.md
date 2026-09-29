@@ -6,6 +6,5 @@
 
 --"/hide"
 module Properties.Products.Tuples where
-
-  open import Notation.Products.Tuples using (_^_) public
+  open import Notation.Products.Tuples public
 ```

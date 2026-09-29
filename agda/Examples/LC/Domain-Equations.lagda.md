@@ -28,7 +28,7 @@ module Examples.LC.Domain-Equations where
   variable δ : ⟪ D∞ ⟫
 
 --"/hide"
-  Env = Var →ˢ D∞  -- environments
+  Env = Var →ˢ D∞                    -- environments
 --"hide"
   variable ρ : ⟪ Env ⟫
 --"/hide"

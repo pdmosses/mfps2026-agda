@@ -6,6 +6,5 @@
 
 --"/hide"
 module Properties.Flat.Naturals where
-
-  open import Notation.Flat.Naturals using (Nat⊥; eqNat) public
+  open import Notation.Flat.Naturals public
 ```

@@ -8,14 +8,18 @@ using `zero` and `suc`.
 
 --"/hide"
 module Notation.Flat.Naturals where
+--"hide"
   
   open import Notation.Flat
   open import Notation.Flat.Booleans
-  open import Agda.Builtin.Nat public
-    using (Nat; suc; _+_; _-_) renaming (_==_ to _==ᴺ_)
+--"/hide"
+  open import Agda.Builtin.Nat public  using (Nat; suc; _+_; _-_)
+                                       renaming (_==_ to _==ᴺ_)
 
   Nat⊥ = Nat +⊥
+--"hide"
 
   postulate 
     instance eqNat : Eq Nat
+--"/hide"
 ```

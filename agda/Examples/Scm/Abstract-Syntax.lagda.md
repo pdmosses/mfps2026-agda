@@ -32,7 +32,7 @@ module Examples.Scm.Abstract-Syntax where
   open import Data.String.Base public using (String)
 --"/hide"
 
-  Ide = String      -- identifiers
+  Ide = String  -- identifiers
 --"hide"
   variable I : Ide
 

@@ -20,7 +20,7 @@ module Examples.PCF.Semantic-Functions where
 
 --"/hide"
 
-  _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫     -- typed variable denotations
+  _⟦_⟧ : Env → Vars σ → ⟪ 𝒟 σ ⟫  -- typed variable denotations
   ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
 ```
 The semantic function `𝒜⟦ c ⟧` gives the standard interpretation of the
@@ -28,7 +28,7 @@ constant `c`. The corresponding definitions in [(Plotkin1977LCP)] use
 case analysis on the domain `𝒟 ι`, which our Agda embedding does not support
 (partly because it can express non-continuous functions).
 ```agda
-  𝒜⟦_⟧ : ℒᴬ σ → ⟪ 𝒟 σ ⟫             -- typed constant denotations
+  𝒜⟦_⟧ : ℒᴬ σ → ⟪ 𝒟 σ ⟫  -- typed constant denotations
   𝒜⟦ tt ⟧    =  ↑ true
   𝒜⟦ ff ⟧    =  ↑ false
   𝒜⟦ ⊃ ⟧     =  λ β δ₁ δ₂ → (β ⟶ δ₁ , δ₂)

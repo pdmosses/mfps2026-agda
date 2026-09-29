@@ -6,6 +6,5 @@
 
 --"/hide"
 module Properties.Updates where
-
-  open import Notation.Updates using (_[_/_]; _[_/_]⊥; _[_←_]) public
+  open import Notation.Updates public
 ```

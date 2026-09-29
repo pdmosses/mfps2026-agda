@@ -10,11 +10,8 @@ module Notation.Domains where
     Domain : Set              -- Domain is the type of all domains
     ⟪_⟫ : Domain → Set        -- ⟪ D ⟫ is the carrier type of D
     ⊥ : {D : Domain} → ⟪ D ⟫  -- ⊥{D} is the 'bottom' element of D
---"hide"
     𝟙 : Domain                -- 𝟙 is a unit domain
   variable A B C : Set; D E F : Domain
-
---"/hide"
 ```
 Some previous papers on embedding denotational semantics in Agda
 [(Mosses2025CDS)]\ [(Mosses2025CSE)]\ [(Mosses2025LAF)]

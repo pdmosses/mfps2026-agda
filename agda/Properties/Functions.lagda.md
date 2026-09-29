@@ -6,9 +6,8 @@
 
 --"/hide"
 module Properties.Functions where
-
   open import Notation.Domains
-  open import Notation.Functions using (_→ᶜ_; dom-cts; _→ˢ_; set-cts; fix) public
+  open import Notation.Functions public
   open import Agda.Builtin.Equality public using (_≡_; refl)
   open import Agda.Builtin.Equality.Rewrite using ()
 

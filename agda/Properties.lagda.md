@@ -43,6 +43,7 @@ in the semantics of the LC and PCF languages;
 they will be needed when tests for equivalence of denotations of *Scm* expressions are added.
 Postulates of properties for the operations on tuples and sequences have not yet been developed.
 ```agda
+--"hide"
   import Properties.Flat.Booleans
   import Properties.Flat.Naturals
   import Properties.Sums
@@ -50,6 +51,7 @@ Postulates of properties for the operations on tuples and sequences have not yet
   import Properties.Products.Tuples
   import Properties.Products.Sequences
   import Properties.Updates
+--"/hide"
 ```
 
 [Postulated Domain Notation]: ../Notation/index.md#postulated-domain-notation

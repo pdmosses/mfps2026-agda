@@ -11,11 +11,11 @@ instead, we use the notation `D →ᶜ E` for embedding continuous function doma
 
 --"/hide"
 module Notation.Functions where
-
+--"hide"
   open import Notation.Domains
-  open import Agda.Builtin.Equality public using (_≡_; refl)
+  open import Agda.Builtin.Equality public using (_≡_)
   open import Agda.Builtin.Equality.Rewrite using ()
-
+--"/hide"
   postulate _→ᶜ_ : Domain → Domain → Domain
 --"hide"
   -- D →ᶜ E is the domain of continuous functions from D to E

@@ -6,9 +6,8 @@
 
 --"/hide"
 module Properties.Recursion where
-
   open import Notation.Domains
-  open import Notation.Recursion using (_≅_; unfold; fold) public
+  open import Notation.Recursion public
   open import Agda.Builtin.Equality public using (_≡_; refl)
   open import Agda.Builtin.Equality.Rewrite using ()
 

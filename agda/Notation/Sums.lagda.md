@@ -10,11 +10,13 @@ and iterated for domains with more than two summands.
 
 --"/hide"
 module Notation.Sums where
-  
+--"hide"
+
   open import Notation.Domains
   open import Notation.Functions
   open import Notation.Flat.Booleans
   
+--"/hide"
   postulate
     _+_    : Domain → Domain → Domain   -- D + E is separated sum
     inj₁   : ⟪ D →ᶜ (D + E) ⟫           -- inj₁ δ is injection from D
