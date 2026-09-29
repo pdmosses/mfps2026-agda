@@ -1,14 +1,22 @@
 # Mechanising Denotational Semantics in Agda
 
-Agda code accompanying the **final version** of a paper ([PDF]) [presented] at [MFPS 2026]:
+Agda code accompanying the **final version** of a paper [presented] at [MFPS 2026]:
 
 > Peter D. Mosses, Jesper Cockx, Bernhard Reus: *Mechanising Denotational Semantics in Agda*
 
 The [MFPS 2026 – Agda Code] website includes hyperlinked, highlighted listings of the complete code.
 
+
+> [!INFO]
+> The Agda code presented in the **preliminary version** of the paper ([PDF])
+> is available in the `preliminary` branch of this repository.
+> A build of the [preliminary website] generated from it has been added as a
+> subdirectory of the [MFPS 2026 – Agda Code] website.
+ 
 [PDF]:                   https://ul-fmf.github.io/mfps-sstt-2026/files/pdfs/mfps/MFPS26-17.pdf
 [Presented]:             https://ul-fmf.github.io/mfps-sstt-2026/programme/#wednesday-june-3-mfps
 [MFPS 2026]:             https://ul-fmf.github.io/mfps-sstt-2026/mfps/
+[Preliminary website]:   https://pdmosses.github.io/mfps2026-agda/preliminary/
 [MFPS 2026 – Agda Code]: https://pdmosses.github.io/mfps2026-agda/
 
 ## Website generation
@@ -20,7 +28,7 @@ make web
 make serve
 ```
 
-Browse the generated website [locally](http://localhost:8026/mfps2026-agda/).
+You can then browse the generated website [locally](http://localhost:8026/mfps2026-agda/).
 
 ## Website deployment
 
@@ -31,42 +39,18 @@ make web
 make deploy
 ```
 
-Browse the generated website [on GitHub Pages](https://pdmosses.github.io/mfps2026-agda/).
-
-## LaTeX generation
-
-```sh
-cd pages
-make clean-latex
-make gen-lagda
-make gen-latex
-```
-
-## PDF generation
-
-Copy the generated LaTeX files to a sibling clone of the [mfps-2026] repository
-then generate the PDF:
-
-```sh
-cd ../mfps-2026/final
-rm -rf generated
-cp -rf ../../mfps2026-agda/pages/latex generated
-pdflatex main
-bibtex main
-pdflatex main
-pdflatex main
-pdflatex main
-```
+You can then browse the generated website [on GitHub Pages](https://pdmosses.github.io/mfps2026-agda/).
 
 ## Repository contents
 
 -   [agda] – Agda code, embedded in Markdown files
--   [pages] – website generation
+-   [pages] – website generation using [Agda-Pages]
 
     -   [pages/agda-pages] – a Git submodule reference to the [Agda-Pages] repository
     -   [pages/docs]
 
-        -   Markdown source files for non-generated web pages
+        -   Non-generated Markdown source files
+        -   [preliminary] – a build of the preliminary website
         -   [.nav.yml] – the navigation configuration file
 
         [Makefile] – the [Agda-Pages] configuration file
@@ -102,6 +86,7 @@ Peter Mosses
 [pages]:            pages
 [pages/agda-pages]: pages/agda-pages
 [pages/docs]:       pages/docs
+[preliminary]:      pages/docs/preliminary
 [.nav.yml]:         pages/docs/.nav.yml
 [Makefile]:         pages/Makefile
 [properdocs.yml]:   pages/properdocs.yml
