@@ -65,7 +65,7 @@ for both variables and types. The definition of the latter is somewhat tedious.
   _[_/_]′ : Env → ⟪ 𝒟 σ ⟫ → Vars σ → Env
   -- ρ [ v / x ]′ maps x to v, and other x′ to ρ x′
   _[_/_]′ {σ} ρ x v = ρ [ σ ← ρ σ [ x / v ] ]
-  --"/hide"
+--"/hide"
 ```
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
