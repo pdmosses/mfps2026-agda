@@ -4,3 +4,4 @@ PROTECT := docs/index.md docs/Abstract.md docs/Library/index.md docs/Meta-notati
 SERVER  := 8026
 
 include agda-pages/agda-pages.mk
+include agda-pages/agda-pages-latex.mk
