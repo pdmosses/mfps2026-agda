@@ -26,7 +26,6 @@ to facilitate browsing the Agda code when online.
 module Notation where
   import Notation.Domains
   import Notation.Functions
-  import Notation.Recursion
   import Notation.Flat
   import Notation.Flat.Booleans
   import Notation.Flat.Naturals
@@ -34,5 +33,6 @@ module Notation where
   import Notation.Products
   import Notation.Products.Tuples
   import Notation.Products.Sequences
+  import Notation.Recursion
   import Notation.Updates
 ```
