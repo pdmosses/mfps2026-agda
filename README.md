@@ -7,7 +7,7 @@ Agda code accompanying the **final version** of a paper [presented] at [MFPS 202
 The [MFPS 2026 – Agda Code] website includes hyperlinked, highlighted listings of the complete code.
 
 
-> [!INFO]
+> [!TIP]
 > The Agda code presented in the **preliminary version** of the paper ([PDF])
 > is available in the `preliminary` branch of this repository.
 > A build of the [preliminary website] generated from it has been added as a
