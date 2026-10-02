@@ -28,8 +28,8 @@ module Properties where
 
   import Properties.Domains
   import Properties.Functions
-  import Properties.Recursion
   import Properties.Flat
+  import Properties.Recursion
 ```
 Removing any of the rewrite rules in the modules imported above
 breaks the proof in at least one of the illustrative tests.
