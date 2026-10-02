@@ -20,24 +20,32 @@
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
-    
-    
       
-        <title>Abstract-Syntax - MFPS 2026 – Agda Code (preliminary version)</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        
+        
+          <link rel="icon" href="../../../assets/images/favicon.png">
+        
       
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.2.0">
+    
+    
       
-
+        <title>Abstract-Syntax - MFPS 2026 – Agda Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7aee198.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
 
     
+
     
       
     
@@ -47,11 +55,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-material.css">
+      <link rel="stylesheet" href="../../../stylesheets/agda-pages.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md.css">
+      <link rel="stylesheet" href="../../../stylesheets/agda-pages-light.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/Agda-md-dark.css">
+      <link rel="stylesheet" href="../../../stylesheets/agda-pages-dark.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -62,6 +72,8 @@
   </head>
   
   
+  
+  
     
     
       
@@ -69,12 +81,14 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="primary">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
     <div data-md-component="skip">
       
         
@@ -94,7 +108,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MFPS 2026 – Agda Code (preliminary version)" class="md-header__button md-logo" aria-label="MFPS 2026 – Agda Code (preliminary version)" data-md-component="logo">
+    <a href="../../.." title="MFPS 2026 – Agda Code" class="md-header__button md-logo" aria-label="MFPS 2026 – Agda Code" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +122,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            MFPS 2026 – Agda Code (preliminary version)
+            MFPS 2026 – Agda Code
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -127,9 +141,19 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2C5.13 2 2 5.13 2 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7M6 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H6zm13-8h-2l-3.2 9h1.9l.7-2h3.2l.7 2h1.9zm-2.15 5.65L18 15l1.15 3.65z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
       </label>
     
@@ -137,20 +161,10 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2C5.13 2 2 5.13 2 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7M6 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H6zm13-8h-2l-3.2 9h1.9l.7-2h3.2l.7 2h1.9zm-2.15 5.65L18 15l1.15 3.65z"/></svg>
       </label>
     
   
@@ -166,7 +180,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -175,7 +189,7 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
@@ -183,7 +197,7 @@
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"/></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
@@ -196,8 +210,8 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
           </div>
@@ -257,17 +271,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../../Notation/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Notation/" class="md-tabs__link">
+          
   
   
     
   
   Notation
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -300,17 +317,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../../Properties/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Properties/" class="md-tabs__link">
+          
   
   
     
   
   Properties
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -386,13 +406,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MFPS 2026 – Agda Code (preliminary version)" class="md-nav__button md-logo" aria-label="MFPS 2026 – Agda Code (preliminary version)" data-md-component="logo">
+    <a href="../../.." title="MFPS 2026 – Agda Code" class="md-nav__button md-logo" aria-label="MFPS 2026 – Agda Code" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    MFPS 2026 – Agda Code (preliminary version)
+    MFPS 2026 – Agda Code
   </label>
   
     <div class="md-nav__source">
@@ -407,7 +427,7 @@
 </a>
     </div>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list">
     
       
       
@@ -420,6 +440,8 @@
       
         
           
+        
+      
         
       
         
@@ -474,8 +496,36 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Abstract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -547,9 +597,44 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Notation/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Notation/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -563,7 +648,437 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notation
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domains
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Notation/Flat/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flat
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flat
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Flat/Booleans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booleans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Flat/Naturals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naturals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Notation/Products/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Products/Sequences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Products/Tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Sums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Notation/Updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -640,7 +1155,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -711,7 +1226,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -876,7 +1391,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -1051,7 +1566,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -1188,9 +1703,44 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Properties/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Properties/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1204,7 +1754,437 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Properties
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Domains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domains
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Properties/Flat/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flat
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flat
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Flat/Booleans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booleans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Flat/Naturals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naturals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Properties/Products/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Products/Sequences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Products/Tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Sums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Properties/Updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1276,7 +2256,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -1444,7 +2424,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -1502,7 +2482,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -1574,7 +2554,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -1695,7 +2675,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -2031,7 +3011,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2085,7 +3065,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2203,7 +3183,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2333,7 +3313,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2387,7 +3367,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2477,7 +3457,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2578,7 +3558,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -2670,7 +3650,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2760,7 +3740,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2882,7 +3862,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -2964,7 +3944,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3054,7 +4034,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3110,7 +4090,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3164,7 +4144,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3254,7 +4234,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3368,7 +4348,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3458,7 +4438,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3548,7 +4528,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3638,7 +4618,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3728,7 +4708,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3818,7 +4798,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3908,7 +4888,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -3998,7 +4978,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4090,7 +5070,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4172,7 +5152,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4270,7 +5250,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4376,7 +5356,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4499,7 +5479,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -4715,7 +5695,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4787,7 +5767,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -4852,7 +5832,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -4976,7 +5956,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5030,7 +6010,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5148,7 +6128,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5302,7 +6282,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5356,7 +6336,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5454,7 +6434,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5546,7 +6526,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5664,7 +6644,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -5809,7 +6789,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -5876,7 +6856,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -5996,7 +6976,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
                 
@@ -6097,7 +7077,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -6236,7 +7216,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list">
             
               
             
@@ -6320,7 +7300,36 @@
           
             <div class="md-content" data-md-component="content">
               
-                
+                <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright notice copied from:
+     https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/partials/path.html
+     Code copied from:
+     https://github.com/squidfunk/mkdocs-material/blob/master/material/templates/partials/path.html
+     Edited for use in agda2pages by @pdmosses
+ -->
+
+
 
 
 
@@ -6330,6 +7339,8 @@
       
       
         
+        
+          
   
   
     
@@ -6346,8 +7357,11 @@
     
   
 
+        
       
         
+        
+          
   
   
     
@@ -6364,16 +7378,17 @@
     
   
 
+        
       
     </ol>
   </nav>
 
               
-              <article class="md-content__inner md-typeset">
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
                 
                   
-
-
   
   
 
@@ -6382,42 +7397,41 @@
 <p>The following abstract syntax of well-formed PCF terms in Agda uses indexed datatype definitions.
 PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are written <code>σ ⇒ τ</code>, and variables <span class="arithmatex">\(\alpha_i^\sigma\)</span> are written <code>α i σ</code>
 (where the argument <code>i</code> merely distinguishes between variables – it is <em>not</em> a De Bruijn index).</p>
-<pre class="Agda"><code class="Agda"><a id="342" class="Symbol">{-#</a> <a id="346" class="Keyword">OPTIONS</a> <a id="354" class="Pragma">--rewriting</a> <a id="366" class="Pragma">--confluence-check</a> <a id="385" class="Pragma">--lossy-unification</a> <a id="405" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="342" class="Symbol">{-#</a> <a id="346" class="Keyword">OPTIONS</a> <a id="354" class="Pragma">--rewriting</a> <a id="366" class="Pragma">--confluence-check</a> <a id="385" class="Symbol">#-}</a>
 
-<a id="420" class="Keyword">module</a> <a id="" href="../../../html/Examples.PCF.Abstract-Syntax.html" class="Module Definition">Examples.PCF.Abstract-Syntax</a> <a id="456" class="Keyword">where</a>
+<a id="400" class="Keyword">module</a> <a id="407" href="../../../Examples/PCF/Abstract-Syntax/" class="Module">Examples.PCF.Abstract-Syntax</a> <a id="436" class="Keyword">where</a>
 
-<a id="472" class="Keyword">open</a> <a id="477" class="Keyword">import</a> <a id="484" href="../../../Notation/" class="Module">Notation</a>
+  <a id="454" class="Keyword">open</a> <a id="459" class="Keyword">import</a> <a id="466" href="../../../Agda/Builtin/Nat/" class="Module">Agda.Builtin.Nat</a> <a id="483" class="Keyword">public</a> <a id="490" class="Keyword">using</a> <a id="496" class="Symbol">(</a><a id="497" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a><a id="500" class="Symbol">)</a>
 
-<a id="504" class="Keyword">data</a> <a id="Types"></a><a id="509" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a>  <a id="516" class="Symbol">:</a> <a id="518" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="522" class="Keyword">where</a>                          <a id="553" class="Comment">-- type terms</a>
-  <a id="Types.ι"></a><a id="569" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a>         <a id="579" class="Symbol">:</a> <a id="581" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a>                              <a id="616" class="Comment">-- individuals</a>
-  <a id="Types.o"></a><a id="633" href="../../../Examples/PCF/Abstract-Syntax/#633" class="InductiveConstructor">o</a>         <a id="643" class="Symbol">:</a> <a id="645" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a>                              <a id="680" class="Comment">-- truth-values</a>
-  <a id="Types._⇒_"></a><a id="698" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">_⇒_</a>       <a id="708" class="Symbol">:</a> <a id="710" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a> <a id="716" class="Symbol">→</a> <a id="718" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a> <a id="724" class="Symbol">→</a> <a id="726" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a>              <a id="745" class="Comment">-- functions</a>
-<a id="767" class="Keyword">infixr</a> <a id="774" class="Number">1</a> <a id="776" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">_⇒_</a>
-<a id="780" class="Keyword">variable</a> <a id="789" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="791" href="../../../Examples/PCF/Abstract-Syntax/#791" class="Generalizable">τ</a> <a id="793" class="Symbol">:</a> <a id="795" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a>
+  <a id="515" class="Keyword">data</a> <a id="Types"></a><a id="520" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a>  <a id="527" class="Symbol">:</a> <a id="529" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="533" class="Keyword">where</a>                          <a id="564" class="Comment">-- type terms</a>
+    <a id="Types.ι"></a><a id="582" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a>         <a id="592" class="Symbol">:</a> <a id="594" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a>                              <a id="629" class="Comment">-- individuals</a>
+    <a id="Types.o"></a><a id="648" href="../../../Examples/PCF/Abstract-Syntax/#648" class="InductiveConstructor">o</a>         <a id="658" class="Symbol">:</a> <a id="660" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a>                              <a id="695" class="Comment">-- truth-values</a>
+    <a id="Types._⇒_"></a><a id="715" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">_⇒_</a>       <a id="725" class="Symbol">:</a> <a id="727" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a> <a id="733" class="Symbol">→</a> <a id="735" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a> <a id="741" class="Symbol">→</a> <a id="743" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a>              <a id="762" class="Comment">-- functions</a>
+  <a id="786" class="Keyword">infixr</a> <a id="793" class="Number">1</a> <a id="795" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">_⇒_</a>
+  <a id="801" class="Keyword">variable</a> <a id="810" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="812" href="../../../Examples/PCF/Abstract-Syntax/#812" class="Generalizable">τ</a> <a id="814" class="Symbol">:</a> <a id="816" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a>
 
-<a id="802" class="Keyword">open</a> <a id="807" class="Keyword">import</a> <a id="814" href="../../../Agda/Builtin/Nat/" class="Module">Agda.Builtin.Nat</a> <a id="831" class="Keyword">public</a> <a id="838" class="Keyword">using</a> <a id="844" class="Symbol">(</a><a id="845" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a><a id="848" class="Symbol">)</a>
 
-<a id="861" class="Keyword">data</a> <a id="Vars"></a><a id="866" href="../../../Examples/PCF/Abstract-Syntax/#866" class="Datatype">Vars</a>   <a id="873" class="Symbol">:</a> <a id="875" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a> <a id="881" class="Symbol">→</a> <a id="883" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="887" class="Keyword">where</a>                  <a id="910" class="Comment">-- typed variables</a>
-  <a id="Vars.α"></a><a id="931" href="../../../Examples/PCF/Abstract-Syntax/#931" class="InductiveConstructor">α</a>         <a id="941" class="Symbol">:</a> <a id="943" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="947" class="Symbol">→</a> <a id="949" class="Symbol">(</a><a id="950" href="../../../Examples/PCF/Abstract-Syntax/#950" class="Bound">σ</a> <a id="952" class="Symbol">:</a> <a id="954" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a><a id="959" class="Symbol">)</a> <a id="961" class="Symbol">→</a> <a id="963" href="../../../Examples/PCF/Abstract-Syntax/#866" class="Datatype">Vars</a> <a id="968" href="../../../Examples/PCF/Abstract-Syntax/#950" class="Bound">σ</a>         <a id="978" class="Comment">-- α i σ is a variable of type σ</a>
-<a id="1020" class="Keyword">variable</a> <a id="1029" href="../../../Examples/PCF/Abstract-Syntax/#1029" class="Generalizable">i</a>  <a id="1032" class="Symbol">:</a> <a id="1034" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a>
+  <a id="836" class="Keyword">data</a> <a id="Vars"></a><a id="841" href="../../../Examples/PCF/Abstract-Syntax/#841" class="Datatype">Vars</a>   <a id="848" class="Symbol">:</a> <a id="850" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a> <a id="856" class="Symbol">→</a> <a id="858" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="862" class="Keyword">where</a>                  <a id="885" class="Comment">-- typed variables</a>
+    <a id="Vars.α"></a><a id="908" href="../../../Examples/PCF/Abstract-Syntax/#908" class="InductiveConstructor">α</a>         <a id="918" class="Symbol">:</a> <a id="920" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="924" class="Symbol">→</a> <a id="926" class="Symbol">(</a><a id="927" href="../../../Examples/PCF/Abstract-Syntax/#927" class="Bound">σ</a> <a id="929" class="Symbol">:</a> <a id="931" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a><a id="936" class="Symbol">)</a> <a id="938" class="Symbol">→</a> <a id="940" href="../../../Examples/PCF/Abstract-Syntax/#841" class="Datatype">Vars</a> <a id="945" href="../../../Examples/PCF/Abstract-Syntax/#927" class="Bound">σ</a>         <a id="955" class="Comment">-- α i σ is a variable of type σ</a>
+  <a id="999" class="Keyword">variable</a> <a id="1008" href="../../../Examples/PCF/Abstract-Syntax/#1008" class="Generalizable">i</a>  <a id="1011" class="Symbol">:</a> <a id="1013" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a>
 
-<a id="1049" class="Keyword">data</a> <a id="ℒᴬ"></a><a id="1054" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a>     <a id="1061" class="Symbol">:</a> <a id="1063" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a> <a id="1069" class="Symbol">→</a> <a id="1071" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1075" class="Keyword">where</a>                  <a id="1098" class="Comment">-- typed constants</a>
-  <a id="ℒᴬ.tt"></a><a id="1119" href="../../../Examples/PCF/Abstract-Syntax/#1119" class="InductiveConstructor">tt</a>        <a id="1129" class="Symbol">:</a> <a id="1131" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1134" href="../../../Examples/PCF/Abstract-Syntax/#633" class="InductiveConstructor">o</a>                               <a id="1166" class="Comment">-- true</a>
-  <a id="ℒᴬ.ff"></a><a id="1176" href="../../../Examples/PCF/Abstract-Syntax/#1176" class="InductiveConstructor">ff</a>        <a id="1186" class="Symbol">:</a> <a id="1188" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1191" href="../../../Examples/PCF/Abstract-Syntax/#633" class="InductiveConstructor">o</a>                               <a id="1223" class="Comment">-- false</a>
-  <a id="ℒᴬ.⊃"></a><a id="1234" href="../../../Examples/PCF/Abstract-Syntax/#1234" class="InductiveConstructor">⊃</a>         <a id="1244" class="Symbol">:</a> <a id="1246" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1249" class="Symbol">(</a><a id="1250" href="../../../Examples/PCF/Abstract-Syntax/#633" class="InductiveConstructor">o</a> <a id="1252" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1254" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1256" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1258" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1260" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1262" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a><a id="1263" class="Symbol">)</a>                 <a id="1281" class="Comment">-- conditional</a>
-  <a id="ℒᴬ.Y"></a><a id="1298" href="../../../Examples/PCF/Abstract-Syntax/#1298" class="InductiveConstructor">Y</a>         <a id="1308" class="Symbol">:</a> <a id="1310" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1313" class="Symbol">((</a><a id="1315" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1317" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1319" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a><a id="1320" class="Symbol">)</a> <a id="1322" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1324" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a><a id="1325" class="Symbol">)</a>                   <a id="1345" class="Comment">-- fixed point</a>
-  <a id="ℒᴬ.k"></a><a id="1362" href="../../../Examples/PCF/Abstract-Syntax/#1362" class="InductiveConstructor">k</a>         <a id="1372" class="Symbol">:</a> <a id="1374" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="1378" class="Symbol">→</a> <a id="1380" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1383" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a>                         <a id="1409" class="Comment">-- numerals</a>
-  <a id="ℒᴬ.⦅+1⦆"></a><a id="1423" href="../../../Examples/PCF/Abstract-Syntax/#1423" class="InductiveConstructor">⦅+1⦆</a>      <a id="1433" class="Symbol">:</a> <a id="1435" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1438" class="Symbol">(</a><a id="1439" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a> <a id="1441" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1443" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a><a id="1444" class="Symbol">)</a>                         <a id="1470" class="Comment">-- successor</a>
-  <a id="ℒᴬ.⦅−1⦆"></a><a id="1485" href="../../../Examples/PCF/Abstract-Syntax/#1485" class="InductiveConstructor">⦅−1⦆</a>      <a id="1495" class="Symbol">:</a> <a id="1497" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1500" class="Symbol">(</a><a id="1501" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a> <a id="1503" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1505" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a><a id="1506" class="Symbol">)</a>                         <a id="1532" class="Comment">-- predecessor</a>
-  <a id="ℒᴬ.Z"></a><a id="1549" href="../../../Examples/PCF/Abstract-Syntax/#1549" class="InductiveConstructor">Z</a>         <a id="1559" class="Symbol">:</a> <a id="1561" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1564" class="Symbol">(</a><a id="1565" href="../../../Examples/PCF/Abstract-Syntax/#569" class="InductiveConstructor">ι</a> <a id="1567" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1569" href="../../../Examples/PCF/Abstract-Syntax/#633" class="InductiveConstructor">o</a><a id="1570" class="Symbol">)</a>                         <a id="1596" class="Comment">-- zero test</a>
-<a id="1618" class="Keyword">variable</a> <a id="1627" href="../../../Examples/PCF/Abstract-Syntax/#1627" class="Generalizable">c</a>  <a id="1630" class="Symbol">:</a> <a id="1632" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1635" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a>
+  <a id="1030" class="Keyword">data</a> <a id="ℒᴬ"></a><a id="1035" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a>     <a id="1042" class="Symbol">:</a> <a id="1044" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a> <a id="1050" class="Symbol">→</a> <a id="1052" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1056" class="Keyword">where</a>                  <a id="1079" class="Comment">-- typed constants</a>
+    <a id="ℒᴬ.tt"></a><a id="1102" href="../../../Examples/PCF/Abstract-Syntax/#1102" class="InductiveConstructor">tt</a>        <a id="1112" class="Symbol">:</a> <a id="1114" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1117" href="../../../Examples/PCF/Abstract-Syntax/#648" class="InductiveConstructor">o</a>                               <a id="1149" class="Comment">-- true</a>
+    <a id="ℒᴬ.ff"></a><a id="1161" href="../../../Examples/PCF/Abstract-Syntax/#1161" class="InductiveConstructor">ff</a>        <a id="1171" class="Symbol">:</a> <a id="1173" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1176" href="../../../Examples/PCF/Abstract-Syntax/#648" class="InductiveConstructor">o</a>                               <a id="1208" class="Comment">-- false</a>
+    <a id="ℒᴬ.⊃"></a><a id="1221" href="../../../Examples/PCF/Abstract-Syntax/#1221" class="InductiveConstructor">⊃</a>         <a id="1231" class="Symbol">:</a> <a id="1233" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1236" class="Symbol">(</a><a id="1237" href="../../../Examples/PCF/Abstract-Syntax/#648" class="InductiveConstructor">o</a> <a id="1239" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1241" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1243" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1245" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1247" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1249" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a><a id="1250" class="Symbol">)</a>                 <a id="1268" class="Comment">-- conditional</a>
+    <a id="ℒᴬ.Y"></a><a id="1287" href="../../../Examples/PCF/Abstract-Syntax/#1287" class="InductiveConstructor">Y</a>         <a id="1297" class="Symbol">:</a> <a id="1299" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1302" class="Symbol">((</a><a id="1304" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1306" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1308" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a><a id="1309" class="Symbol">)</a> <a id="1311" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1313" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a><a id="1314" class="Symbol">)</a>                   <a id="1334" class="Comment">-- fixed point</a>
+    <a id="ℒᴬ.k"></a><a id="1353" href="../../../Examples/PCF/Abstract-Syntax/#1353" class="InductiveConstructor">k</a>         <a id="1363" class="Symbol">:</a> <a id="1365" href="../../../Agda/Builtin/Nat/#203" class="Datatype">Nat</a> <a id="1369" class="Symbol">→</a> <a id="1371" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1374" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a>                         <a id="1400" class="Comment">-- numerals</a>
+    <a id="ℒᴬ.⦅+1⦆"></a><a id="1416" href="../../../Examples/PCF/Abstract-Syntax/#1416" class="InductiveConstructor">⦅+1⦆</a>      <a id="1426" class="Symbol">:</a> <a id="1428" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1431" class="Symbol">(</a><a id="1432" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a> <a id="1434" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1436" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a><a id="1437" class="Symbol">)</a>                         <a id="1463" class="Comment">-- successor</a>
+    <a id="ℒᴬ.⦅−1⦆"></a><a id="1480" href="../../../Examples/PCF/Abstract-Syntax/#1480" class="InductiveConstructor">⦅−1⦆</a>      <a id="1490" class="Symbol">:</a> <a id="1492" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1495" class="Symbol">(</a><a id="1496" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a> <a id="1498" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1500" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a><a id="1501" class="Symbol">)</a>                         <a id="1527" class="Comment">-- predecessor</a>
+    <a id="ℒᴬ.Z"></a><a id="1546" href="../../../Examples/PCF/Abstract-Syntax/#1546" class="InductiveConstructor">Z</a>         <a id="1556" class="Symbol">:</a> <a id="1558" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1561" class="Symbol">(</a><a id="1562" href="../../../Examples/PCF/Abstract-Syntax/#582" class="InductiveConstructor">ι</a> <a id="1564" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1566" href="../../../Examples/PCF/Abstract-Syntax/#648" class="InductiveConstructor">o</a><a id="1567" class="Symbol">)</a>                         <a id="1593" class="Comment">-- zero test</a>
+  <a id="1617" class="Keyword">variable</a> <a id="1626" href="../../../Examples/PCF/Abstract-Syntax/#1626" class="Generalizable">c</a>  <a id="1629" class="Symbol">:</a> <a id="1631" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1634" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a>
 
-<a id="1648" class="Keyword">data</a> <a id="Terms"></a><a id="1653" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a>  <a id="1660" class="Symbol">:</a> <a id="1662" href="../../../Examples/PCF/Abstract-Syntax/#509" class="Datatype">Types</a> <a id="1668" class="Symbol">→</a> <a id="1670" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1674" class="Keyword">where</a>                  <a id="1697" class="Comment">-- typed terms</a>
-  <a id="Terms.𝑉_"></a><a id="1714" href="../../../Examples/PCF/Abstract-Syntax/#1714" class="InductiveConstructor Operator">𝑉_</a>        <a id="1724" class="Symbol">:</a> <a id="1726" href="../../../Examples/PCF/Abstract-Syntax/#866" class="Datatype">Vars</a> <a id="1731" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1733" class="Symbol">→</a> <a id="1735" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1741" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a>                   <a id="1761" class="Comment">-- variable</a>
-  <a id="Terms.𝐿_"></a><a id="1775" href="../../../Examples/PCF/Abstract-Syntax/#1775" class="InductiveConstructor Operator">𝐿_</a>        <a id="1785" class="Symbol">:</a> <a id="1787" href="../../../Examples/PCF/Abstract-Syntax/#1054" class="Datatype">ℒᴬ</a> <a id="1790" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1792" class="Symbol">→</a> <a id="1794" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1800" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a>                     <a id="1822" class="Comment">-- constant</a>
-  <a id="Terms.⦅_␣_⦆"></a><a id="1836" href="../../../Examples/PCF/Abstract-Syntax/#1836" class="InductiveConstructor Operator">⦅_␣_⦆</a>     <a id="1846" class="Symbol">:</a> <a id="1848" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1854" class="Symbol">(</a><a id="1855" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1857" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1859" href="../../../Examples/PCF/Abstract-Syntax/#791" class="Generalizable">τ</a><a id="1860" class="Symbol">)</a> <a id="1862" class="Symbol">→</a> <a id="1864" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1870" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1872" class="Symbol">→</a> <a id="1874" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1880" href="../../../Examples/PCF/Abstract-Syntax/#791" class="Generalizable">τ</a>  <a id="1883" class="Comment">-- function application</a>
-  <a id="Terms.⦅λ_␣_⦆"></a><a id="1909" href="../../../Examples/PCF/Abstract-Syntax/#1909" class="InductiveConstructor Operator">⦅λ_␣_⦆</a>    <a id="1919" class="Symbol">:</a> <a id="1921" href="../../../Examples/PCF/Abstract-Syntax/#866" class="Datatype">Vars</a> <a id="1926" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1928" class="Symbol">→</a> <a id="1930" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1936" href="../../../Examples/PCF/Abstract-Syntax/#791" class="Generalizable">τ</a> <a id="1938" class="Symbol">→</a> <a id="1940" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="1946" class="Symbol">(</a><a id="1947" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a> <a id="1949" href="../../../Examples/PCF/Abstract-Syntax/#698" class="InductiveConstructor Operator">⇒</a> <a id="1951" href="../../../Examples/PCF/Abstract-Syntax/#791" class="Generalizable">τ</a><a id="1952" class="Symbol">)</a>   <a id="1956" class="Comment">-- function abstraction</a>
-<a id="1989" class="Keyword">variable</a> <a id="1998" href="../../../Examples/PCF/Abstract-Syntax/#1998" class="Generalizable">M</a> <a id="2000" href="../../../Examples/PCF/Abstract-Syntax/#2000" class="Generalizable">N</a> <a id="2002" class="Symbol">:</a> <a id="2004" href="../../../Examples/PCF/Abstract-Syntax/#1653" class="Datatype">Terms</a> <a id="2010" href="../../../Examples/PCF/Abstract-Syntax/#789" class="Generalizable">σ</a>
+  <a id="1649" class="Keyword">data</a> <a id="Terms"></a><a id="1654" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a>  <a id="1661" class="Symbol">:</a> <a id="1663" href="../../../Examples/PCF/Abstract-Syntax/#520" class="Datatype">Types</a> <a id="1669" class="Symbol">→</a> <a id="1671" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1675" class="Keyword">where</a>                  <a id="1698" class="Comment">-- typed terms</a>
+    <a id="Terms.𝑉_"></a><a id="1717" href="../../../Examples/PCF/Abstract-Syntax/#1717" class="InductiveConstructor Operator">𝑉_</a>        <a id="1727" class="Symbol">:</a> <a id="1729" href="../../../Examples/PCF/Abstract-Syntax/#841" class="Datatype">Vars</a> <a id="1734" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1736" class="Symbol">→</a> <a id="1738" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1744" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a>                   <a id="1764" class="Comment">-- variable</a>
+    <a id="Terms.𝐿_"></a><a id="1780" href="../../../Examples/PCF/Abstract-Syntax/#1780" class="InductiveConstructor Operator">𝐿_</a>        <a id="1790" class="Symbol">:</a> <a id="1792" href="../../../Examples/PCF/Abstract-Syntax/#1035" class="Datatype">ℒᴬ</a> <a id="1795" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1797" class="Symbol">→</a> <a id="1799" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1805" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a>                     <a id="1827" class="Comment">-- constant</a>
+    <a id="Terms.⦅_␣_⦆"></a><a id="1843" href="../../../Examples/PCF/Abstract-Syntax/#1843" class="InductiveConstructor Operator">⦅_␣_⦆</a>     <a id="1853" class="Symbol">:</a> <a id="1855" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1861" class="Symbol">(</a><a id="1862" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1864" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1866" href="../../../Examples/PCF/Abstract-Syntax/#812" class="Generalizable">τ</a><a id="1867" class="Symbol">)</a> <a id="1869" class="Symbol">→</a> <a id="1871" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1877" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1879" class="Symbol">→</a> <a id="1881" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1887" href="../../../Examples/PCF/Abstract-Syntax/#812" class="Generalizable">τ</a>  <a id="1890" class="Comment">-- function application</a>
+    <a id="Terms.⦅λ_␣_⦆"></a><a id="1918" href="../../../Examples/PCF/Abstract-Syntax/#1918" class="InductiveConstructor Operator">⦅λ_␣_⦆</a>    <a id="1928" class="Symbol">:</a> <a id="1930" href="../../../Examples/PCF/Abstract-Syntax/#841" class="Datatype">Vars</a> <a id="1935" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1937" class="Symbol">→</a> <a id="1939" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1945" href="../../../Examples/PCF/Abstract-Syntax/#812" class="Generalizable">τ</a> <a id="1947" class="Symbol">→</a> <a id="1949" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="1955" class="Symbol">(</a><a id="1956" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a> <a id="1958" href="../../../Examples/PCF/Abstract-Syntax/#715" class="InductiveConstructor Operator">⇒</a> <a id="1960" href="../../../Examples/PCF/Abstract-Syntax/#812" class="Generalizable">τ</a><a id="1961" class="Symbol">)</a>   <a id="1965" class="Comment">-- function abstraction</a>
+  <a id="2000" class="Keyword">variable</a> <a id="2009" href="../../../Examples/PCF/Abstract-Syntax/#2009" class="Generalizable">M</a> <a id="2011" href="../../../Examples/PCF/Abstract-Syntax/#2011" class="Generalizable">N</a> <a id="2013" class="Symbol">:</a> <a id="2015" href="../../../Examples/PCF/Abstract-Syntax/#1654" class="Datatype">Terms</a> <a id="2021" href="../../../Examples/PCF/Abstract-Syntax/#810" class="Generalizable">σ</a>
 </code></pre>
 
 
@@ -6425,9 +7439,6 @@ PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are writt
 
 
 
-
-  
-  
 
 
 
@@ -6441,56 +7452,32 @@ PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are writt
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
-        
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: PCF">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                PCF
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Domain-Equations/" class="md-footer__link md-footer__link--next" aria-label="Next: Domain-Equations">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Domain-Equations
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -6498,8 +7485,8 @@ PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are writt
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
     </a>
   
 </div>
@@ -6519,10 +7506,17 @@ PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are writt
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "code": null, "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": {"options": {"baseUrl": "../../..", "bundleUrl": "../../../search/", "highlight": true, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.44453a05.min.js"></script>
       
         <script src="../../../javascripts/katex.js"></script>
       
@@ -6531,6 +7525,8 @@ PCF function types <span class="arithmatex">\(\sigma \to \tau\)</span> are writt
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
         <script src="../../../javascripts/highlight-hover.js"></script>
+      
+        <script src="../../../javascripts/custom.js"></script>
       
     
   </body>
