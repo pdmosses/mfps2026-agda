@@ -27,13 +27,13 @@ $$\begin{align}
 \end{align}$$
 ```agda
 --"hide"
-{-# OPTIONS --rewriting --confluence-check --lossy-unification #-}
+{-# OPTIONS --rewriting --confluence-check #-}
 
 module Examples.PCF where
 
-import Examples.PCF.Abstract-Syntax
-import Examples.PCF.Domain-Equations
-import Examples.PCF.Semantic-Functions
+  import Examples.PCF.Abstract-Syntax
+  import Examples.PCF.Domain-Equations
+  import Examples.PCF.Semantic-Functions
 --"/hide"
 ```
 

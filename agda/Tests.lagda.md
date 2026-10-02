@@ -15,15 +15,17 @@ The success of those tests indirectly checks that the rewrite rules preserve den
 (A more systematic approach would be to develop a suite of unit tests for consequences
 of postulated properties, independently of denotational definitions.)
 
-[Postulated Properties]: ../Properties.md#postulated-properties
+[Postulated Properties]: ../Properties/index.md#postulated-properties
 
 
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
-import Tests.LC
-import Tests.PCF
-import Tests.Scm
+module Tests where
+
+  import Tests.LC
+  import Tests.PCF
+  import Tests.Scm
 --"/hide"
 ```
