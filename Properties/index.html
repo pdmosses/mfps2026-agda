@@ -7335,12 +7335,12 @@
 <h1 id="postulated-properties">Postulated Properties</h1>
 <p>The <code>Properties</code> module postulates basic properties of some of the operations
 of the <a href="../Notation/#postulated-domain-notation">postulated domain notation</a>.
-These properties are expected to hold in various categories of domains <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>
+These properties are expected to hold in various categories of domains <a href="https://achimjungbham.github.io/pub/papers/handy1.pdf">(Abramsky1995DT)</a>,
 but they do <em>not</em> define the <em>mathematical structure</em> of domains.</p>
-<p>The postulated properties support proofs that terms have identical denotations.
+<p>The postulated properties support proofs that terms compute the expected values.
 For example, some <a href="../Tests/#illustrative-tests">illustrative tests</a> declare that the denotation of a function application
-is equivalent to the denotation of a constant;
-other tests declare that particular instances of renaming do not affect denotations.</p>
+is equivalent to a constant value;
+other tests indicate whether application of a <span class="arithmatex">\(\lambda\)</span>-abstraction evaluates the argument.</p>
 <p>When postulated properties are declared as <em>rewrite rules</em>,
 Agda can use them <em>automatically</em> in proofs.
 Agda also has an option to check that the declared rewrite rules form a confluent system.
@@ -7349,14 +7349,13 @@ Confluent but non-terminating rewrite rules cannot break consistency,
 as shown by Cockx, Tabareau, and Winterhalter <a href="https://doi.org/10.1145/3434341">(Cockx2021TRT)</a>.</p>
 <p>The rewrite rules declared below support <em>automatic</em> proof of identity for all the illustrative tests:
 the proof terms are simply <code>refl</code> (i.e., reflexivity).</p>
-<pre class="Agda"><code class="Agda"><a id="1197" class="Symbol">{-#</a> <a id="1201" class="Keyword">OPTIONS</a> <a id="1209" class="Pragma">--rewriting</a> <a id="1221" class="Pragma">--confluence-check</a> <a id="1240" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="1194" class="Symbol">{-#</a> <a id="1198" class="Keyword">OPTIONS</a> <a id="1206" class="Pragma">--rewriting</a> <a id="1218" class="Pragma">--confluence-check</a> <a id="1237" class="Symbol">#-}</a>
 
-<a id="1255" class="Keyword">module</a> <a id="1262" href="../Properties/" class="Module">Properties</a> <a id="1273" class="Keyword">where</a>
-
-  <a id="1282" class="Keyword">import</a> <a id="1289" href="../Properties/Domains/" class="Module">Properties.Domains</a>
-  <a id="1310" class="Keyword">import</a> <a id="1317" href="../Properties/Functions/" class="Module">Properties.Functions</a>
-  <a id="1340" class="Keyword">import</a> <a id="1347" href="../Properties/Flat/" class="Module">Properties.Flat</a>
-  <a id="1365" class="Keyword">import</a> <a id="1372" href="../Properties/Recursion/" class="Module">Properties.Recursion</a>
+<a id="1252" class="Keyword">module</a> <a id="1259" href="../Properties/" class="Module">Properties</a> <a id="1270" class="Keyword">where</a>
+  <a id="1278" class="Keyword">import</a> <a id="1285" href="../Properties/Domains/" class="Module">Properties.Domains</a>
+  <a id="1306" class="Keyword">import</a> <a id="1313" href="../Properties/Functions/" class="Module">Properties.Functions</a>
+  <a id="1336" class="Keyword">import</a> <a id="1343" href="../Properties/Flat/" class="Module">Properties.Flat</a>
+  <a id="1361" class="Keyword">import</a> <a id="1368" href="../Properties/Recursion/" class="Module">Properties.Recursion</a>
 </code></pre>
 <p>Removing any of the rewrite rules in the modules imported above
 breaks the proof in at least one of the illustrative tests.
@@ -7368,13 +7367,13 @@ and reading them is unlikely to provide new insights.</p>
 in the semantics of the LC and PCF languages;
 they will be needed when tests for equivalence of denotations of <em>Scm</em> expressions are added.
 Postulates of properties for the operations on tuples and sequences have not yet been developed.</p>
-<pre class="Agda"><code class="Agda">  <a id="2143" class="Keyword">import</a> <a id="2150" href="../Properties/Flat/Booleans/" class="Module">Properties.Flat.Booleans</a>
-  <a id="2177" class="Keyword">import</a> <a id="2184" href="../Properties/Flat/Naturals/" class="Module">Properties.Flat.Naturals</a>
-  <a id="2211" class="Keyword">import</a> <a id="2218" href="../Properties/Sums/" class="Module">Properties.Sums</a>
-  <a id="2236" class="Keyword">import</a> <a id="2243" href="../Properties/Products/" class="Module">Properties.Products</a>
-  <a id="2265" class="Keyword">import</a> <a id="2272" href="../Properties/Products/Tuples/" class="Module">Properties.Products.Tuples</a>
-  <a id="2301" class="Keyword">import</a> <a id="2308" href="../Properties/Products/Sequences/" class="Module">Properties.Products.Sequences</a>
-  <a id="2340" class="Keyword">import</a> <a id="2347" href="../Properties/Updates/" class="Module">Properties.Updates</a>
+<pre class="Agda"><code class="Agda">  <a id="2139" class="Keyword">import</a> <a id="2146" href="../Properties/Flat/Booleans/" class="Module">Properties.Flat.Booleans</a>
+  <a id="2173" class="Keyword">import</a> <a id="2180" href="../Properties/Flat/Naturals/" class="Module">Properties.Flat.Naturals</a>
+  <a id="2207" class="Keyword">import</a> <a id="2214" href="../Properties/Sums/" class="Module">Properties.Sums</a>
+  <a id="2232" class="Keyword">import</a> <a id="2239" href="../Properties/Products/" class="Module">Properties.Products</a>
+  <a id="2261" class="Keyword">import</a> <a id="2268" href="../Properties/Products/Tuples/" class="Module">Properties.Products.Tuples</a>
+  <a id="2297" class="Keyword">import</a> <a id="2304" href="../Properties/Products/Sequences/" class="Module">Properties.Products.Sequences</a>
+  <a id="2336" class="Keyword">import</a> <a id="2343" href="../Properties/Updates/" class="Module">Properties.Updates</a>
 </code></pre>
 
 

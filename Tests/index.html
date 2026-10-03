@@ -7333,26 +7333,23 @@
 
 
 <h1 id="illustrative-tests">Illustrative Tests</h1>
-<p>The tests below illustrate <em>automatic</em> proof of equivalence of term denotations
-by the Agda type-checker:
-the type-correctness of the <code>refl</code> definitions of the declared equivalences
-confirms that they hold.
-Such tests can check that the denotation of a function call is equivalent to
-the denotation of a constant in the embedding of a denotational semantics.
-They can even check that a specific renaming preserves the denotation of a term.</p>
+<p>The tests below illustrate <em>automatic</em> proof by the Agda type-checker that
+the denotations of some terms compute the expected values.
+The type-correctness of the <code>refl</code> definitions of the declared equivalences
+confirms that they hold.</p>
 <p>Apart from confirming that a denotational semantics defines denotations
 which satisfy some expected equivalences at least for some terms,
-some of the tests also depend on rewrite rules for the <a href="../Properties/#postulated-properties">postulated properties</a>.
+the tests also depend on the imported rewrite rules for <a href="../Properties/#postulated-properties">postulated properties</a>.
 The success of those tests indirectly checks that the rewrite rules preserve denotations.
 (A more systematic approach would be to develop a suite of unit tests for consequences
 of postulated properties, independently of denotational definitions.)</p>
-<pre class="Agda"><code class="Agda"><a id="1019" class="Symbol">{-#</a> <a id="1023" class="Keyword">OPTIONS</a> <a id="1031" class="Pragma">--rewriting</a> <a id="1043" class="Pragma">--confluence-check</a> <a id="1062" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="815" class="Symbol">{-#</a> <a id="819" class="Keyword">OPTIONS</a> <a id="827" class="Pragma">--rewriting</a> <a id="839" class="Pragma">--confluence-check</a> <a id="858" class="Symbol">#-}</a>
 
-<a id="1067" class="Keyword">module</a> <a id="1074" href="../Tests/" class="Module">Tests</a> <a id="1080" class="Keyword">where</a>
+<a id="863" class="Keyword">module</a> <a id="870" href="../Tests/" class="Module">Tests</a> <a id="876" class="Keyword">where</a>
 
-  <a id="1089" class="Keyword">import</a> <a id="1096" href="../Tests/LC/" class="Module">Tests.LC</a>
-  <a id="1107" class="Keyword">import</a> <a id="1114" href="../Tests/PCF/" class="Module">Tests.PCF</a>
-  <a id="1126" class="Keyword">import</a> <a id="1133" href="../Tests/Scm/" class="Module">Tests.Scm</a>
+  <a id="885" class="Keyword">import</a> <a id="892" href="../Tests/LC/" class="Module">Tests.LC</a>
+  <a id="903" class="Keyword">import</a> <a id="910" href="../Tests/PCF/" class="Module">Tests.PCF</a>
+  <a id="922" class="Keyword">import</a> <a id="929" href="../Tests/Scm/" class="Module">Tests.Scm</a>
 </code></pre>
 
 
