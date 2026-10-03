@@ -2,13 +2,13 @@
 
 The `Properties` module postulates basic properties of some of the operations
 of the [postulated domain notation].
-These properties are expected to hold in various categories of domains [(Abramsky1995DT)]
+These properties are expected to hold in various categories of domains [(Abramsky1995DT)],
 but they do *not* define the *mathematical structure* of domains.
 
-The postulated properties support proofs that terms have identical denotations.
+The postulated properties support proofs that terms compute the expected values.
 For example, some [illustrative tests] declare that the denotation of a function application
-is equivalent to the denotation of a constant;
-other tests declare that particular instances of renaming do not affect denotations.
+is equivalent to a constant value;
+other tests indicate whether application of a $\lambda$-abstraction evaluates the argument.
 
 When postulated properties are declared as *rewrite rules*,
 Agda can use them *automatically* in proofs.
@@ -25,7 +25,6 @@ the proof terms are simply `refl` (i.e., reflexivity).
 
 --"/hide"
 module Properties where
-
   import Properties.Domains
   import Properties.Functions
   import Properties.Flat
