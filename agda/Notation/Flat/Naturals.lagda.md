@@ -17,9 +17,7 @@ module Notation.Flat.Naturals where
                                        renaming (_==_ to _==ᴺ_)
 
   Nat⊥ = Nat +⊥
---"hide"
 
   postulate 
     instance eqNat : Eq Nat
---"/hide"
 ```
