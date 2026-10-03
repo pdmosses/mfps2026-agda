@@ -15,5 +15,5 @@ module Properties.Flat where
   postulate
     elim-♯-↑  : (f ♯) (↑ a′)  ≡ f a′
     elim-♯-⊥  : (f ♯) ⊥      ≡ ⊥
-  {-# REWRITE elim-♯-↑ elim-♯-⊥ #-}
+  {-# REWRITE elim-♯-↑ #-}
 ```
