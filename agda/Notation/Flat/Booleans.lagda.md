@@ -27,12 +27,10 @@ This module also defines `Eq A` for use as an instance parameter,
 restricting operation definitions to types `A` such that `_==_ : A → A → Bool`,
 and postulates a `Bool⊥`-valued operation `δ₁ ==⊥ δ₂` on `A +⊥`.
 ```agda
---"hide"
   record Eq (A : Set) : Set where field _==_ : A → A → Bool
   open Eq {{...}} public
   postulate
     _==⊥_ : {{Eq A}} → ⟪ (A +⊥) →ᶜ (A +⊥) →ᶜ Bool⊥ ⟫
     -- δ₁ ==⊥ δ₂ is ⊥ when either operand is ⊥
     instance eqBool : Eq Bool
---"/hide"
 ```
