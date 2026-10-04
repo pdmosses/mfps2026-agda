@@ -14,9 +14,9 @@ module Examples.PCF.Semantic-Functions where
   open import Examples.PCF.Domain-Equations
   open import Notation.Domains
   open import Notation.Functions
-  open import Notation.Flat using (↑; _♯)
-  open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; false; true)
-  open import Notation.Flat.Naturals using (_+_; _-_)
+  open import Notation.Flat
+  open import Notation.Flat.Booleans
+  open import Notation.Flat.Naturals
 
 --"/hide"
 

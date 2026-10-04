@@ -16,9 +16,9 @@ module Examples.PCF.Domain-Equations where
   open import Examples.PCF.Abstract-Syntax
   open import Notation.Domains
   open import Notation.Functions
-  open import Notation.Flat.Booleans using (Bool; Bool⊥; Eq; _==_)
-  open import Notation.Flat.Naturals using (Nat⊥; eqNat)
-  open import Notation.Updates using (MaybeEq; _==?_; just; nothing; refl; _[_/_]; _[_←_])
+  open import Notation.Flat.Booleans
+  open import Notation.Flat.Naturals
+  open import Notation.Updates
   open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 --"/hide"
 

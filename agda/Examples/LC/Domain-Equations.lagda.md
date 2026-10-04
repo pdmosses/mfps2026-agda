@@ -14,10 +14,10 @@ module Examples.LC.Domain-Equations where
   open import Examples.LC.Abstract-Syntax
   open import Notation.Domains
   open import Notation.Functions
-  open import Notation.Recursion using (_≅_; fold; unfold) public
-  open import Notation.Flat.Booleans using (Bool; Eq; _==_)
-  open import Notation.Flat.Naturals using (eqNat)
-  open import Notation.Updates using (_[_/_]) public
+  open import Notation.Recursion
+  open import Notation.Flat.Booleans
+  open import Notation.Flat.Naturals
+  open import Notation.Updates
   open import Agda.Builtin.Nat renaming (_==_ to _==ᴺ_) public
 
 --"/hide"
