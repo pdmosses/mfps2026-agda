@@ -27,12 +27,16 @@ the empty sequence is represented by `␣␣␣` , and sequence prefixing by `E 
 --"/hide"
 module Examples.Scm.Abstract-Syntax where
 --"hide"
-
-  open import Data.Integer.Base public renaming (ℤ to Int) using ()
+  open import Notation.Flat.Booleans
+  open import Data.Integer.Base public renaming (ℤ to Int) using (+_)
   open import Data.String.Base public using (String)
+  open import Data.String.Properties renaming (_==_ to _==ˢ_) using ()
 --"/hide"
 
   Ide = String  -- identifiers
+  instance
+    eqIde : Eq Ide
+    _==_ {{eqIde}} = _==ˢ_
 --"hide"
   variable I : Ide
 
