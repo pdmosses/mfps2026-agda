@@ -1,12 +1,9 @@
 # Scm Tests
 
 ```agda
---"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
---"/hide"
 module Tests.Scm where
---"hide"
   open import Examples.Scm.Abstract-Syntax
   open import Examples.Scm.Domain-Equations
   open import Examples.Scm.Auxiliary-Functions
@@ -19,13 +16,9 @@ module Tests.Scm where
   open import Properties.Sums
   open import Properties.Products.Sequences
   open import Properties.Updates
---"/hide"
 
-  check-sum : {β : ⟪ 𝐓 ⟫} → (β in⊥ 𝐄) ∈⊥ 𝐓 ≡ ↑ true
-  check-sum = refl
 ```
 Check `ℰ⟦ ⦅if E ␣ E₁ ␣ E₂ ⦆ ⟧ ρ κ`:
-
 ```agda
   check-if-t : 
     ℰ⟦ ⦅if con #t ␣ con (int (+ 1)) ␣ con (int (+ 2)) ⦆ ⟧ ρ κ ≡ κ (↑ (+ 1) in⊥ 𝐄)
@@ -50,11 +43,13 @@ Check `ℰ⟦ ⦅if E ␣ E₁ ␣ E₂ ⦆ ⟧ ρ κ`:
   check-if-unspecified : 
     ℰ⟦ ⦅if ⦅set! I ␣ con #f ⦆ ␣ con (int (+ 1)) ␣ con (int (+ 2)) ⦆ ⟧ ρ κ σ ≡ κ (↑ (+ 1) in⊥ 𝐄) _
   check-if-unspecified = refl
+
 ```
 Check `ℰ⟦ ide I ⟧ ρ κ`: **FAILED TO RESOLVE INSTANCE ARGUMENTS FOR `_[_/_]`!**
 ```agda
   -- check-ide :
   --   ℰ⟦ ide I ⟧ (ρ [ α / I ]) κ (σ [ ε / α ]) ≡ κ ε (σ [ ε / α ])
   -- check-ide = refl
+
 ```
 (To be continued...)

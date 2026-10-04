@@ -14,12 +14,12 @@ a [property of recursive domains] to eliminate compositions of `unfold` and `fol
 module Tests.LC where
   open import Notation.Domains
   open import Notation.Functions
-  open import Properties.Recursion
+
   open import Examples.LC.Abstract-Syntax
   open import Examples.LC.Domain-Equations
   open import Examples.LC.Semantic-Functions
 
-  -- Variables:
+  open import Properties.Recursion
 
   a = x 0
   b = x 1
@@ -31,31 +31,35 @@ module Tests.LC where
 
   app-k :
     ⟦ ⦅ ⦅λ a ␣ var b ⦆ ␣ var c ⦆ ⟧ ρ ≡ ρ b
-  app-k = refl 
+  app-k = refl
 
-  -- The following test involves the diverging evaluation of a λ-abstraction to
-  -- itself. It is commented-out, to avoid nontermination of the Agda type-checker.
-  -- 
+```
+The following test involves the diverging evaluation of a λ-abstraction to
+itself. It is commented-out, to avoid nontermination of the Agda type-checker.
+```agda
   -- app-id-to-divergence :
   --   ⟦  ⦅  ⦅λ a ␣ var a ⦆ ␣
   --         ⦅ ⦅λ c ␣ ⦅ var c ␣ var c ⦆ ⦆ ␣ ⦅λ c ␣ ⦅ var c ␣ var c ⦆ ⦆ ⦆ ⦆ ⟧ ρ ≡ ρ b
   -- app-id-to-divergence = refl
 
-  -- The following test illustrates that application of a λ-abstraction can
-  -- terminate when its argument evaluation diverges.
-
+```
+The following test illustrates that application of a λ-abstraction can
+terminate when its argument evaluation diverges.
+```agda
   app-k-to-divergence :
     ⟦  ⦅  ⦅λ a ␣ var b ⦆ ␣
           ⦅ ⦅λ c ␣ ⦅ var c ␣ var c ⦆ ⦆ ␣ ⦅λ c ␣ ⦅ var c ␣ var c ⦆ ⦆ ⦆ ⦆ ⟧ ρ ≡ ρ b
   app-k-to-divergence = refl
 
-  -- This final illustrative test shows that the free variable `a` is not captured
-  -- by the λ-abstraction on `a`.
-
+```
+This final illustrative test shows that the free variable `a` is not captured
+by the λ-abstraction on `a`.
+```agda
   app-k-abs :
     ⟦ ⦅ ⦅λ b ␣ ⦅ ⦅λ a ␣ var b ⦆ ␣ var c ⦆ ⦆ ␣ var a ⦆ ⟧ ρ ≡ ρ a
   app-k-abs = refl
 ```
+
 A reviewer pointed out that the only interpretation of `⟪ D∞ ⟫` in Agda could be a singleton type,
 in which case one should expect many equalities to hold.
 However, when the Agda proof of an equality is simply by `refl`, it cannot use such reasoning

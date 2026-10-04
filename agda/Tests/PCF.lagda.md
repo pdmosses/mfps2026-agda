@@ -14,13 +14,13 @@ extensions of functions to flat domains.
 
 module Tests.PCF where
   open import Notation.Domains
-  open import Properties.Functions
-  open import Properties.Flat
+
   open import Examples.PCF.Abstract-Syntax
   open import Examples.PCF.Domain-Equations
   open import Examples.PCF.Semantic-Functions
 
-  -- Typed variables:
+  open import Properties.Functions
+  open import Properties.Flat
 
   a  = α 0 ι
   b  = α 1 ι
