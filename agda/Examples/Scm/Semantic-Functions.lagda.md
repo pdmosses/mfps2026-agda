@@ -14,13 +14,13 @@ module Examples.Scm.Semantic-Functions where
   open import Examples.Scm.Abstract-Syntax
   open import Examples.Scm.Domain-Equations
   open import Examples.Scm.Auxiliary-Functions
-  open import Notation.Domains using (⟪_⟫)
-  open import Notation.Functions using (_→ᶜ_; _→ˢ_)
-  open import Notation.Flat using (↑)
-  open import Notation.Flat.Booleans using (_⟶_,_; _==⊥_; true; false)
-  open import Notation.Sums using (_in⊥_; _|⊥_)
-  open import Notation.Products.Sequences using (_⋆; ⟨⟩; ⟨_⟩; _§_)
-  open import Notation.Updates using (_[_/_])
+  open import Notation.Domains
+  open import Notation.Functions
+  open import Notation.Flat
+  open import Notation.Flat.Booleans
+  open import Notation.Sums
+  open import Notation.Products.Sequences
+  open import Notation.Updates
 --"/hide"
 
   𝒦⟦_⟧   :  ⟪ Con →ˢ 𝐄 ⟫                      -- constant denotations
@@ -36,12 +36,12 @@ module Examples.Scm.Semantic-Functions where
   ℰ⟦ ⦅ E ␣ E⋆ ⦆ ⟧ ρ κ          = ℰ⟦ E ⟧ ρ (λ ϵ → ℰ⋆⟦ E⋆ ⟧ ρ (λ ϵ⋆ → (ϵ |⊥ 𝐅) ϵ⋆ κ))
   ℰ⟦ ⦅lambda I ␣ E ⦆ ⟧ ρ κ     = κ (   (λ ϵ⋆ κ′ →
                                         list ϵ⋆ (λ ϵ → alloc ϵ (λ α → ℰ⟦ E ⟧ (ρ [ α / I ]) κ′))
-                                      ) in⊥ 𝐄 )
+                                       ) in⊥ 𝐄 )
   ℰ⟦ ⦅if E ␣ E₁ ␣ E₂ ⦆ ⟧ ρ κ   = ℰ⟦ E ⟧ ρ (λ ϵ → truish ϵ ⟶ ℰ⟦ E₁ ⟧ ρ κ , ℰ⟦ E₂ ⟧ ρ κ)
   ℰ⟦ ⦅set! I ␣ E ⦆ ⟧ ρ κ       = ℰ⟦ E ⟧ ρ (λ ϵ → assign (ρ I) ϵ (κ (↑ unspecified in⊥ 𝐄)))
 
-  ℰ⋆⟦ ␣␣␣ ⟧ ρ κ      = κ ⟨⟩
-  ℰ⋆⟦ E ␣␣ E⋆ ⟧ ρ κ  = ℰ⟦ E ⟧ ρ (λ ϵ → ℰ⋆⟦ E⋆ ⟧ ρ (λ ϵ⋆ → κ (⟨ ϵ ⟩ § ϵ⋆)))
+  ℰ⋆⟦ ␣␣␣ ⟧ ρ κ⋆      = κ⋆ ⟨⟩
+  ℰ⋆⟦ E ␣␣ E⋆ ⟧ ρ κ⋆  = ℰ⟦ E ⟧ ρ (λ ϵ → ℰ⋆⟦ E⋆ ⟧ ρ (λ ϵ⋆ → κ⋆ (⟨ ϵ ⟩ § ϵ⋆)))
 --"hide"
 
   ℬ⟦_⟧   :  ⟪ Body →ˢ 𝐔 →ᶜ (𝐔 →ᶜ 𝐂) →ᶜ 𝐂 ⟫    -- body denotations
