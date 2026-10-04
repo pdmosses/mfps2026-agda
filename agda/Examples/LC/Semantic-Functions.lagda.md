@@ -17,6 +17,7 @@ module Examples.LC.Semantic-Functions where
   open import Notation.Domains
   open import Notation.Functions
   open import Notation.Recursion
+  open import Notation.Updates
 
 --"/hide"
   ⟦_⟧ : Exp → ⟪ Env →ᶜ D∞ ⟫
