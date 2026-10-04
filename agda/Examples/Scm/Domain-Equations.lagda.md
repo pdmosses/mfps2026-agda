@@ -13,15 +13,15 @@ avoids the need for the functions `fold` and `unfold`.
 module Examples.Scm.Domain-Equations where
 --"hide"
 
-  open import Examples.Scm.Abstract-Syntax using (Ide; Int)
-  open import Notation.Domains using (Domain; ⟪_⟫)
-  open import Notation.Functions using (_→ᶜ_; _→ˢ_)
-  open import Notation.Flat using (_+⊥)
-  open import Notation.Flat.Booleans using (Bool⊥)
-  open import Notation.Flat.Naturals using (Nat⊥)
-  open import Notation.Sums using (_≳_↦_)
-  open import Notation.Products using (_×_)
-  open import Notation.Products.Sequences using (_⋆)
+  open import Examples.Scm.Abstract-Syntax
+  open import Notation.Domains
+  open import Notation.Functions
+  open import Notation.Flat
+  open import Notation.Flat.Booleans
+  open import Notation.Flat.Naturals
+  open import Notation.Sums
+  open import Notation.Products
+  open import Notation.Products.Sequences
 --"/hide"
 
   postulate Loc : Set
@@ -61,9 +61,14 @@ and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.
     E+=F  : 𝐄 ≳ 5 ↦ 𝐅
 --"hide"
 
+  postulate instance
+    eqL   : Eq Loc
+    eqM   : Eq Misc
+    eqR   : Eq Int
+
   variable
     α : ⟪ 𝐋 ⟫;  ρ : ⟪ 𝐔 ⟫;  μ  : ⟪ 𝐌 ⟫;    ϵ : ⟪ 𝐄 ⟫
-    σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;   φ : ⟪ 𝐅 ⟫
+    σ : ⟪ 𝐒 ⟫;  θ : ⟪ 𝐂 ⟫;  ϵ⋆ : ⟪ 𝐄 ⋆ ⟫;   φ : ⟪ 𝐅 ⟫;  κ : ⟪ 𝐄 →ᶜ 𝐂 ⟫
 --"/hide"
 ```
 
