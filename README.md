@@ -59,9 +59,28 @@ You can then browse the generated website [on GitHub Pages](https://pdmosses.git
 -   [LICENSE] – MIT license
 -   [README.md] – this file
 
+## Installation
+
+After cloning the repository for the first time, initialise the submodule at `pages/agda-pages`
+by running the following command in the repository root:
+
+```sh
+git submodule update --init --recursive
+```
+
+To update the submodule to a subsequent commit, run:
+
+```sh
+git submodule update --remote
+```
+
+> [!WARNING]
+> The submodule currently references a commit of the unstable `dev` branch of `agda-pages`.
+> This may change.
+
 ## Software dependencies
 
-...
+See the relevant branch of the [Agda-Pages] repository.
 
 ## Contributing
 
