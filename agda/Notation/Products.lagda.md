@@ -3,7 +3,6 @@
 The carrier of the binary product `D × E` of two domains consists of all
 pairs `(d , e)` of elements of `D` and `E`
 with the pair `(⊥{D} , ⊥{E})` as the bottom element `⊥{D × E}`.
-Neither the product nor pairing is associative.
 The following operations can be used directly for binary products,
 and iterated for products of more than two domains.
 ```agda
@@ -28,3 +27,5 @@ module Notation.Products where
   infixr 4 _,_
 --"/hide"
 ```
+Neither the product nor pairing is associative in the embedding –
+they are associative up to isomorphism, but the Agda type-checker doesn’t take account of that.

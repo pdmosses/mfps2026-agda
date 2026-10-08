@@ -28,5 +28,6 @@ module Notation.Recursion where
 ```
 The *instance parameter* `{{D ≅ E}}` of the above operations restricts them
 to domains `D` and `E` for which `instance _ : D ≅ E` has been declared.
+[LC: an untyped lambda-calculus] illustrates the use of this notation in an Agda embedding.
 
-[(Abramsky1995DT)]: https://achimjungbham.github.io/pub/papers/handy1.pdf
+[LC: an untyped lambda-calculus]: ../Examples/LC/index.md#untyped-lambda-calculus

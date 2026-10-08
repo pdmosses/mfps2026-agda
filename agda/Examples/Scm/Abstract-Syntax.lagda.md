@@ -18,7 +18,7 @@ $$\begin{align}
 \end{align}$$
 @latex
 @/latex
-In the following Agda embedding of the above grammar, the abstract syntax of sequences `E⋆ : Exp⋆` is made explicit:
+In the following Agda specifcation of *Scm* ASTs, the abstract syntax of sequences `E⋆ : Exp⋆` is made explicit:
 the empty sequence is represented by `␣␣␣` , and sequence prefixing by `E ␣␣ E⋆`.
 ```agda
 --"hide"
@@ -30,13 +30,9 @@ module Examples.Scm.Abstract-Syntax where
   open import Notation.Flat.Booleans
   open import Data.Integer.Base public renaming (ℤ to Int) using (+_)
   open import Data.String.Base public using (String)
-  open import Data.String.Properties renaming (_==_ to _==ˢ_) using ()
 --"/hide"
 
   Ide = String  -- identifiers
-  instance
-    eqIde : Eq Ide
-    _==_ {{eqIde}} = _==ˢ_
 --"hide"
   variable I : Ide
 

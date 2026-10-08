@@ -31,3 +31,5 @@ module Notation.Products.Sequences where
     _↓_    : ⟪ D ⋆ →ᶜ Nat →ˢ D ⟫     -- δ⋆ ↓ n is the nth element
     _†_    : ⟪ D ⋆ →ᶜ Nat →ˢ D ⋆ ⟫   -- δ⋆ † n is the nth tail
 ```
+
+[(Scheme)]: https://scheme.org

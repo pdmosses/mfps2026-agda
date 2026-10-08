@@ -2,7 +2,10 @@ nav:
   - About:
     - index.md
     - Abstract.md
-    - Background.md
+    - Background:
+      - Background/index.md
+      - Background/Denotational-Semantics.md
+      - Background/Agda.md
     - Meta-notation.md
   - Notation
   - Examples:

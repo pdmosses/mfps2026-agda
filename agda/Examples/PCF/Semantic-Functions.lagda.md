@@ -24,7 +24,8 @@ module Examples.PCF.Semantic-Functions where
   ρ ⟦ α i σ ⟧ = ρ σ (α i σ)
 ```
 The semantic function `𝒜⟦ c ⟧` gives the standard interpretation of the
-constant `c`. The corresponding definitions in [(Plotkin1977LCP)] use
+constant `c` (making the injections and lifting for flat domains explicit).
+The corresponding definitions in [(Plotkin1977LCP)] use
 case analysis on the domain `𝒟 ι`, which our Agda embedding does not support
 (partly because it can express non-continuous functions).
 ```agda
@@ -49,6 +50,6 @@ denotation of the term `M` as a function of the environment `ρ`.
   𝒜′⟦ ⦅λ α i σ ␣ M ⦆ ⟧ ρ x  =  𝒜′⟦ M ⟧ (ρ [ x / α i σ ]′)
 ```
 Comparison with Plotkin's original definition of PCF [(Plotkin1977LCP)] confirms
-the directness of our Agda embedding.
+the directness of our Agda embedding of the semantic equations for typed terms.
 
 [(Plotkin1977LCP)]: https://doi.org/10.1016/0304-3975(77)90044-5

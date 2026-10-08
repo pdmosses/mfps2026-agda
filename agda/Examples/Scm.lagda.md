@@ -4,7 +4,7 @@
 whose denotational semantics is defined in the *Scheme* reports [(Scheme)].
 The domains and auxiliary functions declared in this section are explained
 in the presentation of the conventional denotational semantics of *Scm* [(Mosses2025CSE)];
-they involve the notation for sequence domains in [sequence domains].
+they involve the notation for [sequence domains].
 
 ```agda
 --"hide"

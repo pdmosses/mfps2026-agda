@@ -10,9 +10,12 @@ together with the rule for [eliminating injections] in arguments of
 extensions of functions to flat domains.
 
 ```agda
+--"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
+--"/hide"
 module Tests.PCF where
+--"hide"
   open import Notation.Domains
 
   open import Examples.PCF.Abstract-Syntax
@@ -21,6 +24,7 @@ module Tests.PCF where
 
   open import Properties.Functions
   open import Properties.Flat
+--"/hide"
 
   a  = α 0 ι
   b  = α 1 ι
@@ -36,6 +40,10 @@ module Tests.PCF where
   check-43-1 :
     𝒜′⟦ ⦅ 𝐿 ⦅−1⦆ ␣ 𝐿 k 43 ⦆ ⟧ ρ ≡ ↑ 42
   check-43-1 = refl
+
+  lookup-var :
+    𝒜′⟦ 𝑉 a ⟧ (ρ [ ↑ 42 / a ]′) ≡ ↑ 42
+  lookup-var = refl
 
   check-id :
     𝒜′⟦ ⦅ ⦅λ a ␣ 𝑉 a ⦆ ␣ 𝐿 k 42 ⦆ ⟧ ρ ≡ ↑ 42

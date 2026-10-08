@@ -43,9 +43,12 @@ The environment `ρ⊥` maps all variables to `⊥`.
   ρ⊥ : Env                               -- initial environment
   ρ⊥ _ _ = ⊥
 ```
-Extension or overriding typed environments, written `ρ [ v / x ]′`,
+Extension or overriding typed environments, written `ρ [ v / x ]′` here,
 requires instances of the equality tests
-for both variables and types. The definition of the latter is somewhat tedious.
+for both variables and types. The definition of the latter is somewhat tedious:
+@latex
+it is omitted here, but can found in the Agda code repository and website [(MFPS2026-Agda)].
+@/latex
 ```agda
 --"hide"
   _==ⱽ_ : Vars σ → Vars σ → Bool

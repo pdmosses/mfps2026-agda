@@ -2,14 +2,14 @@
 
 The conventional notation in denotational definitions for the domain of
 continuous functions from $D$ to $E$ is $D \to E$ or $[D \to E]$.
-However, Agda reserves the notation `D → E` for the *type* of *all* (total)
+However, Agda reserves the notation `D → E` for the type of *all* (total)
 functions from type `D` to type `E`;
-instead, we use the notation `D →ᶜ E` for embedding continuous function domains:
+here, we use the notation `D →ᶜ E` for embedding continuous function domains:
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
-
 --"/hide"
+
 module Notation.Functions where
 --"hide"
   open import Notation.Domains

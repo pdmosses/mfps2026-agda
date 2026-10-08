@@ -6,10 +6,11 @@
 
 --"/hide"
 module Properties.Sums where
-
+--"hide"
   open import Notation.Domains
   open import Notation.Functions
   open import Notation.Sums using (_+_; inj₁; inj₂; [_,_]) public
+--"/hide"
 
   variable φ : ⟪ D →ᶜ F ⟫; ψ : ⟪ E →ᶜ F ⟫; δ : ⟪ D ⟫; ε : ⟪ E ⟫
   postulate
@@ -18,12 +19,14 @@ module Properties.Sums where
     elim-[]-⊥  :  [ φ , ψ ] ⊥         ≡  ⊥
   {-# REWRITE elim-inj₁ elim-inj₂ #-} 
 
+--"hide"
   open import Notation.Sums using (n; _≳_↦_; _in⊥_; _|⊥_; _∈⊥_) public
   open import Notation.Flat
   open import Notation.Flat.Booleans
   open import Notation.Flat.Naturals
 
   open import Relation.Binary.PropositionalEquality.Core using (_≢_)
+--"/hide"
   variable D′ : Domain; n′ : Nat
   postulate
     elim-∈⊥    :  {{_ : E ≳ n ↦ D}} → {{_ : E ≳ n′ ↦ D′}} → (δ : ⟪ D ⟫) →

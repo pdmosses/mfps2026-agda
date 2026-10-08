@@ -23,7 +23,7 @@ module Notation.Updates where
 --"/hide"
   ρ [ δ / a ] = λ a′ → if a == a′ then δ else ρ a′
 ```
-Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
+Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫` (appending $\bot$ to the conventional notation):
 ```agda
   _[_/_]⊥ : {{Eq A}} → ⟪ ((A +⊥) →ᶜ D) →ᶜ D →ᶜ (A +⊥) →ᶜ ((A +⊥) →ᶜ D) ⟫
 --"hide"
@@ -31,17 +31,21 @@ Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫`:
 --"/hide"
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 ```
-Defining an operation `m [ x ← y ]` for extension or overriding of *dependent* maps `m` is less straightforward,
+Defining an operation for extension or overriding of *dependent* maps `m` is less straightforward,
 as it involves an equality test that may return an *equivalence proof*.
 ```agda
   open import Data.Maybe.Base public using (Maybe; just; nothing)
   open import Relation.Binary.PropositionalEquality.Core public using (_≡_; refl)
+
   record MaybeEq (A : Set) : Set where field _==?_ : (a a′ : A) → Maybe (a ≡ a′)
   open MaybeEq {{...}} public
+
   variable X : Set; Y : X → Set
+
   _[_←_] :  {{MaybeEq X}} → (∀ x′ → Y x′) → (x : X) → Y x → (∀ x′ → Y x′)
-  _[_←_] {X} {Y} m x y = λ x′ → h x′ (x ==? x′) where
-    h : (x′ : X) → Maybe (x ≡ x′) → Y x′
-    h x′ (just refl) = y
-    h x′ nothing = m x′
+  _[_←_] {X} {Y} m x y = λ x′ → h x′ (x ==? x′) 
+    where
+      h : (x′ : X) → Maybe (x ≡ x′) → Y x′
+      h x′ (just refl) = y
+      h x′ nothing = m x′
 ```

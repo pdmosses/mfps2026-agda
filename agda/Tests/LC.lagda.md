@@ -9,9 +9,12 @@ All the `refl` proofs of the tests implicitly use the rewrite rule postulated as
 a [property of recursive domains] to eliminate compositions of `unfold` and `fold`.
 
 ```agda
+--"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
 
+--"/hide"
 module Tests.LC where
+--"hide"
   open import Notation.Domains
   open import Notation.Functions
 
@@ -19,11 +22,26 @@ module Tests.LC where
   open import Examples.LC.Domain-Equations
   open import Examples.LC.Semantic-Functions
 
+  open import Properties.Flat.Booleans
+  open import Properties.Updates
   open import Properties.Recursion
+--"/hide"
 
   a = x 0
   b = x 1
   c = x 2
+```
+Due to potential non-injectivity of the postulated operation `⟪_⟫`,
+the definition of `_[_/_]` needs to be instantiated at `D∞`
+for the type-checker to resolve the `lookup-id` test:
+
+```agda
+  _[_/_]D∞ : {{Eq A}} → ⟪ (A →ˢ D∞) →ᶜ D∞ →ᶜ A →ˢ (A →ˢ D∞) ⟫
+  ρ [ δ / a ]D∞ = λ a′ → if a == a′ then δ else ρ a′
+
+  lookup-id :
+    ⟦ var a ⟧ (ρ [ δ / a ]D∞) ≡ δ
+  lookup-id = refl
 
   app-id :
     ⟦ ⦅ ⦅λ a ␣ var a ⦆ ␣ var b ⦆ ⟧ ρ ≡ ρ b
@@ -44,7 +62,7 @@ itself. It is commented-out, to avoid nontermination of the Agda type-checker.
 
 ```
 The following test illustrates that application of a λ-abstraction can
-terminate when its argument evaluation diverges.
+terminate when evaluation of its argument would diverge.
 ```agda
   app-k-to-divergence :
     ⟦  ⦅  ⦅λ a ␣ var b ⦆ ␣

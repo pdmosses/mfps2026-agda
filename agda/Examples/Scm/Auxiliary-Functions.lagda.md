@@ -22,11 +22,16 @@ module Examples.Scm.Auxiliary-Functions where
   open import Notation.Products.Sequences
   open import Notation.Updates
   open import Agda.Builtin.Nat using (Nat)
+  open import Data.String.Properties renaming (_==_ to _==ˢ_) using ()
 
   postulate
     _<ᴿ_  : ⟪ 𝐑 →ᶜ 𝐑 →ᶜ 𝐓 ⟫
     _+ᴿ_  : ⟪ 𝐑 →ᶜ 𝐑 →ᶜ 𝐑 ⟫
     _∧ᵀ_  : ⟪ 𝐓 →ᶜ 𝐓 →ᶜ 𝐓 ⟫
+
+  instance
+    eqIde : Eq Ide
+    _==_ {{eqIde}} = _==ˢ_
 
   postulate unknown : Loc
 
@@ -56,7 +61,7 @@ $\lambda$-abstraction and application, which is wellknown to ensure continuity.
 --"/hide"
 ```
 Conventional denotational definitions usually leave the injection function `↑` from
-sets into flat domains implicit, in contrast to the embedding of the definition of `truish`:
+sets into flat domains implicit, in contrast to the following embedding of the definition of `truish`:
 
 ```agda
   truish : ⟪ 𝐄 →ᶜ 𝐓 ⟫                -- truish ε is true for all ε except false
@@ -64,7 +69,7 @@ sets into flat domains implicit, in contrast to the embedding of the definition 
               ↑ true
 ```
 The remaining auxiliary function definitions shown here involve the operations for (finite) sequences `ϵ⋆`
-declared in the module `Notation.Products.Sequences`.
+declared in the module for [sequence domains].
 ```agda
   cons : ⟪ 𝐅 ⟫                       -- cons ⟨ ϵ₁ , ϵ₂ ⟩ allocates and initialises a pair
   cons ϵ⋆ κ =  (# ϵ⋆ ==⊥ ↑ 2) ⟶
@@ -105,4 +110,4 @@ The following definition uses the postulated operation `fix` to avoid recursion.
 
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
-[Notation.Products.Sequences]: ../../Notation.md#Products.Sequences
+[Sequence Domains]: ../../Notation/Products/Sequences.md#sequence-domains

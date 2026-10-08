@@ -4,7 +4,8 @@ The domains for *Scm* are somewhat simpler than for the denotational semantics i
 the Scheme standards [(Scheme)],
 but still involve all our postulated domain constructors.
 Using definitional equations `D = E` instead of postulated bijections `D ≅ E`
-avoids the need for the functions `fold` and `unfold`.
+for non-recursive collections of domains
+avoids the need for the functions `fold` and `unfold` in definitions of denotations.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
@@ -59,6 +60,9 @@ and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.
     E+=P  : 𝐄 ≳ 3 ↦ 𝐏
     E+=M  : 𝐄 ≳ 4 ↦ 𝐌
     E+=F  : 𝐄 ≳ 5 ↦ 𝐅
+```
+(where the numerical indices and order of the summand declarations are arbitrary).
+```agda
 --"hide"
 
   postulate instance

@@ -24,7 +24,8 @@ module Notation.Sums where
     [_,_]  : ⟪ (D →ᶜ F) →ᶜ (E →ᶜ F) →ᶜ ((D + E) →ᶜ F) ⟫
     -- [ φ , ψ ] applies φ to arguments in D, and ψ to arguments in E
 ```
-Conventional denotational definitions of programming languages (e.g., in [(Scheme)])
+Conventional denotational definitions of programming languages
+(e.g., the *Scheme* semantics [(Scheme)])
 use domain names instead of numerical indices in operations associated with separated sums.
 The inherently *dependent* types of the Agda embedding of these operations are as follows.
 ```agda
@@ -41,7 +42,7 @@ where an instance of type `E ≳ n ↦ D` is declared for some `n`.
 Instead of defining the summands `D` of a separated sum
 domain `E` by an equation `E = ... + D + ...`, the
 domain `E` is merely *postulated*, and each summand is
-declared separately by `instance _ : E ≳ n ↦ D` (where
-`n` should be a different natural number for each summand).
+declared separately by `instance _ : E ≳ n ↦ D` (where\ `n`
+should be a different natural number for each summand, but is otherwise arbitrary).
 
 [(Scheme)]: https://standards.scheme.org

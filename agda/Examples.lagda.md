@@ -19,6 +19,6 @@ module Examples where
 ```
 
 [Postulated Notation]: ../Notation/index.md#postulated-domain-notation
-[Untyped Lambda-Calculus]: ../Examples/LC/index.md#untyped-lambda-calculus
+[LC: An Untyped Lambda-Calculus]: ../Examples/LC/index.md#untyped-lambda-calculus
 [PCF: A Programming Language for Computable Functions]: ../Examples/PCF/index.md#pcf-a-programming-language-for-computable-functions
 [Scm: A Sublanguage of Scheme]: ../Examples/Scm/index.md#scm-a-sublanguage-of-scheme
