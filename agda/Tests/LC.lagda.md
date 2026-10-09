@@ -26,7 +26,10 @@ module Tests.LC where
   open import Properties.Updates
   open import Properties.Recursion
 --"/hide"
+```
 
+The following trivial abbreviations improve the readbility of AST terms in the tests:
+```agda
   a = x 0
   b = x 1
   c = x 2

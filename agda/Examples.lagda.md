@@ -3,7 +3,7 @@
 This section illustrates mechanisation of denotational semantics in Agda
 with three examples, all using the [postulated notation] for domains and their
 associated operations:
-the [Untyped Lambda-Calculus],
+[LC: An Untyped Lambda-Calculus],
 [PCF: A Programming Language for Computable Functions], and
 [Scm: A Sublanguage of Scheme].
 ```agda
