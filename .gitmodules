@@ -1,4 +1,4 @@
 [submodule "pages/agda-pages"]
 	path = pages/agda-pages
 	url = https://github.com/pdmosses/agda-pages
-	branch = dev
+	branch = mfps2026
