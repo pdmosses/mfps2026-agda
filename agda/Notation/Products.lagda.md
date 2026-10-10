@@ -28,4 +28,4 @@ module Notation.Products where
 --"/hide"
 ```
 Neither the product nor pairing is associative in the embedding –
-they are associative up to isomorphism, but the Agda type-checker doesn’t take account of that.
+they are associative up to isomorphism, but the Agda type-checker does not take account of that.

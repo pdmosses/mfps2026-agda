@@ -1,6 +1,6 @@
 # Untyped Lambda-Calculus
 
-This section presents our Agda embedding of a denotational semantics of the untyped $\lambda$-calculus.
+This section presents our Agda embedding of a denotational semantics of an untyped $\lambda$-calculus.
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}

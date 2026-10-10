@@ -50,7 +50,8 @@ Postulating one (or both) of these domains avoids divergence;
 postulating `𝐄` also has the benefit that the embeddings and projections for its summands
 subsume the bijection between `𝐄` and its intended structure.
 
-The following postulates instantiate injection (`δ in⊥ 𝐄`),
+The following postulates instantiate the notation used in denotational semantics for [sum domains]:
+injection (`δ in⊥ 𝐄`),
 inspection (`ε ∈⊥ D`),
 and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.
 ```agda
@@ -78,3 +79,4 @@ and projection (`ε |⊥ D`) for each summand `D` of `𝐄`.
 
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
 [(Scheme)]: https://standards.scheme.org
+[sum domains]: ../../Notation/Sums.md#sum-domains

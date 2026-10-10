@@ -31,7 +31,9 @@ Similarly for stores `σ : ⟪ (A +⊥) →ᶜ D ⟫` (appending $\bot$ to the c
 --"/hide"
   σ [ δ / α ]⊥ = λ α′ → (α ==⊥ α′) ⟶ δ , σ α′
 ```
-Defining an operation for extension or overriding of *dependent* maps `m` is less straightforward,
+Defining an operation `m [ x ← y ]`
+for updating a *dependent* map `m` to map `x` to `y`
+is somewhat less straightforward,
 as it involves an equality test that may return an *equivalence proof*.
 ```agda
   open import Data.Maybe.Base public using (Maybe; just; nothing)
@@ -49,3 +51,6 @@ as it involves an equality test that may return an *equivalence proof*.
       h x′ (just refl) = y
       h x′ nothing = m x′
 ```
+
+Note that the order of the arguments differs from that in the notation
+for non-dependent updates, as the type of `y` may depend on the value of `x`.

@@ -38,7 +38,7 @@ The inherently *dependent* types of the Agda embedding of these operations are a
     _∈⊥_   : ⟪ E ⟫ → (D : Domain) → {{E ≳ n ↦ D}} → ⟪ Bool⊥ ⟫  -- ε ∈⊥ D  inspection
 ```
 The operations are defined only for `D` and `E`
-where an instance of type `E ≳ n ↦ D` is declared for some `n`.
+where an instance of type `E ≳ n ↦ D` is declared for some\ `n`.
 Instead of defining the summands `D` of a separated sum
 domain `E` by an equation `E = ... + D + ...`, the
 domain `E` is merely *postulated*, and each summand is

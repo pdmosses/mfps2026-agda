@@ -1,9 +1,9 @@
 # Background
 
-This section briefly recalls the main features of Scott–Strachey denotational semantics,
+This section first recalls the main features of Scott–Strachey denotational semantics,
 and summarises the notation conventionally used in denotational descriptions of programming languages.
 It then mentions significant features of the Agda language,
-and explains some Agda syntax used in the subsequent sections.
+and briefly explains some Agda syntax used in the subsequent sections.
 ```agda
 --"hide"
 module Background where

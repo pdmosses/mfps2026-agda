@@ -9,8 +9,7 @@ Apart from confirming that a denotational semantics defines denotations
 which compute the expected values at least for some terms,
 the tests also depend on the imported rewrite rules for [postulated properties].
 The success of those tests indirectly checks that the rewrite rules preserve denotations.
-(A more systematic approach would be to develop a suite of unit tests for consequences of postulated properties,
-independently of denotational definitions that use the involved operations.)
+(A more systematic approach would be to develop a suite of unit tests for consequences of postulated properties.)
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
@@ -23,11 +22,10 @@ module Tests where
 
 We leave development of significant tests for the `Scm` language to future work.
 This is partly because the published denotational definition of *Scm* [(Mosses2025CDS)]
-leaves various domains and operations unspecified, and our Agda embedding merely postulates them;
-denotations that involve operations on postulated domains do not (in general)
-compute particular elements of domains.
-The Agda type-checker can reduce the embeddings of denotation terms with postulated operation
-to (weak) head form, thereby testing the properties that we have declared as rewrite rules.
+leaves various domains and operations completely unspecified, and our Agda embedding merely postulates them,
+without specifying their properties.
+Reduction of embedded denotations involving such operations by the Agda type-checker to (weak) head form
+would not (in general) lead to particular elements of domains.
 
 As a workaround, we could replace the embedded declarations of the postulated domains and operations
 by definitions; e.g., the postulated type `Loc` of locations could be defined by `Loc = Nat`,

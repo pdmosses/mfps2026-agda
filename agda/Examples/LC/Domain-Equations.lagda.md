@@ -2,7 +2,9 @@
 
 Simply defining `D∞ = (D∞ →ᶜ D∞)` would lead to non-termination of the Agda type-checker.
 Instead, we postulate the domain `D∞`, together with a bijection `D∞ ≅ (D∞ →ᶜ D∞)`.
-This declares `unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and `fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞ ⟫`.
+This declares the operations
+`unfold : ⟪ D∞ →ᶜ (D∞ →ᶜ D∞) ⟫` and `fold : ⟪ (D∞ →ᶜ D∞) →ᶜ D∞ ⟫`
+associated with [recursive domains].
 ```agda
 --"hide"
 {-# OPTIONS --rewriting --confluence-check #-}
@@ -33,8 +35,8 @@ module Examples.LC.Domain-Equations where
   variable ρ : ⟪ Env ⟫
 --"/hide"
 ```
-Use of the conventional notation `ρ [ δ / v ]` for updating an environment `ρ` to map `v` to `d`
-requires an equality test for variables@latex, elided here@/latex.
+Use of the conventional notation `ρ [ δ / v ]` for updating an environment `ρ` to map `v` to `δ`
+requires an equality test for variables@latex; its definition is elided here@/latex.
 ```agda
 --"hide"
   _==ⱽ_ : Var → Var → Bool
@@ -43,3 +45,5 @@ requires an equality test for variables@latex, elided here@/latex.
   _==_ {{eqVar}} = _==ⱽ_
 --"/hide"
 ```
+
+[recursive domains]: ../../Notation/Recursion.md#recursive-domains

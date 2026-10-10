@@ -43,7 +43,7 @@ but here it is only important that endofunctions between domains have *fixed poi
 recursive *domain equations* have well-defined solutions (up to isomorphism),
 and each domain comes with a *bottom element*.
 The conventional notation for domain constructors and their accompanying operations,
-summarised below, is independent of the exact notion of domains.
+summarised below, is independent of the exact notion of domain.
 
 Domains.
 :   Every domain $D$ has a *bottom* element $\bot_D$ that represents
@@ -68,10 +68,10 @@ Flat domains.
     returning\ $\bot$ when any argument is\ $\bot$.
 
     Elements\ $\tau$ of the domain of *truth-values* $\textbf{T} = \{ \textit{true}, \textit{false} \}_\bot$
-    are used in *conditionals* written $\tau \to \delta_1, \delta_2$\ ,
-    where $\delta_1, \delta_2 : D$, $\textit{true} \to \delta_1, \delta_2$ is $\delta_1$\ ,
-    $\textit{false} \to \delta_1, \delta_2$ is $\delta_2$\ , and
-    $\bot_{\textbf{T}} \to \delta_1, \delta_2$ is $\bot_D$\ .
+    are used in *conditionals* written $\tau \to \delta_1, \delta_2\,$,
+    where $\delta_1, \delta_2 : D$, $\textit{true} \to \delta_1, \delta_2$ is $\delta_1\,$,
+    $\textit{false} \to \delta_1, \delta_2$ is $\delta_2\,$, and
+    $\bot_{\textbf{T}} \to \delta_1, \delta_2$ is $\bot_D\,$.
 
 Sum domains.
 :   The *separated sum domain* $X = \ldots + Y + \ldots$ consists of injected elements
@@ -81,32 +81,33 @@ Sum domains.
     The $\textbf{T}$-valued operation $\chi \mathbin{\textsf{E}} Y$
     (written $\chi \in Y$ in [(Scheme)])
     tests whether $\chi : X$ is the injection of some $\upsilon : Y$;
-    if so, $\chi \mid Y$ projects $\chi$ to $\upsilon$, otherwise to $\bot_Y$.
+    if so, $\chi \mid Y$ projects $\chi$ to $\upsilon$, otherwise to $\bot_X$.
     (This notation has the pragmatic advantage of being independent of the order of the summands.)
 
 Product domains.
-:   The *product domain* $P = D \times E$ consists of pairs $\langle \delta, \epsilon \rangle$
-    with $\bot_P = \langle \bot_D, \bot_E \rangle$.
+:   The *product domain* $P = D \times E$ consists of pairs written $\langle \delta, \epsilon \rangle$,
+    where $\delta : D$, $\epsilon : E$, and $\bot_P = \langle \bot_D, \bot_E \rangle$.
     When $\pi : P$, the operations $\pi \downarrow 1$ and $\pi \downarrow 2$ select its components.
 
-    The domain of $n$-*tuples* $\langle \delta_1, \ldots, \delta_n \rangle$ of elements of $D$
+    The domain of $n$-*tuples* $\langle \delta_1, \ldots, \delta_n \rangle$ of elements $\delta_i : D$
     is written\ $D^n$, and the domain of all finite *sequences* is written\ $D^*$.
     Further operations on\ $D^*$ include the empty sequence\ $\langle \rangle$,
     concatenation\ $\delta^*_1 \mathbin{\S} \delta^*_2$, length\ $\textit{\#}\,\delta^*$,
     $n$th\ component $\delta^* \downarrow n$, and $n$th\ tail $\delta^* \mathbin{\dagger} n$ ($n \geq 1$).
 
-Recursive domains
+Recursive domains.
 :   In a collection of domain equations $D_i = E_i$, the $D_i$ are distinct domain names,
     and the $E_i$ are domain terms formed from standard domain constructors and domain names,
     allowing unrestricted recursion.
-    However, the solution of the equations is up to an isomorphism
+    However, the solution of the equations is only up to an isomorphism
     (written $\textit{unfold} : D_i \to E_i$\ , $\textit{fold} : E_i \to D_i$ in [(Abramsky1995DT)],
     and $\phi : D_i \to E_i$\ , $\psi : E_i \to D_i$ in [(Reynolds1998TPL)],
     but usually left implicit).
 
 Updates.
-:   The *update* $\phi[\epsilon / \delta]$ of a function $\phi : D \to E$ maps $\delta$ to $\epsilon$,
-    and all other elements $\delta'$ in $D$ to $\phi(\delta')$.
+:   The *update* $\phi[\epsilon / \delta]$ of a function $\phi : D \to E$ 
+    maps (non-$\bot$) $\delta : D$ to $\epsilon : E$,
+    and all other elements $\delta' : D$ to $\phi(\delta')$.
     The domain $D$ has to be flat (with a continuous equality);
     the same notation is used when $D$ is a set.
 ```agda

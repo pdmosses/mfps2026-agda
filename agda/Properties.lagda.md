@@ -31,7 +31,7 @@ would break the proof for at least one of our tests of the `LC` and `PCF` exampl
 Further modules with postulated properties will be needed when
 tests for equivalence of denotations of `Scm` expressions are added.
 
-Rewrite rules are safe to use with `Agda.Builtin.Equality` when that option is enabled
+Rewrite rules are safe to use with `Agda.Builtin.Equality` when that option is enabled.
 In principle, all `refl` proof terms that rely on rewrite rules could be replaced by proofs
 that apply the postulated properties to specified subterms.
 However, we expect that it would be quite tedious to develop such proofs,

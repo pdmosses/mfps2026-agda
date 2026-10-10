@@ -47,7 +47,7 @@ module Examples.Scm.Auxiliary-Functions where
 In the continuation-passing style used to define auxilary functions for *Scm*,
 giving explicit continuity proofs would be particulary tedious.
 For example, the function `hold` is simply a combination of
-$\lambda$-abstraction and application, which is wellknown to ensure continuity.
+$\lambda$-abstraction and application, which is well-known to ensure continuity.
 ```agda
   postulate new : ⟪ (𝐋 →ᶜ 𝐂) →ᶜ 𝐂 ⟫  -- new gives an unallocated location
 
@@ -61,7 +61,7 @@ $\lambda$-abstraction and application, which is wellknown to ensure continuity.
 --"/hide"
 ```
 Conventional denotational definitions usually leave the injection function `↑` from
-sets into flat domains implicit, in contrast to the following embedding of the definition of `truish`:
+sets into [flat domains] implicit, in contrast to the following embedding of the definition of `truish`:
 
 ```agda
   truish : ⟪ 𝐄 →ᶜ 𝐓 ⟫                -- truish ε is true for all ε except false
@@ -111,3 +111,4 @@ The following definition uses the postulated operation `fix` to avoid recursion.
 [(MFPS2026-Agda)]: https://pdmosses.github.io/mfps2026-agda/
 [(Mosses2025CSE)]: https://doi.org/10.1145/3759427.3760369
 [Sequence Domains]: ../../Notation/Products/Sequences.md#sequence-domains
+[flat domains]: ../../Notation/Flat/index.md#flat-domains

@@ -1,7 +1,7 @@
 # Recursive Domains
 
-Conventional denotational semantics often involves groups of mutually
-recursive domain definitions.
+Conventional denotational definitions often involve groups of mutually
+recursive domain equations.
 In Agda, recursive type definitions lead to non-termination of
 the type-checker.
 To avoid non-termination, it is sufficient to break the recursion by
@@ -28,6 +28,6 @@ module Notation.Recursion where
 ```
 The *instance parameter* `{{D ≅ E}}` of the above operations restricts them
 to domains `D` and `E` for which `instance _ : D ≅ E` has been declared.
-[LC: an untyped lambda-calculus] illustrates the use of this notation in an Agda embedding.
+The [untyped lambda-calculus] example illustrates the use of this notation in an Agda embedding.
 
-[LC: an untyped lambda-calculus]: ../Examples/LC/index.md#untyped-lambda-calculus
+[untyped lambda-calculus]: ../Examples/LC/index.md#untyped-lambda-calculus
