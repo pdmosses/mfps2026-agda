@@ -534,9 +534,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Background/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Background/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,7 +575,87 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Background
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Denotational-Semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denotational-Semantics
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Agda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1712,8 +1817,6 @@
       
         
       
-        
-      
     
     
     
@@ -1772,34 +1875,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Properties/Domains/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Domains
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1822,7 +1897,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1844,14 +1919,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1983,7 +2058,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2005,14 +2080,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2196,8 +2271,6 @@
       
         
       
-        
-      
     
     
     
@@ -2293,34 +2366,6 @@
     
   
     PCF
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Tests/Scm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scm
   
 
     
@@ -13100,24 +13145,25 @@
 <p>The carrier of the binary product <code>D × E</code> of two domains consists of all
 pairs <code>(d , e)</code> of elements of <code>D</code> and <code>E</code>
 with the pair <code>(⊥{D} , ⊥{E})</code> as the bottom element <code>⊥{D × E}</code>.
-Neither the product nor pairing is associative.
 The following operations can be used directly for binary products,
 and iterated for products of more than two domains.</p>
-<pre class="Agda"><code class="Agda"><a id="384" class="Symbol">{-#</a> <a id="388" class="Keyword">OPTIONS</a> <a id="396" class="Pragma">--rewriting</a> <a id="408" class="Pragma">--confluence-check</a> <a id="427" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda"><a id="336" class="Symbol">{-#</a> <a id="340" class="Keyword">OPTIONS</a> <a id="348" class="Pragma">--rewriting</a> <a id="360" class="Pragma">--confluence-check</a> <a id="379" class="Symbol">#-}</a>
 
-<a id="442" class="Keyword">module</a> <a id="449" href="../../Notation/Products/" class="Module">Notation.Products</a> <a id="467" class="Keyword">where</a>
+<a id="394" class="Keyword">module</a> <a id="401" href="../../Notation/Products/" class="Module">Notation.Products</a> <a id="419" class="Keyword">where</a>
 
-  <a id="485" class="Keyword">open</a> <a id="490" class="Keyword">import</a> <a id="497" href="../../Notation/Domains/" class="Module">Notation.Domains</a>
-  <a id="516" class="Keyword">open</a> <a id="521" class="Keyword">import</a> <a id="528" href="../../Notation/Functions/" class="Module">Notation.Functions</a>
+  <a id="437" class="Keyword">open</a> <a id="442" class="Keyword">import</a> <a id="449" href="../../Notation/Domains/" class="Module">Notation.Domains</a>
+  <a id="468" class="Keyword">open</a> <a id="473" class="Keyword">import</a> <a id="480" href="../../Notation/Functions/" class="Module">Notation.Functions</a>
 
-  <a id="562" class="Keyword">postulate</a>
-    <a id="_×_"></a><a id="576" href="../../Notation/Products/#576" class="Postulate Operator">_×_</a>  <a id="581" class="Symbol">:</a> <a id="583" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="590" class="Symbol">→</a> <a id="592" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="599" class="Symbol">→</a> <a id="601" href="../../Notation/Domains/#287" class="Postulate">Domain</a>  <a id="609" class="Comment">-- D × E is the categorical product</a>
-    <a id="_,_"></a><a id="649" href="../../Notation/Products/#649" class="Postulate Operator">_,_</a>  <a id="654" class="Symbol">:</a> <a id="656" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="658" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="660" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="663" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="665" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="668" class="Symbol">(</a><a id="669" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="671" href="../../Notation/Products/#576" class="Postulate Operator">×</a> <a id="673" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="674" class="Symbol">)</a> <a id="676" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>     <a id="682" class="Comment">-- (δ , ε) is a pair of elements</a>
-    <a id="_↓₁"></a><a id="719" href="../../Notation/Products/#719" class="Postulate Operator">_↓₁</a>  <a id="724" class="Symbol">:</a> <a id="726" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="728" class="Symbol">(</a><a id="729" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="731" href="../../Notation/Products/#576" class="Postulate Operator">×</a> <a id="733" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="734" class="Symbol">)</a> <a id="736" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="739" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="741" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>          <a id="752" class="Comment">-- (δ , ε)↓₁ is δ</a>
-    <a id="_↓₂"></a><a id="774" href="../../Notation/Products/#774" class="Postulate Operator">_↓₂</a>  <a id="779" class="Symbol">:</a> <a id="781" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="783" class="Symbol">(</a><a id="784" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="786" href="../../Notation/Products/#576" class="Postulate Operator">×</a> <a id="788" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="789" class="Symbol">)</a> <a id="791" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="794" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="796" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>          <a id="807" class="Comment">-- (δ , ε)↓₂ is ε</a>
-  <a id="836" class="Keyword">infixr</a> <a id="843" class="Number">2</a> <a id="845" href="../../Notation/Products/#576" class="Postulate Operator">_×_</a>
-  <a id="851" class="Keyword">infixr</a> <a id="858" class="Number">4</a> <a id="860" href="../../Notation/Products/#649" class="Postulate Operator">_,_</a>
+  <a id="514" class="Keyword">postulate</a>
+    <a id="_×_"></a><a id="528" href="../../Notation/Products/#528" class="Postulate Operator">_×_</a>  <a id="533" class="Symbol">:</a> <a id="535" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="542" class="Symbol">→</a> <a id="544" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="551" class="Symbol">→</a> <a id="553" href="../../Notation/Domains/#287" class="Postulate">Domain</a>  <a id="561" class="Comment">-- D × E is the categorical product</a>
+    <a id="_,_"></a><a id="601" href="../../Notation/Products/#601" class="Postulate Operator">_,_</a>  <a id="606" class="Symbol">:</a> <a id="608" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="610" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="612" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="615" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="617" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="620" class="Symbol">(</a><a id="621" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="623" href="../../Notation/Products/#528" class="Postulate Operator">×</a> <a id="625" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="626" class="Symbol">)</a> <a id="628" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>     <a id="634" class="Comment">-- (δ , ε) is a pair of elements</a>
+    <a id="_↓₁"></a><a id="671" href="../../Notation/Products/#671" class="Postulate Operator">_↓₁</a>  <a id="676" class="Symbol">:</a> <a id="678" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="680" class="Symbol">(</a><a id="681" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="683" href="../../Notation/Products/#528" class="Postulate Operator">×</a> <a id="685" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="686" class="Symbol">)</a> <a id="688" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="691" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="693" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>          <a id="704" class="Comment">-- (δ , ε)↓₁ is δ</a>
+    <a id="_↓₂"></a><a id="726" href="../../Notation/Products/#726" class="Postulate Operator">_↓₂</a>  <a id="731" class="Symbol">:</a> <a id="733" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="735" class="Symbol">(</a><a id="736" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="738" href="../../Notation/Products/#528" class="Postulate Operator">×</a> <a id="740" href="../../Notation/Domains/#559" class="Generalizable">E</a><a id="741" class="Symbol">)</a> <a id="743" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="746" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="748" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>          <a id="759" class="Comment">-- (δ , ε)↓₂ is ε</a>
+  <a id="788" class="Keyword">infixr</a> <a id="795" class="Number">2</a> <a id="797" href="../../Notation/Products/#528" class="Postulate Operator">_×_</a>
+  <a id="803" class="Keyword">infixr</a> <a id="810" class="Number">4</a> <a id="812" href="../../Notation/Products/#601" class="Postulate Operator">_,_</a>
 </code></pre>
+<p>Neither the product nor pairing is associative in the embedding –
+they are associative up to isomorphism, but the Agda type-checker does not take account of that.</p>
 
 
 

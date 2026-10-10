@@ -534,9 +534,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../Background/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Background/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,7 +575,87 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Background
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Background/Denotational-Semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denotational-Semantics
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Background/Agda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1705,8 +1810,6 @@
       
         
       
-        
-      
     
     
     
@@ -1765,34 +1868,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../Properties/Domains/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Domains
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1815,7 +1890,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1837,14 +1912,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1976,7 +2051,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1998,14 +2073,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2191,8 +2266,6 @@
       
         
       
-        
-      
     
     
     
@@ -2291,34 +2364,6 @@
     
   
     PCF
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Scm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scm
   
 
     
@@ -13061,19 +13106,29 @@ the denotations of some terms compute the expected values.
 The type-correctness of the <code>refl</code> definitions of the declared equivalences
 confirms that they hold.</p>
 <p>Apart from confirming that a denotational semantics defines denotations
-which satisfy some expected equivalences at least for some terms,
+which compute the expected values at least for some terms,
 the tests also depend on the imported rewrite rules for <a href="../Properties/#postulated-properties">postulated properties</a>.
 The success of those tests indirectly checks that the rewrite rules preserve denotations.
-(A more systematic approach would be to develop a suite of unit tests for consequences
-of postulated properties, independently of denotational definitions.)</p>
-<pre class="Agda"><code class="Agda"><a id="815" class="Symbol">{-#</a> <a id="819" class="Keyword">OPTIONS</a> <a id="827" class="Pragma">--rewriting</a> <a id="839" class="Pragma">--confluence-check</a> <a id="858" class="Symbol">#-}</a>
+(A more systematic approach would be to develop a suite of unit tests for consequences of postulated properties.)</p>
+<pre class="Agda"><code class="Agda"><a id="692" class="Symbol">{-#</a> <a id="696" class="Keyword">OPTIONS</a> <a id="704" class="Pragma">--rewriting</a> <a id="716" class="Pragma">--confluence-check</a> <a id="735" class="Symbol">#-}</a>
 
-<a id="863" class="Keyword">module</a> <a id="870" href="../Tests/" class="Module">Tests</a> <a id="876" class="Keyword">where</a>
-
-  <a id="885" class="Keyword">import</a> <a id="892" href="../Tests/LC/" class="Module">Tests.LC</a>
-  <a id="903" class="Keyword">import</a> <a id="910" href="../Tests/PCF/" class="Module">Tests.PCF</a>
-  <a id="922" class="Keyword">import</a> <a id="929" href="../Tests/Scm/" class="Module">Tests.Scm</a>
+<a id="750" class="Keyword">module</a> <a id="757" href="../Tests/" class="Module">Tests</a> <a id="763" class="Keyword">where</a>
+  <a id="771" class="Keyword">import</a> <a id="778" href="../Tests/LC/" class="Module">Tests.LC</a>
+  <a id="789" class="Keyword">import</a> <a id="796" href="../Tests/PCF/" class="Module">Tests.PCF</a>
 </code></pre>
+
+<p>We leave development of significant tests for the <code>Scm</code> language to future work.
+This is partly because the published denotational definition of <em>Scm</em> <a href="https://doi.org/10.1145/3759537.3762694">(Mosses2025CDS)</a>
+leaves various domains and operations completely unspecified, and our Agda embedding merely postulates them,
+without specifying their properties.
+Reduction of embedded denotations involving such operations by the Agda type-checker to (weak) head form
+would not (in general) lead to particular elements of domains.</p>
+<p>As a workaround, we could replace the embedded declarations of the postulated domains and operations
+by definitions; e.g., the postulated type <code>Loc</code> of locations could be defined by <code>Loc = Nat</code>,
+and the postulated operation <code>new</code> could then be defined to give the first location
+mapped to <code>unallocated</code> by the current store.
+But that would undermine the correspondence between the published denotational semantics
+and its Agda embedding.</p>
 
 
 

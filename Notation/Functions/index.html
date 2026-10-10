@@ -534,9 +534,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Background/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Background/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,7 +575,87 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Background
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Denotational-Semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denotational-Semantics
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Agda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1720,8 +1825,6 @@
       
         
       
-        
-      
     
     
     
@@ -1780,34 +1883,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Properties/Domains/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Domains
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1830,7 +1905,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1852,14 +1927,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1991,7 +2066,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2013,14 +2088,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2204,8 +2279,6 @@
       
         
       
-        
-      
     
     
     
@@ -2301,34 +2374,6 @@
     
   
     PCF
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Tests/Scm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scm
   
 
     
@@ -13068,18 +13113,18 @@
 <h1 id="function-domains">Function Domains</h1>
 <p>The conventional notation in denotational definitions for the domain of
 continuous functions from <span class="arithmatex">\(D\)</span> to <span class="arithmatex">\(E\)</span> is <span class="arithmatex">\(D \to E\)</span> or <span class="arithmatex">\([D \to E]\)</span>.
-However, Agda reserves the notation <code>D → E</code> for the <em>type</em> of <em>all</em> (total)
+However, Agda reserves the notation <code>D → E</code> for the type of <em>all</em> (total)
 functions from type <code>D</code> to type <code>E</code>;
-instead, we use the notation <code>D →ᶜ E</code> for embedding continuous function domains:</p>
-<pre class="Agda"><code class="Agda"><a id="370" class="Symbol">{-#</a> <a id="374" class="Keyword">OPTIONS</a> <a id="382" class="Pragma">--rewriting</a> <a id="394" class="Pragma">--confluence-check</a> <a id="413" class="Symbol">#-}</a>
+here, we use the notation <code>D →ᶜ E</code> for embedding continuous function domains:</p>
+<pre class="Agda"><code class="Agda"><a id="365" class="Symbol">{-#</a> <a id="369" class="Keyword">OPTIONS</a> <a id="377" class="Pragma">--rewriting</a> <a id="389" class="Pragma">--confluence-check</a> <a id="408" class="Symbol">#-}</a>
 
-<a id="428" class="Keyword">module</a> <a id="435" href="../../Notation/Functions/" class="Module">Notation.Functions</a> <a id="454" class="Keyword">where</a>
-  <a id="471" class="Keyword">open</a> <a id="476" class="Keyword">import</a> <a id="483" href="../../Notation/Domains/" class="Module">Notation.Domains</a>
-  <a id="502" class="Keyword">open</a> <a id="507" class="Keyword">import</a> <a id="514" href="../../Agda/Builtin/Equality/" class="Module">Agda.Builtin.Equality</a> <a id="536" class="Keyword">public</a> <a id="543" class="Keyword">using</a> <a id="549" class="Symbol">(</a><a id="550" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">_≡_</a><a id="553" class="Symbol">)</a>
-  <a id="557" class="Keyword">open</a> <a id="562" class="Keyword">import</a> <a id="569" href="../../Agda/Builtin/Equality/Rewrite/" class="Module">Agda.Builtin.Equality.Rewrite</a> <a id="599" class="Keyword">using</a> <a id="605" class="Symbol">()</a>
-  <a id="620" class="Keyword">postulate</a> <a id="_→ᶜ_"></a><a id="630" href="../../Notation/Functions/#630" class="Postulate Operator">_→ᶜ_</a> <a id="635" class="Symbol">:</a> <a id="637" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="644" class="Symbol">→</a> <a id="646" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="653" class="Symbol">→</a> <a id="655" href="../../Notation/Domains/#287" class="Postulate">Domain</a>
-  <a id="673" class="Comment">-- D →ᶜ E is the domain of continuous functions from D to E</a>
-  <a id="735" class="Keyword">infixr</a> <a id="742" class="Number">0</a> <a id="744" href="../../Notation/Functions/#630" class="Postulate Operator">_→ᶜ_</a>
+<a id="423" class="Keyword">module</a> <a id="430" href="../../Notation/Functions/" class="Module">Notation.Functions</a> <a id="449" class="Keyword">where</a>
+  <a id="466" class="Keyword">open</a> <a id="471" class="Keyword">import</a> <a id="478" href="../../Notation/Domains/" class="Module">Notation.Domains</a>
+  <a id="497" class="Keyword">open</a> <a id="502" class="Keyword">import</a> <a id="509" href="../../Agda/Builtin/Equality/" class="Module">Agda.Builtin.Equality</a> <a id="531" class="Keyword">public</a> <a id="538" class="Keyword">using</a> <a id="544" class="Symbol">(</a><a id="545" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">_≡_</a><a id="548" class="Symbol">)</a>
+  <a id="552" class="Keyword">open</a> <a id="557" class="Keyword">import</a> <a id="564" href="../../Agda/Builtin/Equality/Rewrite/" class="Module">Agda.Builtin.Equality.Rewrite</a> <a id="594" class="Keyword">using</a> <a id="600" class="Symbol">()</a>
+  <a id="615" class="Keyword">postulate</a> <a id="_→ᶜ_"></a><a id="625" href="../../Notation/Functions/#625" class="Postulate Operator">_→ᶜ_</a> <a id="630" class="Symbol">:</a> <a id="632" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="639" class="Symbol">→</a> <a id="641" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="648" class="Symbol">→</a> <a id="650" href="../../Notation/Domains/#287" class="Postulate">Domain</a>
+  <a id="668" class="Comment">-- D →ᶜ E is the domain of continuous functions from D to E</a>
+  <a id="730" class="Keyword">infixr</a> <a id="737" class="Number">0</a> <a id="739" href="../../Notation/Functions/#625" class="Postulate Operator">_→ᶜ_</a>
 </code></pre>
 <p>Both λ-abstraction and application preserve continuity.
 In conventional denotational semantics,
@@ -13096,21 +13141,21 @@ continuation-passing style.)</p>
 from conventional denotational definitions in Agda,
 it appears to be necessary to <em>rewrite</em> the carrier types of function domains
 to ordinary function types:</p>
-<pre class="Agda"><code class="Agda">  <a id="1670" class="Keyword">postulate</a> <a id="dom-cts"></a><a id="1680" href="../../Notation/Functions/#1680" class="Postulate">dom-cts</a> <a id="1688" class="Symbol">:</a> <a id="1690" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1692" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="1694" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1697" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="1699" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="1701" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1703" class="Symbol">(</a><a id="1704" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1706" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="1708" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="1710" class="Symbol">→</a> <a id="1712" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1714" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="1716" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="1717" class="Symbol">)</a>
-  <a id="1721" class="Symbol">{-#</a> <a id="1725" class="Keyword">REWRITE</a> <a id="1733" href="../../Notation/Functions/#1680" class="Postulate">dom-cts</a> <a id="1741" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda">  <a id="1665" class="Keyword">postulate</a> <a id="dom-cts"></a><a id="1675" href="../../Notation/Functions/#1675" class="Postulate">dom-cts</a> <a id="1683" class="Symbol">:</a> <a id="1685" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1687" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="1689" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1692" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="1694" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="1696" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="1698" class="Symbol">(</a><a id="1699" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1701" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="1703" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="1705" class="Symbol">→</a> <a id="1707" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="1709" href="../../Notation/Domains/#559" class="Generalizable">E</a> <a id="1711" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="1712" class="Symbol">)</a>
+  <a id="1716" class="Symbol">{-#</a> <a id="1720" class="Keyword">REWRITE</a> <a id="1728" href="../../Notation/Functions/#1675" class="Postulate">dom-cts</a> <a id="1736" class="Symbol">#-}</a>
 </code></pre>
 <p>Similarly, the notation <code>A →ˢ D</code> is the embedding of the domain of all functions
 from an ordinary type <code>A</code> to a domain <code>D</code> (which are trivially continuous,
 ordered pointwise):</p>
-<pre class="Agda"><code class="Agda">  <a id="1935" class="Keyword">postulate</a> <a id="_→ˢ_"></a><a id="1945" href="../../Notation/Functions/#1945" class="Postulate Operator">_→ˢ_</a> <a id="1950" class="Symbol">:</a> <a id="1952" href="../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1956" class="Symbol">→</a> <a id="1958" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="1965" class="Symbol">→</a> <a id="1967" href="../../Notation/Domains/#287" class="Postulate">Domain</a>
-  <a id="1985" class="Comment">-- A →ˢ D is the domain of all functions from A to D</a>
-  <a id="2040" class="Keyword">infixr</a> <a id="2047" class="Number">0</a> <a id="2049" href="../../Notation/Functions/#1945" class="Postulate Operator">_→ˢ_</a>
-  <a id="2066" class="Keyword">postulate</a> <a id="set-cts"></a><a id="2076" href="../../Notation/Functions/#2076" class="Postulate">set-cts</a>  <a id="2085" class="Symbol">:</a> <a id="2087" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2089" href="../../Notation/Domains/#544" class="Generalizable">A</a> <a id="2091" href="../../Notation/Functions/#1945" class="Postulate Operator">→ˢ</a> <a id="2094" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2096" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="2098" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2100" class="Symbol">(</a><a id="2101" href="../../Notation/Domains/#544" class="Generalizable">A</a> <a id="2103" class="Symbol">→</a> <a id="2105" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2107" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2109" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2110" class="Symbol">)</a>
-  <a id="2114" class="Symbol">{-#</a> <a id="2118" class="Keyword">REWRITE</a> <a id="2126" href="../../Notation/Functions/#2076" class="Postulate">set-cts</a> <a id="2134" class="Symbol">#-}</a>
+<pre class="Agda"><code class="Agda">  <a id="1930" class="Keyword">postulate</a> <a id="_→ˢ_"></a><a id="1940" href="../../Notation/Functions/#1940" class="Postulate Operator">_→ˢ_</a> <a id="1945" class="Symbol">:</a> <a id="1947" href="../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1951" class="Symbol">→</a> <a id="1953" href="../../Notation/Domains/#287" class="Postulate">Domain</a> <a id="1960" class="Symbol">→</a> <a id="1962" href="../../Notation/Domains/#287" class="Postulate">Domain</a>
+  <a id="1980" class="Comment">-- A →ˢ D is the domain of all functions from A to D</a>
+  <a id="2035" class="Keyword">infixr</a> <a id="2042" class="Number">0</a> <a id="2044" href="../../Notation/Functions/#1940" class="Postulate Operator">_→ˢ_</a>
+  <a id="2061" class="Keyword">postulate</a> <a id="set-cts"></a><a id="2071" href="../../Notation/Functions/#2071" class="Postulate">set-cts</a>  <a id="2080" class="Symbol">:</a> <a id="2082" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2084" href="../../Notation/Domains/#544" class="Generalizable">A</a> <a id="2086" href="../../Notation/Functions/#1940" class="Postulate Operator">→ˢ</a> <a id="2089" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2091" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a> <a id="2093" href="../../Agda/Builtin/Equality/#150" class="Datatype Operator">≡</a> <a id="2095" class="Symbol">(</a><a id="2096" href="../../Notation/Domains/#544" class="Generalizable">A</a> <a id="2098" class="Symbol">→</a> <a id="2100" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2102" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2104" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2105" class="Symbol">)</a>
+  <a id="2109" class="Symbol">{-#</a> <a id="2113" class="Keyword">REWRITE</a> <a id="2121" href="../../Notation/Functions/#2071" class="Postulate">set-cts</a> <a id="2129" class="Symbol">#-}</a>
 </code></pre>
 <p>Embeddings of <em>endofunctions</em> <code>φ</code> on a domain <code>D</code> should always have
 fixed points <code>fix φ</code>, with <code>fix</code> itself also being continuous:</p>
-<pre class="Agda"><code class="Agda">  <a id="2284" class="Keyword">postulate</a> <a id="fix"></a><a id="2294" href="../../Notation/Functions/#2294" class="Postulate">fix</a> <a id="2298" class="Symbol">:</a> <a id="2300" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2302" class="Symbol">(</a><a id="2303" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2305" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="2308" href="../../Notation/Domains/#557" class="Generalizable">D</a><a id="2309" class="Symbol">)</a> <a id="2311" href="../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="2314" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2316" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
+<pre class="Agda"><code class="Agda">  <a id="2279" class="Keyword">postulate</a> <a id="fix"></a><a id="2289" href="../../Notation/Functions/#2289" class="Postulate">fix</a> <a id="2293" class="Symbol">:</a> <a id="2295" href="../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2297" class="Symbol">(</a><a id="2298" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2300" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="2303" href="../../Notation/Domains/#557" class="Generalizable">D</a><a id="2304" class="Symbol">)</a> <a id="2306" href="../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="2309" href="../../Notation/Domains/#557" class="Generalizable">D</a> <a id="2311" href="../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
 </code></pre>
 
 

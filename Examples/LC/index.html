@@ -534,9 +534,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Background/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Background/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,7 +575,87 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Background
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Denotational-Semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denotational-Semantics
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Background/Agda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1712,8 +1817,6 @@
       
         
       
-        
-      
     
     
     
@@ -1772,34 +1875,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Properties/Domains/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Domains
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1822,7 +1897,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1844,14 +1919,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1983,7 +2058,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2005,14 +2080,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2196,8 +2271,6 @@
       
         
       
-        
-      
     
     
     
@@ -2293,34 +2366,6 @@
     
   
     PCF
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Tests/Scm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scm
   
 
     
@@ -13097,14 +13142,14 @@
 
 
 <h1 id="untyped-lambda-calculus">Untyped Lambda-Calculus</h1>
-<p>This section presents our Agda embedding of a denotational semantics of the untyped <span class="arithmatex">\(\lambda\)</span>-calculus.</p>
-<pre class="Agda"><code class="Agda"><a id="149" class="Symbol">{-#</a> <a id="153" class="Keyword">OPTIONS</a> <a id="161" class="Pragma">--rewriting</a> <a id="173" class="Pragma">--confluence-check</a> <a id="192" class="Symbol">#-}</a>
+<p>This section presents our Agda embedding of a denotational semantics of an untyped <span class="arithmatex">\(\lambda\)</span>-calculus.</p>
+<pre class="Agda"><code class="Agda"><a id="148" class="Symbol">{-#</a> <a id="152" class="Keyword">OPTIONS</a> <a id="160" class="Pragma">--rewriting</a> <a id="172" class="Pragma">--confluence-check</a> <a id="191" class="Symbol">#-}</a>
 
-<a id="197" class="Keyword">module</a> <a id="204" href="../../Examples/LC/" class="Module">Examples.LC</a> <a id="216" class="Keyword">where</a>
+<a id="196" class="Keyword">module</a> <a id="203" href="../../Examples/LC/" class="Module">Examples.LC</a> <a id="215" class="Keyword">where</a>
 
-  <a id="225" class="Keyword">import</a> <a id="232" href="../../Examples/LC/Abstract-Syntax/" class="Module">Examples.LC.Abstract-Syntax</a>
-  <a id="262" class="Keyword">import</a> <a id="269" href="../../Examples/LC/Domain-Equations/" class="Module">Examples.LC.Domain-Equations</a>
-  <a id="300" class="Keyword">import</a> <a id="307" href="../../Examples/LC/Semantic-Functions/" class="Module">Examples.LC.Semantic-Functions</a>
+  <a id="224" class="Keyword">import</a> <a id="231" href="../../Examples/LC/Abstract-Syntax/" class="Module">Examples.LC.Abstract-Syntax</a>
+  <a id="261" class="Keyword">import</a> <a id="268" href="../../Examples/LC/Domain-Equations/" class="Module">Examples.LC.Domain-Equations</a>
+  <a id="299" class="Keyword">import</a> <a id="306" href="../../Examples/LC/Semantic-Functions/" class="Module">Examples.LC.Semantic-Functions</a>
 </code></pre>
 
 

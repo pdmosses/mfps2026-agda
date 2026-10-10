@@ -534,9 +534,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Background/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Background/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -550,7 +575,87 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Background
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Background/Denotational-Semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denotational-Semantics
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Background/Agda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1722,8 +1827,6 @@
       
         
       
-        
-      
     
     
     
@@ -1782,34 +1885,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../Properties/Domains/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Domains
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -1832,7 +1907,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1854,14 +1929,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1993,7 +2068,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2015,14 +2090,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2206,8 +2281,6 @@
       
         
       
-        
-      
     
     
     
@@ -2303,34 +2376,6 @@
     
   
     PCF
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Tests/Scm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scm
   
 
     
@@ -13121,35 +13166,36 @@
 the Scheme standards <a href="https://standards.scheme.org">(Scheme)</a>,
 but still involve all our postulated domain constructors.
 Using definitional equations <code>D = E</code> instead of postulated bijections <code>D ≅ E</code>
-avoids the need for the functions <code>fold</code> and <code>unfold</code>.</p>
-<pre class="Agda"><code class="Agda"><a id="344" class="Symbol">{-#</a> <a id="348" class="Keyword">OPTIONS</a> <a id="356" class="Pragma">--rewriting</a> <a id="368" class="Pragma">--confluence-check</a> <a id="387" class="Symbol">#-}</a>
+for non-recursive collections of domains
+avoids the need for the functions <code>fold</code> and <code>unfold</code> in definitions of denotations.</p>
+<pre class="Agda"><code class="Agda"><a id="415" class="Symbol">{-#</a> <a id="419" class="Keyword">OPTIONS</a> <a id="427" class="Pragma">--rewriting</a> <a id="439" class="Pragma">--confluence-check</a> <a id="458" class="Symbol">#-}</a>
 
-<a id="402" class="Keyword">module</a> <a id="409" href="../../../Examples/Scm/Domain-Equations/" class="Module">Examples.Scm.Domain-Equations</a> <a id="439" class="Keyword">where</a>
+<a id="473" class="Keyword">module</a> <a id="480" href="../../../Examples/Scm/Domain-Equations/" class="Module">Examples.Scm.Domain-Equations</a> <a id="510" class="Keyword">where</a>
 
-  <a id="457" class="Keyword">open</a> <a id="462" class="Keyword">import</a> <a id="469" href="../../../Examples/Scm/Abstract-Syntax/" class="Module">Examples.Scm.Abstract-Syntax</a>
-  <a id="500" class="Keyword">open</a> <a id="505" class="Keyword">import</a> <a id="512" href="../../../Notation/Domains/" class="Module">Notation.Domains</a>
-  <a id="531" class="Keyword">open</a> <a id="536" class="Keyword">import</a> <a id="543" href="../../../Notation/Functions/" class="Module">Notation.Functions</a>
-  <a id="564" class="Keyword">open</a> <a id="569" class="Keyword">import</a> <a id="576" href="../../../Notation/Flat/" class="Module">Notation.Flat</a>
-  <a id="592" class="Keyword">open</a> <a id="597" class="Keyword">import</a> <a id="604" href="../../../Notation/Flat/Booleans/" class="Module">Notation.Flat.Booleans</a>
-  <a id="629" class="Keyword">open</a> <a id="634" class="Keyword">import</a> <a id="641" href="../../../Notation/Flat/Naturals/" class="Module">Notation.Flat.Naturals</a>
-  <a id="666" class="Keyword">open</a> <a id="671" class="Keyword">import</a> <a id="678" href="../../../Notation/Sums/" class="Module">Notation.Sums</a>
-  <a id="694" class="Keyword">open</a> <a id="699" class="Keyword">import</a> <a id="706" href="../../../Notation/Products/" class="Module">Notation.Products</a>
-  <a id="726" class="Keyword">open</a> <a id="731" class="Keyword">import</a> <a id="738" href="../../../Notation/Products/Sequences/" class="Module">Notation.Products.Sequences</a>
+  <a id="528" class="Keyword">open</a> <a id="533" class="Keyword">import</a> <a id="540" href="../../../Examples/Scm/Abstract-Syntax/" class="Module">Examples.Scm.Abstract-Syntax</a>
+  <a id="571" class="Keyword">open</a> <a id="576" class="Keyword">import</a> <a id="583" href="../../../Notation/Domains/" class="Module">Notation.Domains</a>
+  <a id="602" class="Keyword">open</a> <a id="607" class="Keyword">import</a> <a id="614" href="../../../Notation/Functions/" class="Module">Notation.Functions</a>
+  <a id="635" class="Keyword">open</a> <a id="640" class="Keyword">import</a> <a id="647" href="../../../Notation/Flat/" class="Module">Notation.Flat</a>
+  <a id="663" class="Keyword">open</a> <a id="668" class="Keyword">import</a> <a id="675" href="../../../Notation/Flat/Booleans/" class="Module">Notation.Flat.Booleans</a>
+  <a id="700" class="Keyword">open</a> <a id="705" class="Keyword">import</a> <a id="712" href="../../../Notation/Flat/Naturals/" class="Module">Notation.Flat.Naturals</a>
+  <a id="737" class="Keyword">open</a> <a id="742" class="Keyword">import</a> <a id="749" href="../../../Notation/Sums/" class="Module">Notation.Sums</a>
+  <a id="765" class="Keyword">open</a> <a id="770" class="Keyword">import</a> <a id="777" href="../../../Notation/Products/" class="Module">Notation.Products</a>
+  <a id="797" class="Keyword">open</a> <a id="802" class="Keyword">import</a> <a id="809" href="../../../Notation/Products/Sequences/" class="Module">Notation.Products.Sequences</a>
 
-  <a id="779" class="Keyword">postulate</a> <a id="Loc"></a><a id="789" href="../../../Examples/Scm/Domain-Equations/#789" class="Postulate">Loc</a> <a id="793" class="Symbol">:</a> <a id="795" href="../../../Agda/Primitive/#388" class="Primitive">Set</a>
-  <a id="𝐋"></a><a id="801" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a>  <a id="804" class="Symbol">=</a>  <a id="807" href="../../../Examples/Scm/Domain-Equations/#789" class="Postulate">Loc</a> <a id="811" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>                <a id="829" class="Comment">-- locations</a>
-  <a id="𝐍"></a><a id="844" href="../../../Examples/Scm/Domain-Equations/#844" class="Function">𝐍</a>  <a id="847" class="Symbol">=</a>  <a id="850" href="../../../Notation/Flat/Naturals/#444" class="Function">Nat⊥</a>                  <a id="872" class="Comment">-- natural numbers</a>
-  <a id="𝐓"></a><a id="893" href="../../../Examples/Scm/Domain-Equations/#893" class="Function">𝐓</a>  <a id="896" class="Symbol">=</a>  <a id="899" href="../../../Notation/Flat/Booleans/#498" class="Function">Bool⊥</a>                 <a id="921" class="Comment">-- booleans</a>
-  <a id="𝐑"></a><a id="935" href="../../../Examples/Scm/Domain-Equations/#935" class="Function">𝐑</a>  <a id="938" class="Symbol">=</a>  <a id="941" href="../../../Agda/Builtin/Int/#245" class="Datatype">Int</a> <a id="945" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>                <a id="963" class="Comment">-- numbers</a>
-  <a id="𝐏"></a><a id="976" href="../../../Examples/Scm/Domain-Equations/#976" class="Function">𝐏</a>  <a id="979" class="Symbol">=</a>  <a id="982" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a> <a id="984" href="../../../Notation/Products/#576" class="Postulate Operator">×</a> <a id="986" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a>                 <a id="1004" class="Comment">-- pairs</a>
-  <a id="𝐔"></a><a id="1015" href="../../../Examples/Scm/Domain-Equations/#1015" class="Function">𝐔</a>  <a id="1018" class="Symbol">=</a>  <a id="1021" href="../../../Examples/Scm/Abstract-Syntax/#1334" class="Function">Ide</a> <a id="1025" href="../../../Notation/Functions/#1945" class="Postulate Operator">→ˢ</a> <a id="1028" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a>              <a id="1043" class="Comment">-- environments</a>
-  <a id="1061" class="Keyword">data</a> <a id="Misc"></a><a id="1066" href="../../../Examples/Scm/Domain-Equations/#1066" class="Datatype">Misc</a> <a id="1071" class="Symbol">:</a> <a id="1073" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1077" class="Keyword">where</a> <a id="Misc.null"></a><a id="1083" href="../../../Examples/Scm/Domain-Equations/#1083" class="InductiveConstructor">null</a> <a id="Misc.unallocated"></a><a id="1088" href="../../../Examples/Scm/Domain-Equations/#1088" class="InductiveConstructor">unallocated</a> <a id="Misc.undefined"></a><a id="1100" href="../../../Examples/Scm/Domain-Equations/#1100" class="InductiveConstructor">undefined</a> <a id="Misc.unspecified"></a><a id="1110" href="../../../Examples/Scm/Domain-Equations/#1110" class="InductiveConstructor">unspecified</a> <a id="1122" class="Symbol">:</a> <a id="1124" href="../../../Examples/Scm/Domain-Equations/#1066" class="Datatype">Misc</a>
-  <a id="𝐌"></a><a id="1131" href="../../../Examples/Scm/Domain-Equations/#1131" class="Function">𝐌</a>  <a id="1134" class="Symbol">=</a>  <a id="1137" href="../../../Examples/Scm/Domain-Equations/#1066" class="Datatype">Misc</a> <a id="1142" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>               <a id="1159" class="Comment">-- miscellaneous</a>
-  <a id="1178" class="Keyword">postulate</a> <a id="𝐄"></a><a id="1188" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="1190" class="Symbol">:</a> <a id="1192" href="../../../Notation/Domains/#287" class="Postulate">Domain</a>        <a id="1206" class="Comment">-- expressed values</a>
-  <a id="𝐒"></a><a id="1228" href="../../../Examples/Scm/Domain-Equations/#1228" class="Function">𝐒</a>  <a id="1231" class="Symbol">=</a>  <a id="1234" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a> <a id="1236" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1239" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a>                <a id="1256" class="Comment">-- stores</a>
-  <a id="1268" class="Keyword">postulate</a> <a id="𝐀"></a><a id="1278" href="../../../Examples/Scm/Domain-Equations/#1278" class="Postulate">𝐀</a> <a id="1280" class="Symbol">:</a> <a id="1282" href="../../../Notation/Domains/#287" class="Postulate">Domain</a>        <a id="1296" class="Comment">-- answers</a>
-  <a id="𝐂"></a><a id="1309" href="../../../Examples/Scm/Domain-Equations/#1309" class="Function">𝐂</a>  <a id="1312" class="Symbol">=</a>  <a id="1315" href="../../../Examples/Scm/Domain-Equations/#1228" class="Function">𝐒</a> <a id="1317" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1320" href="../../../Examples/Scm/Domain-Equations/#1278" class="Postulate">𝐀</a>                <a id="1337" class="Comment">-- command continuations</a>
-  <a id="𝐅"></a><a id="1364" href="../../../Examples/Scm/Domain-Equations/#1364" class="Function">𝐅</a>  <a id="1367" class="Symbol">=</a>  <a id="1370" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="1372" href="../../../Notation/Products/Sequences/#726" class="Postulate Operator">⋆</a> <a id="1374" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1377" class="Symbol">(</a><a id="1378" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="1380" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1383" href="../../../Examples/Scm/Domain-Equations/#1309" class="Function">𝐂</a><a id="1384" class="Symbol">)</a> <a id="1386" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="1389" href="../../../Examples/Scm/Domain-Equations/#1309" class="Function">𝐂</a>  <a id="1392" class="Comment">-- procedure values</a>
+  <a id="850" class="Keyword">postulate</a> <a id="Loc"></a><a id="860" href="../../../Examples/Scm/Domain-Equations/#860" class="Postulate">Loc</a> <a id="864" class="Symbol">:</a> <a id="866" href="../../../Agda/Primitive/#388" class="Primitive">Set</a>
+  <a id="𝐋"></a><a id="872" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a>  <a id="875" class="Symbol">=</a>  <a id="878" href="../../../Examples/Scm/Domain-Equations/#860" class="Postulate">Loc</a> <a id="882" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>                <a id="900" class="Comment">-- locations</a>
+  <a id="𝐍"></a><a id="915" href="../../../Examples/Scm/Domain-Equations/#915" class="Function">𝐍</a>  <a id="918" class="Symbol">=</a>  <a id="921" href="../../../Notation/Flat/Naturals/#443" class="Function">Nat⊥</a>                  <a id="943" class="Comment">-- natural numbers</a>
+  <a id="𝐓"></a><a id="964" href="../../../Examples/Scm/Domain-Equations/#964" class="Function">𝐓</a>  <a id="967" class="Symbol">=</a>  <a id="970" href="../../../Notation/Flat/Booleans/#498" class="Function">Bool⊥</a>                 <a id="992" class="Comment">-- booleans</a>
+  <a id="𝐑"></a><a id="1006" href="../../../Examples/Scm/Domain-Equations/#1006" class="Function">𝐑</a>  <a id="1009" class="Symbol">=</a>  <a id="1012" href="../../../Agda/Builtin/Int/#245" class="Datatype">Int</a> <a id="1016" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>                <a id="1034" class="Comment">-- numbers</a>
+  <a id="𝐏"></a><a id="1047" href="../../../Examples/Scm/Domain-Equations/#1047" class="Function">𝐏</a>  <a id="1050" class="Symbol">=</a>  <a id="1053" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a> <a id="1055" href="../../../Notation/Products/#528" class="Postulate Operator">×</a> <a id="1057" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a>                 <a id="1075" class="Comment">-- pairs</a>
+  <a id="𝐔"></a><a id="1086" href="../../../Examples/Scm/Domain-Equations/#1086" class="Function">𝐔</a>  <a id="1089" class="Symbol">=</a>  <a id="1092" href="../../../Examples/Scm/Abstract-Syntax/#1259" class="Function">Ide</a> <a id="1096" href="../../../Notation/Functions/#1940" class="Postulate Operator">→ˢ</a> <a id="1099" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a>              <a id="1114" class="Comment">-- environments</a>
+  <a id="1132" class="Keyword">data</a> <a id="Misc"></a><a id="1137" href="../../../Examples/Scm/Domain-Equations/#1137" class="Datatype">Misc</a> <a id="1142" class="Symbol">:</a> <a id="1144" href="../../../Agda/Primitive/#388" class="Primitive">Set</a> <a id="1148" class="Keyword">where</a> <a id="Misc.null"></a><a id="1154" href="../../../Examples/Scm/Domain-Equations/#1154" class="InductiveConstructor">null</a> <a id="Misc.unallocated"></a><a id="1159" href="../../../Examples/Scm/Domain-Equations/#1159" class="InductiveConstructor">unallocated</a> <a id="Misc.undefined"></a><a id="1171" href="../../../Examples/Scm/Domain-Equations/#1171" class="InductiveConstructor">undefined</a> <a id="Misc.unspecified"></a><a id="1181" href="../../../Examples/Scm/Domain-Equations/#1181" class="InductiveConstructor">unspecified</a> <a id="1193" class="Symbol">:</a> <a id="1195" href="../../../Examples/Scm/Domain-Equations/#1137" class="Datatype">Misc</a>
+  <a id="𝐌"></a><a id="1202" href="../../../Examples/Scm/Domain-Equations/#1202" class="Function">𝐌</a>  <a id="1205" class="Symbol">=</a>  <a id="1208" href="../../../Examples/Scm/Domain-Equations/#1137" class="Datatype">Misc</a> <a id="1213" href="../../../Notation/Flat/#548" class="Postulate Operator">+⊥</a>               <a id="1230" class="Comment">-- miscellaneous</a>
+  <a id="1249" class="Keyword">postulate</a> <a id="𝐄"></a><a id="1259" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="1261" class="Symbol">:</a> <a id="1263" href="../../../Notation/Domains/#287" class="Postulate">Domain</a>        <a id="1277" class="Comment">-- expressed values</a>
+  <a id="𝐒"></a><a id="1299" href="../../../Examples/Scm/Domain-Equations/#1299" class="Function">𝐒</a>  <a id="1302" class="Symbol">=</a>  <a id="1305" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a> <a id="1307" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1310" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a>                <a id="1327" class="Comment">-- stores</a>
+  <a id="1339" class="Keyword">postulate</a> <a id="𝐀"></a><a id="1349" href="../../../Examples/Scm/Domain-Equations/#1349" class="Postulate">𝐀</a> <a id="1351" class="Symbol">:</a> <a id="1353" href="../../../Notation/Domains/#287" class="Postulate">Domain</a>        <a id="1367" class="Comment">-- answers</a>
+  <a id="𝐂"></a><a id="1380" href="../../../Examples/Scm/Domain-Equations/#1380" class="Function">𝐂</a>  <a id="1383" class="Symbol">=</a>  <a id="1386" href="../../../Examples/Scm/Domain-Equations/#1299" class="Function">𝐒</a> <a id="1388" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1391" href="../../../Examples/Scm/Domain-Equations/#1349" class="Postulate">𝐀</a>                <a id="1408" class="Comment">-- command continuations</a>
+  <a id="𝐅"></a><a id="1435" href="../../../Examples/Scm/Domain-Equations/#1435" class="Function">𝐅</a>  <a id="1438" class="Symbol">=</a>  <a id="1441" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="1443" href="../../../Notation/Products/Sequences/#726" class="Postulate Operator">⋆</a> <a id="1445" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1448" class="Symbol">(</a><a id="1449" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="1451" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1454" href="../../../Examples/Scm/Domain-Equations/#1380" class="Function">𝐂</a><a id="1455" class="Symbol">)</a> <a id="1457" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="1460" href="../../../Examples/Scm/Domain-Equations/#1380" class="Function">𝐂</a>  <a id="1463" class="Comment">-- procedure values</a>
 </code></pre>
 <p>The published denotational semantics of <em>Scm</em> <a href="https://doi.org/10.1145/3759427.3760369">(Mosses2025CSE)</a> defines the domain <span class="arithmatex">\(𝐄\)</span>
 of expression values by the equation <span class="arithmatex">\(𝐄 = 𝐓 + 𝐑 + 𝐏 + 𝐌 + 𝐅\)</span>,
@@ -13160,24 +13206,27 @@ would cause the type checker to diverge.
 Postulating one (or both) of these domains avoids divergence;
 postulating <code>𝐄</code> also has the benefit that the embeddings and projections for its summands
 subsume the bijection between <code>𝐄</code> and its intended structure.</p>
-<p>The following postulates instantiate injection (<code>δ in⊥ 𝐄</code>),
+<p>The following postulates instantiate the notation used in denotational semantics for <a href="../../../Notation/Sums/#sum-domains">sum domains</a>:
+injection (<code>δ in⊥ 𝐄</code>),
 inspection (<code>ε ∈⊥ D</code>),
 and projection (<code>ε |⊥ D</code>) for each summand <code>D</code> of <code>𝐄</code>.</p>
-<pre class="Agda"><code class="Agda">  <a id="2195" class="Keyword">postulate</a> <a id="2205" class="Keyword">instance</a>
-    <a id="E+=T"></a><a id="2218" href="../../../Examples/Scm/Domain-Equations/#2218" class="Postulate">E+=T</a>  <a id="2224" class="Symbol">:</a> <a id="2226" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2228" href="../../../Notation/Sums/#1188" class="Postulate Operator">≳</a> <a id="2230" class="Number">1</a> <a id="2232" href="../../../Notation/Sums/#1188" class="Postulate Operator">↦</a> <a id="2234" href="../../../Examples/Scm/Domain-Equations/#893" class="Function">𝐓</a>
-    <a id="E+=R"></a><a id="2240" href="../../../Examples/Scm/Domain-Equations/#2240" class="Postulate">E+=R</a>  <a id="2246" class="Symbol">:</a> <a id="2248" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2250" href="../../../Notation/Sums/#1188" class="Postulate Operator">≳</a> <a id="2252" class="Number">2</a> <a id="2254" href="../../../Notation/Sums/#1188" class="Postulate Operator">↦</a> <a id="2256" href="../../../Examples/Scm/Domain-Equations/#935" class="Function">𝐑</a>
-    <a id="E+=P"></a><a id="2262" href="../../../Examples/Scm/Domain-Equations/#2262" class="Postulate">E+=P</a>  <a id="2268" class="Symbol">:</a> <a id="2270" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2272" href="../../../Notation/Sums/#1188" class="Postulate Operator">≳</a> <a id="2274" class="Number">3</a> <a id="2276" href="../../../Notation/Sums/#1188" class="Postulate Operator">↦</a> <a id="2278" href="../../../Examples/Scm/Domain-Equations/#976" class="Function">𝐏</a>
-    <a id="E+=M"></a><a id="2284" href="../../../Examples/Scm/Domain-Equations/#2284" class="Postulate">E+=M</a>  <a id="2290" class="Symbol">:</a> <a id="2292" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2294" href="../../../Notation/Sums/#1188" class="Postulate Operator">≳</a> <a id="2296" class="Number">4</a> <a id="2298" href="../../../Notation/Sums/#1188" class="Postulate Operator">↦</a> <a id="2300" href="../../../Examples/Scm/Domain-Equations/#1131" class="Function">𝐌</a>
-    <a id="E+=F"></a><a id="2306" href="../../../Examples/Scm/Domain-Equations/#2306" class="Postulate">E+=F</a>  <a id="2312" class="Symbol">:</a> <a id="2314" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2316" href="../../../Notation/Sums/#1188" class="Postulate Operator">≳</a> <a id="2318" class="Number">5</a> <a id="2320" href="../../../Notation/Sums/#1188" class="Postulate Operator">↦</a> <a id="2322" href="../../../Examples/Scm/Domain-Equations/#1364" class="Function">𝐅</a>
+<pre class="Agda"><code class="Agda">  <a id="2329" class="Keyword">postulate</a> <a id="2339" class="Keyword">instance</a>
+    <a id="E+=T"></a><a id="2352" href="../../../Examples/Scm/Domain-Equations/#2352" class="Postulate">E+=T</a>  <a id="2358" class="Symbol">:</a> <a id="2360" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2362" href="../../../Notation/Sums/#1208" class="Postulate Operator">≳</a> <a id="2364" class="Number">1</a> <a id="2366" href="../../../Notation/Sums/#1208" class="Postulate Operator">↦</a> <a id="2368" href="../../../Examples/Scm/Domain-Equations/#964" class="Function">𝐓</a>
+    <a id="E+=R"></a><a id="2374" href="../../../Examples/Scm/Domain-Equations/#2374" class="Postulate">E+=R</a>  <a id="2380" class="Symbol">:</a> <a id="2382" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2384" href="../../../Notation/Sums/#1208" class="Postulate Operator">≳</a> <a id="2386" class="Number">2</a> <a id="2388" href="../../../Notation/Sums/#1208" class="Postulate Operator">↦</a> <a id="2390" href="../../../Examples/Scm/Domain-Equations/#1006" class="Function">𝐑</a>
+    <a id="E+=P"></a><a id="2396" href="../../../Examples/Scm/Domain-Equations/#2396" class="Postulate">E+=P</a>  <a id="2402" class="Symbol">:</a> <a id="2404" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2406" href="../../../Notation/Sums/#1208" class="Postulate Operator">≳</a> <a id="2408" class="Number">3</a> <a id="2410" href="../../../Notation/Sums/#1208" class="Postulate Operator">↦</a> <a id="2412" href="../../../Examples/Scm/Domain-Equations/#1047" class="Function">𝐏</a>
+    <a id="E+=M"></a><a id="2418" href="../../../Examples/Scm/Domain-Equations/#2418" class="Postulate">E+=M</a>  <a id="2424" class="Symbol">:</a> <a id="2426" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2428" href="../../../Notation/Sums/#1208" class="Postulate Operator">≳</a> <a id="2430" class="Number">4</a> <a id="2432" href="../../../Notation/Sums/#1208" class="Postulate Operator">↦</a> <a id="2434" href="../../../Examples/Scm/Domain-Equations/#1202" class="Function">𝐌</a>
+    <a id="E+=F"></a><a id="2440" href="../../../Examples/Scm/Domain-Equations/#2440" class="Postulate">E+=F</a>  <a id="2446" class="Symbol">:</a> <a id="2448" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2450" href="../../../Notation/Sums/#1208" class="Postulate Operator">≳</a> <a id="2452" class="Number">5</a> <a id="2454" href="../../../Notation/Sums/#1208" class="Postulate Operator">↦</a> <a id="2456" href="../../../Examples/Scm/Domain-Equations/#1435" class="Function">𝐅</a>
+</code></pre>
+<p>(where the numerical indices and order of the summand declarations are arbitrary).</p>
+<pre class="Agda"><code class="Agda">
+  <a id="2565" class="Keyword">postulate</a> <a id="2575" class="Keyword">instance</a>
+    <a id="eqL"></a><a id="2588" href="../../../Examples/Scm/Domain-Equations/#2588" class="Postulate">eqL</a>   <a id="2594" class="Symbol">:</a> <a id="2596" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2599" href="../../../Examples/Scm/Domain-Equations/#860" class="Postulate">Loc</a>
+    <a id="eqM"></a><a id="2607" href="../../../Examples/Scm/Domain-Equations/#2607" class="Postulate">eqM</a>   <a id="2613" class="Symbol">:</a> <a id="2615" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2618" href="../../../Examples/Scm/Domain-Equations/#1137" class="Datatype">Misc</a>
+    <a id="eqR"></a><a id="2627" href="../../../Examples/Scm/Domain-Equations/#2627" class="Postulate">eqR</a>   <a id="2633" class="Symbol">:</a> <a id="2635" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2638" href="../../../Agda/Builtin/Int/#245" class="Datatype">Int</a>
 
-  <a id="2336" class="Keyword">postulate</a> <a id="2346" class="Keyword">instance</a>
-    <a id="eqL"></a><a id="2359" href="../../../Examples/Scm/Domain-Equations/#2359" class="Postulate">eqL</a>   <a id="2365" class="Symbol">:</a> <a id="2367" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2370" href="../../../Examples/Scm/Domain-Equations/#789" class="Postulate">Loc</a>
-    <a id="eqM"></a><a id="2378" href="../../../Examples/Scm/Domain-Equations/#2378" class="Postulate">eqM</a>   <a id="2384" class="Symbol">:</a> <a id="2386" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2389" href="../../../Examples/Scm/Domain-Equations/#1066" class="Datatype">Misc</a>
-    <a id="eqR"></a><a id="2398" href="../../../Examples/Scm/Domain-Equations/#2398" class="Postulate">eqR</a>   <a id="2404" class="Symbol">:</a> <a id="2406" href="../../../Notation/Flat/Booleans/#842" class="Record">Eq</a> <a id="2409" href="../../../Agda/Builtin/Int/#245" class="Datatype">Int</a>
-
-  <a id="2416" class="Keyword">variable</a>
-    <a id="2429" href="../../../Examples/Scm/Domain-Equations/#2429" class="Generalizable">α</a> <a id="2431" class="Symbol">:</a> <a id="2433" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2435" href="../../../Examples/Scm/Domain-Equations/#801" class="Function">𝐋</a> <a id="2437" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2438" class="Symbol">;</a>  <a id="2441" href="../../../Examples/Scm/Domain-Equations/#2441" class="Generalizable">ρ</a> <a id="2443" class="Symbol">:</a> <a id="2445" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2447" href="../../../Examples/Scm/Domain-Equations/#1015" class="Function">𝐔</a> <a id="2449" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2450" class="Symbol">;</a>  <a id="2453" href="../../../Examples/Scm/Domain-Equations/#2453" class="Generalizable">μ</a>  <a id="2456" class="Symbol">:</a> <a id="2458" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2460" href="../../../Examples/Scm/Domain-Equations/#1131" class="Function">𝐌</a> <a id="2462" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2463" class="Symbol">;</a>    <a id="2468" href="../../../Examples/Scm/Domain-Equations/#2468" class="Generalizable">ϵ</a> <a id="2470" class="Symbol">:</a> <a id="2472" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2474" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2476" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
-    <a id="2482" href="../../../Examples/Scm/Domain-Equations/#2482" class="Generalizable">σ</a> <a id="2484" class="Symbol">:</a> <a id="2486" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2488" href="../../../Examples/Scm/Domain-Equations/#1228" class="Function">𝐒</a> <a id="2490" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2491" class="Symbol">;</a>  <a id="2494" href="../../../Examples/Scm/Domain-Equations/#2494" class="Generalizable">θ</a> <a id="2496" class="Symbol">:</a> <a id="2498" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2500" href="../../../Examples/Scm/Domain-Equations/#1309" class="Function">𝐂</a> <a id="2502" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2503" class="Symbol">;</a>  <a id="2506" href="../../../Examples/Scm/Domain-Equations/#2506" class="Generalizable">ϵ⋆</a> <a id="2509" class="Symbol">:</a> <a id="2511" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2513" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2515" href="../../../Notation/Products/Sequences/#726" class="Postulate Operator">⋆</a> <a id="2517" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2518" class="Symbol">;</a>   <a id="2522" href="../../../Examples/Scm/Domain-Equations/#2522" class="Generalizable">φ</a> <a id="2524" class="Symbol">:</a> <a id="2526" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2528" href="../../../Examples/Scm/Domain-Equations/#1364" class="Function">𝐅</a> <a id="2530" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2531" class="Symbol">;</a>  <a id="2534" href="../../../Examples/Scm/Domain-Equations/#2534" class="Generalizable">κ</a> <a id="2536" class="Symbol">:</a> <a id="2538" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2540" href="../../../Examples/Scm/Domain-Equations/#1188" class="Postulate">𝐄</a> <a id="2542" href="../../../Notation/Functions/#630" class="Postulate Operator">→ᶜ</a> <a id="2545" href="../../../Examples/Scm/Domain-Equations/#1309" class="Function">𝐂</a> <a id="2547" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
+  <a id="2645" class="Keyword">variable</a>
+    <a id="2658" href="../../../Examples/Scm/Domain-Equations/#2658" class="Generalizable">α</a> <a id="2660" class="Symbol">:</a> <a id="2662" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2664" href="../../../Examples/Scm/Domain-Equations/#872" class="Function">𝐋</a> <a id="2666" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2667" class="Symbol">;</a>  <a id="2670" href="../../../Examples/Scm/Domain-Equations/#2670" class="Generalizable">ρ</a> <a id="2672" class="Symbol">:</a> <a id="2674" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2676" href="../../../Examples/Scm/Domain-Equations/#1086" class="Function">𝐔</a> <a id="2678" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2679" class="Symbol">;</a>  <a id="2682" href="../../../Examples/Scm/Domain-Equations/#2682" class="Generalizable">μ</a>  <a id="2685" class="Symbol">:</a> <a id="2687" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2689" href="../../../Examples/Scm/Domain-Equations/#1202" class="Function">𝐌</a> <a id="2691" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2692" class="Symbol">;</a>    <a id="2697" href="../../../Examples/Scm/Domain-Equations/#2697" class="Generalizable">ϵ</a> <a id="2699" class="Symbol">:</a> <a id="2701" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2703" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2705" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
+    <a id="2711" href="../../../Examples/Scm/Domain-Equations/#2711" class="Generalizable">σ</a> <a id="2713" class="Symbol">:</a> <a id="2715" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2717" href="../../../Examples/Scm/Domain-Equations/#1299" class="Function">𝐒</a> <a id="2719" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2720" class="Symbol">;</a>  <a id="2723" href="../../../Examples/Scm/Domain-Equations/#2723" class="Generalizable">θ</a> <a id="2725" class="Symbol">:</a> <a id="2727" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2729" href="../../../Examples/Scm/Domain-Equations/#1380" class="Function">𝐂</a> <a id="2731" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2732" class="Symbol">;</a>  <a id="2735" href="../../../Examples/Scm/Domain-Equations/#2735" class="Generalizable">ϵ⋆</a> <a id="2738" class="Symbol">:</a> <a id="2740" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2742" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2744" href="../../../Notation/Products/Sequences/#726" class="Postulate Operator">⋆</a> <a id="2746" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2747" class="Symbol">;</a>   <a id="2751" href="../../../Examples/Scm/Domain-Equations/#2751" class="Generalizable">φ</a> <a id="2753" class="Symbol">:</a> <a id="2755" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2757" href="../../../Examples/Scm/Domain-Equations/#1435" class="Function">𝐅</a> <a id="2759" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a><a id="2760" class="Symbol">;</a>  <a id="2763" href="../../../Examples/Scm/Domain-Equations/#2763" class="Generalizable">κ</a> <a id="2765" class="Symbol">:</a> <a id="2767" href="../../../Notation/Domains/#354" class="Postulate Operator">⟪</a> <a id="2769" href="../../../Examples/Scm/Domain-Equations/#1259" class="Postulate">𝐄</a> <a id="2771" href="../../../Notation/Functions/#625" class="Postulate Operator">→ᶜ</a> <a id="2774" href="../../../Examples/Scm/Domain-Equations/#1380" class="Function">𝐂</a> <a id="2776" href="../../../Notation/Domains/#354" class="Postulate Operator">⟫</a>
 </code></pre>
 
 
